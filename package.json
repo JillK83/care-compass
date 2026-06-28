@@ -1,0 +1,1 @@
+{"name": "care-compass-monorepo", "private": true, "workspaces": ["apps/*", "packages/*"], "scripts": {"dev": "turbo run dev", "dev:console": "npm run dev --workspace=console", "dev:compass": "npm run dev --workspace=compass", "build": "turbo run build"}, "devDependencies": {"turbo": "latest"}}
