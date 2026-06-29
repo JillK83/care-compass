@@ -152,7 +152,7 @@ WCAG 2.1 AA compliance is required across both doors.
 These three tokens were corrected following the Door 2 WCAG audit. They are confirmed and committed — do not revert to old values.
 
 ```css
---accent-action: #B5490A;        /* was #D85A30 — fixes badge + Assign button (now 5.32:1 on white) */
+--orange-alert: #B5490A;         /* was #D85A30 — fixes badge + Assign button (now 5.32:1 on white) */
 --text-on-surface-warm: #444441; /* use on #F0EEE9 warm surface only — passes AA */
 ```
 
