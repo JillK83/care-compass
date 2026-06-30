@@ -1,0 +1,150 @@
+/* packages/ui/MapEngine/MapEngine.css                          */
+/* Uses tokens from shared theme.css. No hardcoded hex values.  */
+
+/* ── Root layout ─────────────────────────────────────────────── */
+
+.map-engine-root {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.map-engine-canvas {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+/* ── Side panel ──────────────────────────────────────────────── */
+
+.map-engine-panel {
+  width: 360px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background: var(--surface-warm);
+  border-left: 1px solid var(--border-subtle);
+}
+
+/* ── Loading overlay ─────────────────────────────────────────── */
+
+.map-engine-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+/* ── Color legend — always visible ───────────────────────────── */
+
+.map-engine-legend {
+  position: absolute;
+  bottom: 2.5rem;       /* above disclaimer */
+  left: 1rem;
+  z-index: 900;
+  background: var(--surface-warm);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.map-engine-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+}
+
+.map-engine-legend__swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Pin legend markers */
+.map-engine-legend__pin {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.map-engine-legend__pin--caregiver {
+  background: var(--accent-action);
+}
+
+.map-engine-legend__pin--signal {
+  background: var(--map-label, #2C3E50);
+  border: 2px solid var(--accent-action);
+}
+
+/* ── Disclaimer ──────────────────────────────────────────────── */
+
+.map-engine-disclaimer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  background: var(--surface-warm);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── Overlay pins ────────────────────────────────────────────── */
+
+.map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.map-pin--caregiver {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-action);
+}
+
+.map-pin--caregiver.map-pin--unavailable {
+  background: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.map-pin--client {
+  width: 32px;
+  height: 32px;
+  background: var(--map-label, #2C3E50);
+}
+
+.map-pin--client.map-pin--unassigned {
+  border-color: var(--accent-action);
+}
+
+.map-pin--signal {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-action);
+  opacity: 0.85;
+  border-width: 1.5px;
+}

@@ -1,7 +1,19 @@
-node_modules
-dist
-.env
-.env.local
-*.local
+# Monorepo Workspaces Dependency Folders
+node_modules/
+
+# OS metadata
 .DS_Store
-.turbo
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+.turbo/
+
+# Local environment variables and secrets
+*.local
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example

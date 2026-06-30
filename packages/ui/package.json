@@ -12,9 +12,12 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/leaflet": "^1.9.14",
-    "leaflet": "^1.9.4",
+    "@types/react": "file:../../node_modules/@types/react",
+    "leaflet": "^1.9.4"
+  },
+  "dependencies": {
     "react-leaflet": "^4.2.1"
   }
 }
