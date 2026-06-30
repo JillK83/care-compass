@@ -75,7 +75,7 @@ export function MapEngine({
     geoLayerRef.current = L.geoJSON(undefined, {
       style: () => ({ weight: 0.5, color: '#888', fillOpacity: 0.75 }),
       onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
-        const fips = feature.properties?.GEOID as string
+        const fips = (feature.properties?.STATE ?? '') + (feature.properties?.COUNTY ?? '')
         const county = counties.find(c => c.fips === fips)
 
         if (county) {
@@ -104,7 +104,7 @@ export function MapEngine({
     if (!geoLayerRef.current || counties.length === 0) return
 
     geoLayerRef.current.setStyle(feature => {
-      const fips   = feature?.properties?.GEOID as string
+      const fips   = (feature?.properties?.STATE ?? '') + (feature?.properties?.COUNTY ?? '')
       const county = counties.find(c => c.fips === fips)
       const fill   = county ? fillValueToHex(county.fillValue, colorScale) : colorScale.noData
       return { fillColor: fill }
@@ -117,7 +117,7 @@ export function MapEngine({
 
     geoLayerRef.current.eachLayer(layer => {
       const gl    = layer as L.Path
-      const fips  = (layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.GEOID
+      const fips  = ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.STATE ?? '') + ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.COUNTY ?? '')
       gl.setStyle({ weight: fips === focusedCountyFips ? 2.5 : 0.5 })
     })
   }, [focusedCountyFips])
