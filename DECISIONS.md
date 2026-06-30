@@ -157,6 +157,18 @@ Copy this template and append it to the relevant section (Design, Architecture, 
 
 ---
 
+### A03 — Direct inline Supabase calls; no custom hook layer (yet)
+
+**Decision:** Components fetch Supabase data directly inline (`useEffect` + `supabase.from(...)`), with local `useState` for data/loading/error. No `useClients()`-style custom hook or service/helper layer exists yet.
+
+**Rationale:** This is a 3-day MVP with one current data-fetching consumer (`ClientsListPage`). Designing a shared hook today means guessing at requirements for the Day 3 realtime map work (`useEffect` fetch-once vs. Supabase realtime subscription are different shapes) before that work has started. Extracting a hook once a second component needs the same data is lower-risk than designing one upfront from a single call site.
+
+**Rejected:** Custom hook per resource (`useClients()`, `useCaregivers()`) built now. Rejected — premature abstraction for a single call site; risks designing the wrong shape before the realtime map requirements (Day 3) are concrete.
+
+**Revisit when:** A second component needs `client_profiles` data (e.g. Assignment Advisory Panel), or when Day 3 realtime map work begins — at that point, decide whether to extract `useClients()` and whether realtime needs a separate hook (`useClientsRealtime()`) rather than overloading one hook with both fetch-once and subscription behavior.
+
+---
+
 ## Open Items
 
 Move to resolved once addressed in build. Do not delete — add resolution date and note.
