@@ -5,7 +5,8 @@ export function loadCrosswalk(rows: Array<{ zip: string; county_fips: string }>)
 }
 
 export function zipToCountyFips(zip: string): string | null {
-  const normalized = zip.trim().replace(/\D/g, '').padStart(5, '0')
+  // Strip non-digits, take first 5 (handles ZIP+4 like "85145-1234"), pad for leading zeros
+  const normalized = zip.trim().replace(/\D/g, '').slice(0, 5).padStart(5, '0')
   if (normalized.length !== 5) return null
   return crosswalkIndex[normalized] ?? null
 }
