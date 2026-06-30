@@ -1,16 +1,22 @@
-/** Returns up to 3 adjacent non-desert counties ordered by agency count descending.
- *  Used by Door 1 ResourcePanel when the family's county is a care desert.
- *
- *  @param fips        FIPS of the desert county
- *  @param allCounties Full CountyFeature[] from computeFillValues() — searched for adjacent matches
- *  @param adjacency   Pre-indexed { [fips]: adjacentFips[] } — built from county-adjacency.csv */
+// Call loadAdjacency() once at app startup before getNearestCountiesWithAgencies().
+let adjacencyIndex: Record<string, string[]> = {}
+
+export function loadAdjacency(rows: Array<{ fips: string; adjacent_fips: string }>) {
+  adjacencyIndex = {}
+  for (const row of rows) {
+    const f = row.fips.trim()
+    const a = row.adjacent_fips.trim()
+    if (!adjacencyIndex[f]) adjacencyIndex[f] = []
+    adjacencyIndex[f].push(a)
+  }
+}
+
 export function getNearestCountiesWithAgencies(
   fips: string,
   allCounties: Array<{ fips: string; agencyCount?: number; [key: string]: unknown }>,
-  adjacency: Record<string, string[]>,
   maxResults = 3,
 ) {
-  const adjacentFips = new Set(adjacency[fips] ?? [])
+  const adjacentFips = new Set(adjacencyIndex[fips] ?? [])
   return allCounties
     .filter(c => adjacentFips.has(c.fips) && (c.agencyCount ?? 0) > 0)
     .sort((a, b) => (b.agencyCount ?? 0) - (a.agencyCount ?? 0))
