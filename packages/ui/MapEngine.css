@@ -1,0 +1,45 @@
+.map-engine-wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.map-canvas {
+  flex: 1;
+  min-height: 0;
+}
+
+.map-panel {
+  width: 360px;
+  overflow-y: auto;
+  background: var(--surface);
+  border-left: var(--border-width) solid var(--border);
+  flex-shrink: 0;
+}
+
+.map-disclaimer {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  max-width: 420px;
+  z-index: 1000;
+  pointer-events: none;
+  line-height: 1.4;
+}
+
+.county-tooltip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}

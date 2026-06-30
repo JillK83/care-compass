@@ -1,0 +1,77 @@
+/* Care Compass Platform — Design Tokens v1.1 (June 29, 2026)
+   Single source of truth for all colors, type sizes, spacing, and radius values.
+   Do not introduce hex values or px sizes outside this file.
+   Full usage rules: DESIGN_SYSTEM.md */
+
+:root {
+  /* ── Brand / Action ── */
+  --teal-primary:           #0F6E56; /* Compass only: search CTA, links, "Find care" button */
+  --teal-deep:              #1D4E5A; /* Nav active state only — never on buttons */
+  --teal-action:            #17383F; /* Primary action buttons (Assign, Flag) — both doors */
+  --teal-light:             #E1F5EE; /* Avatar/tag backgrounds — decorative */
+
+  /* ── Alert / Status ── */
+  --orange-alert:           #B5490A; /* Care desert badge — never on buttons (5.32:1 on white) */
+  --orange-swatch:          #D85A30; /* Legend swatch fill — decorative, never text */
+  --orange-gap:             #E67E22; /* Gap county map fill — decorative */
+  --red-critical:           #C0392B; /* "0 agencies" stat, desert map fill — AA on white for text */
+  --green-served:           #27AE60; /* Assigned state, served map fill, success */
+  --gray-no-data:           #D3D1C7; /* No-data map fill — decorative */
+  --blue-pin:               #2980B9; /* Caregiver pins on map — decorative */
+
+  /* ── Surfaces ── */
+  --canvas:                 #F8F7F4; /* Page background */
+  --surface:                #FFFFFF; /* Card / panel background */
+  --surface-secondary:      #F0EEE9; /* Sidebar background, disclaimer strip */
+
+  /* ── Text ── */
+  --text-primary:           #1A1A1A; /* All primary text — AA on all surfaces */
+  --text-secondary:         #5C5C5C; /* Supporting text, subtitles, why-lines */
+  --text-muted:             #767676; /* Captions, disclaimers — WCAG AA floor on white */
+  --text-muted-decorative:  #9A9A9A; /* Pin icons, decorative only — NEVER body text (2.77:1 fails AA) */
+  --text-on-surface-warm:   #444441; /* Text on --surface-secondary (#F0EEE9) — never use --text-muted here */
+
+  /* ── Avatar ── */
+  --avatar-bg:              #E1F5EE;
+  --avatar-text:            #0F6E56; /* AA on --avatar-bg */
+
+  /* ── Borders ── */
+  --border:                 rgba(0, 0, 0, 0.10);
+  --border-width:           0.5px;
+
+  /* ── Border Radius ── */
+  --radius-card:            12px; /* Compass cards and panels */
+  --radius-card-console:    8px;  /* Console cards */
+  --radius-button:          8px;  /* All buttons, both doors */
+  --radius-chip:            8px;  /* Filter chips, tags */
+  --radius-pill:            20px; /* Agency count pills only */
+  --radius-avatar:          50%;  /* Avatar circles */
+
+  /* ── Spacing ── */
+  --space-card-padding:         24px; /* Compass card internal padding */
+  --space-card-padding-console: 16px; /* Console card internal padding */
+  --space-zone-gap:             12px; /* Gap between card zones */
+
+  /* ── Accent ── */
+  --accent-bar:             4px; /* Left accent bar on result headline card */
+}
+
+/* Base reset — Inter only, no other font families */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--canvas);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
