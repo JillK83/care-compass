@@ -1,0 +1,62 @@
+/* theme.css — Care Console (Door 2)
+   Source of truth: DESIGN_SYSTEM.md
+   Scope: tokens marked "Console" or "Both" only. Compass-only tokens
+   (e.g. --teal-primary) are intentionally omitted from this file —
+   apps/compass owns its own scoped theme.css.
+   Do not introduce new colors, sizes, or spacing values here without
+   updating DESIGN_SYSTEM.md first.
+*/
+
+:root {
+  /* Color — Console + Both */
+  --teal-deep: #1D4E5A;          /* Nav active state, sidebar pill — Console only */
+  --teal-action: #17383F;        /* Primary action buttons (Assign, Flag CTA) — Both */
+  --teal-light: #E1F5EE;         /* Avatar/tag backgrounds, flag CTA card surface — Both */
+  --orange-alert: #B5490A;       /* Care desert badge, urgency indicators — Console only */
+  --orange-swatch: #D85A30;      /* Legend swatch fill only, decorative — Console only */
+  --red-critical: #C0392B;       /* "0 agencies" stat, result card accent, desert map fill — Both */
+  --green-served: #27AE60;       /* Assigned state, served map fill, success — Both */
+  --orange-gap: #E67E22;         /* Gap county map fill, decorative — Both */
+  --gray-no-data: #D3D1C7;       /* No-data map fill, decorative — Both */
+  --blue-pin: #2980B9;           /* Caregiver pins on map, decorative — Console only */
+
+  --canvas: #F8F7F4;             /* Page background — Both */
+  --surface: #FFFFFF;            /* Card / panel background — Both */
+  --surface-secondary: #F0EEE9;  /* Sidebar background, disclaimer strip — Console only */
+
+  --text-primary: #1A1A1A;       /* All primary text — Both */
+  --text-secondary: #5C5C5C;     /* Supporting text, subtitles, why-lines — Both */
+  --text-muted: #767676;         /* Caveat text, footer disclaimers, captions — Both */
+  --text-muted-decorative: #9A9A9A; /* Decorative labels only, never body text — Both */
+
+  --border: rgba(0, 0, 0, 0.10); /* All card and panel borders — Both */
+  --border-width: 0.5px;         /* All structural borders — Both */
+
+  --avatar-bg: #E1F5EE;          /* Avatar circle backgrounds — Both */
+  --avatar-text: #0F6E56;        /* Avatar initials — Both */
+
+  /* Radius */
+  --radius-card-console: 8px;    /* All cards — Console */
+  --radius-button: 8px;          /* All buttons, both screens — Both */
+  --radius-chip: 8px;            /* Filter chips, tags — Both */
+  --radius-pill: 20px;           /* Agency count pills only — Both */
+  --radius-avatar: 50%;          /* Avatar circles — Both */
+
+  /* Spacing */
+  --space-card-padding-console: 16px; /* Console card internal padding */
+  --space-zone-gap: 12px;        /* Gap between card zones — Both */
+  --accent-bar: 4px;             /* Left accent bar on result headline card — Both */
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif; /* Sole font family — Both. No exceptions. */
+
+  /* Minimum body text size — WCAG 2.1 AA compliance floor, per
+     DESIGN_SYSTEM.md typography rules: "Minimum body text size is
+     14px. Never use 12px for body copy — captions only." This is the
+     one typography value that's actually locked; everything else in
+     the typography reference table (display/heading/label sizes) is
+     still under review and intentionally NOT tokenized here yet.
+     Components should use literal px values for those until
+     DESIGN_SYSTEM.md confirms exact sizes. */
+  --font-size-body-min: 14px;
+}
