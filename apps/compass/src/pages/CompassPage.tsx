@@ -109,7 +109,7 @@ export function CompassPage() {
   }, [])
 
   // ── ZIP lookup ────────────────────────────────────────────────
-  function handleSearch(e: React.FormEvent<HTMLFormElement>) {
+  function handleSearch(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault()
     setErrorMsg('')
 
@@ -170,7 +170,17 @@ export function CompassPage() {
           </button>
         </div>
         {errorMsg && (
-          <p id="zip-error" className="zip-error" role="alert">{errorMsg}</p>
+          <p id="zip-error" className="zip-error" role="alert">
+            {errorMsg}{' '}
+            <a
+              href="https://eldercare.acl.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="zip-error-link"
+            >
+              Try Eldercare Locator instead
+            </a>
+          </p>
         )}
         {loadState === 'error' && (
           <p className="zip-error" role="alert">Failed to load data. Please refresh.</p>
