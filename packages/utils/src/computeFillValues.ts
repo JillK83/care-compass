@@ -10,10 +10,11 @@ interface RawCountyRow {
 }
 
 export function computeFillValues(rows: RawCountyRow[]) {
-  const maxDensity = Math.max(...rows.map(r => r.per_1k_seniors), 0.001)
+  const sorted = [...rows.map(r => r.per_1k_seniors)].sort((a, b) => a - b)
+  const cap = Math.max(sorted[Math.floor(sorted.length * 0.95)] ?? 0.001, 0.001)
 
   return rows.map(r => {
-    const fillValue = r.per_1k_seniors / maxDensity
+    const fillValue = Math.min(r.per_1k_seniors / cap, 1.0)
 
     return {
       fips:                 r.fips,

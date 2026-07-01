@@ -74,4 +74,5 @@ export interface MapEngineProps {
   isLoading:          boolean
   dataSource:         DataSource
   disclaimerText:     string | null   // null = use default for dataSource
+  geojsonData?:       GeoJSON.FeatureCollection
 }

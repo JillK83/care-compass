@@ -17,10 +17,10 @@ const DEFAULT_DISCLAIMERS: Record<string, string> = {
 // ─── Color helpers ───────────────────────────────────────────────
 
 function fillValueToHex(fillValue: number, colorScale: ColorScale): string {
-  if (fillValue < 0)  return colorScale.noData
-  if (fillValue < 0.4) return colorScale.low
-  if (fillValue < 0.7) return colorScale.mid
-  return colorScale.high
+  if (fillValue < 0)    return colorScale.noData
+  if (fillValue < 0.05) return colorScale.low   // 0 agencies or near-zero
+  if (fillValue < 0.25) return colorScale.mid   // below-average coverage
+  return colorScale.high                         // above p75 relative to p95 cap
 }
 
 // ─── Pin rendering ───────────────────────────────────────────────
@@ -57,6 +57,7 @@ export function MapEngine({
   isLoading,
   dataSource,
   disclaimerText,
+  geojsonData,
 }: MapEngineProps) {
   const mapRef     = useRef<HTMLDivElement>(null)
   const leafletRef = useRef<L.Map | null>(null)
@@ -99,6 +100,13 @@ export function MapEngine({
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── Load GeoJSON boundaries ─────────────────────────────────────
+  useEffect(() => {
+    if (!geoLayerRef.current || !geojsonData) return
+    geoLayerRef.current.clearLayers()
+    geoLayerRef.current.addData(geojsonData)
+  }, [geojsonData])
+
   // ── Update county fills when data changes ───────────────────────
   useEffect(() => {
     if (!geoLayerRef.current || counties.length === 0) return
@@ -109,7 +117,7 @@ export function MapEngine({
       const fill   = county ? fillValueToHex(county.fillValue, colorScale) : colorScale.noData
       return { fillColor: fill }
     })
-  }, [counties, colorScale])
+  }, [counties, colorScale, geojsonData])
 
   // ── Highlight focused county ────────────────────────────────────
   useEffect(() => {

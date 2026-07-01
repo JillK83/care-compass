@@ -155,6 +155,14 @@ Copy this template and append it to the relevant section (Design, Architecture, 
 
 **Rejected:** Password auth. Rejected — adds password reset flow, storage, and hashing complexity for a demo that doesn't need it.
 
+### A03 — react-leaflet peer dependency override for React 19
+
+**Decision:** Root `package.json` uses npm `overrides` to allow `react-leaflet@4.2.1` to run under React 19: `{ "overrides": { "react-leaflet": { "react": "^19.0.0" } } }`.
+
+**Rationale:** `react-leaflet@4.2.1` declares `"react": "^18.0.0"` as a peer dependency but is functionally compatible with React 19. The monorepo is locked to React 19.2.7 across both apps. Downgrading to React 18 would have required cascading changes across both `apps/compass` and `apps/console`. The override costs nothing at runtime — it only suppresses the false peer dep error at install time.
+
+**Rejected:** Pinning the monorepo to React 18. Rejected — both apps are already on React 19.2.7 and Jillian's Supabase auth work was built against React 19. Downgrading created more churn than the fix warranted.
+
 ---
 
 ### A03 — Direct inline Supabase calls; no custom hook layer (yet)
@@ -197,10 +205,9 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 
 | # | Item | Screen | Status |
 |---|---|---|---|
-| O1 | Verify ZIP-to-county crosswalk behavior for ZIPs spanning multiple county lines | Both | Open — Lee, Day 1 |
+| O1 | Verify ZIP-to-county crosswalk behavior for ZIPs spanning multiple county lines | Both | Resolved 2026-06-30 — simplemaps crosswalk uses primary county per ZIP; ZIP+4 handled by slice(0,5) in zipToCountyFips.ts |
 | O2 | Lock choropleth map library dependency before scaffolding MapEngine component API | Both | Resolved — 2026-06-30, see D08. Library choice (Leaflet + free GeoJSON) was locked in D08; only the react-leaflet/React 19 version conflict remained open, tracked separately as O6. |
 | O3 | Run Door 1 WCAG audit against Figma Make output before committing Door 1 CSS | Compass | Open — Lee, Day 3 |
-| O4 | Confirm demo ZIP codes (85145, 85139, 85128) against Lee's dataset | Both | Open — Lee, Day 1 |
-| O5 | Flag CTA confirmation state (post-click text + visual) not yet mocked | Compass | Open — Build |
+| O4 | Confirm demo ZIP codes (85145, 85139, 85128) against Lee's dataset | Both | Resolved 2026-06-30 — all three ZIPs map to 04021 (Pinal County, AZ), confirmed is_desert=True in home_care_by_county.csv |
+| O5 | Flag CTA confirmation state (post-click text + visual) not yet mocked | Compass | Resolved 2026-06-30 — implemented in ResourcePanel.tsx as local useState; confirmation message shows ZIP on click, no backend (D10) |
 | O6 | react-leaflet / React 19 peer dependency conflict — blocks MapEngine rendering for both doors | Both | Resolved — 2026-06-30, see A04. Upgraded react-leaflet to 5.0.0; all four workspaces build clean. |
-

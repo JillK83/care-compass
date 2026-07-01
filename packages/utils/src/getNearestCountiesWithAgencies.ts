@@ -13,7 +13,7 @@ export function loadAdjacency(rows: Array<{ fips: string; adjacent_fips: string 
 
 export function getNearestCountiesWithAgencies(
   fips: string,
-  allCounties: Array<{ fips: string; agencyCount?: number; [key: string]: unknown }>,
+  allCounties: Array<{ fips: string; name: string; state: string; agencyCount?: number }>,
   maxResults = 3,
 ) {
   const adjacentFips = new Set(adjacencyIndex[fips] ?? [])
