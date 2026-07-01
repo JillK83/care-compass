@@ -75,21 +75,6 @@ export function MapEngine({
 
     geoLayerRef.current = L.geoJSON(undefined, {
       style: () => ({ weight: 0.5, color: '#888', fillOpacity: 0.75 }),
-      onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
-        const fips = (feature.properties?.STATE ?? '') + (feature.properties?.COUNTY ?? '')
-        const county = counties.find(c => c.fips === fips)
-
-        if (county) {
-          layer.bindTooltip(
-            `<strong>${county.tooltip.headline}</strong><br/>` +
-            county.tooltip.stats.map(s => `${s.label}: ${s.value}`).join('<br/>') +
-            `<br/><em>${county.tooltip.caveat}</em>`,
-            { sticky: true }
-          )
-        }
-
-        layer.on('click', () => onCountyClick(fips))
-      },
     }).addTo(leafletRef.current)
 
     pinLayerRef.current = L.layerGroup().addTo(leafletRef.current)
@@ -107,7 +92,7 @@ export function MapEngine({
     geoLayerRef.current.addData(geojsonData)
   }, [geojsonData])
 
-  // ── Update county fills when data changes ───────────────────────
+  // ── Update county fills and tooltips when data changes ─────────
   useEffect(() => {
     if (!geoLayerRef.current || counties.length === 0) return
 
@@ -116,6 +101,25 @@ export function MapEngine({
       const county = counties.find(c => c.fips === fips)
       const fill   = county ? fillValueToHex(county.fillValue, colorScale) : colorScale.noData
       return { fillColor: fill }
+    })
+
+    geoLayerRef.current.eachLayer(layer => {
+      const gl    = layer as L.Path
+      const fips  = ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.STATE ?? '') + ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.COUNTY ?? '')
+      const county = counties.find(c => c.fips === fips)
+
+      gl.off('click')
+      gl.on('click', () => onCountyClick(fips))
+
+      if (county) {
+        gl.unbindTooltip()
+        gl.bindTooltip(
+          `<strong>${county.tooltip.headline}</strong><br/>` +
+          county.tooltip.stats.map(s => `${s.label}: ${s.value}`).join('<br/>') +
+          `<br/><em>${county.tooltip.caveat}</em>`,
+          { sticky: true }
+        )
+      }
     })
   }, [counties, colorScale, geojsonData])
 

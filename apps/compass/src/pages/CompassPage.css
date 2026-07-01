@@ -1,0 +1,12 @@
+.compass-page {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.map-section {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
