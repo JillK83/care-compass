@@ -197,6 +197,7 @@ export function CompassPage() {
           agenciesPer1k={focusedCounty.agenciesPer1kSeniors}
           seniorPopulation={focusedCounty.seniorPopulation}
           searchedZip={searchedZip}
+          countyFips={focusedFips ?? ''}
           nearbyCounties={nearbyCounties.map(c => ({
             fips:        c.fips,
             name:        c.name,

@@ -31,7 +31,7 @@ export function computeFillValues(rows: RawCountyRow[]) {
           : `${r.county}, ${r.state}`,
         stats: [
           { label: 'Home health agencies',    value: String(r.agencies) },
-          { label: 'Agencies per 1k seniors', value: r.per_1k_seniors.toFixed(1) },
+          { label: 'Agencies per 100k seniors', value: (r.per_1k_seniors * 100).toFixed(1) },
           { label: 'Senior population',       value: r.seniors.toLocaleString() },
         ],
         caveat: 'Counts reflect agency billing location, not service area. CMS 2023 data.',
