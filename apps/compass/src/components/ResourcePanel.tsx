@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { supabase } from '../lib/supabase'
 
 interface NearbyCounty {
   fips: string
@@ -15,6 +16,7 @@ interface ResourcePanelProps {
   agenciesPer1k: number
   seniorPopulation: number
   searchedZip: string
+  countyFips: string
   nearbyCounties: NearbyCounty[]
 }
 
@@ -26,11 +28,26 @@ export function ResourcePanel({
   agenciesPer1k,
   seniorPopulation,
   searchedZip,
+  countyFips,
   nearbyCounties,
 }: ResourcePanelProps) {
-  const [signalSent, setSignalSent] = useState(false)
+  const [signalSent, setSignalSent]       = useState(false)
+  const [signalSending, setSignalSending] = useState(false)
+  const [signalError, setSignalError]     = useState<string | null>(null)
 
-  const stateSlug = stateName.toLowerCase().replace(/\s+/g, '-')
+  async function handleDemandSignal() {
+    setSignalSending(true)
+    setSignalError(null)
+    const { error } = await supabase
+      .from('demand_signals')
+      .insert({ zip: searchedZip, county_fips: countyFips })
+    setSignalSending(false)
+    if (error) {
+      setSignalError('Could not record your signal — please try again.')
+    } else {
+      setSignalSent(true)
+    }
+  }
 
   return (
     <div className="resource-panel">
@@ -62,8 +79,8 @@ export function ResourcePanel({
             </dd>
           </div>
           <div className="stat">
-            <dt>Per 1,000 seniors</dt>
-            <dd>{agenciesPer1k.toFixed(1)}</dd>
+            <dt>Per 100k seniors</dt>
+            <dd>{(agenciesPer1k * 100).toFixed(1)}</dd>
           </div>
           <div className="stat">
             <dt>Senior population</dt>
@@ -81,12 +98,16 @@ export function ResourcePanel({
         ) : (
           <>
             <p className="flag-prompt">Don't see options near you?</p>
+            {signalError && (
+              <p className="zip-error" role="alert" style={{ marginBottom: '8px' }}>{signalError}</p>
+            )}
             <button
               className="btn-flag"
-              onClick={() => setSignalSent(true)}
+              onClick={handleDemandSignal}
+              disabled={signalSending}
               aria-label={`Flag that care is needed near ZIP code ${searchedZip}`}
             >
-              I need care near here
+              {signalSending ? 'Sending…' : 'I need care near here'}
             </button>
           </>
         )}
@@ -143,7 +164,7 @@ export function ResourcePanel({
           </li>
           <li>
             <a
-              href={`https://www.medicaid.gov/about-us/beneficiary-resources/index.html`}
+              href="https://www.medicaid.gov/about-us/beneficiary-resources/index.html"
               target="_blank"
               rel="noopener noreferrer"
               className="resource-link"
