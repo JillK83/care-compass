@@ -255,10 +255,10 @@ Track these before or during Day 1. Do not close them silently — update `DECIS
 
 The demo sequences both doors in one session. Know this before touching any demo-path code.
 
-1. Family enters ZIP 85145 (rural Maricopa County, Arizona)
+1. Family enters ZIP 85145 (rural Pinal County, Arizona)
 2. County resolves → map highlights desert county → panel shows zero/low agency count
 3. Resource links visible → "I need care here" clicked → ZIP flagged
-4. Coordinator logs into Care Console → sees demand signal on map in Maricopa County
+4. Coordinator logs into Care Console → sees demand signal on map in Pinal County
 5. Clicks county → assignment panel surfaces unassigned client
 6. Spanish-speaking aide matched → assignment confirmed → map fill updates → audit log entry recorded
 
