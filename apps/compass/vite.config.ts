@@ -9,10 +9,10 @@ export default defineConfig({
       targets: [
         {
           src: '../../packages/utils/assets/*',
-          dest: 'assets'
-        }
-      ]
-    })
+          dest: 'assets',
+        },
+      ],
+    }),
   ],
   server: { port: 5173 },
 })

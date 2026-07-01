@@ -10,6 +10,9 @@ dist-ssr/
 build/
 .turbo/
 
+# Data assets — source of truth is packages/utils/assets; local copies for dev only
+apps/compass/public/assets/
+
 # Local environment variables and secrets
 *.local
 .env

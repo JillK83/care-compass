@@ -85,12 +85,26 @@ export function MapEngine({
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ── Load GeoJSON boundaries ─────────────────────────────────────
+  // ── Load GeoJSON boundaries + bind tooltips and clicks ──────────
   useEffect(() => {
     if (!geoLayerRef.current || !geojsonData) return
     geoLayerRef.current.clearLayers()
     geoLayerRef.current.addData(geojsonData)
-  }, [geojsonData])
+    geoLayerRef.current.eachLayer(layer => {
+      const f = (layer as unknown as { feature?: GeoJSON.Feature }).feature
+      const fips = (f?.properties?.STATE ?? '') + (f?.properties?.COUNTY ?? '')
+      const county = counties.find(c => c.fips === fips)
+      if (county) {
+        (layer as L.Layer).bindTooltip(
+          `<strong>${county.tooltip.headline}</strong><br/>` +
+          county.tooltip.stats.map(s => `${s.label}: ${s.value}`).join('<br/>') +
+          `<br/><em>${county.tooltip.caveat}</em>`,
+          { sticky: true }
+        )
+      }
+      layer.on('click', () => onCountyClick(fips))
+    })
+  }, [geojsonData, counties, onCountyClick]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Update county fills and tooltips when data changes ─────────
   useEffect(() => {

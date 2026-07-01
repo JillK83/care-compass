@@ -1,12 +1,294 @@
+/* ── Page shell ─────────────────────────────────────────────── */
+
 .compass-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
   display: flex;
   flex-direction: column;
-  height: 100svh;
-  overflow: hidden;
+  gap: 32px;
 }
 
-.map-section {
+/* ── Hero ───────────────────────────────────────────────────── */
+
+.compass-hero {
+  text-align: center;
+  padding-top: 24px;
+}
+
+.compass-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--teal-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.compass-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* ── ZIP form ───────────────────────────────────────────────── */
+
+.zip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.zip-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.zip-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.zip-input {
   flex: 1;
-  min-height: 0;
-  position: relative;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-button);
+  background: var(--surface);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.zip-input:focus {
+  border-color: var(--teal-primary);
+}
+
+.zip-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-search {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--teal-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.btn-search:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-search:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zip-error {
+  font-size: 14px;
+  color: var(--red-critical);
+}
+
+/* ── Result card ────────────────────────────────────────────── */
+
+.result-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  border: var(--border-width) solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desert-badge {
+  display: inline-block;
+  background: var(--orange-alert);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.result-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.result-subhead {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.stat-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+}
+
+.stat dd {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Demand signal (Flag CTA) ───────────────────────────────── */
+
+.flag-cta {
+  text-align: center;
+  padding: 20px;
+  background: var(--surface-secondary);
+  border-radius: var(--radius-card);
+}
+
+.flag-prompt {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.btn-flag {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--teal-action);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn-flag:hover {
+  opacity: 0.88;
+}
+
+.flag-sent {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-served);
+  margin: 0;
+}
+
+/* ── Nearby counties ────────────────────────────────────────── */
+
+.nearby-section {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  border: var(--border-width) solid var(--border);
+}
+
+.nearby-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.nearby-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nearby-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nearby-name {
+  color: var(--text-primary);
+}
+
+.nearby-count {
+  font-weight: 600;
+  color: var(--green-served);
+  background: var(--teal-light);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* ── Resource links ─────────────────────────────────────────── */
+
+.resource-links {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  border: var(--border-width) solid var(--border);
+}
+
+.resource-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.resource-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resource-link {
+  font-size: 14px;
+  color: var(--teal-primary);
+  text-decoration: none;
+  display: block;
+  line-height: 1.4;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+.resource-caveat {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+/* ── Map section ─────────────────────────────────────────────── */
+
+.map-section {
+  height: 480px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: var(--border-width) solid var(--border);
 }
