@@ -85,6 +85,18 @@ export function MapEngine({
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── Invalidate size when container resizes ──────────────────────
+  useEffect(() => {
+    if (!leafletRef.current) return
+    const observer = new ResizeObserver(() => {
+      leafletRef.current?.invalidateSize()
+    })
+    if (mapRef.current) {
+      observer.observe(mapRef.current)
+    }
+    return () => observer.disconnect()
+  }, [])
+
   // ── Load GeoJSON boundaries + bind tooltips and clicks ──────────
   useEffect(() => {
     if (!geoLayerRef.current || !geojsonData) return
