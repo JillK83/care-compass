@@ -9,6 +9,7 @@ type Mode = 'create' | 'edit' | 'view'
 type FormState = {
   name: string
   nickname: string
+  pronouns: string
   preferred_language: string
   gender_preference: string
   comfort_note: string
@@ -18,6 +19,7 @@ type FormState = {
 const EMPTY_FORM: FormState = {
   name: '',
   nickname: '',
+  pronouns: '',
   preferred_language: '',
   gender_preference: '',
   comfort_note: '',
@@ -37,7 +39,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
     if (mode === 'create' || !id) return
     supabase
       .from('client_profiles')
-      .select('name, nickname, preferred_language, gender_preference, comfort_note, avoid_note')
+      .select('name, nickname, pronouns, preferred_language, gender_preference, comfort_note, avoid_note')
       .eq('id', id)
       .single()
       .then(({ data, error }) => {
@@ -47,6 +49,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
           setForm({
             name: data.name ?? '',
             nickname: data.nickname ?? '',
+            pronouns: data.pronouns ?? '',
             preferred_language: data.preferred_language ?? '',
             gender_preference: data.gender_preference ?? '',
             comfort_note: data.comfort_note ?? '',
@@ -71,6 +74,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
     const payload = {
       name: form.name.trim(),
       nickname: form.nickname.trim() || null,
+      pronouns: form.pronouns.trim() || null,
       preferred_language: form.preferred_language.trim() || null,
       gender_preference: form.gender_preference || null,
       comfort_note: form.comfort_note.trim() || null,
@@ -172,6 +176,25 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
                 autoComplete="off"
               />
             )}
+          </div>
+
+          <div className="field-group">
+            <label className="field-label" htmlFor="field-pronouns">
+              Pronouns <span className="field-optional">optional</span>
+            </label>
+            {isReadOnly ? (
+              <p id="field-pronouns" className="field-value">{form.pronouns || '—'}</p>
+            ) : (
+              <input
+                id="field-pronouns"
+                type="text"
+                className="field-input"
+                value={form.pronouns}
+                onChange={handleChange('pronouns')}
+                autoComplete="off"
+              />
+            )}
+            <p className="field-hint">So aides know how to refer to your client</p>
           </div>
 
           <div className="field-group">

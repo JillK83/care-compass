@@ -7,6 +7,8 @@ import { supabase } from '../lib/supabase'
 type ClientProfile = {
   id: string
   name: string
+  pronouns: string | null
+  is_assigned: boolean
 }
 
 export function ClientsListPage() {
@@ -18,7 +20,7 @@ export function ClientsListPage() {
   useEffect(() => {
     supabase
       .from('client_profiles')
-      .select('id, name')
+      .select('id, name, pronouns, is_assigned')
       .then(({ data, error: fetchError }) => {
         if (fetchError) {
           setError(fetchError.message)
@@ -112,8 +114,8 @@ export function ClientsListPage() {
               onClick={() => navigate(`/clients/${c.id}`)}
             >
               <td style={styles.td}>{c.name}</td>
-              <td style={styles.td}>—</td>
-              <td style={styles.td}>—</td>
+              <td style={styles.td}>{c.pronouns || '—'}</td>
+              <td style={styles.td}>{c.is_assigned ? 'Yes' : 'No'}</td>
             </tr>
           ))}
         </tbody>
