@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { Banner } from '../components/Banner'
 import './DignityProfilePage.css'
@@ -29,11 +29,17 @@ const EMPTY_FORM: FormState = {
 export function DignityProfilePage({ mode }: { mode: Mode }) {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const [form, setForm] = useState<FormState>(EMPTY_FORM)
   const [isLoading, setIsLoading] = useState(mode !== 'create')
   const [isSaving, setIsSaving] = useState(false)
   const [banner, setBanner] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
+
+  useEffect(() => {
+    const state = location.state as { banner?: string } | null
+    if (state?.banner) setBanner({ type: 'success', message: state.banner })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (mode === 'create' || !id) return
@@ -91,7 +97,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
         setBanner({ type: 'error', message: `Save failed: ${error?.message ?? 'Unknown error'}` })
         setIsSaving(false)
       } else {
-        navigate(`/clients/${data.id}`, { replace: true })
+        navigate(`/clients/${data.id}`, { replace: true, state: { banner: 'Profile saved' } })
       }
     } else {
       const { error } = await supabase
@@ -102,7 +108,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
         setBanner({ type: 'error', message: `Save failed: ${error.message}` })
         setIsSaving(false)
       } else {
-        navigate(`/clients/${id}`, { replace: true })
+        navigate(`/clients/${id}`, { replace: true, state: { banner: 'Profile saved' } })
       }
     }
   }
@@ -124,6 +130,26 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
 
   return (
     <main className="profile-page">
+      <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+      {isReadOnly && (
+        <button
+          type="button"
+          onClick={() => navigate('/clients')}
+          style={{
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            cursor: 'pointer',
+            fontSize: 'var(--text-sm)',
+            color: 'var(--text-secondary)',
+            fontFamily: 'var(--font-family)',
+            display: 'block',
+            marginBottom: '12px',
+          }}
+        >
+          ← Back to clients
+        </button>
+      )}
       <div className="profile-card">
         <header className="profile-header">
           <h1 className="profile-title">{pageTitle}</h1>
@@ -194,7 +220,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
                 autoComplete="off"
               />
             )}
-            <p className="field-hint">So aides know how to refer to your client</p>
+            {!isReadOnly && <p className="field-hint">So aides know how to refer to your client</p>}
           </div>
 
           <div className="field-group">
@@ -273,12 +299,14 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
           </div>
 
           <div className="profile-actions">
-            <button type="button" className="btn-ghost" onClick={() => navigate(-1)}>
-              {isReadOnly ? 'Back' : 'Cancel'}
-            </button>
             {mode === 'edit' && (
               <button type="button" className="btn-outline" onClick={() => window.print()}>
                 Print
+              </button>
+            )}
+            {!isReadOnly && (
+              <button type="button" className="btn-ghost" onClick={() => navigate('/clients')}>
+                Cancel
               </button>
             )}
             {!isReadOnly && (
@@ -292,6 +320,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
             )}
           </div>
         </form>
+      </div>
       </div>
     </main>
   )

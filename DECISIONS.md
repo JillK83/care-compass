@@ -174,6 +174,16 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### D14 — Wayfinding link replaces shared Back/Cancel button on Dignity Profile
+
+**Decision:** View mode shows a "← Back to clients" text link above the profile card, navigating explicitly to /clients. Edit/create mode keeps "Cancel" in its existing bottom-right position next to "Save profile", also navigating to /clients instead of browser history.
+
+**Rationale:** The original shared button used navigate(-1) for both "Back" (view) and "Cancel" (edit) — but these are different actions. Cancel is a form action (abandon changes, stay in flow); Back is wayfinding (orient and leave). Bottom-of-card placement for Back meant a coordinator had to scroll past the entire profile to find an exit. navigate(-1) also made the destination unpredictable after a save used replace: true. Aligns with D01's sidebar-only navigation principle — this link reinforces the sidebar's existing Clients entry rather than introducing a second navigation source.
+
+**Rejected:** Keeping one shared button for both modes. Rejected because it conflated two different action types under one label and position, and relying on navigate(-1) made "Back" mean different things depending on navigation history.
+
+---
+
 ## Architecture Decisions
 
 ### A01 — Two-door architecture; one monorepo
@@ -245,6 +255,16 @@ No component may use a literal px or rem value for font-size — tokens only.
 **Rationale:** Closes O5. The demand signal path (D10) is anonymous and ZIP-only — the schema enforces this at the column level (no identity fields) and RLS enforces it at the access level (no read-back to Door 1). Keeping signals in Supabase makes the Door 2 overlay query a simple authenticated SELECT with no additional infra.
 
 **Rejected:** Storing demand signals outside Supabase. Rejected — Supabase is already the Door 2 data store; a second storage target for a simple INSERT adds infra complexity without benefit for a demo build.
+
+---
+
+### A08 — Dropped `aide_gender_pref`; activated `pronouns` for client-facing use
+
+**Decision:** Removed the unused `aide_gender_pref` column from `client_profiles`. Wired the existing but previously unused `pronouns` column into the Dignity Profile form and Clients List. `gender_preference` remains the sole field for "gender preference of aide" (PRD-spec'd); `pronouns` is a distinct, separate field for how the aide should refer to the client.
+
+**Rationale:** Discovered via direct Supabase query that the schema had two dead/duplicate gender-related columns (`aide_gender_pref`, `pronouns`) alongside the one actually in use (`gender_preference`). Root cause: `aide_gender_pref` and `pronouns` were added outside version control (no migration file, no git history) and never wired to any component. On inspection, `pronouns` serves a real, distinct need — the PRD's aide-gender-preference field doesn't cover cases where a client's name doesn't make pronouns clear to an aide meeting them for the first time. Kept it and gave it a real purpose instead of dropping it.
+
+**Rejected:** Dropping `pronouns` as dead weight along with `aide_gender_pref`. Rejected because it maps to a genuine person-centered-care need distinct from aide gender preference — closing this now was faster than re-adding a column later once the gap surfaced during the demo.
 
 ---
 
