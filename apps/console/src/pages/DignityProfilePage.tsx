@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { Banner } from '../components/Banner'
+import { zipToCountyFips } from 'utils'
 import './DignityProfilePage.css'
 
 type Mode = 'create' | 'edit' | 'view'
@@ -14,6 +15,7 @@ type FormState = {
   gender_preference: string
   comfort_note: string
   avoid_note: string
+  zip_input: string
 }
 
 const EMPTY_FORM: FormState = {
@@ -24,6 +26,7 @@ const EMPTY_FORM: FormState = {
   gender_preference: '',
   comfort_note: '',
   avoid_note: '',
+  zip_input: '',
 }
 
 export function DignityProfilePage({ mode }: { mode: Mode }) {
@@ -35,6 +38,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
   const [isLoading, setIsLoading] = useState(mode !== 'create')
   const [isSaving, setIsSaving] = useState(false)
   const [banner, setBanner] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
+  const [zipError, setZipError] = useState('')
 
   useEffect(() => {
     const state = location.state as { banner?: string } | null
@@ -45,7 +49,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
     if (mode === 'create' || !id) return
     supabase
       .from('client_profiles')
-      .select('name, nickname, pronouns, preferred_language, gender_preference, comfort_note, avoid_note')
+      .select('name, nickname, pronouns, preferred_language, gender_preference, comfort_note, avoid_note, zip_input')
       .eq('id', id)
       .single()
       .then(({ data, error }) => {
@@ -60,6 +64,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
             gender_preference: data.gender_preference ?? '',
             comfort_note: data.comfort_note ?? '',
             avoid_note: data.avoid_note ?? '',
+            zip_input: data.zip_input ?? '',
           })
         }
         setIsLoading(false)
@@ -74,6 +79,18 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!form.name.trim()) return
+    setZipError('')
+
+    const rawZip = form.zip_input.trim()
+    let county_fips: string | null = null
+    if (rawZip) {
+      county_fips = zipToCountyFips(rawZip)
+      if (!county_fips) {
+        setZipError('ZIP code not found. Try a 5-digit US ZIP.')
+        return
+      }
+    }
+
     setIsSaving(true)
     setBanner(null)
 
@@ -85,6 +102,8 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
       gender_preference: form.gender_preference || null,
       comfort_note: form.comfort_note.trim() || null,
       avoid_note: form.avoid_note.trim() || null,
+      zip_input: rawZip || null,
+      county_fips,
     }
 
     if (mode === 'create') {
@@ -295,6 +314,35 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
                 onChange={handleChange('avoid_note')}
                 rows={3}
               />
+            )}
+          </div>
+
+          <div className="field-group">
+            <label className="field-label" htmlFor="field-zip">
+              ZIP code <span className="field-optional">optional</span>
+            </label>
+            <p className="field-hint">Used to assign the client to a county service area</p>
+            {isReadOnly ? (
+              <p id="field-zip" className="field-value">{form.zip_input || '—'}</p>
+            ) : (
+              <input
+                id="field-zip"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]{5}(-[0-9]{4})?"
+                maxLength={10}
+                placeholder="e.g. 85145"
+                className="field-input"
+                value={form.zip_input}
+                onChange={e => { setZipError(''); handleChange('zip_input')(e) }}
+                autoComplete="off"
+                aria-describedby={zipError ? 'field-zip-error' : undefined}
+              />
+            )}
+            {zipError && (
+              <p id="field-zip-error" role="alert" style={{ fontSize: 'var(--text-xs)', color: 'var(--red-critical)', margin: 0 }}>
+                {zipError}
+              </p>
             )}
           </div>
 
