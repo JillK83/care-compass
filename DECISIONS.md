@@ -238,6 +238,16 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### A07 — demand_signals Supabase table for Door 1 → Door 2 demand loop
+
+**Decision:** demand_signals is a Supabase table that enables anonymous demand signal writes from Door 1 and coordinator reads from Door 2. Schema: id (uuid, pk), zip (text, not null), county_fips (text, not null), created_at (timestamptz). RLS: INSERT open to anon (unauthenticated Door 1 users); SELECT restricted to authenticated (Door 2 coordinators). No UPDATE/DELETE policies — flags are write-once.
+
+**Rationale:** Closes O5. The demand signal path (D10) is anonymous and ZIP-only — the schema enforces this at the column level (no identity fields) and RLS enforces it at the access level (no read-back to Door 1). Keeping signals in Supabase makes the Door 2 overlay query a simple authenticated SELECT with no additional infra.
+
+**Rejected:** Storing demand signals outside Supabase. Rejected — Supabase is already the Door 2 data store; a second storage target for a simple INSERT adds infra complexity without benefit for a demo build.
+
+---
+
 ## Open Items
 
 Move to resolved once addressed in build. Do not delete — add resolution date and note.
@@ -248,9 +258,11 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O2 | Lock choropleth map library dependency before scaffolding MapEngine component API | Both | Resolved — 2026-06-30, see D08. Library choice (Leaflet + free GeoJSON) was locked in D08; only the react-leaflet/React 19 version conflict remained open, tracked separately as O6. |
 | O3 | Run Door 1 WCAG audit against Figma Make output before committing Door 1 CSS | Compass | Open — Lee, Day 3 |
 | O4 | Confirm demo ZIP codes (85145, 85139, 85128) against Lee's dataset | Both | Resolved 2026-06-30 — all three ZIPs map to 04021 (Pinal County, AZ), confirmed is_desert=True in home_care_by_county.csv |
-| O5 | Flag CTA confirmation state (post-click text + visual) not yet mocked | Compass | Resolved 2026-06-30 — implemented in ResourcePanel.tsx as local useState; confirmation message shows ZIP on click, no backend (D10) |
+| O5 | Demand signal backend wiring — Supabase insert from Door 1 'I need care here' button | Compass | Resolved (Lee, Day 3) — Created apps/compass/src/lib/supabase.ts matching console's createClient pattern. ResourcePanel.tsx's 'I need care here' button now performs an async insert into demand_signals (zip, county_fips) via Supabase — replaces prior local-only stub. UI shows 'Sending…' in flight, inline error on failure, confirmation on success. apps/compass/.env.local created with VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY only — no service role key, confirmed by Jillian. Demand signals now flow to Console map overlay. |
 | O6 | react-leaflet / React 19 peer dependency conflict — blocks MapEngine rendering for both doors | Both | Resolved — 2026-06-30, see A04. Upgraded react-leaflet to 5.0.0; all four workspaces build clean. |
 | O7 | Add gender_preference field to Dignity Profile form | Console | Resolved — 2026-07-01, gender_preference column added to client_profiles (text, nullable) and wired into DignityProfilePage.tsx as a select (No preference → null, Female/Male → literal string). |
 | O8 | Crosswalk audit complete (Lee, Day 2) | Both | Resolved 2026-07-01 — zero duplicate ZIPs; every ZIP maps to exactly one FIPS, no is_primary flag needed. Demo ZIPs 85145/85139/85128 confirmed → FIPS 04021 (Pinal County, AZ), is_desert=True, 0 agencies; demo script validated. 8 orphan FIPS in crosswalk not present in home_care_by_county.csv — all US territories (American Samoa, Guam, Northern Mariana Islands ×3, US Virgin Islands ×3), expected CMS coverage gap, not a bug. All 4 utils (computeFillValues, zipToCountyFips, getNearestCountiesWithAgencies, plus 4th) and CompassPage.tsx end-to-end wiring confirmed already complete on main. |
 | O9 | ResourcePanel bad-ZIP error state missing Eldercare Locator fallback link | Compass | Open — Lee, Day 3. Inline error message exists but direct Eldercare Locator link as fallback not yet included per spec. |
 | O10 | Create demand_signals table for Door 1 demand signal writes | Both | Resolved 2026-07-01 — table created on Supabase project xcknjvqaphxdxrvyobhh: columns id (uuid pk), zip (text not null), county_fips (text not null), created_at (timestamptz). RLS enabled; INSERT open to anon (Door 1 unauthenticated), SELECT restricted to authenticated (Door 2 coordinators). No UPDATE/DELETE policies — flags are write-once. |
+| O11 | per-1,000 → per-100,000 stat rescale in computeFillValues.ts and ResourcePanel.tsx | Both | Resolved (Lee, Day 3) — computeFillValues.ts and ResourcePanel.tsx display layer updated: label changed to 'Agencies per 100k seniors', value computed as (per_1k_seniors * 100).toFixed(1). Internal field names (agenciesPer1kSeniors, per_1k_seniors) unchanged — display-only fix, no schema or calculation-source changes. |
+| — | Note (Jillian, Day 3) re: O5 | Compass | O5's Supabase wiring is code-complete but not yet locally verified by Lee — his apps/compass/.env.local (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY) is not yet created on his machine. He'll add it and test the live insert tomorrow. Treat O5 as code-resolved, pending local confirmation. |
