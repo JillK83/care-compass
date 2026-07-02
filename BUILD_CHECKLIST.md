@@ -48,7 +48,7 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 ### Daily checkpoint
 - [x] Both builders merge feature branches to `main`
 - [x] MapEngine interface confirmed locked — no solo changes from this point
-- [ ] DECISIONS.md O1 and O4 updated with resolution
+- [x] DECISIONS.md O1 and O4 updated with resolution
   - O1 (crosswalk edge case behavior) and O4 (demo ZIP confirmation) remain open — rolled into Day 2 crosswalk audit below.
 
 ---
@@ -57,28 +57,28 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 **Goal:** Both doors have functional core flows. Dignity Profile completable. Family panel rendering real data.
 
 ### Both — before splitting (new, added after Day 1 carryover)
-- [ ] Resolve react-leaflet / React 19 peer dependency conflict — blocks MapEngine rendering for both doors. Confirm react-leaflet's supported React version range; likely fix is pinning `react@18` repo-wide or adding an `overrides`/`resolutions` entry. Tracked as DECISIONS.md O6.
-- [ ] Confirm both apps still build after the fix before continuing MapEngine-adjacent work
-- [ ] Add DECISIONS.md A03 documenting the fix once resolved; close O6 referencing A03
+- [x] Resolve react-leaflet / React 19 peer dependency conflict — blocks MapEngine rendering for both doors. Confirm react-leaflet's supported React version range; likely fix is pinning `react@18` repo-wide or adding an `overrides`/`resolutions` entry. Tracked as DECISIONS.md O6.
+- [x] Confirm both apps still build after the fix before continuing MapEngine-adjacent work
+- [x] Add DECISIONS.md A03 documenting the fix once resolved; close O6 referencing A03
 
 ### Lee — Door 1
 
 **Crosswalk audit (do first — pure verification, unblocks the demo ZIP question and O1/O4):**
-- [ ] Group `zip-county-crosswalk.csv` by ZIP; confirm any duplicate-ZIP rows have an `is_primary` flag or defined ordering
-- [ ] Pull rows for 85145, 85139, 85128 specifically; confirm resolved county matches Maricopa demo expectations
-- [ ] Check for orphan ZIPs — ZIP maps to a county FIPS not present in `home_care_by_county.csv`
-- [ ] Check for orphan FIPS — county FIPS in `home_care_by_county.csv` or `us-counties-20m.geojson` never hit by any ZIP (lower urgency, sanity pass before demo)
-- [ ] **If 85145/85139/85128 don't resolve to desert counties:** identify real desert Maricopa County ZIPs from the dataset and flag to Jillian before continuing — demo script ZIPs are a joint decision, not a solo swap
-- [ ] Update DECISIONS.md O1 and O4 with resolution once audit is complete
+- [x] Group `zip-county-crosswalk.csv` by ZIP; confirm any duplicate-ZIP rows have an `is_primary` flag or defined ordering
+- [x] Pull rows for 85145, 85139, 85128 specifically; confirm resolved county matches Maricopa demo expectations
+- [x] Check for orphan ZIPs — ZIP maps to a county FIPS not present in `home_care_by_county.csv`
+- [x] Check for orphan FIPS — county FIPS in `home_care_by_county.csv` or `us-counties-20m.geojson` never hit by any ZIP (lower urgency, sanity pass before demo)
+- [x] **If 85145/85139/85128 don't resolve to desert counties:** identify real desert Maricopa County ZIPs from the dataset and flag to Jillian before continuing — demo script ZIPs are a joint decision, not a solo swap
+- [x] Update DECISIONS.md O1 and O4 with resolution once audit is complete
 
 **Utils (in dependency order):**
-- [ ] `computeFillValues.ts` — normalize agency counts to 0.0–1.0 fill scale
-- [ ] `zipToCountyFips.ts` — ZIP string → county FIPS via crosswalk, returns `null` if not found
-- [ ] `getNearestCountiesWithAgencies.ts` — adjacency lookup for zero-agency counties (depends on `computeFillValues` output)
+- [x] `computeFillValues.ts` — normalize agency counts to 0.0–1.0 fill scale
+- [x] `zipToCountyFips.ts` — ZIP string → county FIPS via crosswalk, returns `null` if not found
+- [x] `getNearestCountiesWithAgencies.ts` — adjacency lookup for zero-agency counties (depends on `computeFillValues` output)
 
 **ZIP lookup flow & ResourcePanel:**
-- [ ] ZIP lookup flow: entry → `zipToCountyFips()` → county highlight → panel populate
-- [ ] `ResourcePanel` live:
+- [x] ZIP lookup flow: entry → `zipToCountyFips()` → county highlight → panel populate
+- [x] `ResourcePanel` live:
   - Desert status label
   - Agency count stat
   - Agencies per 1,000 seniors
@@ -86,8 +86,8 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
   - PACE finder link
   - State Medicaid link (routes to state-specific page using `state` code)
   - Medicare Advantage plan finder link
-- [ ] Adjacency logic: `getNearestCountiesWithAgencies()` wired — nearest non-desert county surfaces when family county is desert
-- [ ] "I need care here" stub: button present, ZIP flag recorded, confirmation text shown
+- [x] Adjacency logic: `getNearestCountiesWithAgencies()` wired — nearest non-desert county surfaces when family county is desert
+- [x] "I need care here" stub: button present, ZIP flag recorded, confirmation text shown
   - This should resolve DECISIONS.md O5 (Flag CTA confirmation state) — confirm and close once shown
 - [x] Error state: bad/unrecognized ZIP → inline error + direct Eldercare Locator link (no dead end)
 
@@ -96,22 +96,23 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 ### Jillian — Door 2
 
 **Decide first (unblocks everything else tonight):**
-- [ ] ClientsListPage "Add new client" CTA — route vs. modal
-- [ ] Typography sizing — short conversation with Lee; lock a type scale so new components stop picking literal px values
-- [ ] Icon system — decide before Dignity Profile and Assignment Panel both start picking icons independently; check any icon color logic against DECISIONS.md D02
-- [ ] Draft DECISIONS.md D11 (typography) and D12 (icon system) once decided
+- [x] ClientsListPage "Add new client" CTA — route vs. modal
+- [x] Typography sizing — short conversation with Lee; lock a type scale so new components stop picking literal px values
+- [x] Icon system — decide before Dignity Profile and Assignment Panel both start picking icons independently; check any icon color logic against DECISIONS.md D02
+- [x] Draft DECISIONS.md D11 (typography) and D12 (icon system) once decided
 
 **Dignity Profile:**
-- [ ] Dignity Profile form complete:
+- [x] Dignity Profile form complete:
   - Client name (required)
   - Nickname, preferred language, gender preference for aide, one comfort, one key thing to avoid (all optional)
   - Emergency contacts NOT present
-- [ ] Profile save, edit, view, and print working
-- [ ] Success and error banners on save/edit
+- [x] Profile save, edit, view, and print working
+- [x] Success and error banners on save/edit
 
 **Seed data & assignment panel:**
 - [ ] Seed data script running:
-  - 10–12 clients across 3–4 Maricopa County ZIPs, `county_fips` populated
+  - 10–12 clients across 3–4 Pinal County ZIPs (FIPS 04021), `county_fips` populated
+    - Corrected from Maricopa per O8 crosswalk audit — demo ZIPs 85145/85139/85128 resolve to Pinal County, not Maricopa.
   - 8–10 caregivers, same county spread
   - At least 1 Spanish-speaking caregiver
   - Most clients unassigned; 2–3 assigned (both states visible)
@@ -122,10 +123,10 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 **Day 2 verify (Jillian):** Create a new Dignity Profile for a client → save → view → print. Seed data visible in Clients List.
 
 ### Daily checkpoint
-- [ ] Both builders merge to `main`
+- [x] Both builders merge to `main`
 - [ ] Full demo scenario walkable in rough form end-to-end (ZIP entry through family panel; coordinator profile create through assignment panel)
-- [ ] Confirm MapEngine renders for both doors post-merge (post react-leaflet fix)
-- [ ] DECISIONS.md open items table updated: close O1, O2 (already resolved, see D08), O4, O5, O6 as applicable; leave O3 (Day 3) open
+- [x] Confirm MapEngine renders for both doors post-merge (post react-leaflet fix)
+- [x] DECISIONS.md open items table updated: close O1, O2 (already resolved, see D08), O4, O5, O6 as applicable; leave O3 (Day 3) open
 
 ---
 
