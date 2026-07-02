@@ -89,7 +89,7 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 - [ ] Adjacency logic: `getNearestCountiesWithAgencies()` wired — nearest non-desert county surfaces when family county is desert
 - [ ] "I need care here" stub: button present, ZIP flag recorded, confirmation text shown
   - This should resolve DECISIONS.md O5 (Flag CTA confirmation state) — confirm and close once shown
-- [ ] Error state: bad/unrecognized ZIP → inline error + direct Eldercare Locator link (no dead end)
+- [x] Error state: bad/unrecognized ZIP → inline error + direct Eldercare Locator link (no dead end)
 
 **Day 2 verify (Lee):** Enter ZIP 85145 (or confirmed substitute) → county highlights → panel shows desert status → resource links visible → "I need care here" shows confirmation.
 
