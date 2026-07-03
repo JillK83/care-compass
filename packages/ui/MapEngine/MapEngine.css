@@ -3,10 +3,17 @@
 
 /* ── Root layout ─────────────────────────────────────────────── */
 
+.map-engine-outer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .map-engine-root {
   position: relative;
   display: flex;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   width: 100%;
 }
 
@@ -82,22 +89,25 @@
 }
 
 .map-engine-legend__pin--caregiver {
-  background: var(--accent-action);
+  background: var(--blue-pin);
+}
+
+.map-engine-legend__pin--client {
+  background: var(--map-label, #2C3E50);
 }
 
 .map-engine-legend__pin--signal {
-  background: var(--map-label, #2C3E50);
-  border: 2px solid var(--accent-action);
+  background: var(--orange-alert);
+  border: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 /* ── Disclaimer ──────────────────────────────────────────────── */
 
 .map-engine-disclaimer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 900;
   padding: 0.25rem 0.75rem;
   font-size: var(--text-xs);
   color: var(--text-secondary);
@@ -120,10 +130,15 @@
   cursor: pointer;
 }
 
+.map-pin:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--teal-action);
+}
+
 .map-pin--caregiver {
   width: 32px;
   height: 32px;
-  background: var(--accent-action);
+  background: var(--blue-pin);
 }
 
 .map-pin--caregiver.map-pin--unavailable {
@@ -138,13 +153,15 @@
 }
 
 .map-pin--client.map-pin--unassigned {
-  border-color: var(--accent-action);
+  border-color: var(--blue-pin);
 }
 
 .map-pin--signal {
-  width: 12px;
-  height: 12px;
-  background: var(--accent-action);
-  opacity: 0.85;
-  border-width: 1.5px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--orange-alert);
 }

@@ -34,4 +34,5 @@
 .app-shell__main {
   flex: 1;
   overflow: auto;
+  height: 100%;
 }

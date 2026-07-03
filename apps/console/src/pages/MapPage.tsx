@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase'
 import { MapEngine, DEFAULT_COLOR_SCALE } from 'ui'
 import type { CountyFeature, OverlayPin } from 'ui'
 import { getInitials } from 'utils'
+import type { ClientProfile, CaregiverProfile } from 'utils'
 import { getSignalCountsByCounty } from '../lib/queries'
 
 // ─── State FIPS → abbreviation ────────────────────────────────────────────────
@@ -17,6 +18,16 @@ const STATE_FIPS_TO_ABBR: Record<string, string> = {
   '47':'TN','48':'TX','49':'UT','50':'VT','51':'VA','53':'WA','54':'WV',
   '55':'WI','56':'WY','72':'PR',
 }
+
+const NON_CONTINENTAL_STATE_FIPS = new Set([
+  '02', // Alaska
+  '15', // Hawaii
+  '72', // Puerto Rico
+  '66', // Guam
+  '78', // US Virgin Islands
+  '60', // American Samoa
+  '69', // Northern Mariana Islands
+])
 
 // ─── Centroid helpers ─────────────────────────────────────────────────────────
 
@@ -71,12 +82,13 @@ function getZipPosition(
   zip: string | null,
   countyFips: string | null,
   centroids: CentroidCache,
+  pinType: string,
 ): { lat: number; lng: number } | null {
   if (!countyFips) return null
   const centroid = centroids.get(countyFips)
   if (!centroid) return null
   if (!zip) return centroid
-  const offset = ZIP_OFFSETS[zipHash(zip) % ZIP_OFFSETS.length]
+  const offset = ZIP_OFFSETS[zipHash(zip + pinType) % ZIP_OFFSETS.length]
   return {
     lat: centroid.lat + offset.dlat,
     lng: centroid.lng + offset.dlng,
@@ -89,8 +101,39 @@ export function MapPage() {
   const [counties,          setCounties]    = useState<CountyFeature[]>([])
   const [geojsonData,       setGeojsonData] = useState<FeatureCollection | null>(null)
   const [overlayPins,       setOverlayPins] = useState<OverlayPin[]>([])
-  const [focusedCountyFips, setFocused]     = useState<string | null>(null)
-  const [isLoading,         setIsLoading]   = useState(true)
+  const [focusedCountyFips, setFocused]              = useState<string | null>(null)
+  const [isLoading,         setIsLoading]             = useState(true)
+  const [selectedCountyClients,    setSelectedCountyClients]    = useState<ClientProfile[]>([])
+  const [selectedCountyCaregivers, setSelectedCountyCaregivers] = useState<CaregiverProfile[]>([])
+
+  function handleCountyClick(fips: string) {
+    setFocused(fips)
+    Promise.all([
+      supabase
+        .from('client_profiles')
+        .select('id, name, preferred_language, county_fips, zip_input')
+        .eq('county_fips', fips)
+        .eq('is_assigned', false),
+      supabase
+        .from('caregiver_profiles')
+        .select('id, name, languages, skills, is_available, county_fips, zip_input')
+        .eq('county_fips', fips)
+        .eq('is_available', true),
+    ]).then(([clientRes, caregiverRes]) => {
+      if (clientRes.error) {
+        console.warn('[MapPage] county clients fetch failed:', clientRes.error.message)
+      } else {
+        setSelectedCountyClients(clientRes.data ?? [])
+      }
+      if (caregiverRes.error) {
+        console.warn('[MapPage] county caregivers fetch failed:', caregiverRes.error.message)
+      } else {
+        setSelectedCountyCaregivers(caregiverRes.data ?? [])
+      }
+    }).catch(e => {
+      console.warn('[MapPage] county click fetch failed:', e)
+    })
+  }
 
   useEffect(() => {
     async function load() {
@@ -102,13 +145,17 @@ export function MapPage() {
           signalCounts,
         ] = await Promise.all([
           fetch('/assets/us-counties-20m.geojson').then(r => r.json() as Promise<FeatureCollection>),
-          supabase.from('client_profiles').select('id, name, county_fips, zip_input, is_assigned'),
+          supabase.from('client_profiles').select('id, name, county_fips, zip_input, is_assigned').eq('is_assigned', false),
           supabase.from('caregiver_profiles').select('id, name, county_fips, zip_input').eq('is_available', true),
           getSignalCountsByCounty(),
         ])
 
         if (clientErr)    throw new Error(clientErr.message)
         if (caregiverErr) throw new Error(caregiverErr.message)
+
+        geoJson.features = geoJson.features.filter(
+          feat => !NON_CONTINENTAL_STATE_FIPS.has(feat.properties?.STATE ?? '')
+        )
 
         setGeojsonData(geoJson)
 
@@ -137,11 +184,9 @@ export function MapPage() {
 
         const pins: OverlayPin[] = []
 
-        // Client pins — all clients, not just unassigned
-        // PinStatus has no "assigned" value — omit status for assigned clients
-        // (MapEngine renders map-pin--unknown for missing status, which is acceptable)
+        // Client pins — unassigned only (is_assigned: false filter applied in query above)
         for (const client of clientRows ?? []) {
-          const pos = getZipPosition(client.zip_input ?? null, client.county_fips ?? null, centroids)
+          const pos = getZipPosition(client.zip_input ?? null, client.county_fips ?? null, centroids, 'client')
           if (!pos) { console.warn('[MapPage] no position for client', client.id); continue }
           pins.push({
             id:         client.id,
@@ -149,14 +194,14 @@ export function MapPage() {
             lng:        pos.lng,
             type:       'client',
             label:      getInitials(client.name ?? ''),
+            status:     'unassigned',
             countyFips: client.county_fips ?? '',
-            ...(client.is_assigned ? {} : { status: 'unassigned' as const }),
           })
         }
 
         // Caregiver pins — available only (is_available filter applied in query above)
         for (const cg of caregiverRows ?? []) {
-          const pos = getZipPosition(cg.zip_input ?? null, cg.county_fips ?? null, centroids)
+          const pos = getZipPosition(cg.zip_input ?? null, cg.county_fips ?? null, centroids, 'caregiver')
           if (!pos) { console.warn('[MapPage] no position for caregiver', cg.id); continue }
           pins.push({
             id:         cg.id,
@@ -174,7 +219,7 @@ export function MapPage() {
         // Reusing label as count badge is a documented deviation — proper fix is OverlayPin.count
         // with Lee sign-off. See DECISIONS.md pending entry.
         for (const sig of signalCounts) {
-          const pos = getZipPosition(sig.zip, sig.countyFips, centroids)
+          const pos = getZipPosition(sig.zip, sig.countyFips, centroids, 'signal')
           if (!pos) { console.warn('[MapPage] no position for signal county', sig.countyFips); continue }
           pins.push({
             id:         `signal-${sig.countyFips}`,
@@ -199,7 +244,7 @@ export function MapPage() {
 
   return (
     <div style={{
-      height: '480px',
+      height: '100%',
       borderRadius: 'var(--radius-card-console)',
       overflow: 'hidden',
       border: 'var(--border-width) solid var(--border)',
@@ -208,7 +253,7 @@ export function MapPage() {
         mode="coordinator"
         counties={counties}
         focusedCountyFips={focusedCountyFips}
-        onCountyClick={setFocused}
+        onCountyClick={handleCountyClick}
         overlayPins={overlayPins}
         colorScale={DEFAULT_COLOR_SCALE}
         panelContent={null}

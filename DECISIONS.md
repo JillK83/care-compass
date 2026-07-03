@@ -216,6 +216,38 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### D18 — MapEngine minZoom hardcoded to prevent over-zoom-out
+
+**Decision:** MapEngine's Leaflet init sets `minZoom: 4`, matching the default initial zoom level, so the map cannot be zoomed out past the national view on either door.
+
+**Rationale:** Without a floor, Leaflet allows zooming out indefinitely, producing a near-empty view with Alaska/Hawaii isolated in gray space and no useful geographic context. Hardcoded as an internal default rather than a prop since neither door has a use case for a different zoom floor; this avoids an unnecessary MapEngine.types.ts change and the associated sign-off cycle. Lee confirmed agreement on the fix (2026-07-03).
+
+**Rejected:** Exposing minZoom as a new MapEngineProps field. Rejected — no current or anticipated need for door-specific zoom floors makes this premature interface surface, consistent with A06's "extract only when a second consumer needs it" principle.
+
+---
+
+### D19 — Non-continental territories filtered from Door 2 map at the page level
+
+**Decision:** apps/console/src/pages/MapPage.tsx filters geoJson.features to exclude Alaska, Hawaii, Puerto Rico, Guam, US Virgin Islands, American Samoa, and Northern Mariana Islands (by STATE FIPS) before the data is passed to MapEngine via setGeojsonData, and before countyFeatures is built from the same object.
+
+**Rationale:** The default map view rendered non-continental territories in mostly-empty space at low zoom, adding visual noise with no demo value — current seed data and demo scenario are Arizona-only. Filtering at the page level (not inside MapEngine) keeps this a per-door data-shaping concern rather than a shared-component change — no MapEngine.types.ts edit, no sign-off cycle required, since each door already owns and filters its own geojsonData before handing it to MapEngine as a prop.
+
+**Rejected:** Filtering inside MapEngine.tsx via maxBounds. Rejected — would constrain shared map interaction/panning behavior for both doors based on a Door-2-specific demo scope decision, and would require a MapEngine.types.ts-adjacent change. Also rejected: a shared filter utility in packages/utils — unnecessary given only one door currently needs this, and packages/utils changes require the same joint sign-off as MapEngine itself per the interface contract.
+
+**Note:** apps/compass (Door 1) has not received the equivalent filter as of this entry — flagged to Lee separately, not yet applied to his data path.
+
+---
+
+### D20 — ZIP-to-pin position uses deterministic jitter from county centroid
+
+**Decision:** OverlayPin lat/lng positions for client, caregiver, and signal pins are computed as a county centroid plus a deterministic offset derived from a hash of the ZIP string (see ZIP_OFFSETS / zipHash / getZipPosition in MapPage.tsx), not real ZIP-level coordinates.
+
+**Rationale:** No ZIP-level coordinate data exists in the current crosswalk or seed data — only ZIP-to-county-FIPS mappings. Deterministic jitter gives visually distinct, stable pin positions per ZIP within a county for demo purposes without fabricating false geographic precision. Determinism (same ZIP always produces the same offset) ensures the map doesn't jitter between renders or sessions.
+
+**Rejected:** Real ZIP centroid geocoding. Rejected — no free/public dataset was sourced for this at ZIP granularity within the project timeline, and county-level precision is sufficient for the demo's purposes (consistent with D07's county-as-unit approach).
+
+---
+
 ## Architecture Decisions
 
 ### A01 — Two-door architecture; one monorepo
@@ -325,3 +357,4 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O16 | Leaflet's default hover-highlight color (#3388ff) doesn't match Console's design system palette. Needs either a CSS override (console-only, if achievable) or a MapEngine style prop (needs Lee). | Jillian | Open |
 | O17 | MapEngine bound tooltips per-layer with no cross-layer coordination, causing overlapping tooltips when hovering adjacent county borders. | Jillian | Resolved (2026-07-02) — activeLayerRef added to MapEngine.tsx, explicitly closes previous layer's tooltip on mouseover handoff before new one opens; listeners cleared before re-adding on re-render to prevent stacking. Internal fix only, no prop/type changes. Lee-approved. Verified clean build on both apps/compass and apps/console. |
 | O18 | Live Supabase seed data diverges from git history — James Whitfield and Marcus Boone (caregivers) and one previously null-ZIP client profile were reassigned to Maricopa County (04013) via direct SQL to make the D17 adjacent-county tier demonstrable. No seed script reflects these changes; a fresh seed run from the committed script would overwrite them and break the adjacent-county demo scenario. | Jillian | Open — update seed script or add a supplemental migration before demo reset |
+| O19 | Major city labels on map (Phoenix, Tucson, etc.) for geographic orientation at default zoom — not currently present, tooltips only show on hover per-county. Would reuse existing overlayPins/makePinIcon pattern but requires a new MapEngineProps field (e.g. cityLabels) — MapEngine interface change, joint sign-off required with Lee. Small hardcoded dataset, no asset sourcing needed. | Jillian/Lee | Open — add after final UI polish if time allows |
