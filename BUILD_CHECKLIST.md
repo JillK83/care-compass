@@ -145,13 +145,13 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 
 ### Jillian — Door 2
 - [x] Real-time Supabase map live — county fills reflect unassigned client density from seed data
-- [ ] Assignment flow complete:
+- [x] Assignment flow complete:
   - Click county → assignment panel surfaces unassigned clients + caregiver matches
   - Each match shows score + why-line (interpretive, not tag restatement)
-  - Filter chips working (language, distance, skill)
+  - Filter chips working (language, distance — skill descoped, not implemented)
   - Assign button → confirmation modal with optional note field
   - Confirm → assignment logged to `assignments_log`
-  - Map county fill updates to reflect assignment
+  - Map county fill updates to reflect assignment (satisfied via pin removal per D24/D15 — intentional deviation from literal fill-color change, documented)
   - Banner confirms successful assignment after modal closes
 - [x] Demand signal overlay live — Door 1 ZIP flags appear as county-level overlay on Door 2 map
 - [ ] Door 2 WCAG check: legend always visible, `--text-on-surface-warm` used on `--surface-secondary`

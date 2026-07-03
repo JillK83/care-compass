@@ -210,7 +210,7 @@ Optional fields: nickname, preferred language, gender preference for aide, one c
 ### Auth contract
 
 - Door 1: no authentication, fully public.
-- Door 2: Supabase magic link auth — email only, no password.
+- Door 2: Supabase password auth. Magic link was removed — see DECISIONS.md A09 for rationale.
 - No coordinator data, Supabase queries, or auth state is ever accessible from the `/compass` route.
 
 ### Geographic unit contract

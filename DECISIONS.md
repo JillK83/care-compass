@@ -401,3 +401,63 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O20 | Overlay pins (client/caregiver/signal) can visually overlap at low zoom when their deterministic jitter positions land close together within the same county or same ZIP — cosmetic, most visible with small demo datasets. A pinType-aware jitter fix (folding pin type into zipHash input) was drafted to reduce cross-type overlap at a shared ZIP but not yet applied. | Jillian | Open |
 | O21 | MapEngine tooltips could stack/remain visible when the map was dragged mid-hover — root cause: browser's mouseout event doesn't fire when an element moves out from under a stationary cursor during a Leaflet pan, leaving activeLayerRef stale. | Jillian | Resolved (2026-07-03) — added a movestart listener on the map instance (not per-layer) that closes the stale tooltip and clears activeLayerRef at the start of any map movement (drag, scroll-zoom, or keyboard pan). Listener explicitly unbound in cleanup alongside the existing map.remove() call. |
 | O22 | Caregiver pins and unassigned-client pin borders referenced var(--accent-action), a CSS custom property that was never defined anywhere in theme.css or any other file — resolved to the CSS initial value (transparent/currentColor) at runtime, making caregiver pins effectively invisible on the map. | Jillian | Resolved (2026-07-03) — all three references swapped to var(--blue-pin), the token theme.css already documents as "Caregiver pins on map — decorative." |
+
+---
+
+### D25 — Assignment Panel made persistent; prompt and empty states instead of conditional mount
+
+**Decision:** `AssignmentPanel` is always rendered via `MapPage.tsx`'s `panelContent` prop — null county shows a prompt state ("Select a county"), a county with no unassigned clients shows an empty state, and a county with clients shows the ranked match list.
+
+**Rationale:** The prior pattern passed `panelContent={focused ? <AssignmentPanel/> : null}`, which caused MapEngine's 360px panel column to collapse entirely when no county was selected. This produced a visible layout reflow on every county deselect — the map resized to fill the vacated column, then resized back on the next click. Jakob's Law: layout shifting on interaction breaks the user's spatial model. The PRD's three-zone layout (sidebar / map / panel) is a locked constraint, not a suggestion.
+
+**Rejected:** Keeping conditional mount and accepting the reflow as a minor artifact. Rejected because the panel read as broken (disappearing) rather than intentionally empty during testing, and the reflow directly violated the locked three-zone layout.
+
+---
+
+### D26 — `min-width: 0` on flex text children to prevent Assignment Panel card overflow clipping
+
+**Decision:** `.assignment-panel__name` and `.assignment-panel__why-line` both receive `min-width: 0`, overriding the CSS default `min-width: auto` that flex items inherit.
+
+**Rationale:** CSS spec defines `min-width: auto` as the default for flex items — a flex item will never shrink below its intrinsic content width even when `flex: 1` is set. On long caregiver names or why-lines, the score badge and Assign button at the right end of each card were pushed outside the panel's visible area. `min-width: 0` allows the text container to shrink below its content size, keeping the badge and button in view.
+
+**Rejected:** `overflow: hidden` on the card to hide the clipped elements. Rejected — hides the symptom without fixing the layout; the Assign button would become inaccessible rather than visible.
+
+---
+
+### D27 — `handle_new_coordinator` trigger auto-provisions `coordinator_profiles` on sign-up
+
+**Decision:** A Supabase database trigger (`handle_new_coordinator`, fires on `INSERT` to `auth.users`) creates a matching row in `coordinator_profiles` with the new user's `id` and `email`.
+
+**Rationale:** Without this trigger, any coordinator who signs in for the first time gets a row in `auth.users` but nothing in `coordinator_profiles`. The first assignment attempt then hits a foreign key violation (`assignments_log.coordinator_id` references `coordinator_profiles.id`) — discovered as a live 409/23503 during testing. The trigger closes the gap at the schema level rather than requiring manual row creation per new user.
+
+**Rejected:** Manual `coordinator_profiles` row creation per new user. Rejected — this was the original approach and the direct cause of the FK violation; it doesn't scale beyond a single manually-seeded coordinator.
+
+---
+
+### A09 — Password auth replaces magic link for Door 2 (supersedes A02)
+
+**Decision:** Care Console uses Supabase `signInWithPassword` (email + password). Magic link (`signInWithOtp`) has been removed from `AuthContext.tsx` and the login page entirely.
+
+**Rationale:** Resend's sandbox sender domain (`onboarding@resend.dev`) restricts delivery to the Resend account owner's own registered email address — confirmed via a 403 in Resend's delivery logs — meaning magic link was structurally unable to reach any coordinator other than the account owner without a verified custom domain. A02's original rationale (avoiding password-reset infrastructure for a demo) no longer holds once magic link proved unreliable for anyone but a single operator. Password auth removes the email-delivery dependency entirely and requires no additional infrastructure for a closed demo set of users.
+
+**Rejected:** Verifying a custom Resend sender domain instead. Rejected for now — a larger, non-code task better scoped separately from unblocking the demo.
+
+---
+
+### D28 — Sign-out button added to Console sidebar
+
+**Decision:** A "Sign out" button was added at the bottom of `AppShell.tsx`'s sidebar, visually separated from the Clients/Map nav links by a `border-top`. Calls `signOut()` from `AuthContext`; `ProtectedRoute` handles the redirect to `/login` once session becomes null.
+
+**Rationale:** No mechanism existed to end a coordinator session from the UI — the only path was clearing browser storage manually. Required for any multi-coordinator demo scenario.
+
+**Rejected:** No alternative considered — this was a missing baseline affordance.
+
+---
+
+### D29 — Dignity Profile edit-save banner uses `setBanner` directly, not router state
+
+**Decision:** On successful edit save, `DignityProfilePage.tsx` calls `setBanner({ type: 'success', message: 'Profile saved' })` directly, without navigating. Previously it used `navigate(..., { state: { banner: 'Profile saved' } })` and read `location.state.banner` on mount at the destination.
+
+**Rationale:** The router-state pattern depends on `location.state` being readable at the exact moment the destination component mounts — in practice the banner silently failed to appear in some navigation timing cases during testing. Direct `setBanner` on the edit page is synchronous and guaranteed, and matches the pattern `AssignmentPanel` already uses for its own success banner. The create path (`mode === 'create'`) retains navigate-with-state because it must navigate to get the new record's ID.
+
+**Rejected:** Keeping the router-state pattern and debugging the timing issue. Rejected — the direct `setBanner` approach is simpler, already proven in `AssignmentPanel`, and eliminates the dependency on navigation/mount timing entirely.
