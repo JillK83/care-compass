@@ -9,19 +9,25 @@ export default defineConfig({
     react(),
     viteStaticCopy({
       targets: [
-        { src: '../../packages/utils/assets/zip-county-crosswalk.csv', dest: 'assets' }
+        { src: '../../packages/utils/assets/zip-county-crosswalk.csv', dest: 'assets' },
+        { src: '../../packages/utils/assets/us-counties-20m.geojson', dest: 'assets' },
       ]
     }),
     {
-      name: 'serve-crosswalk-dev',
+      name: 'serve-shared-assets-dev',
       configureServer(server) {
-        server.middlewares.use('/assets/zip-county-crosswalk.csv', (_req, res, next) => {
+        server.middlewares.use('/assets', (req, res, next) => {
           const filePath = path.resolve(
             __dirname,
-            '../../packages/utils/assets/zip-county-crosswalk.csv'
+            '../../packages/utils/assets',
+            req.url?.replace(/^\//, '') ?? ''
           )
           if (fs.existsSync(filePath)) {
-            res.setHeader('Content-Type', 'text/csv')
+            res.setHeader('Content-Type',
+              filePath.endsWith('.geojson') ? 'application/json' :
+              filePath.endsWith('.csv')     ? 'text/csv' :
+              'application/octet-stream'
+            )
             fs.createReadStream(filePath).pipe(res)
           } else {
             next()

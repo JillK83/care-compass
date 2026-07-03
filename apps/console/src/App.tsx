@@ -6,6 +6,7 @@ import { LoginPage } from './pages/LoginPage'
 import { ClientsListPage } from './pages/ClientsListPage'
 import { DignityProfilePage } from './pages/DignityProfilePage'
 import { CaregiverProfilePage } from './pages/CaregiverProfilePage'
+import { MapPage } from './pages/MapPage'
 import { loadCrosswalk } from 'utils'
 
 function App() {
@@ -29,6 +30,14 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/map"
+            element={
+              <ProtectedRoute>
+                <MapPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/clients"
             element={
               <ProtectedRoute>
                 <ClientsListPage />

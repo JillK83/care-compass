@@ -184,6 +184,26 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### D15 — Door 2 map redesigned as neutral boundaries + pin-based visualization
+
+**Decision:** Door 2's map renders all counties with uniform noData (gray) fill — no demand-driven or metric-based choropleth coloring. Information is carried by three overlay pin types instead: client (assigned/unassigned status), caregiver (availability), and signal (aggregate demand count per county).
+
+**Rationale:** A demand-driven fill would require inventing a metric semantics distinct from Door 1's desert/served scale (which measures care access, not coordinator workload) without a clear product need. Pin-based visualization directly serves the Assignment Panel workflow — showing supply and demand as discrete, clickable entities — rather than an aggregate color that doesn't answer "who specifically needs an aide."
+
+**Rejected:** Fill-by-unassigned-client-ratio (red = high need). Rejected — conflates Door 2's "unmet demand" question with Door 1's visually identical but semantically different "care desert" scale, risking confusion since both doors share the same MapEngine color tokens.
+
+---
+
+### D16 — Signal pin count rendered via label field reuse
+
+**Decision:** The demand-signal count badge (e.g. "3") is rendered using OverlayPin.label, which is documented in the interface contract for person-initials only ("omit entirely for signal pins").
+
+**Rationale:** Adding a proper count field to OverlayPin requires a MapEngine interface change and joint sign-off with Lee — out of scope for tonight's timeline. label is a valid string type regardless of content, so this is a non-breaking, temporary reuse rather than a contract violation.
+
+**Rejected:** Stopping to request the interface change before shipping any signal pin visualization. Rejected — would block demo-critical map work on a sign-off cycle; the deviation is small, documented, and easily reverted once count is added properly.
+
+---
+
 ## Architecture Decisions
 
 ### A01 — Two-door architecture; one monorepo
@@ -287,3 +307,8 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O11 | per-1,000 → per-100,000 stat rescale in computeFillValues.ts and ResourcePanel.tsx | Both | Resolved (Lee, Day 3) — computeFillValues.ts and ResourcePanel.tsx display layer updated: label changed to 'Agencies per 100k seniors', value computed as (per_1k_seniors * 100).toFixed(1). Internal field names (agenciesPer1kSeniors, per_1k_seniors) unchanged — display-only fix, no schema or calculation-source changes. |
 | O12 | Console + Compass UI polish pass — missing pin/external-link icons, "View on map" per-county links, "Start here" badge on Eldercare Locator, Label/Tag typography on section headers | Both | Open — Jillian, own thread |
 | — | Note (Jillian, Day 3) re: O5 | Compass | O5's Supabase wiring is code-complete but not yet locally verified by Lee — his apps/compass/.env.local (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY) is not yet created on his machine. He'll add it and test the live insert tomorrow. Treat O5 as code-resolved, pending local confirmation. |
+| O13 | No auto-create trigger for coordinator_profiles on magic-link sign-up — id column has no default (unlike every other table's gen_random_uuid()), meaning it's designed to key off auth.users.id, but nothing creates this row automatically. Discovered during seed data prep; Jillian's row was inserted manually as a one-time fix. | Jillian | Open — needed before multi-coordinator use, not blocking single-coordinator demo |
+| O14 | getSignalCountsByCounty (lib/queries.ts) locks the returned zip to whichever demand_signals row is encountered first per county during grouping — count is always accurate, but pin placement could understate spread if a county accumulates signals across multiple ZIPs. Not an issue with current 2-row demo data. | Jillian | Open — low priority, cosmetic |
+| O15 | MapEngine legend renders hardcoded "Care desert / Moderate gap / Well served" text regardless of props — not suppressible from apps/console. Misleading on Door 2, which no longer uses that color scale (see D15). Needs a legendMode prop or equivalent — MapEngine interface change requiring joint sign-off. | Jillian/Lee | Open |
+| O16 | Leaflet's default hover-highlight color (#3388ff) doesn't match Console's design system palette. Needs either a CSS override (console-only, if achievable) or a MapEngine style prop (needs Lee). | Jillian | Open |
+| O17 | MapEngine bound tooltips per-layer with no cross-layer coordination, causing overlapping tooltips when hovering adjacent county borders. | Jillian | Resolved (2026-07-02) — activeLayerRef added to MapEngine.tsx, explicitly closes previous layer's tooltip on mouseover handoff before new one opens; listeners cleared before re-adding on re-render to prevent stacking. Internal fix only, no prop/type changes. Lee-approved. Verified clean build on both apps/compass and apps/console. |

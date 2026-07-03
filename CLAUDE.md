@@ -276,3 +276,11 @@ Seed data requirements: at least one confirmed Spanish-speaking caregiver, at le
 | `DECISIONS.md` | Ten locked design decisions with rationale and rejected alternatives |
 | `BUILD_CHECKLIST.md` | Day-by-day task list with owners and verification steps |
 | `CareCompass_PRD_v1.0.docx` | Full product requirements document |
+
+---
+
+## 12. RLS False-Empty-Table Pattern
+
+If a Supabase query via an unauthenticated context (anon key in a standalone script, curl command, or Node test run outside the actual app) returns empty / no rows, do NOT conclude the table is empty. Check first whether RLS restricts SELECT to authenticated users — an anon caller will always see zero rows on such tables regardless of real data. Verify actual table contents via the Supabase SQL editor (bypasses RLS) before reporting a table as empty or proposing to re-seed / re-insert data.
+
+This exact mistake recurred on `client_profiles`, `caregiver_profiles`, and `demand_signals` within a single session on 2026-07-02 — treat this as a standing check before any "table is empty" conclusion, not a one-off debugging step.

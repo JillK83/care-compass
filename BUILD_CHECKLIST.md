@@ -110,7 +110,7 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 - [x] Success and error banners on save/edit
 
 **Seed data & assignment panel:**
-- [ ] Seed data script running:
+- [x] Seed data script running:
   - 10–12 clients across 3–4 Pinal County ZIPs (FIPS 04021), `county_fips` populated
     - Corrected from Maricopa per O8 crosswalk audit — demo ZIPs 85145/85139/85128 resolve to Pinal County, not Maricopa.
   - 8–10 caregivers, same county spread
@@ -144,7 +144,7 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
 **Day 3 verify (Lee):** Enter ZIP 85145 (or confirmed substitute) → desert county fills dark red → panel shows 0 agencies → legend visible → nearest county shows. Full visual matches Figma.
 
 ### Jillian — Door 2
-- [ ] Real-time Supabase map live — county fills reflect unassigned client density from seed data
+- [x] Real-time Supabase map live — county fills reflect unassigned client density from seed data
 - [ ] Assignment flow complete:
   - Click county → assignment panel surfaces unassigned clients + caregiver matches
   - Each match shows score + why-line (interpretive, not tag restatement)
@@ -153,7 +153,7 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
   - Confirm → assignment logged to `assignments_log`
   - Map county fill updates to reflect assignment
   - Banner confirms successful assignment after modal closes
-- [ ] Demand signal overlay live — Door 1 ZIP flags appear as county-level overlay on Door 2 map
+- [x] Demand signal overlay live — Door 1 ZIP flags appear as county-level overlay on Door 2 map
 - [ ] Door 2 WCAG check: legend always visible, `--text-on-surface-warm` used on `--surface-secondary`
 
 **Day 3 verify (Jillian):** Full demo scenario end-to-end without intervention. Assignment logged to audit trail. Map updates after assignment.

@@ -59,10 +59,13 @@ export function MapEngine({
   disclaimerText,
   geojsonData,
 }: MapEngineProps) {
-  const mapRef     = useRef<HTMLDivElement>(null)
-  const leafletRef = useRef<L.Map | null>(null)
-  const geoLayerRef = useRef<L.GeoJSON | null>(null)
-  const pinLayerRef = useRef<L.LayerGroup | null>(null)
+  const mapRef          = useRef<HTMLDivElement>(null)
+  const leafletRef      = useRef<L.Map | null>(null)
+  const geoLayerRef     = useRef<L.GeoJSON | null>(null)
+  const pinLayerRef     = useRef<L.LayerGroup | null>(null)
+  // Tracks the layer whose tooltip is currently open so we can close it
+  // before the next layer's tooltip opens — prevents stacked tooltips at borders.
+  const activeLayerRef  = useRef<L.Path | null>(null)
 
   // ── Mount map once ──────────────────────────────────────────────
   useEffect(() => {
@@ -103,18 +106,28 @@ export function MapEngine({
     geoLayerRef.current.clearLayers()
     geoLayerRef.current.addData(geojsonData)
     geoLayerRef.current.eachLayer(layer => {
-      const f = (layer as unknown as { feature?: GeoJSON.Feature }).feature
+      const gl  = layer as L.Path
+      const f   = (gl as unknown as { feature?: GeoJSON.Feature }).feature
       const fips = (f?.properties?.STATE ?? '') + (f?.properties?.COUNTY ?? '')
       const county = counties.find(c => c.fips === fips)
       if (county) {
-        (layer as L.Layer).bindTooltip(
+        gl.bindTooltip(
           `<strong>${county.tooltip.headline}</strong><br/>` +
           county.tooltip.stats.map(s => `${s.label}: ${s.value}`).join('<br/>') +
           `<br/><em>${county.tooltip.caveat}</em>`,
           { sticky: true }
         )
       }
-      layer.on('click', () => onCountyClick(fips))
+      gl.on('mouseover', () => {
+        if (activeLayerRef.current && activeLayerRef.current !== gl) {
+          activeLayerRef.current.closeTooltip()
+        }
+        activeLayerRef.current = gl
+      })
+      gl.on('mouseout', () => {
+        if (activeLayerRef.current === gl) activeLayerRef.current = null
+      })
+      gl.on('click', () => onCountyClick(fips))
     })
   }, [geojsonData, counties, onCountyClick]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -135,7 +148,18 @@ export function MapEngine({
       const county = counties.find(c => c.fips === fips)
 
       gl.off('click')
+      gl.off('mouseover')
+      gl.off('mouseout')
       gl.on('click', () => onCountyClick(fips))
+      gl.on('mouseover', () => {
+        if (activeLayerRef.current && activeLayerRef.current !== gl) {
+          activeLayerRef.current.closeTooltip()
+        }
+        activeLayerRef.current = gl
+      })
+      gl.on('mouseout', () => {
+        if (activeLayerRef.current === gl) activeLayerRef.current = null
+      })
 
       if (county) {
         gl.unbindTooltip()
