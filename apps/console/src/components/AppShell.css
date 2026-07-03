@@ -1,0 +1,37 @@
+.app-shell {
+  display: flex;
+  height: 100%;
+}
+
+.app-shell__sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--surface-secondary);
+  border-right: var(--border-width) solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+.app-shell__nav-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: var(--text-base);
+  color: var(--text-on-surface-warm);
+}
+
+.app-shell__nav-link:hover:not(.active) {
+  background: var(--canvas);
+}
+
+.app-shell__nav-link.active {
+  background: var(--teal-deep);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+.app-shell__main {
+  flex: 1;
+  overflow: auto;
+}

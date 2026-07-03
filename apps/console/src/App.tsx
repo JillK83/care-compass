@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { ProtectedRoute } from './components/ProtectedRoute'
+import { AppShell } from './components/AppShell'
 import { LoginPage } from './pages/LoginPage'
 import { ClientsListPage } from './pages/ClientsListPage'
 import { DignityProfilePage } from './pages/DignityProfilePage'
@@ -29,45 +30,18 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route
-            path="/map"
             element={
               <ProtectedRoute>
-                <MapPage />
+                <AppShell />
               </ProtectedRoute>
             }
-          />
-          <Route
-            path="/clients"
-            element={
-              <ProtectedRoute>
-                <ClientsListPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/clients/new"
-            element={
-              <ProtectedRoute>
-                <DignityProfilePage mode="create" />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/clients/:id/edit"
-            element={
-              <ProtectedRoute>
-                <DignityProfilePage mode="edit" />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/clients/:id"
-            element={
-              <ProtectedRoute>
-                <DignityProfilePage mode="view" />
-              </ProtectedRoute>
-            }
-          />
+          >
+            <Route path="/clients" element={<ClientsListPage />} />
+            <Route path="/clients/new" element={<DignityProfilePage mode="create" />} />
+            <Route path="/clients/:id/edit" element={<DignityProfilePage mode="edit" />} />
+            <Route path="/clients/:id" element={<DignityProfilePage mode="view" />} />
+            <Route path="/map" element={<MapPage />} />
+          </Route>
           <Route
             path="/caregivers/new"
             element={
