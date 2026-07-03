@@ -1,0 +1,93 @@
+/* apps/console/src/components/AssignmentConfirmModal.css   */
+/* Tokens from shared theme.css. No hardcoded hex or px.    */
+
+.confirm-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.confirm-modal__dialog {
+  background: var(--surface);
+  border-radius: var(--radius-card-console);
+  padding: var(--space-card-padding-console);
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-zone-gap);
+}
+
+.confirm-modal__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.confirm-modal__body {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.confirm-modal__label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.confirm-modal__textarea {
+  font-family: inherit;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-card-console);
+  padding: 8px;
+  resize: vertical;
+  width: 100%;
+}
+
+.confirm-modal__textarea:disabled {
+  opacity: 0.6;
+}
+
+.confirm-modal__error {
+  font-size: var(--text-sm);
+  color: var(--red-critical);
+}
+
+.confirm-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.confirm-modal__btn {
+  padding: 0 16px;
+  min-height: 36px;
+  font-size: var(--text-sm);
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+}
+
+.confirm-modal__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.confirm-modal__btn--cancel {
+  background: transparent;
+  color: var(--text-secondary);
+  border: var(--border-width) solid var(--border);
+}
+
+.confirm-modal__btn--confirm {
+  background: var(--teal-action);
+  color: #ffffff;
+  border: none;
+}

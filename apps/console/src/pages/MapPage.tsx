@@ -5,7 +5,8 @@ import { MapEngine, DEFAULT_COLOR_SCALE } from 'ui'
 import type { CountyFeature, OverlayPin } from 'ui'
 import { getInitials } from 'utils'
 import type { ClientProfile, CaregiverProfile } from 'utils'
-import { getSignalCountsByCounty } from '../lib/queries'
+import { getSignalCountsByCounty, getUnassignedClientsByCounty, getAvailableCaregiversByCounty } from '../lib/queries'
+import { AssignmentPanel } from '../components/AssignmentPanel'
 
 // ─── State FIPS → abbreviation ────────────────────────────────────────────────
 const STATE_FIPS_TO_ABBR: Record<string, string> = {
@@ -106,30 +107,19 @@ export function MapPage() {
   const [selectedCountyClients,    setSelectedCountyClients]    = useState<ClientProfile[]>([])
   const [selectedCountyCaregivers, setSelectedCountyCaregivers] = useState<CaregiverProfile[]>([])
 
+  function handleAssignSuccess(clientId: string) {
+    setOverlayPins(prev => prev.filter(pin => pin.id !== clientId))
+    if (focusedCountyFips) handleCountyClick(focusedCountyFips)
+  }
+
   function handleCountyClick(fips: string) {
     setFocused(fips)
     Promise.all([
-      supabase
-        .from('client_profiles')
-        .select('id, name, preferred_language, county_fips, zip_input')
-        .eq('county_fips', fips)
-        .eq('is_assigned', false),
-      supabase
-        .from('caregiver_profiles')
-        .select('id, name, languages, skills, is_available, county_fips, zip_input')
-        .eq('county_fips', fips)
-        .eq('is_available', true),
-    ]).then(([clientRes, caregiverRes]) => {
-      if (clientRes.error) {
-        console.warn('[MapPage] county clients fetch failed:', clientRes.error.message)
-      } else {
-        setSelectedCountyClients(clientRes.data ?? [])
-      }
-      if (caregiverRes.error) {
-        console.warn('[MapPage] county caregivers fetch failed:', caregiverRes.error.message)
-      } else {
-        setSelectedCountyCaregivers(caregiverRes.data ?? [])
-      }
+      getUnassignedClientsByCounty(fips),
+      getAvailableCaregiversByCounty(fips),
+    ]).then(([clients, caregivers]) => {
+      setSelectedCountyClients(clients)
+      setSelectedCountyCaregivers(caregivers)
     }).catch(e => {
       console.warn('[MapPage] county click fetch failed:', e)
     })
@@ -256,7 +246,17 @@ export function MapPage() {
         onCountyClick={handleCountyClick}
         overlayPins={overlayPins}
         colorScale={DEFAULT_COLOR_SCALE}
-        panelContent={null}
+        panelContent={
+          <AssignmentPanel
+            countyFips={focusedCountyFips}
+            countyName={focusedCountyFips
+              ? counties.find(c => c.fips === focusedCountyFips)?.name ?? ''
+              : ''}
+            clients={selectedCountyClients}
+            caregivers={selectedCountyCaregivers}
+            onAssignSuccess={handleAssignSuccess}
+          />
+        }
         isLoading={isLoading}
         dataSource="live"
         disclaimerText={null}

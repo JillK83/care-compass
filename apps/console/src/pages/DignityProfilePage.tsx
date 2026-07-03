@@ -125,10 +125,10 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
         .eq('id', id!)
       if (error) {
         setBanner({ type: 'error', message: `Save failed: ${error.message}` })
-        setIsSaving(false)
       } else {
-        navigate(`/clients/${id}`, { replace: true, state: { banner: 'Profile saved' } })
+        setBanner({ type: 'success', message: 'Profile saved' })
       }
+      setIsSaving(false)
     }
   }
 

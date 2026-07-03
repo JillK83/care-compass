@@ -36,3 +36,22 @@
   overflow: auto;
   height: 100%;
 }
+
+.app-shell__signout {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 20px;
+  border: none;
+  border-top: var(--border-width) solid var(--border);
+  background: none;
+  text-align: left;
+  font-size: var(--text-base);
+  font-family: inherit;
+  color: var(--text-on-surface-warm);
+  cursor: pointer;
+}
+
+.app-shell__signout:hover {
+  background: var(--canvas);
+}

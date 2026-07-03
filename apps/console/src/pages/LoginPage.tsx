@@ -1,29 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export function LoginPage() {
-  const { sendMagicLink } = useAuth()
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'sent' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+  const { session, signInWithPassword } = useAuth()
+  const navigate = useNavigate()
+  const [email,         setEmail]         = useState('')
+  const [password,      setPassword]      = useState('')
+  const [passwordError, setPasswordError] = useState('')
 
-  async function handleSubmit() {
-    if (!email) return
-    const { error } = await sendMagicLink(email)
-    if (error) {
-      setErrorMsg(error)
-      setStatus('error')
-    } else {
-      setStatus('sent')
-    }
-  }
+  useEffect(() => {
+    if (session) navigate('/clients', { replace: true })
+  }, [session, navigate])
 
-  if (status === 'sent') {
-    return (
-      <main style={{ padding: '2rem' }}>
-        <p>Check your email — a sign-in link is on its way to <strong>{email}</strong>.</p>
-      </main>
-    )
+  async function handleSignIn() {
+    if (!email || !password) return
+    setPasswordError('')
+    const { error } = await signInWithPassword(email, password)
+    if (error) setPasswordError(error)
   }
 
   return (
@@ -35,11 +29,19 @@ export function LoginPage() {
         type="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
-        onKeyDown={e => e.key === 'Enter' && handleSubmit()}
         placeholder="you@agency.com"
       />
-      <button onClick={handleSubmit}>Send sign-in link</button>
-      {status === 'error' && <p role="alert">{errorMsg}</p>}
+      <label htmlFor="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        onKeyDown={e => e.key === 'Enter' && handleSignIn()}
+        placeholder="Password"
+      />
+      <button onClick={handleSignIn}>Sign in</button>
+      {passwordError && <p role="alert">{passwordError}</p>}
     </main>
   )
 }

@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import './AppShell.css'
 
 export function AppShell() {
+  const { signOut } = useAuth()
+
   return (
     <div className="app-shell">
       <aside className="app-shell__sidebar">
@@ -19,6 +22,9 @@ export function AppShell() {
             Map
           </NavLink>
         </nav>
+        <button className="app-shell__signout" onClick={signOut}>
+          Sign out
+        </button>
       </aside>
       <main className="app-shell__main">
         <Outlet />
