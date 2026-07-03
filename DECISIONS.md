@@ -204,6 +204,18 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### D17 — Adjacent-county match tier added to caregiver scoring
+
+**Decision:** scoreCaregiverMatch now includes a matchedAdjacentCounty check (+0.75 score, "Nearby county — caregiver may be able to travel" why-line), inserted between same-county and language-match in the priority chain. Reuses isAdjacentCounty, a new export on the existing getNearestCountiesWithAgencies.ts module built for Door 1's care-desert fallback logic.
+
+**Rationale:** The original scoring function (language/availability/county) had no way to reflect that a nearby but non-same-county caregiver might still be a reasonable match, undercutting the PRD's stated "region" filter requirement (Journey 3, P0). Reusing the existing adjacency utility avoids inventing distance logic without lat/long data, consistent with D07's county-as-unit approach.
+
+**Rejected:** Real geographic distance (lat/long-based). Rejected — no coordinate data exists in the ZIP crosswalk, and county-level adjacency already answers the practical "can this caregiver reasonably travel here" question without new data infrastructure.
+
+**Note:** To make this demonstrable, two caregivers (James Whitfield, Marcus Boone) and one client (the profile with a previously null ZIP) were reassigned in Supabase to Maricopa County (04013) via direct SQL — not through a seed script, so this change does not appear in git history. See O18 below.
+
+---
+
 ## Architecture Decisions
 
 ### A01 — Two-door architecture; one monorepo
@@ -312,3 +324,4 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O15 | MapEngine legend renders hardcoded "Care desert / Moderate gap / Well served" text regardless of props — not suppressible from apps/console. Misleading on Door 2, which no longer uses that color scale (see D15). Needs a legendMode prop or equivalent — MapEngine interface change requiring joint sign-off. | Jillian/Lee | Open |
 | O16 | Leaflet's default hover-highlight color (#3388ff) doesn't match Console's design system palette. Needs either a CSS override (console-only, if achievable) or a MapEngine style prop (needs Lee). | Jillian | Open |
 | O17 | MapEngine bound tooltips per-layer with no cross-layer coordination, causing overlapping tooltips when hovering adjacent county borders. | Jillian | Resolved (2026-07-02) — activeLayerRef added to MapEngine.tsx, explicitly closes previous layer's tooltip on mouseover handoff before new one opens; listeners cleared before re-adding on re-render to prevent stacking. Internal fix only, no prop/type changes. Lee-approved. Verified clean build on both apps/compass and apps/console. |
+| O18 | Live Supabase seed data diverges from git history — James Whitfield and Marcus Boone (caregivers) and one previously null-ZIP client profile were reassigned to Maricopa County (04013) via direct SQL to make the D17 adjacent-county tier demonstrable. No seed script reflects these changes; a fresh seed run from the committed script would overwrite them and break the adjacent-county demo scenario. | Jillian | Open — update seed script or add a supplemental migration before demo reset |
