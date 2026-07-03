@@ -461,3 +461,15 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Rationale:** The router-state pattern depends on `location.state` being readable at the exact moment the destination component mounts — in practice the banner silently failed to appear in some navigation timing cases during testing. Direct `setBanner` on the edit page is synchronous and guaranteed, and matches the pattern `AssignmentPanel` already uses for its own success banner. The create path (`mode === 'create'`) retains navigate-with-state because it must navigate to get the new record's ID.
 
 **Rejected:** Keeping the router-state pattern and debugging the timing issue. Rejected — the direct `setBanner` approach is simpler, already proven in `AssignmentPanel`, and eliminates the dependency on navigation/mount timing entirely.
+
+---
+
+### A10 — `dimmedPinIds` added to `MapEngineProps` (bypassed 2-hour review window)
+
+**Decision:** Added optional `dimmedPinIds?: string[]` to `MapEngineProps`. Pins whose `id` appears in the list render at 0.3 opacity via Leaflet's native `opacity` marker option; all others render at full opacity. On Door 2, county focus dims pins outside that county's relevance — caregiver relevance follows D17's adjacency logic (`isAdjacentCounty`), not a raw `countyFips` match, so legitimately-scored adjacent-county matches stay at full opacity. Signal pins are never dimmed. Door 1 never passes the prop (optional, defaults to no dimming).
+
+**Rationale:** Map pins were unscoped to the focused county while the Assignment Panel's counts were correctly scoped — read as a data bug, was actually a scope mismatch. Chose a `MapEngineProps`-level field over an `OverlayPin.opacity` field to keep pin data pure (identity, position, status) and rendering decisions inside MapEngine.
+
+**Process:** Made without the standard joint review window per `MapEngine_Interface_Contract.md §10` — Jillian's call, given minimal surface (one optional field, no breaking change, no effect on Door 1) and same-session urgency. Lee notified after the fact. One-time exception, not a precedent.
+
+**Rejected:** `opacity?: number` on `OverlayPin` — mixes presentation hints into a data type that should carry only identity and position.

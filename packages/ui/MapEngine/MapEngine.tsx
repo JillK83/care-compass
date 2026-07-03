@@ -51,6 +51,7 @@ export function MapEngine({
   focusedCountyFips,
   onCountyClick,
   overlayPins,
+  dimmedPinIds,
   colorScale,
   panelContent,
   isLoading,
@@ -199,14 +200,18 @@ export function MapEngine({
 
     pinLayerRef.current.clearLayers()
 
+    const dimmedSet = new Set(dimmedPinIds ?? [])
     overlayPins.forEach(pin => {
-      const marker = L.marker([pin.lat, pin.lng], { icon: makePinIcon(pin) })
+      const marker = L.marker([pin.lat, pin.lng], {
+        icon:    makePinIcon(pin),
+        opacity: dimmedSet.has(pin.id) ? 0.3 : 1,
+      })
       if (pin.label) {
         marker.bindTooltip(pin.label, { direction: 'top' })
       }
       pinLayerRef.current!.addLayer(marker)
     })
-  }, [overlayPins])
+  }, [overlayPins, dimmedPinIds])
 
   // ── Render ──────────────────────────────────────────────────────
   return (

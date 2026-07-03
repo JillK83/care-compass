@@ -92,6 +92,9 @@ export interface MapEngineProps {
   focusedCountyFips:  string | null
   onCountyClick:      (fips: string) => void
   overlayPins:        OverlayPin[]
+  dimmedPinIds?:      string[]      // ids present here render at reduced opacity (0.3);
+                                    // omit or pass [] for normal rendering.
+                                    // Purely a rendering hint — no semantic meaning.
   colorScale:         ColorScale
   panelContent:       React.ReactNode | null
   isLoading:          boolean
@@ -146,6 +149,7 @@ const [focused, setFocused] = useState<string | null>(null)
   focusedCountyFips={focused}
   onCountyClick={(fips) => setFocused(fips)}
   overlayPins={[]}                  // no pins on consumer map
+  // dimmedPinIds omitted — Door 1 has no pins to dim
   colorScale={DEFAULT_COLOR_SCALE}
   panelContent={
     focused
@@ -181,6 +185,7 @@ const [pins, setPins]           = useState<OverlayPin[]>([])
   focusedCountyFips={focused}
   onCountyClick={(fips) => setFocused(fips)}
   overlayPins={pins}                // caregiver pins + signal pins
+  dimmedPinIds={dimmedPins}         // ids of pins outside the focused county's relevance (see MapPage.tsx for adjacency logic)
   colorScale={DEFAULT_COLOR_SCALE}
   panelContent={
     focused
@@ -352,6 +357,8 @@ This contract is locked after the Day 1 scaffold commit.
 4. Both builders must explicitly approve — one approval is not enough
 5. Update `MapEngine.types.ts`, this file, and `DECISIONS.md` (add an A-series entry) in the same commit
 6. Both builders pull and verify their door still builds before continuing parallel work
+
+*2026-07-03 — `dimmedPinIds` added to `MapEngineProps` without the standard 2-hour joint review window. Jillian made the call to move first given same-session urgency; documented here and in DECISIONS.md per usual. Lee to be notified separately. This is an acknowledged exception, not a new precedent for skipping the protocol.*
 
 **Never:**
 - Modify `MapEngine.types.ts` without updating this file in the same commit

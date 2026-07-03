@@ -33,40 +33,15 @@ export function AssignmentPanel({
   const clientLabel    = `${clients.length} unassigned client${clients.length !== 1 ? 's' : ''}`
   const caregiverLabel = `${caregivers.length} available aide${caregivers.length !== 1 ? 's' : ''}`
 
-  if (countyFips === null) {
-    return (
-      <div className="assignment-panel">
-        <p className="assignment-panel__empty">
-          Select a county on the map to see unassigned clients and caregiver matches.
-        </p>
-      </div>
-    )
-  }
-
-  if (clients.length === 0) {
-    return (
-      <div className="assignment-panel">
-        <div className="assignment-panel__header">
-          <h2 className="assignment-panel__county-name">{countyName}</h2>
-        </div>
-        <p className="assignment-panel__empty">
-          No unassigned clients in this county.{' '}
-          <Link className="assignment-panel__empty-link" to="/clients">
-            View clients list
-          </Link>
-        </p>
-      </div>
-    )
-  }
-
-  const activeClient = clients[0]
-  const ranked       = rankCaregiverMatches(activeClient, caregivers)
+  const activeClient = clients.length > 0 ? clients[0] : null
+  const ranked       = activeClient ? rankCaregiverMatches(activeClient, caregivers) : []
 
   let filtered = ranked
   if (languageFilterActive) filtered = filtered.filter(r => r.matchedLanguage)
   if (zipFilterActive)      filtered = filtered.filter(r => r.matchedZip || r.matchedCounty || r.matchedAdjacentCounty)
 
   async function handleConfirm(note: string) {
+    if (!activeClient || !selectedMatch) return
     setIsSubmitting(true)
     try {
       const { error: insertError } = await supabase
@@ -74,8 +49,8 @@ export function AssignmentPanel({
         .insert({
           coordinator_id: session!.user.id,
           client_id:      activeClient.id,
-          caregiver_id:   selectedMatch!.id,
-          match_score:    selectedMatch!.score,
+          caregiver_id:   selectedMatch.id,
+          match_score:    selectedMatch.score,
           note:           note.trim() === '' ? null : note.trim(),
         })
       if (insertError) throw new Error(insertError.message)
@@ -88,7 +63,7 @@ export function AssignmentPanel({
         console.error('[AssignmentPanel] is_assigned update failed:', updateError.message)
       }
 
-      const assignedName = selectedMatch!.name
+      const assignedName = selectedMatch.name
       setSelectedMatch(null)
       setIsSubmitting(false)
       onAssignSuccess(activeClient.id)
@@ -101,7 +76,7 @@ export function AssignmentPanel({
 
   return (
     <div className="assignment-panel">
-      {/* Banner */}
+      {/* Banner renders regardless of which state branch is active */}
       {banner && (
         <Banner
           type="success"
@@ -110,75 +85,95 @@ export function AssignmentPanel({
         />
       )}
 
-      {/* 1. Header */}
-      <div className="assignment-panel__header">
-        <h2 className="assignment-panel__county-name">{countyName}</h2>
-        <p className="assignment-panel__subtext">{clientLabel} · {caregiverLabel}</p>
-      </div>
-
-      {/* 2. Showing label */}
-      <p className="assignment-panel__showing">Showing: Available now</p>
-
-      {/* 3. Filter chips */}
-      <div className="assignment-panel__filters">
-        <button
-          className={`assignment-panel__chip${languageFilterActive ? ' assignment-panel__chip--active' : ''}`}
-          onClick={() => setLanguageFilterActive(v => !v)}
-        >
-          Language
-        </button>
-        <button
-          className={`assignment-panel__chip${zipFilterActive ? ' assignment-panel__chip--active' : ''}`}
-          onClick={() => setZipFilterActive(v => !v)}
-        >
-          Zip/distance
-        </button>
-      </div>
-
-      {/* 4. Section label */}
-      <p className="assignment-panel__section-label">Fit-ranked aides</p>
-
-      {/* 5. Card list or empty filter state */}
-      {filtered.length === 0 ? (
-        <p className="assignment-panel__no-match">No caregivers match the current filters.</p>
+      {countyFips === null ? (
+        <p className="assignment-panel__empty">
+          Select a county on the map to see unassigned clients and caregiver matches.
+        </p>
+      ) : clients.length === 0 ? (
+        <>
+          <div className="assignment-panel__header">
+            <h2 className="assignment-panel__county-name">{countyName}</h2>
+          </div>
+          <p className="assignment-panel__empty">
+            No unassigned clients in this county.{' '}
+            <Link className="assignment-panel__empty-link" to="/clients">
+              View clients list
+            </Link>
+          </p>
+        </>
       ) : (
-        <div className="assignment-panel__cards">
-          {filtered.map(match => (
-            <div key={match.id} className="assignment-panel__card">
-              {/* Zone A: avatar + name + score */}
-              <div className="assignment-panel__zone-a">
-                <span className="assignment-panel__avatar">{getInitials(match.name)}</span>
-                <span className="assignment-panel__name">{match.name}</span>
-                <span className="assignment-panel__score-badge">{match.score}/5</span>
-              </div>
+        <>
+          {/* 1. Header */}
+          <div className="assignment-panel__header">
+            <h2 className="assignment-panel__county-name">{countyName}</h2>
+            <p className="assignment-panel__subtext">{clientLabel} · {caregiverLabel}</p>
+          </div>
 
-              {/* Zone B: status chip + skills */}
-              <div className="assignment-panel__zone-b">
-                <span className="assignment-panel__tag">
-                  {match.isAvailable ? 'Available' : 'Unavailable'}
-                </span>
-                {match.skills.map(skill => (
-                  <span key={skill} className="assignment-panel__tag">{skill}</span>
-                ))}
-              </div>
+          {/* 2. Showing label */}
+          <p className="assignment-panel__showing">Showing: Available now</p>
 
-              {/* Zone C: why-line + assign button */}
-              <div className="assignment-panel__zone-c">
-                <span className="assignment-panel__why-line">{match.whyLine}</span>
-                <button
-                  className="assignment-panel__assign-btn"
-                  onClick={() => setSelectedMatch(match)}
-                >
-                  Assign
-                </button>
-              </div>
+          {/* 3. Filter chips */}
+          <div className="assignment-panel__filters">
+            <button
+              className={`assignment-panel__chip${languageFilterActive ? ' assignment-panel__chip--active' : ''}`}
+              onClick={() => setLanguageFilterActive(v => !v)}
+            >
+              Language
+            </button>
+            <button
+              className={`assignment-panel__chip${zipFilterActive ? ' assignment-panel__chip--active' : ''}`}
+              onClick={() => setZipFilterActive(v => !v)}
+            >
+              Zip/distance
+            </button>
+          </div>
+
+          {/* 4. Section label */}
+          <p className="assignment-panel__section-label">Fit-ranked aides</p>
+
+          {/* 5. Card list or empty filter state */}
+          {filtered.length === 0 ? (
+            <p className="assignment-panel__no-match">No caregivers match the current filters.</p>
+          ) : (
+            <div className="assignment-panel__cards">
+              {filtered.map(match => (
+                <div key={match.id} className="assignment-panel__card">
+                  {/* Zone A: avatar + name + score */}
+                  <div className="assignment-panel__zone-a">
+                    <span className="assignment-panel__avatar">{getInitials(match.name)}</span>
+                    <span className="assignment-panel__name">{match.name}</span>
+                    <span className="assignment-panel__score-badge">{match.score}/5</span>
+                  </div>
+
+                  {/* Zone B: status chip + skills */}
+                  <div className="assignment-panel__zone-b">
+                    <span className="assignment-panel__tag">
+                      {match.isAvailable ? 'Available' : 'Unavailable'}
+                    </span>
+                    {match.skills.map(skill => (
+                      <span key={skill} className="assignment-panel__tag">{skill}</span>
+                    ))}
+                  </div>
+
+                  {/* Zone C: why-line + assign button */}
+                  <div className="assignment-panel__zone-c">
+                    <span className="assignment-panel__why-line">{match.whyLine}</span>
+                    <button
+                      className="assignment-panel__assign-btn"
+                      onClick={() => setSelectedMatch(match)}
+                    >
+                      Assign
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
 
-      {/* Confirmation modal */}
-      {selectedMatch && (
+      {/* Confirmation modal — outside branches; selectedMatch is cleared before onAssignSuccess fires */}
+      {selectedMatch && activeClient && (
         <AssignmentConfirmModal
           clientName={activeClient.name}
           caregiverName={selectedMatch.name}

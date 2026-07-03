@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import type { FeatureCollection, Geometry, Polygon, MultiPolygon } from 'geojson'
 import { supabase } from '../lib/supabase'
 import { MapEngine, DEFAULT_COLOR_SCALE } from 'ui'
 import type { CountyFeature, OverlayPin } from 'ui'
-import { getInitials } from 'utils'
+import { getInitials, isAdjacentCounty } from 'utils'
 import type { ClientProfile, CaregiverProfile } from 'utils'
 import { getSignalCountsByCounty, getUnassignedClientsByCounty, getAvailableCaregiversByCounty } from '../lib/queries'
 import { AssignmentPanel } from '../components/AssignmentPanel'
@@ -106,6 +106,18 @@ export function MapPage() {
   const [isLoading,         setIsLoading]             = useState(true)
   const [selectedCountyClients,    setSelectedCountyClients]    = useState<ClientProfile[]>([])
   const [selectedCountyCaregivers, setSelectedCountyCaregivers] = useState<CaregiverProfile[]>([])
+
+  const dimmedPinIds = useMemo(() => {
+    if (!focusedCountyFips) return []
+    return overlayPins
+      .filter(pin => {
+        if (pin.type === 'signal') return false
+        if (pin.countyFips === focusedCountyFips) return false
+        if (pin.type === 'caregiver' && isAdjacentCounty(focusedCountyFips, pin.countyFips)) return false
+        return true
+      })
+      .map(pin => pin.id)
+  }, [overlayPins, focusedCountyFips])
 
   function handleAssignSuccess(clientId: string) {
     setOverlayPins(prev => prev.filter(pin => pin.id !== clientId))
@@ -245,6 +257,7 @@ export function MapPage() {
         focusedCountyFips={focusedCountyFips}
         onCountyClick={handleCountyClick}
         overlayPins={overlayPins}
+        dimmedPinIds={dimmedPinIds}
         colorScale={DEFAULT_COLOR_SCALE}
         panelContent={
           <AssignmentPanel

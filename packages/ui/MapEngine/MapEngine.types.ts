@@ -69,6 +69,9 @@ export interface MapEngineProps {
   focusedCountyFips:  string | null
   onCountyClick:      (fips: string) => void
   overlayPins:        OverlayPin[]
+  dimmedPinIds?:      string[]      // ids present here render at reduced opacity (0.3);
+                                    // omit or pass [] for normal rendering.
+                                    // Purely a rendering hint — no semantic meaning.
   colorScale:         ColorScale
   panelContent:       React.ReactNode | null
   isLoading:          boolean
