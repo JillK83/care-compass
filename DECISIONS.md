@@ -248,6 +248,46 @@ No component may use a literal px or rem value for font-size — tokens only.
 
 ---
 
+### D21 — Map disclaimer restructured to normal document flow below the map
+
+**Decision:** MapEngine's disclaimer footer is now rendered as a block-level element below the map canvas (inside a new .map-engine-outer flex-column wrapper), rather than absolutely positioned as an overlay on top of the pannable map.
+
+**Rationale:** As an absolute overlay, the disclaimer could be visually obscured by or collide with overlay pins and the legend at certain pan/zoom positions on Door 2 — an always-visible disclaimer that can be covered by other content doesn't meet the intent of "always shown." Moving it outside the map's pannable viewport entirely removes the possibility of collision rather than managing z-index around it.
+
+**Rejected:** Increasing z-index to force the disclaimer above all map content. Rejected — doesn't solve the inverse case (pins rendering behind an opaque disclaimer, becoming invisible instead of colliding), and treats a structural layering problem as a stacking-order problem.
+
+---
+
+### D22 — Map tooltip content simplified: caveat line removed, empty stats suppressed
+
+**Decision:** County hover tooltips no longer render the italic caveat line ("Counts reflect agency billing location..."). Additionally, the stats line (and its leading line break) only renders when county.tooltip.stats is non-empty.
+
+**Rationale:** The caveat text duplicated the always-visible footer disclaimer (per D09/WCAG requirement that the disclaimer is always shown) — repeating it in every tooltip added length without adding information, the same logic D04 already applied to why-line copy. Separately, Door 2's counties always pass an empty stats array (per D15, no metric shown), which left a visible blank line where the stats would have rendered.
+
+**Rejected:** Keeping the caveat in tooltips for standalone context. Rejected — the footer disclaimer already satisfies the "always visible" requirement without needing repetition per-hover.
+
+---
+
+### D23 — Demand signal pin rendered as a distinct icon, not a label-based count badge
+
+**Decision:** Signal-type pins render as an inline SVG Radio icon (colored via var(--orange-alert)) regardless of whether OverlayPin.label is present, instead of falling into the same 32px labeled-circle style used for caregiver/client initials. The count carried in label is still surfaced via the existing hover tooltip binding.
+
+**Rationale:** D16 documented reusing label to carry the demand count as a temporary, non-breaking deviation. In practice this made signal pins render in a style built for person-initials, at a size/contrast that was illegible for a numeric badge. Branching on pin.type === 'signal' instead of presence/absence of label gives signal pins their own visual treatment without any OverlayPin/MapEngineProps change — count is preserved via tooltip rather than removed.
+
+**Rejected:** Adding a proper OverlayPin.count field. Rejected for now — same reasoning as D16, still avoids the MapEngine.types.ts sign-off cycle for what remains a demo-scope visual fix; count-via-tooltip achieves the same information access.
+
+---
+
+### D24 — Console map shows only unassigned clients
+
+**Decision:** apps/console/src/pages/MapPage.tsx filters client_profiles to is_assigned = false before building client pins. Assigned clients no longer appear on the map at all. The legend gained a third row ("Unassigned client") to match.
+
+**Rationale:** D15 established that pin-based visualization exists to answer "who here needs an aide" — an assigned client has already exited that state. Showing assigned and unassigned clients identically (same color/size, distinguishable only by a subtle border) worked against the map's own purpose by adding visual noise to the exact view meant to surface unmet need.
+
+**Rejected:** Keeping both on the map with a bolder unassigned-only border. Rejected — even a bold border still requires the coordinator to actively parse each pin rather than seeing unmet need at a glance, which is the whole point of D15's pin-based approach in the first place.
+
+---
+
 ## Architecture Decisions
 
 ### A01 — Two-door architecture; one monorepo
@@ -353,8 +393,11 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | — | Note (Jillian, Day 3) re: O5 | Compass | O5's Supabase wiring is code-complete but not yet locally verified by Lee — his apps/compass/.env.local (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY) is not yet created on his machine. He'll add it and test the live insert tomorrow. Treat O5 as code-resolved, pending local confirmation. |
 | O13 | No auto-create trigger for coordinator_profiles on magic-link sign-up — id column has no default (unlike every other table's gen_random_uuid()), meaning it's designed to key off auth.users.id, but nothing creates this row automatically. Discovered during seed data prep; Jillian's row was inserted manually as a one-time fix. | Jillian | Open — needed before multi-coordinator use, not blocking single-coordinator demo |
 | O14 | getSignalCountsByCounty (lib/queries.ts) locks the returned zip to whichever demand_signals row is encountered first per county during grouping — count is always accurate, but pin placement could understate spread if a county accumulates signals across multiple ZIPs. Not an issue with current 2-row demo data. | Jillian | Open — low priority, cosmetic |
-| O15 | MapEngine legend renders hardcoded "Care desert / Moderate gap / Well served" text regardless of props — not suppressible from apps/console. Misleading on Door 2, which no longer uses that color scale (see D15). Needs a legendMode prop or equivalent — MapEngine interface change requiring joint sign-off. | Jillian/Lee | Open |
+| O15 | MapEngine legend renders hardcoded "Care desert / Moderate gap / Well served" text regardless of props — not suppressible from apps/console. Misleading on Door 2, which no longer uses that color scale (see D15). Needs a legendMode prop or equivalent — MapEngine interface change requiring joint sign-off. | Jillian/Lee | Resolved (2026-07-03) — resolved via existing mode prop rather than a new legendMode field. MapEngine.tsx already receives mode ('consumer' | 'coordinator'); the four color-scale legend rows are now conditionally rendered only when mode !== 'coordinator', so Door 2's legend shows only the pin-type rows (Available aide, Unassigned client, Demand signal). No MapEngine.types.ts change or joint sign-off was actually required — the original open item assumed a new prop was needed, but the existing mode prop already carried the necessary signal. |
 | O16 | Leaflet's default hover-highlight color (#3388ff) doesn't match Console's design system palette. Needs either a CSS override (console-only, if achievable) or a MapEngine style prop (needs Lee). | Jillian | Open |
 | O17 | MapEngine bound tooltips per-layer with no cross-layer coordination, causing overlapping tooltips when hovering adjacent county borders. | Jillian | Resolved (2026-07-02) — activeLayerRef added to MapEngine.tsx, explicitly closes previous layer's tooltip on mouseover handoff before new one opens; listeners cleared before re-adding on re-render to prevent stacking. Internal fix only, no prop/type changes. Lee-approved. Verified clean build on both apps/compass and apps/console. |
 | O18 | Live Supabase seed data diverges from git history — James Whitfield and Marcus Boone (caregivers) and one previously null-ZIP client profile were reassigned to Maricopa County (04013) via direct SQL to make the D17 adjacent-county tier demonstrable. No seed script reflects these changes; a fresh seed run from the committed script would overwrite them and break the adjacent-county demo scenario. | Jillian | Open — update seed script or add a supplemental migration before demo reset |
 | O19 | Major city labels on map (Phoenix, Tucson, etc.) for geographic orientation at default zoom — not currently present, tooltips only show on hover per-county. Would reuse existing overlayPins/makePinIcon pattern but requires a new MapEngineProps field (e.g. cityLabels) — MapEngine interface change, joint sign-off required with Lee. Small hardcoded dataset, no asset sourcing needed. | Jillian/Lee | Open — add after final UI polish if time allows |
+| O20 | Overlay pins (client/caregiver/signal) can visually overlap at low zoom when their deterministic jitter positions land close together within the same county or same ZIP — cosmetic, most visible with small demo datasets. A pinType-aware jitter fix (folding pin type into zipHash input) was drafted to reduce cross-type overlap at a shared ZIP but not yet applied. | Jillian | Open |
+| O21 | MapEngine tooltips could stack/remain visible when the map was dragged mid-hover — root cause: browser's mouseout event doesn't fire when an element moves out from under a stationary cursor during a Leaflet pan, leaving activeLayerRef stale. | Jillian | Resolved (2026-07-03) — added a movestart listener on the map instance (not per-layer) that closes the stale tooltip and clears activeLayerRef at the start of any map movement (drag, scroll-zoom, or keyboard pan). Listener explicitly unbound in cleanup alongside the existing map.remove() call. |
+| O22 | Caregiver pins and unassigned-client pin borders referenced var(--accent-action), a CSS custom property that was never defined anywhere in theme.css or any other file — resolved to the CSS initial value (transparent/currentColor) at runtime, making caregiver pins effectively invisible on the map. | Jillian | Resolved (2026-07-03) — all three references swapped to var(--blue-pin), the token theme.css already documents as "Caregiver pins on map — decorative." |
