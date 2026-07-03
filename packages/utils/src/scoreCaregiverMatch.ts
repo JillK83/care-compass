@@ -1,5 +1,7 @@
 // Minimal profile shapes required for scoring — only the fields the algorithm reads.
 // Extend if the full Supabase row type is ever generated.
+import { isAdjacentCounty } from './getNearestCountiesWithAgencies.ts'
+
 export interface ClientProfile {
   id: string
   name: string
@@ -23,6 +25,7 @@ export interface MatchResult {
   whyLine: string
   matchedZip: boolean
   matchedCounty: boolean
+  matchedAdjacentCounty: boolean
   matchedLanguage: boolean
   isAvailable: boolean
   skills: string[]
@@ -57,12 +60,20 @@ export function scoreCaregiverMatch(
     caregiver.zip_input !== null &&
     caregiver.zip_input === client.zip_input
 
+  // Only check adjacency when counties differ — skip if either FIPS is null.
+  const matchedAdjacentCounty =
+    !matchedCounty &&
+    client.county_fips !== null &&
+    caregiver.county_fips !== null &&
+    isAdjacentCounty(client.county_fips, caregiver.county_fips)
+
   const isAvailable = caregiver.is_available
 
   const raw =
     (matchedLanguage ? 2 : 0) +
     (isAvailable ? 1.5 : 0) +
-    (matchedCounty ? 1.5 : 0)
+    (matchedCounty ? 1.5 : 0) +
+    (matchedAdjacentCounty ? 0.75 : 0)
 
   const score = roundToHalf(Math.min(raw, 5))
 
@@ -75,6 +86,8 @@ export function scoreCaregiverMatch(
     lead = 'Closest match — same ZIP'
   } else if (matchedCounty) {
     lead = 'Same county'
+  } else if (matchedAdjacentCounty) {
+    lead = 'Nearby county — caregiver may be able to travel'
   } else if (matchedLanguage) {
     lead = 'Speaks client\'s language'
   }
@@ -95,7 +108,11 @@ export function scoreCaregiverMatch(
     whyLine = lead + addon
   }
 
-  return { score, whyLine, matchedZip, matchedCounty, matchedLanguage, isAvailable, skills: caregiver.skills }
+  return {
+    score, whyLine,
+    matchedZip, matchedCounty, matchedAdjacentCounty, matchedLanguage,
+    isAvailable, skills: caregiver.skills,
+  }
 }
 
 export function rankCaregiverMatches(

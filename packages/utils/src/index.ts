@@ -1,6 +1,6 @@
 export { computeFillValues } from './computeFillValues'
 export { zipToCountyFips, loadCrosswalk } from './zipToCountyFips'
-export { getNearestCountiesWithAgencies, loadAdjacency } from './getNearestCountiesWithAgencies'
+export { getNearestCountiesWithAgencies, loadAdjacency, isAdjacentCounty } from './getNearestCountiesWithAgencies'
 export { getInitials } from './getInitials'
 export { scoreCaregiverMatch, rankCaregiverMatches } from './scoreCaregiverMatch'
 export type { ClientProfile, CaregiverProfile, MatchResult, RankedMatchResult } from './scoreCaregiverMatch'

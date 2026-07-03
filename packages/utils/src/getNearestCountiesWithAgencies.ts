@@ -11,6 +11,10 @@ export function loadAdjacency(rows: Array<{ fips: string; adjacent_fips: string 
   }
 }
 
+export function isAdjacentCounty(fips1: string, fips2: string): boolean {
+  return (adjacencyIndex[fips1] ?? []).includes(fips2)
+}
+
 export function getNearestCountiesWithAgencies(
   fips: string,
   allCounties: Array<{ fips: string; name: string; state: string; agencyCount?: number }>,

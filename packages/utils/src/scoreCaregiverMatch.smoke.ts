@@ -2,6 +2,14 @@
 // Uses demo scenario data: Spanish-speaking client in Pinal County (04021), ZIP 85145
 import { rankCaregiverMatches } from './scoreCaregiverMatch.ts'
 import type { ClientProfile, CaregiverProfile } from './scoreCaregiverMatch.ts'
+import { loadAdjacency } from './getNearestCountiesWithAgencies.ts'
+
+// Seed minimal adjacency for the smoke test.
+// Pinal (04021) ↔ Maricopa (04013) are confirmed adjacent in Arizona.
+loadAdjacency([
+  { fips: '04021', adjacent_fips: '04013' },
+  { fips: '04013', adjacent_fips: '04021' },
+])
 
 const client: ClientProfile = {
   id: 'client-demo-001',
@@ -45,7 +53,7 @@ const caregivers: CaregiverProfile[] = [
     languages: ['Vietnamese', 'English'],
     skills: [],
     is_available: false,
-    county_fips: '04013',  // Maricopa — different county
+    county_fips: '04013',  // Maricopa — adjacent to Pinal (04021), exercises new tier
     zip_input: '85001',
   },
 ]
@@ -59,6 +67,6 @@ ranked.forEach((r, i) => {
   console.log(`#${i + 1}  ${r.name}  (id: ${r.id})`)
   console.log(`    score: ${r.score}`)
   console.log(`    why:   ${r.whyLine}`)
-  console.log(`    flags: zip=${r.matchedZip} county=${r.matchedCounty} lang=${r.matchedLanguage} avail=${r.isAvailable}`)
+  console.log(`    flags: zip=${r.matchedZip} county=${r.matchedCounty} adjacentCounty=${r.matchedAdjacentCounty} lang=${r.matchedLanguage} avail=${r.isAvailable}`)
   console.log()
 })
