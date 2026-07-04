@@ -256,20 +256,6 @@ export function MapPage() {
           })
         }
 
-        // TEMP DEBUG — remove once client pin presence confirmed (Stage 15)
-        console.table(
-          (clientRows ?? []).map(c => {
-            const p = pins.find(pin => pin.id === c.id)
-            return {
-              name:       c.name,
-              zip:        c.zip_input,
-              countyFips: c.county_fips,
-              pinFound:   !!p,
-              lat:        p?.lat,
-              lng:        p?.lng,
-            }
-          })
-        )
         setOverlayPins(pins)
       } catch (e) {
         console.error('[MapPage] load failed:', e)
