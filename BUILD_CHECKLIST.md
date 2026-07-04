@@ -155,8 +155,25 @@ Check off as you go. Both builders merge to main at each daily checkpoint.
   - Banner confirms successful assignment after modal closes
 - [x] Demand signal overlay live — Door 1 ZIP flags appear as county-level overlay on Door 2 map
 - [ ] Door 2 WCAG check: legend always visible, `--text-on-surface-warm` used on `--surface-secondary`
+- [x] County-level map pin visibility fully resolved: auto-zoom on county
+      focus, zoom floor (9) for pin separation, occupancy-based offset
+      assignment (replaces hash-rank approach), 16-point rosette jitter
+      pattern replacing 8-point ring. See DECISIONS.md D32/D33.
+- [ ] Clients List cleanup pass: row hover, Assigned badges, ZIP/county
+      column, header contrast, row numbering/sorting, edit affordance,
+      new-client indicator (see UI_CHANGES_PENDING.md 2026-07-04 batch)
+- [ ] Assignment Panel filter-reset bug (language/zip-distance chips
+      persist across county selection — confirmed, fix drafted, not
+      applied)
+- [ ] O23: caregiver assignment-load visibility tag (see DECISIONS.md)
 
 **Day 3 verify (Jillian):** Full demo scenario end-to-end without intervention. Assignment logged to audit trail. Map updates after assignment.
+
+**Day 4 verify (Jillian):** Click through Maricopa, Pinal, and at least one
+other county with 3+ simultaneous pins — confirm all pins render as
+visually distinct with legible labels, zero console capacity warnings.
+Confirm auto-zoom respects prefers-reduced-motion (instant snap vs. fly
+animation) and resets to national view on deselect.
 
 ### Integration (both)
 - [ ] Full demo scenario walkthrough — family ZIP → desert → flag → coordinator map → assign → update
