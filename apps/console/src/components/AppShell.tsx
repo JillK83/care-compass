@@ -8,6 +8,7 @@ export function AppShell() {
   return (
     <div className="app-shell">
       <aside className="app-shell__sidebar">
+        <div className="app-shell__wordmark">Care Console</div>
         <nav>
           <NavLink
             to="/clients"

@@ -183,6 +183,15 @@
 
 /* ── Empty states ─────────────────────────────────────────── */
 
+.assignment-panel__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px 0;
+}
+
 .assignment-panel__empty {
   font-size: var(--text-sm);
   color: var(--text-secondary);

@@ -86,20 +86,32 @@ export function AssignmentPanel({
       )}
 
       {countyFips === null ? (
-        <p className="assignment-panel__empty">
-          Select a county on the map to see unassigned clients and caregiver matches.
-        </p>
+        <div className="assignment-panel__empty-state">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="var(--gray-no-data)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" stroke="var(--gray-no-data)" strokeWidth="1.5"/>
+          </svg>
+          <p className="assignment-panel__empty">
+            Select a county on the map to see unassigned clients and caregiver matches.
+          </p>
+        </div>
       ) : clients.length === 0 ? (
         <>
           <div className="assignment-panel__header">
             <h2 className="assignment-panel__county-name">{countyName}</h2>
           </div>
-          <p className="assignment-panel__empty">
-            No unassigned clients in this county.{' '}
-            <Link className="assignment-panel__empty-link" to="/clients">
-              View clients list
-            </Link>
-          </p>
+          <div className="assignment-panel__empty-state">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="28" cy="20" r="10" fill="var(--gray-no-data)" />
+              <path d="M8 48c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="var(--gray-no-data)" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
+            <p className="assignment-panel__empty">
+              No unassigned clients in this county.{' '}
+              <Link className="assignment-panel__empty-link" to="/clients">
+                View clients list
+              </Link>
+            </p>
+          </div>
         </>
       ) : (
         <>

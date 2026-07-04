@@ -50,6 +50,12 @@ export function ClientsListPage() {
   if (clients.length === 0) {
     return (
       <main style={styles.page}>
+        <div style={styles.pageHeader}>
+          <h1 style={styles.pageTitle}>Clients</h1>
+          <button style={styles.ctaButton} onClick={() => navigate('/clients/new')}>
+            Add new client
+          </button>
+        </div>
         <div style={styles.emptyCard}>
           {/*
             Placeholder inline SVG — no shared icon system exists yet in packages/ui.
@@ -74,20 +80,12 @@ export function ClientsListPage() {
             />
           </svg>
 
-          {/* Heading size 20px — not yet tokenized; typography scale beyond
-              --font-size-body-min is still under review per DESIGN_SYSTEM.md */}
           <h2 style={styles.emptyHeading}>No clients yet</h2>
 
           <p style={styles.emptyBody}>
             Add a client profile to begin matching caregivers.
           </p>
 
-          <button
-            style={styles.ctaButton}
-            onClick={() => navigate('/clients/new')}
-          >
-            Add new client
-          </button>
         </div>
       </main>
     )
@@ -98,6 +96,12 @@ export function ClientsListPage() {
   // and assignments_log join logic (out of scope for this task).
   return (
     <main style={styles.page}>
+      <div style={styles.pageHeader}>
+        <h1 style={styles.pageTitle}>Clients</h1>
+        <button style={styles.ctaButton} onClick={() => navigate('/clients/new')}>
+          Add new client
+        </button>
+      </div>
       <table style={styles.table}>
         <thead>
           <tr>
@@ -125,6 +129,19 @@ export function ClientsListPage() {
 }
 
 const styles: Record<string, React.CSSProperties> = {
+  pageHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: '24px',
+  },
+  pageTitle: {
+    margin: 0,
+    fontSize: 'var(--text-xl)',
+    fontWeight: 600,
+    color: 'var(--text-primary)',
+    fontFamily: 'var(--font-family)',
+  },
   page: {
     padding: '32px',
     fontFamily: 'var(--font-family)',
@@ -133,12 +150,12 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: 'border-box',
   },
   loadingText: {
-    fontSize: 'var(--font-size-body-min)',
+    fontSize: 'var(--text-base)',
     color: 'var(--text-secondary)',
     fontFamily: 'var(--font-family)',
   },
   errorText: {
-    fontSize: 'var(--font-size-body-min)',
+    fontSize: 'var(--text-base)',
     color: 'var(--red-critical)',
     fontFamily: 'var(--font-family)',
   },
@@ -158,15 +175,14 @@ const styles: Record<string, React.CSSProperties> = {
   },
   emptyHeading: {
     margin: 0,
-    // 20px — not yet tokenized; typography scale under review per DESIGN_SYSTEM.md
-    fontSize: '20px',
+    fontSize: 'var(--text-xl)',
     fontWeight: 600,
     color: 'var(--text-primary)',
     fontFamily: 'var(--font-family)',
   },
   emptyBody: {
     margin: 0,
-    fontSize: 'var(--font-size-body-min)',
+    fontSize: 'var(--text-base)',
     color: 'var(--text-secondary)',
     fontFamily: 'var(--font-family)',
   },
@@ -177,7 +193,7 @@ const styles: Record<string, React.CSSProperties> = {
     color: '#ffffff',
     border: 'none',
     borderRadius: 'var(--radius-button)',
-    fontSize: 'var(--font-size-body-min)',
+    fontSize: 'var(--text-base)',
     fontFamily: 'var(--font-family)',
     fontWeight: 500,
     cursor: 'pointer',
@@ -187,7 +203,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: '100%',
     borderCollapse: 'collapse',
     fontFamily: 'var(--font-family)',
-    fontSize: 'var(--font-size-body-min)',
+    fontSize: 'var(--text-base)',
   },
   tr: {
     transition: 'background 0.1s',

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import './LoginPage.css'
 
 export function LoginPage() {
   const { session, signInWithPassword } = useAuth()
@@ -21,27 +22,43 @@ export function LoginPage() {
   }
 
   return (
-    <main style={{ padding: '2rem' }}>
-      <h1>Care Console</h1>
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="you@agency.com"
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        type="password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        onKeyDown={e => e.key === 'Enter' && handleSignIn()}
-        placeholder="Password"
-      />
-      <button onClick={handleSignIn}>Sign in</button>
-      {passwordError && <p role="alert">{passwordError}</p>}
+    <main className="login-page">
+      <div className="login-card">
+        <h1 className="login-title">Care Console</h1>
+        <div className="field-group">
+          <label className="field-label" htmlFor="login-email">Email</label>
+          <input
+            id="login-email"
+            type="email"
+            className="field-input"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="you@agency.com"
+            autoComplete="email"
+          />
+        </div>
+        <div className="field-group">
+          <label className="field-label" htmlFor="login-password">Password</label>
+          <input
+            id="login-password"
+            type="password"
+            className="field-input"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleSignIn()}
+            placeholder="Password"
+            autoComplete="current-password"
+          />
+        </div>
+        {passwordError && (
+          <p role="alert" style={{ fontSize: 'var(--text-sm)', color: 'var(--red-critical)', margin: 0 }}>
+            {passwordError}
+          </p>
+        )}
+        <button className="btn-primary" onClick={handleSignIn}>
+          Sign in
+        </button>
+      </div>
     </main>
   )
 }
