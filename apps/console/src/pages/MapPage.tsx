@@ -65,14 +65,22 @@ function buildCentroidCache(geoJson: FeatureCollection): CentroidCache {
 // This deterministic offset separates ZIPs visually for the demo only — not real geocoding.
 // See DECISIONS.md pending entry.
 const ZIP_OFFSETS = [
-  { dlat:  0.16, dlng:  0.00 },
-  { dlat:  0.11, dlng:  0.11 },
-  { dlat:  0.00, dlng:  0.16 },
-  { dlat: -0.11, dlng:  0.11 },
-  { dlat: -0.16, dlng:  0.00 },
-  { dlat: -0.11, dlng: -0.11 },
-  { dlat:  0.00, dlng: -0.16 },
-  { dlat:  0.11, dlng: -0.11 },
+  { dlat:  0.16, dlng:  0.00 },  // N      outer
+  { dlat:  0.09, dlng:  0.04 },  // NNE    inner
+  { dlat:  0.11, dlng:  0.11 },  // NE     outer
+  { dlat:  0.04, dlng:  0.09 },  // ENE    inner
+  { dlat:  0.00, dlng:  0.16 },  // E      outer
+  { dlat: -0.04, dlng:  0.09 },  // ESE    inner
+  { dlat: -0.11, dlng:  0.11 },  // SE     outer
+  { dlat: -0.09, dlng:  0.04 },  // SSE    inner
+  { dlat: -0.16, dlng:  0.00 },  // S      outer
+  { dlat: -0.09, dlng: -0.04 },  // SSW    inner
+  { dlat: -0.11, dlng: -0.11 },  // SW     outer
+  { dlat: -0.04, dlng: -0.09 },  // WSW    inner
+  { dlat:  0.00, dlng: -0.16 },  // W      outer
+  { dlat:  0.04, dlng: -0.09 },  // WNW    inner
+  { dlat:  0.11, dlng: -0.11 },  // NW     outer
+  { dlat:  0.09, dlng: -0.04 },  // NNW    inner
 ] as const
 
 function zipHash(zip: string): number {
@@ -84,12 +92,26 @@ function getZipPosition(
   countyFips: string | null,
   centroids: CentroidCache,
   pinType: string,
+  countyOccupied: Map<string, Set<number>>,
 ): { lat: number; lng: number } | null {
   if (!countyFips) return null
   const centroid = centroids.get(countyFips)
   if (!centroid) return null
   if (!zip) return centroid
-  const offset = ZIP_OFFSETS[zipHash(zip + pinType) % ZIP_OFFSETS.length]
+  const occupied = countyOccupied.get(countyFips) ?? new Set<number>()
+  if (!countyOccupied.has(countyFips)) countyOccupied.set(countyFips, occupied)
+  // Advance past occupied slots; wraps back if all 8 taken (hard capacity: 8 pins per county)
+  let idx = zipHash(zip + pinType) % ZIP_OFFSETS.length
+  for (let i = 0; i < ZIP_OFFSETS.length; i++) {
+    if (!occupied.has(idx)) break
+    idx = (idx + 1) % ZIP_OFFSETS.length
+  }
+  // Capacity guard — fires if a county exceeds 16 simultaneous pins (ZIP_OFFSETS.length)
+  if (occupied.has(idx)) {
+    console.warn('[MapPage] offset capacity exceeded — pin will collide', { countyFips, zip, pinType })
+  }
+  occupied.add(idx)
+  const offset = ZIP_OFFSETS[idx]
   return {
     lat: centroid.lat + offset.dlat,
     lng: centroid.lng + offset.dlng,
@@ -147,8 +169,8 @@ export function MapPage() {
           signalCounts,
         ] = await Promise.all([
           fetch('/assets/us-counties-20m.geojson').then(r => r.json() as Promise<FeatureCollection>),
-          supabase.from('client_profiles').select('id, name, county_fips, zip_input, is_assigned').eq('is_assigned', false),
-          supabase.from('caregiver_profiles').select('id, name, county_fips, zip_input').eq('is_available', true),
+          supabase.from('client_profiles').select('id, name, county_fips, zip_input, is_assigned').eq('is_assigned', false).order('id'),
+          supabase.from('caregiver_profiles').select('id, name, county_fips, zip_input').eq('is_available', true).order('id'),
           getSignalCountsByCounty(),
         ])
 
@@ -185,10 +207,11 @@ export function MapPage() {
         setCounties(countyFeatures)
 
         const pins: OverlayPin[] = []
+        const countyOccupied = new Map<string, Set<number>>()
 
         // Client pins — unassigned only (is_assigned: false filter applied in query above)
         for (const client of clientRows ?? []) {
-          const pos = getZipPosition(client.zip_input ?? null, client.county_fips ?? null, centroids, 'client')
+          const pos = getZipPosition(client.zip_input ?? null, client.county_fips ?? null, centroids, 'client', countyOccupied)
           if (!pos) { console.warn('[MapPage] no position for client', client.id); continue }
           pins.push({
             id:         client.id,
@@ -203,7 +226,7 @@ export function MapPage() {
 
         // Caregiver pins — available only (is_available filter applied in query above)
         for (const cg of caregiverRows ?? []) {
-          const pos = getZipPosition(cg.zip_input ?? null, cg.county_fips ?? null, centroids, 'caregiver')
+          const pos = getZipPosition(cg.zip_input ?? null, cg.county_fips ?? null, centroids, 'caregiver', countyOccupied)
           if (!pos) { console.warn('[MapPage] no position for caregiver', cg.id); continue }
           pins.push({
             id:         cg.id,
@@ -221,7 +244,7 @@ export function MapPage() {
         // Reusing label as count badge is a documented deviation — proper fix is OverlayPin.count
         // with Lee sign-off. See DECISIONS.md pending entry.
         for (const sig of signalCounts) {
-          const pos = getZipPosition(sig.zip, sig.countyFips, centroids, 'signal')
+          const pos = getZipPosition(sig.zip, sig.countyFips, centroids, 'signal', countyOccupied)
           if (!pos) { console.warn('[MapPage] no position for signal county', sig.countyFips); continue }
           pins.push({
             id:         `signal-${sig.countyFips}`,
@@ -233,6 +256,20 @@ export function MapPage() {
           })
         }
 
+        // TEMP DEBUG — remove once client pin presence confirmed (Stage 15)
+        console.table(
+          (clientRows ?? []).map(c => {
+            const p = pins.find(pin => pin.id === c.id)
+            return {
+              name:       c.name,
+              zip:        c.zip_input,
+              countyFips: c.county_fips,
+              pinFound:   !!p,
+              lat:        p?.lat,
+              lng:        p?.lng,
+            }
+          })
+        )
         setOverlayPins(pins)
       } catch (e) {
         console.error('[MapPage] load failed:', e)

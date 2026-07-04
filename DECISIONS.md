@@ -401,6 +401,7 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O20 | Overlay pins (client/caregiver/signal) can visually overlap at low zoom when their deterministic jitter positions land close together within the same county or same ZIP — cosmetic, most visible with small demo datasets. A pinType-aware jitter fix (folding pin type into zipHash input) was drafted to reduce cross-type overlap at a shared ZIP but not yet applied. | Jillian | Open |
 | O21 | MapEngine tooltips could stack/remain visible when the map was dragged mid-hover — root cause: browser's mouseout event doesn't fire when an element moves out from under a stationary cursor during a Leaflet pan, leaving activeLayerRef stale. | Jillian | Resolved (2026-07-03) — added a movestart listener on the map instance (not per-layer) that closes the stale tooltip and clears activeLayerRef at the start of any map movement (drag, scroll-zoom, or keyboard pan). Listener explicitly unbound in cleanup alongside the existing map.remove() call. |
 | O22 | Caregiver pins and unassigned-client pin borders referenced var(--accent-action), a CSS custom property that was never defined anywhere in theme.css or any other file — resolved to the CSS initial value (transparent/currentColor) at runtime, making caregiver pins effectively invisible on the map. | Jillian | Resolved (2026-07-03) — all three references swapped to var(--blue-pin), the token theme.css already documents as "Caregiver pins on map — decorative." |
+| O23 | Caregiver cards (Assignment Panel + Map view) show no indication of existing assignment load — a caregiver already assigned to N clients looks identical to one with zero. Per D31, this isn't a bug (multiple concurrent assignments are valid) but the lack of visibility could read as one in a demo. Scoped fix: add a status tag/count ("Currently assigned: Nx") to the existing card display, sourced from assignments_log, alongside the existing Available/Unavailable tag. A separate client-side assignment history view is a larger feature, not scoped here. | Jillian | Open — fold into next UI/Clients-Assignment pass |
 
 ---
 
@@ -495,3 +496,35 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Rationale:** Home care aides realistically carry a caseload of multiple clients — `is_available` represents whether a caregiver is taking on any work at all (on leave, fully booked, etc.), a separate coordinator-managed state, not a 1:1 capacity flag tied to assignment count. Practically, with a small seeded caregiver pool, auto-flipping availability on every assign would exhaust available matches after only a few assignments and make the demo brittle.
 
 **Rejected:** Setting `is_available = false` on assign (one active client per caregiver). Rejected — conflates "currently taking work" with "has exactly zero clients," which doesn't reflect how home care staffing actually works, and doesn't match `assignments_log` already being the system of record for who's assigned to whom (no denormalized caregiver-side flag exists, only `client_profiles.is_assigned` per D24).
+
+**Follow-up (open, not yet built):** Coordinators currently have no visibility into how many clients a caregiver already carries when deciding whether to assign another, and there is no client-side view of which caregiver(s) are currently assigned. See O23.
+
+---
+
+### D32 — County-level pin auto-zoom, zoom floor, and occupancy-based offset assignment
+
+**Decision:** Three related additions built while chasing a reported bug (newly added client Sam Davis not appearing on the map):
+
+1. MapEngine auto-zooms (flyTo/setView with explicit zoom computed via getBoundsZoom, reduced-motion aware) to a county's polygon bounds when focusedCountyFips changes, resetting to the national view on deselect. Internal-only — no MapEngine.types.ts change, no sign-off needed. Door 1 inherits this for free via the same focusedCountyFips prop.
+
+2. Auto-zoom result is floored at zoom 9 (capped at 10) — the confirmed threshold where two 32px jittered pins become visually distinct. Large counties (Maricopa) previously landed at zoom 8 via fitBounds alone, one level short. Implemented via `map.getBoundsZoom(bounds, false)` → `Math.min(Math.max(rawZoom, 9), 10)` → explicit `flyTo`/`setView` with center + zoom.
+
+3. ZIP-offset jitter (D20) previously hashed `zip + pinType` with a within-type rank suffix for duplicates — this caught same-zip-same-type collisions (two caregivers, same ZIP) but not cross-type collisions. Sam Davis's client pin and two caregiver pins (different ZIPs, different types) all hashed to offset index 0 in Maricopa and rendered on the identical pixel. Replaced with occupancy-based assignment: a per-county `Map<string, Set<number>>` tracks which offset slots are taken across all pin types together; any pin whose hashed index collides advances to the next free slot via linear probe, in stable id-sorted order (`.order('id')` added to client/caregiver Supabase queries for cross-session determinism).
+
+**Correction to initial diagnosis:** An earlier pass mistakenly identified Eliza/Sam Davis as the colliding pair — recomputing hashes from scratch showed Eliza never collided (index 7) and the actual collision was Sam Davis vs. two caregivers (James Whitfield, Marcus Boone — all three independently hashing to index 0).
+
+**Rationale:** Each fix addressed a distinct, independently confirmed cause — auto-zoom fixed county-too-small-on-screen, the zoom floor fixed fitBounds undershooting on large counties, occupancy-based offsets fixed hash collisions as an inherent birthday-paradox risk regardless of what's fed into the hash string.
+
+**Rejected:** Scaling offset radius outward (only patches today's seed data, risks pushing jittered pins across county boundaries in narrow counties). Appending record id into every pin's hash key (changes output for every pin including non-colliding ones, violates D20's cross-session determinism guarantee).
+
+---
+
+### D33 — Offset capacity raised to 16; rosette pattern; capacity guard made permanent
+
+**Decision:** ZIP_OFFSETS expanded from 8 to 16 entries (`as const`, so truncation surfaces at compile time) after live seed data in Pinal County (3 clients + 7 caregivers = 10 pins) exceeded the original 8-slot ceiling, silently overflowing and re-stacking pins even with the occupancy-probe fix from D32 in place. The `console.warn` added during diagnosis (`'[MapPage] offset capacity exceeded — pin will collide'`, logging `countyFips`/`zip`/`pinType`) is kept permanently rather than removed as temporary debug code — cheap insurance if any county exceeds 16 pins in the future.
+
+**Follow-up:** The original 8-point (and initial 16-point) layouts used a single fixed radius at equal angular spacing, producing a visually artificial perfect-ring/octagon pattern. Replaced with a varied-radius rosette: 8 outer points at 0.16° radius (cardinal + diagonal angles) alternating with 8 inner points at 0.10° radius (intermediate angles), indexed in alternation around the full circle. Still fully deterministic and hardcoded, no runtime randomness, same 0.16° max radius ceiling as D20 — only the shape/distribution of points changed, not the hash, the occupancy-probe logic, or the capacity guard.
+
+**Known limit, still open:** 16-pin ceiling per county. Not currently at risk given seed data, but not infinite — revisit if a county's combined client+caregiver count approaches 16.
+
+**Rejected:** No alternative capacity expansion was considered — 16 was chosen as 60% headroom over the confirmed 10-pin maximum in current data, enough for demo-scale growth without over-engineering.

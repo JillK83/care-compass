@@ -194,6 +194,42 @@ export function MapEngine({
     })
   }, [focusedCountyFips])
 
+  // ── Auto-zoom to focused county ─────────────────────────────────
+  useEffect(() => {
+    if (!leafletRef.current || !geoLayerRef.current) return
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (focusedCountyFips === null) {
+      if (reducedMotion) {
+        leafletRef.current.setView([37.8, -96], 4)
+      } else {
+        leafletRef.current.flyTo([37.8, -96], 4)
+      }
+      return
+    }
+
+    let found = false
+    geoLayerRef.current.eachLayer(layer => {
+      if (found) return
+      const gl   = layer as L.Path
+      const fips = ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.STATE ?? '') +
+                   ((layer as unknown as { feature: GeoJSON.Feature }).feature?.properties?.COUNTY ?? '')
+      if (fips !== focusedCountyFips) return
+      found = true
+      const bounds = (gl as unknown as L.GeoJSON).getBounds?.()
+      if (!bounds?.isValid()) return
+      const rawZoom = leafletRef.current!.getBoundsZoom(bounds, false)
+      const zoom    = Math.min(Math.max(rawZoom, 9), 10)
+      const center  = bounds.getCenter()
+      if (reducedMotion) {
+        leafletRef.current!.setView(center, zoom)
+      } else {
+        leafletRef.current!.flyTo(center, zoom)
+      }
+    })
+  }, [focusedCountyFips]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── Render overlay pins ─────────────────────────────────────────
   useEffect(() => {
     if (!pinLayerRef.current) return
