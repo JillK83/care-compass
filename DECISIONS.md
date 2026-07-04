@@ -391,7 +391,7 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O11 | per-1,000 → per-100,000 stat rescale in computeFillValues.ts and ResourcePanel.tsx | Both | Resolved (Lee, Day 3) — computeFillValues.ts and ResourcePanel.tsx display layer updated: label changed to 'Agencies per 100k seniors', value computed as (per_1k_seniors * 100).toFixed(1). Internal field names (agenciesPer1kSeniors, per_1k_seniors) unchanged — display-only fix, no schema or calculation-source changes. |
 | O12 | Console + Compass UI polish pass — missing pin/external-link icons, "View on map" per-county links, "Start here" badge on Eldercare Locator, Label/Tag typography on section headers | Both | Open — Jillian, own thread |
 | — | Note (Jillian, Day 3) re: O5 | Compass | O5's Supabase wiring is code-complete but not yet locally verified by Lee — his apps/compass/.env.local (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY) is not yet created on his machine. He'll add it and test the live insert tomorrow. Treat O5 as code-resolved, pending local confirmation. |
-| O13 | No auto-create trigger for coordinator_profiles on magic-link sign-up — id column has no default (unlike every other table's gen_random_uuid()), meaning it's designed to key off auth.users.id, but nothing creates this row automatically. Discovered during seed data prep; Jillian's row was inserted manually as a one-time fix. | Jillian | Open — needed before multi-coordinator use, not blocking single-coordinator demo |
+| O13 | No auto-create trigger for coordinator_profiles on magic-link sign-up — id column has no default (unlike every other table's gen_random_uuid()), meaning it's designed to key off auth.users.id, but nothing creates this row automatically. Discovered during seed data prep; Jillian's row was inserted manually as a one-time fix. | Jillian | Resolved (2026-07-03) — see D27. handle_new_coordinator trigger fires on auth.users insert, auto-creates the coordinator_profiles row. Discovered as a live 409/23503 FK violation during Assignment Panel testing before the trigger was built. |
 | O14 | getSignalCountsByCounty (lib/queries.ts) locks the returned zip to whichever demand_signals row is encountered first per county during grouping — count is always accurate, but pin placement could understate spread if a county accumulates signals across multiple ZIPs. Not an issue with current 2-row demo data. | Jillian | Open — low priority, cosmetic |
 | O15 | MapEngine legend renders hardcoded "Care desert / Moderate gap / Well served" text regardless of props — not suppressible from apps/console. Misleading on Door 2, which no longer uses that color scale (see D15). Needs a legendMode prop or equivalent — MapEngine interface change requiring joint sign-off. | Jillian/Lee | Resolved (2026-07-03) — resolved via existing mode prop rather than a new legendMode field. MapEngine.tsx already receives mode ('consumer' | 'coordinator'); the four color-scale legend rows are now conditionally rendered only when mode !== 'coordinator', so Door 2's legend shows only the pin-type rows (Available aide, Unassigned client, Demand signal). No MapEngine.types.ts change or joint sign-off was actually required — the original open item assumed a new prop was needed, but the existing mode prop already carried the necessary signal. |
 | O16 | Leaflet's default hover-highlight color (#3388ff) doesn't match Console's design system palette. Needs either a CSS override (console-only, if achievable) or a MapEngine style prop (needs Lee). | Jillian | Open |
@@ -470,6 +470,28 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 
 **Rationale:** Map pins were unscoped to the focused county while the Assignment Panel's counts were correctly scoped — read as a data bug, was actually a scope mismatch. Chose a `MapEngineProps`-level field over an `OverlayPin.opacity` field to keep pin data pure (identity, position, status) and rendering decisions inside MapEngine.
 
+**Rejected:** `opacity?: number` on `OverlayPin` — mixes presentation hints into a data type that should carry only identity and position.
+
 **Process:** Made without the standard joint review window per `MapEngine_Interface_Contract.md §10` — Jillian's call, given minimal surface (one optional field, no breaking change, no effect on Door 1) and same-session urgency. Lee notified after the fact. One-time exception, not a precedent.
 
-**Rejected:** `opacity?: number` on `OverlayPin` — mixes presentation hints into a data type that should carry only identity and position.
+---
+
+### D30 — Assignment Panel scoped to a single client; no client selector
+
+**Decision:** When a county has multiple unassigned clients, the Assignment Panel always shows ranked caregiver matches for `clients[0]` only. There is no UI to select a different client within the county, and clicking an individual client pin on the map does nothing — only county-level click opens the panel.
+
+**Rationale:** Scoring (`rankCaregiverMatches`) is per-client — a language match for one client isn't the same ranking for another. Adding a full client-selector (list/dropdown to choose which client's matches display) was scoped out to ship the core assign flow first: pick top client, rank, confirm, log. Explicit call made during build: "keep it simple, top client only."
+
+**Rejected:** Building the selector alongside the initial panel. Rejected — would have expanded the panel's first build into a second UI surface (client list + selection state + pin-click wiring) before the core assign→confirm→log path was proven end-to-end.
+
+**Revisit when:** A demo scenario or user feedback requires assigning to more than one client per county in the same session, or when pin-click interactivity is added to the map (currently only county polygons are clickable).
+
+---
+
+### D31 — Caregiver availability not flipped on assignment
+
+**Decision:** Confirming an assignment does not set `caregiver_profiles.is_available = false`. A caregiver can appear as an available match for multiple clients even after being assigned to one.
+
+**Rationale:** Home care aides realistically carry a caseload of multiple clients — `is_available` represents whether a caregiver is taking on any work at all (on leave, fully booked, etc.), a separate coordinator-managed state, not a 1:1 capacity flag tied to assignment count. Practically, with a small seeded caregiver pool, auto-flipping availability on every assign would exhaust available matches after only a few assignments and make the demo brittle.
+
+**Rejected:** Setting `is_available = false` on assign (one active client per caregiver). Rejected — conflates "currently taking work" with "has exactly zero clients," which doesn't reflect how home care staffing actually works, and doesn't match `assignments_log` already being the system of record for who's assigned to whom (no denormalized caregiver-side flag exists, only `client_profiles.is_assigned` per D24).
