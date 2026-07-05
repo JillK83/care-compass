@@ -70,3 +70,25 @@ Deferred from this session — needs a dedicated UI pass:
   a bad assignment requires direct SQL. Scoped fix: reuse AssignmentConfirmModal
   pattern (same confirm-before-commit flow as Assign, reverse mutation).
   Surfaced during 2026-07-04 demo prep. See DECISIONS.md O25.
+
+---
+
+## 2026-07-05 — Door 1 Compass — deferred polish, WCAG on hold
+
+Deferred for a future session, not forgotten:
+- Nearby counties list: pin icon, uppercase section-label heading,
+  bold county name weight (scoped prompt already drafted, not yet
+  run).
+- "What to do next" section: currently still titled "Find care
+  options" with plain link-list formatting — needs full rebuild to
+  title/description/icon-row format matching the Figma target
+  (scoped prompt already drafted, not yet run).
+- "View on map" action on nearby county rows — separately deferred,
+  see earlier entry in this file.
+
+WCAG audit for Door 1 (Compass) is on hold, matching Door 2's status
+— Console's audit is blocked on map-related limitations in the
+shared MapEngine component, and Compass shares the same map surface,
+so auditing Compass in isolation ahead of resolving that shared
+constraint isn't a good use of time. Revisit both doors' WCAG audits
+together once the MapEngine limitation is understood.

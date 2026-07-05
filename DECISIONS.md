@@ -554,3 +554,23 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Rejected:** Full pin-click-to-select wiring (the originally deferred feature). Rejected for now due to time/scope — that still requires cross-team coordination on pin behavior and stays as an open item.
 
 **Follow-up:** Map does not visually indicate which client is currently selected via the dropdown. Worth considering a highlight/pulse on that client's pin in a future pass — would need MapEngine coordination with Lee.
+
+### D36 — Flag CTA button: fit-content width, not 320px fixed
+
+**Decision:** The "Flag this area as needing care" button uses width: fit-content instead of the 320px fixed width specified in DESIGN_SYSTEM.md's button rules table.
+
+**Rationale:** The 320px fixed width, once implemented, created visible excess whitespace on either side of the button's text given this specific copy length, especially against the card's left-aligned heading and description above it. Fit-content sizing keeps the button visually balanced with its own copy while remaining centered in the card.
+
+**Rejected:** Keeping the literal 320px per the original DESIGN_SYSTEM.md spec — rejected because it looked visually unbalanced in practice once built, not just in the abstract spec.
+
+**Follow-up:** DESIGN_SYSTEM.md's button rules table should be updated to reflect this change so the two documents don't contradict each other — not done as part of this fix, flagging separately.
+
+### D37 — Remove "agencies per 1,000 seniors" stat from Door 1 result card
+
+**Decision:** The result card's stat row now shows only "Agencies here" and "Senior population" — the "Per 100k seniors" stat has been removed from this surface. It remains available via the map's hover tooltip, which is unchanged.
+
+**Rationale:** The result card is a confirmatory, single-purpose surface per DESIGN_SYSTEM.md ("a calm, single-purpose results page") answering one question: is there care near me. The normalized per-100k rate is a comparative metric more useful for browsing/analysis (already served by the hover tooltip and the map's color-coded severity fill) than for a family member confirming their own county's status. Removing it reduces scan cost on the page most in need of staying minimal (Hick's Law).
+
+**Deviation note:** This removes a stat explicitly listed as P0 in PRD_Jillian_Krebsbach.md ("Panel displays county-level desert status, agency count, and agencies per 1,000 seniors"). The PRD is being updated separately to reflect this — not automated as part of this change.
+
+**Rejected:** Keeping the stat in both the result card and the hover tooltip — rejected as redundant once the family already has the raw count and the map's color signal for severity.

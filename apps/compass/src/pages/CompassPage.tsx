@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Search } from 'lucide-react'
 import type { FeatureCollection } from 'geojson'
 import Papa from 'papaparse'
 import './CompassPage.css'
@@ -134,12 +135,21 @@ export function CompassPage() {
 
   // ── Render ────────────────────────────────────────────────────
   return (
-    <div className="compass-page">
+    <>
+      <div className="compass-topbar">
+        <div className="compass-topbar-inner">
+          <span className="compass-wordmark">Care Compass</span>
+          <span className="compass-tagline">Free. No login. Real agency data.</span>
+        </div>
+      </div>
+      <div className="compass-page">
 
       {/* Hero */}
       <header className="compass-hero">
-        <h1 className="compass-title">Care Compass</h1>
-        <p className="compass-subtitle">Find home health care options near you</p>
+        <h1 className="compass-title">Find home care near you</h1>
+        <p className="compass-subtitle">
+          Enter a ZIP code to see Medicare-certified home health agencies in that area.
+        </p>
       </header>
 
       {/* ZIP search */}
@@ -160,13 +170,19 @@ export function CompassPage() {
             className="zip-input"
             aria-describedby={errorMsg ? 'zip-error' : undefined}
             disabled={loadState !== 'ready'}
+            autoComplete="off"
           />
           <button
             type="submit"
             className="btn-search"
             disabled={loadState !== 'ready' || zipInput.trim().length < 5}
           >
-            {loadState === 'loading' ? 'Loading…' : 'Find care'}
+            {loadState === 'loading' ? 'Loading…' : (
+              <>
+                <Search size={16} />
+                Find care
+              </>
+            )}
           </button>
         </div>
         {errorMsg && (
@@ -186,6 +202,9 @@ export function CompassPage() {
           <p className="zip-error" role="alert">Failed to load data. Please refresh.</p>
         )}
       </form>
+      <p className="zip-trust-note">
+        We use your ZIP to find nearby agencies. We don't store it.
+      </p>
 
       {/* Result */}
       {focusedCounty && (
@@ -194,7 +213,6 @@ export function CompassPage() {
           stateName={focusedCounty.state}
           isDesert={focusedCounty.isDesert}
           agencyCount={focusedCounty.agencyCount}
-          agenciesPer1k={focusedCounty.agenciesPer1kSeniors}
           seniorPopulation={focusedCounty.seniorPopulation}
           searchedZip={searchedZip}
           countyFips={focusedFips ?? ''}
@@ -209,23 +227,31 @@ export function CompassPage() {
 
       {/* Map */}
       {loadState === 'ready' && (
-        <section className="map-section" aria-label="Care desert map">
-          <MapEngine
-            mode="consumer"
-            counties={counties}
-            focusedCountyFips={focusedFips}
-            onCountyClick={setFocusedFips}
-            overlayPins={[]}
-            colorScale={DEFAULT_COLOR_SCALE}
-            panelContent={null}
-            isLoading={false}
-            dataSource="static"
-            disclaimerText={null}
-            geojsonData={geojsonData ?? undefined}
-          />
-        </section>
+        <div className="map-container">
+          {focusedCounty && (
+            <p className="map-focus-label">
+              Showing: {focusedCounty.name}, {focusedCounty.state}
+            </p>
+          )}
+          <section className="map-section" aria-label="Care desert map">
+            <MapEngine
+              mode="consumer"
+              counties={counties}
+              focusedCountyFips={focusedFips}
+              onCountyClick={setFocusedFips}
+              overlayPins={[]}
+              colorScale={DEFAULT_COLOR_SCALE}
+              panelContent={null}
+              isLoading={false}
+              dataSource="static"
+              disclaimerText={null}
+              geojsonData={geojsonData ?? undefined}
+            />
+          </section>
+        </div>
       )}
 
     </div>
+    </>
   )
 }

@@ -13,7 +13,6 @@ interface ResourcePanelProps {
   stateName: string
   isDesert: boolean
   agencyCount: number
-  agenciesPer1k: number
   seniorPopulation: number
   searchedZip: string
   countyFips: string
@@ -25,7 +24,6 @@ export function ResourcePanel({
   stateName,
   isDesert,
   agencyCount,
-  agenciesPer1k,
   seniorPopulation,
   searchedZip,
   countyFips,
@@ -79,10 +77,6 @@ export function ResourcePanel({
             </dd>
           </div>
           <div className="stat">
-            <dt>Per 100k seniors</dt>
-            <dd>{(agenciesPer1k * 100).toFixed(1)}</dd>
-          </div>
-          <div className="stat">
             <dt>Senior population</dt>
             <dd>{seniorPopulation.toLocaleString()}</dd>
           </div>
@@ -97,7 +91,10 @@ export function ResourcePanel({
           </p>
         ) : (
           <>
-            <p className="flag-prompt">Don't see options near you?</p>
+            <h3 className="flag-heading">Let agencies know you need care in this area</h3>
+            <p className="flag-description">
+              Clicking below adds your ZIP to a demand signal map that participating agencies can see.
+            </p>
             {signalError && (
               <p className="zip-error" role="alert" style={{ marginBottom: '8px' }}>{signalError}</p>
             )}
@@ -107,7 +104,7 @@ export function ResourcePanel({
               disabled={signalSending}
               aria-label={`Flag that care is needed near ZIP code ${searchedZip}`}
             >
-              {signalSending ? 'Sending…' : 'I need care near here'}
+              {signalSending ? 'Sending…' : 'Flag this area as needing care'}
             </button>
           </>
         )}
