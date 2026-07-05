@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { rankCaregiverMatches, getInitials } from 'utils'
 import type { ClientProfile, CaregiverProfile, RankedMatchResult } from 'utils'
@@ -28,12 +28,44 @@ export function AssignmentPanel({
   const [selectedMatch,        setSelectedMatch]        = useState<RankedMatchResult | null>(null)
   const [isSubmitting,         setIsSubmitting]         = useState(false)
   const [banner,               setBanner]               = useState<string | null>(null)
+  const [assignmentCounts,     setAssignmentCounts]     = useState<Record<string, number>>({})
+  const [selectedClientId,     setSelectedClientId]     = useState<string | null>(null)
   const { session } = useAuth()
+
+  useEffect(() => {
+    setLanguageFilterActive(false)
+    setZipFilterActive(false)
+    setSelectedClientId(null)
+  }, [countyFips])
+
+  useEffect(() => {
+    if (caregivers.length === 0) {
+      setAssignmentCounts({})
+      return
+    }
+    async function fetchCounts() {
+      const { data, error } = await supabase
+        .from('assignments_log')
+        .select('caregiver_id')
+        .in('caregiver_id', caregivers.map(c => c.id))
+      if (error) {
+        console.error('[AssignmentPanel] failed to fetch assignment counts:', error.message)
+        return
+      }
+      const counts: Record<string, number> = {}
+      for (const row of data ?? []) {
+        const id = row.caregiver_id as string
+        counts[id] = (counts[id] ?? 0) + 1
+      }
+      setAssignmentCounts(counts)
+    }
+    fetchCounts()
+  }, [caregivers])
 
   const clientLabel    = `${clients.length} unassigned client${clients.length !== 1 ? 's' : ''}`
   const caregiverLabel = `${caregivers.length} available aide${caregivers.length !== 1 ? 's' : ''}`
 
-  const activeClient = clients.length > 0 ? clients[0] : null
+  const activeClient = clients.find(c => c.id === selectedClientId) ?? clients[0] ?? null
   const ranked       = activeClient ? rankCaregiverMatches(activeClient, caregivers) : []
 
   let filtered = ranked
@@ -119,6 +151,25 @@ export function AssignmentPanel({
           <div className="assignment-panel__header">
             <h2 className="assignment-panel__county-name">{countyName}</h2>
             <p className="assignment-panel__subtext">{clientLabel} · {caregiverLabel}</p>
+            {clients.length > 1 ? (
+              <div className="assignment-panel__client-select">
+                <label htmlFor="client-select" className="assignment-panel__client-select-label">
+                  Matching for:
+                </label>
+                <select
+                  id="client-select"
+                  className="assignment-panel__client-select-input"
+                  value={activeClient?.id ?? ''}
+                  onChange={e => setSelectedClientId(e.target.value)}
+                >
+                  {clients.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+              </div>
+            ) : (
+              <p className="assignment-panel__matching-for">Matching for: {activeClient?.name}</p>
+            )}
           </div>
 
           {/* 2. Showing label */}
@@ -150,10 +201,15 @@ export function AssignmentPanel({
             <div className="assignment-panel__cards">
               {filtered.map(match => (
                 <div key={match.id} className="assignment-panel__card">
-                  {/* Zone A: avatar + name + score */}
+                  {/* Zone A: avatar + identity (name + load) + score */}
                   <div className="assignment-panel__zone-a">
                     <span className="assignment-panel__avatar">{getInitials(match.name)}</span>
-                    <span className="assignment-panel__name">{match.name}</span>
+                    <div className="assignment-panel__identity">
+                      <span className="assignment-panel__name">{match.name}</span>
+                      <p className="assignment-panel__assignment-count">
+                        Currently assigned: {assignmentCounts[match.id] ?? 0}x
+                      </p>
+                    </div>
                     <span className="assignment-panel__score-badge">{match.score}/5</span>
                   </div>
 

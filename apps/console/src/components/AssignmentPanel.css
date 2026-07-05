@@ -31,6 +31,37 @@
   color: var(--text-secondary);
 }
 
+.assignment-panel__matching-for {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ── Client selector ──────────────────────────────────────── */
+
+.assignment-panel__client-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.assignment-panel__client-select-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.assignment-panel__client-select-input {
+  font-size: var(--text-sm);
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-button);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
 /* ── Showing label ────────────────────────────────────────── */
 
 .assignment-panel__showing {
@@ -97,8 +128,16 @@
 
 .assignment-panel__zone-a {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+}
+
+.assignment-panel__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
 .assignment-panel__avatar {
@@ -119,8 +158,6 @@
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text-primary);
-  flex: 1;
-  min-width: 0;
 }
 
 .assignment-panel__score-badge {
@@ -131,6 +168,11 @@
   font-weight: 600;
   border-radius: var(--radius-chip);
   flex-shrink: 0;
+}
+
+.assignment-panel__assignment-count {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
 }
 
 /* ── Zone B ───────────────────────────────────────────────── */
@@ -149,6 +191,7 @@
   color: var(--text-secondary);
   background: transparent;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 /* ── Zone C ───────────────────────────────────────────────── */
