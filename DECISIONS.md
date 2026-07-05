@@ -401,7 +401,7 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 | O20 | Overlay pins (client/caregiver/signal) can visually overlap at low zoom when their deterministic jitter positions land close together within the same county or same ZIP — cosmetic, most visible with small demo datasets. A pinType-aware jitter fix (folding pin type into zipHash input) was drafted to reduce cross-type overlap at a shared ZIP but not yet applied. | Jillian | Open |
 | O21 | MapEngine tooltips could stack/remain visible when the map was dragged mid-hover — root cause: browser's mouseout event doesn't fire when an element moves out from under a stationary cursor during a Leaflet pan, leaving activeLayerRef stale. | Jillian | Resolved (2026-07-03) — added a movestart listener on the map instance (not per-layer) that closes the stale tooltip and clears activeLayerRef at the start of any map movement (drag, scroll-zoom, or keyboard pan). Listener explicitly unbound in cleanup alongside the existing map.remove() call. |
 | O22 | Caregiver pins and unassigned-client pin borders referenced var(--accent-action), a CSS custom property that was never defined anywhere in theme.css or any other file — resolved to the CSS initial value (transparent/currentColor) at runtime, making caregiver pins effectively invisible on the map. | Jillian | Resolved (2026-07-03) — all three references swapped to var(--blue-pin), the token theme.css already documents as "Caregiver pins on map — decorative." |
-| O23 | Caregiver cards (Assignment Panel + Map view) show no indication of existing assignment load — a caregiver already assigned to N clients looks identical to one with zero. Per D31, this isn't a bug (multiple concurrent assignments are valid) but the lack of visibility could read as one in a demo. Scoped fix: add a status tag/count ("Currently assigned: Nx") to the existing card display, sourced from assignments_log, alongside the existing Available/Unavailable tag. A separate client-side assignment history view is a larger feature, not scoped here. | Jillian | Open — fold into next UI/Clients-Assignment pass |
+| O23 | Caregiver cards (Assignment Panel + Map view) show no indication of existing assignment load — a caregiver already assigned to N clients looks identical to one with zero. Per D31, this isn't a bug (multiple concurrent assignments are valid) but the lack of visibility could read as one in a demo. Scoped fix: add a status tag/count ("Currently assigned: Nx") to the existing card display, sourced from assignments_log, alongside the existing Available/Unavailable tag. A separate client-side assignment history view is a larger feature, not scoped here. | Jillian | Resolved (2026-07-04) — "Currently assigned: Nx" tag shipped in AssignmentPanel, sourced from assignments_log, displayed in Zone A identity column. |
 
 ---
 
@@ -540,3 +540,15 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Rejected:** Keeping `--teal-action` and relying on underline alone. Rejected — tested and confirmed insufficient contrast to read as a hover state at a glance. Introducing a new token for this one use case. Rejected — adds a token for a single-surface need when an existing token is visually adequate.
 
 **Follow-up:** If Lee's Door 1 introduces a similar row/list hover pattern, flag this decision for consistency review rather than independently picking a third color.
+
+---
+
+### D35 — Minimal client-selector dropdown added to AssignmentPanel
+
+**Decision:** When a county has more than one unassigned client, the panel shows a dropdown ("Matching for: [Client Name]") letting the coordinator choose which client drives ranking/filtering, instead of always defaulting to clients[0]. Counties with exactly one client keep the original static text line, no dropdown.
+
+**Rationale:** Live flow testing (2026-07-04) surfaced the gap directly — a newly added client (Raphael Antonio) was unreachable in the panel because another client happened to sort first in Pinal County. D30's original "keep it simple, top client only, no selector" decision assumed this would come up rarely enough to defer; testing showed it's a real blocker for coordinators working multi-client counties. This is a scoped fix, not the full deferred feature — it does not touch MapEngine, pin-click wiring, or map highlighting of the selected client, so it doesn't require Lee's sign-off per the MapEngine Interface Contract.
+
+**Rejected:** Full pin-click-to-select wiring (the originally deferred feature). Rejected for now due to time/scope — that still requires cross-team coordination on pin behavior and stays as an open item.
+
+**Follow-up:** Map does not visually indicate which client is currently selected via the dropdown. Worth considering a highlight/pulse on that client's pin in a future pass — would need MapEngine coordination with Lee.
