@@ -528,3 +528,15 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Known limit, still open:** 16-pin ceiling per county. Not currently at risk given seed data, but not infinite — revisit if a county's combined client+caregiver count approaches 16.
 
 **Rejected:** No alternative capacity expansion was considered — 16 was chosen as 60% headroom over the confirmed 10-pin maximum in current data, enough for demo-scale growth without over-engineering.
+
+---
+
+### D34 — --teal-deep used for Clients List row hover text, deviating from nav-only reservation
+
+**Decision:** The Clients List row-name hover state (link-style affordance — color shift + underline signaling the row is clickable) uses `--teal-deep` (#1D4E5A), not `--teal-action` (#17383F).
+
+**Rationale:** `--teal-action` is near-black (#17383F) and sits too close in luminance to `--text-primary` (#1A1A1A) to read as a distinct hover state — the underline was doing all the signaling work, the color shift was imperceptible. `--teal-deep` is documented as nav-active-state-only, but is visually closer to a conventional "interactive link" color and provides actual contrast against static row text. This is a link-text use case, not a button — `--teal-action`'s "no exceptions" rule (D02) is specifically about action buttons, not link-style text affordances, so this doesn't conflict with D02.
+
+**Rejected:** Keeping `--teal-action` and relying on underline alone. Rejected — tested and confirmed insufficient contrast to read as a hover state at a glance. Introducing a new token for this one use case. Rejected — adds a token for a single-surface need when an existing token is visually adequate.
+
+**Follow-up:** If Lee's Door 1 introduces a similar row/list hover pattern, flag this decision for consistency review rather than independently picking a third color.

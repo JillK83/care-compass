@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import './ClientsListPage.css'
 
 // Placeholder type — columns confirmed from CLAUDE.md Dignity Profile contract.
 // Assigned status derivation (from assignments_log join) is out of scope for this task.
@@ -114,12 +115,18 @@ export function ClientsListPage() {
           {clients.map(c => (
             <tr
               key={c.id}
-              style={{ ...styles.tr, cursor: 'pointer' }}
+              className="clients-row"
               onClick={() => navigate(`/clients/${c.id}`)}
             >
-              <td style={styles.td}>{c.name}</td>
+              <td style={styles.td}>
+                <span className="clients-row-name">{c.name}</span>
+              </td>
               <td style={styles.td}>{c.pronouns || '—'}</td>
-              <td style={styles.td}>{c.is_assigned ? 'Yes' : 'No'}</td>
+              <td style={styles.td}>
+                <span className={`assigned-badge assigned-badge--${c.is_assigned ? 'yes' : 'no'}`}>
+                  {c.is_assigned ? 'Assigned' : 'Unassigned'}
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -205,14 +212,14 @@ const styles: Record<string, React.CSSProperties> = {
     fontFamily: 'var(--font-family)',
     fontSize: 'var(--text-base)',
   },
-  tr: {
-    transition: 'background 0.1s',
-  },
   th: {
     textAlign: 'left',
     padding: '10px 12px',
     color: 'var(--text-secondary)',
-    fontWeight: 500,
+    fontWeight: 600,
+    fontSize: 'var(--text-sm)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.07em',
     borderBottom: 'var(--border-width) solid var(--border)',
   },
   td: {

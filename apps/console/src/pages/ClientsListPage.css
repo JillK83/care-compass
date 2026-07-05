@@ -1,0 +1,40 @@
+/* apps/console/src/pages/ClientsListPage.css */
+/* Tokens from shared theme.css. No hardcoded hex or px. */
+
+.clients-row {
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.clients-row:hover {
+  background: var(--canvas);
+}
+
+.assigned-badge {
+  padding: 3px 10px;
+  border-radius: var(--radius-chip);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.assigned-badge--yes {
+  background: var(--teal-action);
+  color: #ffffff;
+}
+
+.assigned-badge--no {
+  background: transparent;
+  color: var(--text-secondary);
+  border: var(--border-width) solid var(--border);
+}
+
+.clients-row-name {
+  transition: color 0.1s;
+}
+
+.clients-row:hover .clients-row-name {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  font-weight: 600;
+}
