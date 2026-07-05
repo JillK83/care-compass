@@ -57,3 +57,16 @@ Deferred from this session — needs a dedicated UI pass:
   Login, or Profile screens (only Compass has mocks). DESIGN_SYSTEM.md
   tokens + Laws of UX are being used as the substitute reference for these
   three screens.
+
+---
+
+## 2026-07-04 (addendum) — O24/O25 logged during demo prep
+
+- O24: Clients List shows no caregiver name for assigned clients — only
+  Assigned/Unassigned badge. Requires assignments_log join to surface the
+  most recent caregiver name per client. Currently visible only via Map/
+  Assignment Panel. See DECISIONS.md O24.
+- O25: No Unassign action exists — assignment is one-directional. Reversing
+  a bad assignment requires direct SQL. Scoped fix: reuse AssignmentConfirmModal
+  pattern (same confirm-before-commit flow as Assign, reverse mutation).
+  Surfaced during 2026-07-04 demo prep. See DECISIONS.md O25.
