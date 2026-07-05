@@ -1,0 +1,3223 @@
+fips,county,state,seniors,agencies,per_1k_seniors,is_desert
+40005,Atoka County,Oklahoma,2673,0,0.0,True
+38085,Sioux County,North Dakota,349,0,0.0,True
+38083,Sheridan County,North Dakota,420,0,0.0,True
+38081,Sargent County,North Dakota,867,0,0.0,True
+38075,Renville County,North Dakota,456,0,0.0,True
+38073,Ransom County,North Dakota,1222,0,0.0,True
+22023,Cameron Parish,Louisiana,924,0,0.0,True
+22021,Caldwell Parish,Louisiana,1727,0,0.0,True
+22007,Assumption Parish,Louisiana,4172,0,0.0,True
+40033,Cotton County,Oklahoma,1042,0,0.0,True
+40025,Cimarron County,Oklahoma,563,0,0.0,True
+40011,Blaine County,Oklahoma,1685,0,0.0,True
+40007,Beaver County,Oklahoma,978,0,0.0,True
+21219,Todd County,Kentucky,2083,0,0.0,True
+40003,Alfalfa County,Oklahoma,1135,0,0.0,True
+39171,Williams County,Ohio,7212,0,0.0,True
+39159,Union County,Ohio,8450,0,0.0,True
+39131,Pike County,Ohio,4974,0,0.0,True
+39125,Paulding County,Ohio,3572,0,0.0,True
+39117,Morrow County,Ohio,6602,0,0.0,True
+39115,Morgan County,Ohio,3032,0,0.0,True
+39105,Meigs County,Ohio,4575,0,0.0,True
+39101,Marion County,Ohio,11958,0,0.0,True
+40045,Ellis County,Oklahoma,869,0,0.0,True
+40043,Dewey County,Oklahoma,842,0,0.0,True
+21211,Shelby County,Kentucky,8183,0,0.0,True
+38047,Logan County,North Dakota,513,0,0.0,True
+39047,Fayette County,Ohio,5175,0,0.0,True
+39039,Defiance County,Ohio,7461,0,0.0,True
+39031,Coshocton County,Ohio,7218,0,0.0,True
+21209,Scott County,Kentucky,7556,0,0.0,True
+21207,Russell County,Kentucky,3729,0,0.0,True
+21201,Robertson County,Kentucky,420,0,0.0,True
+21197,Powell County,Kentucky,2048,0,0.0,True
+21191,Pendleton County,Kentucky,2496,0,0.0,True
+21217,Taylor County,Kentucky,4660,0,0.0,True
+21215,Spencer County,Kentucky,2981,0,0.0,True
+21213,Simpson County,Kentucky,3167,0,0.0,True
+21165,Menifee County,Kentucky,1363,0,0.0,True
+39075,Holmes County,Ohio,6313,0,0.0,True
+39071,Highland County,Ohio,8085,0,0.0,True
+39067,Harrison County,Ohio,3245,0,0.0,True
+39065,Hardin County,Ohio,4906,0,0.0,True
+21239,Woodford County,Kentucky,5423,0,0.0,True
+21237,Wolfe County,Kentucky,1262,0,0.0,True
+21233,Webster County,Kentucky,2295,0,0.0,True
+21231,Wayne County,Kentucky,4144,0,0.0,True
+21229,Washington County,Kentucky,2338,0,0.0,True
+21225,Union County,Kentucky,2623,0,0.0,True
+21223,Trimble County,Kentucky,1562,0,0.0,True
+40103,Noble County,Oklahoma,2357,0,0.0,True
+40075,Kiowa County,Oklahoma,1766,0,0.0,True
+40067,Jefferson County,Oklahoma,1120,0,0.0,True
+40063,Hughes County,Oklahoma,2506,0,0.0,True
+40059,Harper County,Oklahoma,658,0,0.0,True
+40053,Grant County,Oklahoma,933,0,0.0,True
+41013,Crook County,Oregon,6437,0,0.0,True
+41009,Columbia County,Oregon,10440,0,0.0,True
+21099,Hart County,Kentucky,3329,0,0.0,True
+21091,Hancock County,Kentucky,1626,0,0.0,True
+21087,Green County,Kentucky,2510,0,0.0,True
+40107,Okfuskee County,Oklahoma,2063,0,0.0,True
+40105,Nowata County,Oklahoma,1873,0,0.0,True
+40077,Latimer County,Oklahoma,2025,0,0.0,True
+40093,Major County,Oklahoma,1614,0,0.0,True
+40085,Love County,Oklahoma,1854,0,0.0,True
+21143,Lyon County,Kentucky,2238,0,0.0,True
+21139,Livingston County,Kentucky,1962,0,0.0,True
+21137,Lincoln County,Kentucky,4603,0,0.0,True
+21123,Larue County,Kentucky,2655,0,0.0,True
+21119,Knott County,Kentucky,2821,0,0.0,True
+21109,Jackson County,Kentucky,2331,0,0.0,True
+21105,Hickman County,Kentucky,1152,0,0.0,True
+21103,Henry County,Kentucky,2845,0,0.0,True
+21003,Allen County,Kentucky,3699,0,0.0,True
+21181,Nicholas County,Kentucky,1278,0,0.0,True
+21163,Meade County,Kentucky,4546,0,0.0,True
+21159,Martin County,Kentucky,1950,0,0.0,True
+21155,Marion County,Kentucky,3333,0,0.0,True
+21153,Magoffin County,Kentucky,2130,0,0.0,True
+21149,McLean County,Kentucky,1805,0,0.0,True
+21147,McCreary County,Kentucky,2717,0,0.0,True
+39143,Sandusky County,Ohio,11669,0,0.0,True
+21189,Owsley County,Kentucky,848,0,0.0,True
+21187,Owen County,Kentucky,2233,0,0.0,True
+21185,Oldham County,Kentucky,9643,0,0.0,True
+21183,Ohio County,Kentucky,4295,0,0.0,True
+38049,McHenry County,North Dakota,1148,0,0.0,True
+21179,Nelson County,Kentucky,7918,0,0.0,True
+21169,Metcalfe County,Kentucky,1956,0,0.0,True
+21167,Mercer County,Kentucky,4386,0,0.0,True
+41007,Clatsop County,Oregon,10046,0,0.0,True
+41003,Benton County,Oregon,16549,0,0.0,True
+41001,Baker County,Oregon,4643,0,0.0,True
+40151,Woods County,Oklahoma,1501,0,0.0,True
+40149,Washita County,Oklahoma,2070,0,0.0,True
+40145,Wagoner County,Oklahoma,14253,0,0.0,True
+40141,Tillman County,Oklahoma,1398,0,0.0,True
+40129,Roger Mills County,Oklahoma,743,0,0.0,True
+22049,Jackson Parish,Louisiana,3071,0,0.0,True
+24037,St. Mary's County,Maryland,15711,0,0.0,True
+24035,Queen Anne's County,Maryland,10311,0,0.0,True
+24019,Dorchester County,Maryland,7354,0,0.0,True
+36079,Putnam County,New York,18321,0,0.0,True
+37077,Granville County,North Carolina,10614,0,0.0,True
+37075,Graham County,North Carolina,1996,0,0.0,True
+37073,Gates County,North Carolina,2296,0,0.0,True
+37065,Edgecombe County,North Carolina,9982,0,0.0,True
+37053,Currituck County,North Carolina,5106,0,0.0,True
+37041,Chowan County,North Carolina,3770,0,0.0,True
+37039,Cherokee County,North Carolina,9128,0,0.0,True
+22059,LaSalle Parish,Louisiana,2301,0,0.0,True
+24039,Somerset County,Maryland,4278,0,0.0,True
+22043,Grant Parish,Louisiana,3411,0,0.0,True
+22037,East Feliciana Parish,Louisiana,3798,0,0.0,True
+22035,East Carroll Parish,Louisiana,1292,0,0.0,True
+38069,Pierce County,North Dakota,976,0,0.0,True
+38067,Pembina County,North Dakota,1733,0,0.0,True
+38065,Oliver County,North Dakota,470,0,0.0,True
+22093,St. James Parish,Louisiana,3759,0,0.0,True
+22091,St. Helena Parish,Louisiana,2235,0,0.0,True
+22089,St. Charles Parish,Louisiana,7715,0,0.0,True
+22087,St. Bernard Parish,Louisiana,5622,0,0.0,True
+22085,Sabine Parish,Louisiana,4641,0,0.0,True
+38001,Adams County,North Dakota,613,0,0.0,True
+26039,Crawford County,Michigan,3526,0,0.0,True
+26037,Clinton County,Michigan,14429,0,0.0,True
+26035,Clare County,Michigan,7692,0,0.0,True
+26033,Chippewa County,Michigan,6972,0,0.0,True
+26027,Cass County,Michigan,11341,0,0.0,True
+26023,Branch County,Michigan,8529,0,0.0,True
+37117,Martin County,North Carolina,5444,0,0.0,True
+37105,Lee County,North Carolina,10897,0,0.0,True
+37093,Hoke County,North Carolina,6054,0,0.0,True
+37087,Haywood County,North Carolina,15827,0,0.0,True
+38007,Billings County,North Dakota,256,0,0.0,True
+38005,Benson County,North Dakota,902,0,0.0,True
+22075,Plaquemines Parish,Louisiana,3214,0,0.0,True
+37177,Tyrrell County,North Carolina,862,0,0.0,True
+24011,Caroline County,Maryland,5719,0,0.0,True
+24009,Calvert County,Maryland,14914,0,0.0,True
+24005,Baltimore County,Maryland,150859,0,0.0,True
+37143,Perquimans County,North Carolina,3732,0,0.0,True
+37137,Pamlico County,North Carolina,3775,0,0.0,True
+37123,Montgomery County,North Carolina,5645,0,0.0,True
+37121,Mitchell County,North Carolina,3812,0,0.0,True
+37029,Camden County,North Carolina,1714,0,0.0,True
+25007,Dukes County,Massachusetts,5387,0,0.0,True
+24047,Worcester County,Maryland,15019,0,0.0,True
+38041,Hettinger County,North Dakota,643,0,0.0,True
+38091,Steele County,North Dakota,499,0,0.0,True
+38087,Slope County,North Dakota,219,0,0.0,True
+38027,Eddy County,North Dakota,622,0,0.0,True
+38025,Dunn County,North Dakota,754,0,0.0,True
+38023,Divide County,North Dakota,534,0,0.0,True
+38021,Dickey County,North Dakota,972,0,0.0,True
+38019,Cavalier County,North Dakota,1000,0,0.0,True
+38013,Burke County,North Dakota,459,0,0.0,True
+38011,Bowman County,North Dakota,699,0,0.0,True
+38009,Bottineau County,North Dakota,1585,0,0.0,True
+38045,LaMoure County,North Dakota,1106,0,0.0,True
+38043,Kidder County,North Dakota,639,0,0.0,True
+38095,Towner County,North Dakota,527,0,0.0,True
+38039,Griggs County,North Dakota,674,0,0.0,True
+38037,Grant County,North Dakota,657,0,0.0,True
+38033,Golden Valley County,North Dakota,424,0,0.0,True
+38031,Foster County,North Dakota,778,0,0.0,True
+38029,Emmons County,North Dakota,943,0,0.0,True
+38063,Nelson County,North Dakota,840,0,0.0,True
+38061,Mountrail County,North Dakota,1249,0,0.0,True
+38057,Mercer County,North Dakota,1824,0,0.0,True
+38055,McLean County,North Dakota,2511,0,0.0,True
+38053,McKenzie County,North Dakota,1305,0,0.0,True
+38051,McIntosh County,North Dakota,779,0,0.0,True
+37149,Polk County,North Carolina,6312,0,0.0,True
+22067,Morehouse Parish,Louisiana,4833,0,0.0,True
+22065,Madison Parish,Louisiana,1644,0,0.0,True
+23013,Knox County,Maine,11072,0,0.0,True
+23007,Franklin County,Maine,6963,0,0.0,True
+22127,Winn Parish,Louisiana,2569,0,0.0,True
+22125,West Feliciana Parish,Louisiana,2412,0,0.0,True
+22121,West Baton Rouge Parish,Louisiana,3979,0,0.0,True
+22117,Washington Parish,Louisiana,8387,0,0.0,True
+22111,Union Parish,Louisiana,4626,0,0.0,True
+22107,Tensas Parish,Louisiana,1081,0,0.0,True
+37163,Sampson County,North Carolina,10636,0,0.0,True
+20207,Woodson County,Kansas,829,0,0.0,True
+23027,Waldo County,Maine,9799,0,0.0,True
+23025,Somerset County,Maine,11494,0,0.0,True
+23023,Sagadahoc County,Maine,8906,0,0.0,True
+23021,Piscataquis County,Maine,4608,0,0.0,True
+23017,Oxford County,Maine,13738,0,0.0,True
+23015,Lincoln County,Maine,10346,0,0.0,True
+39021,Champaign County,Ohio,7341,0,0.0,True
+39019,Carroll County,Ohio,5852,0,0.0,True
+38103,Wells County,North Dakota,1009,0,0.0,True
+38099,Walsh County,North Dakota,2260,0,0.0,True
+38097,Traill County,North Dakota,1599,0,0.0,True
+45067,Marion County,South Carolina,6104,0,0.0,True
+20049,Elk County,Kansas,694,0,0.0,True
+20047,Edwards County,Kansas,627,0,0.0,True
+19139,Muscatine County,Iowa,7509,0,0.0,True
+19135,Monroe County,Iowa,1495,0,0.0,True
+19129,Mills County,Iowa,2892,0,0.0,True
+19127,Marshall County,Iowa,7378,0,0.0,True
+19121,Madison County,Iowa,3027,0,0.0,True
+19119,Lyon County,Iowa,2285,0,0.0,True
+46097,Miner County,South Dakota,579,0,0.0,True
+46095,Mellette County,South Dakota,310,0,0.0,True
+45073,Oconee County,South Carolina,19264,0,0.0,True
+45069,Marlboro County,South Carolina,4901,0,0.0,True
+20053,Ellsworth County,Kansas,1511,0,0.0,True
+45065,McCormick County,South Carolina,3670,0,0.0,True
+45061,Lee County,South Carolina,3282,0,0.0,True
+19159,Ringgold County,Iowa,1077,0,0.0,True
+19157,Poweshiek County,Iowa,3900,0,0.0,True
+19143,Osceola County,Iowa,1347,0,0.0,True
+46015,Brule County,South Dakota,1066,0,0.0,True
+46009,Bon Homme County,South Dakota,1495,0,0.0,True
+46007,Bennett County,South Dakota,512,0,0.0,True
+46003,Aurora County,South Dakota,539,0,0.0,True
+45087,Union County,South Carolina,5651,0,0.0,True
+45081,Saluda County,South Carolina,3819,0,0.0,True
+45049,Hampton County,South Carolina,3505,0,0.0,True
+20007,Barber County,Kansas,963,0,0.0,True
+20003,Anderson County,Kansas,1621,0,0.0,True
+20001,Allen County,Kansas,2594,0,0.0,True
+45017,Calhoun County,South Carolina,3417,0,0.0,True
+45015,Berkeley County,South Carolina,34719,0,0.0,True
+45011,Barnwell County,South Carolina,3892,0,0.0,True
+45009,Bamberg County,South Carolina,3089,0,0.0,True
+45005,Allendale County,South Carolina,1680,0,0.0,True
+45001,Abbeville County,South Carolina,5496,0,0.0,True
+20033,Comanche County,Kansas,487,0,0.0,True
+20027,Clay County,Kansas,1985,0,0.0,True
+20039,Decatur County,Kansas,804,0,0.0,True
+45077,Pickens County,South Carolina,22594,0,0.0,True
+45039,Fairfield County,South Carolina,4788,0,0.0,True
+45037,Edgefield County,South Carolina,5192,0,0.0,True
+45035,Dorchester County,South Carolina,24347,0,0.0,True
+45033,Dillon County,South Carolina,4852,0,0.0,True
+45031,Darlington County,South Carolina,12227,0,0.0,True
+45027,Clarendon County,South Carolina,7574,0,0.0,True
+20067,Grant County,Kansas,962,0,0.0,True
+20065,Graham County,Kansas,622,0,0.0,True
+20063,Gove County,Kansas,656,0,0.0,True
+20061,Geary County,Kansas,3108,0,0.0,True
+20059,Franklin County,Kansas,4558,0,0.0,True
+46079,Lake County,South Dakota,2603,0,0.0,True
+46071,Jackson County,South Dakota,353,0,0.0,True
+46069,Hyde County,South Dakota,346,0,0.0,True
+46067,Hutchinson County,South Dakota,1605,0,0.0,True
+46063,Harding County,South Dakota,219,0,0.0,True
+46061,Hanson County,South Dakota,552,0,0.0,True
+46059,Hand County,South Dakota,751,0,0.0,True
+46057,Hamlin County,South Dakota,891,0,0.0,True
+46055,Haakon County,South Dakota,485,0,0.0,True
+46091,Marshall County,South Dakota,985,0,0.0,True
+46089,McPherson County,South Dakota,701,0,0.0,True
+46087,McCook County,South Dakota,1057,0,0.0,True
+46085,Lyman County,South Dakota,669,0,0.0,True
+46037,Day County,South Dakota,1435,0,0.0,True
+46077,Kingsbury County,South Dakota,1196,0,0.0,True
+46075,Jones County,South Dakota,223,0,0.0,True
+46073,Jerauld County,South Dakota,537,0,0.0,True
+46101,Moody County,South Dakota,1276,0,0.0,True
+72107,Orocovis Municipio,Puerto Rico,4118,0,0.0,True
+19025,Calhoun County,Iowa,2295,0,0.0,True
+19019,Buchanan County,Iowa,3773,0,0.0,True
+19017,Bremer County,Iowa,4901,0,0.0,True
+19009,Audubon County,Iowa,1405,0,0.0,True
+19003,Adams County,Iowa,874,0,0.0,True
+19001,Adair County,Iowa,1660,0,0.0,True
+19087,Henry County,Iowa,3924,0,0.0,True
+19197,Wright County,Iowa,2834,0,0.0,True
+46033,Custer County,South Dakota,2827,0,0.0,True
+46031,Corson County,South Dakota,497,0,0.0,True
+46027,Clay County,South Dakota,1843,0,0.0,True
+46025,Clark County,South Dakota,906,0,0.0,True
+46023,Charles Mix County,South Dakota,1713,0,0.0,True
+46021,Campbell County,South Dakota,420,0,0.0,True
+46017,Buffalo County,South Dakota,164,0,0.0,True
+19099,Jasper County,Iowa,7329,0,0.0,True
+19097,Jackson County,Iowa,4219,0,0.0,True
+19091,Humboldt County,Iowa,2050,0,0.0,True
+20011,Bourbon County,Kansas,2793,0,0.0,True
+19075,Grundy County,Iowa,2568,0,0.0,True
+19073,Greene County,Iowa,2132,0,0.0,True
+19071,Fremont County,Iowa,1549,0,0.0,True
+19053,Decatur County,Iowa,1599,0,0.0,True
+46053,Gregory County,South Dakota,1029,0,0.0,True
+46049,Faulk County,South Dakota,522,0,0.0,True
+46047,Fall River County,South Dakota,2220,0,0.0,True
+46045,Edmunds County,South Dakota,904,0,0.0,True
+46043,Douglas County,South Dakota,661,0,0.0,True
+46041,Dewey County,South Dakota,518,0,0.0,True
+46039,Deuel County,South Dakota,946,0,0.0,True
+20145,Pawnee County,Kansas,1376,0,0.0,True
+21073,Franklin County,Kentucky,9485,0,0.0,True
+21069,Fleming County,Kentucky,2816,0,0.0,True
+21065,Estill County,Kentucky,2734,0,0.0,True
+21063,Elliott County,Kentucky,1582,0,0.0,True
+21061,Edmonson County,Kentucky,2627,0,0.0,True
+42059,Greene County,Pennsylvania,7057,0,0.0,True
+42053,Forest County,Pennsylvania,1628,0,0.0,True
+42023,Cameron County,Pennsylvania,1320,0,0.0,True
+20163,Rooks County,Kansas,1140,0,0.0,True
+20159,Rice County,Kansas,1837,0,0.0,True
+20153,Rawlins County,Kansas,700,0,0.0,True
+20147,Phillips County,Kansas,1200,0,0.0,True
+21077,Gallatin County,Kentucky,1356,0,0.0,True
+41043,Linn County,Oregon,24878,0,0.0,True
+41037,Lake County,Oregon,2051,0,0.0,True
+41031,Jefferson County,Oregon,4935,0,0.0,True
+41027,Hood River County,Oregon,4248,0,0.0,True
+41021,Gilliam County,Oregon,636,0,0.0,True
+42075,Lebanon County,Pennsylvania,28915,0,0.0,True
+42067,Juniata County,Pennsylvania,4904,0,0.0,True
+42061,Huntingdon County,Pennsylvania,9446,0,0.0,True
+42005,Armstrong County,Pennsylvania,15242,0,0.0,True
+42001,Adams County,Pennsylvania,22404,0,0.0,True
+41071,Yamhill County,Oregon,19811,0,0.0,True
+21007,Ballard County,Kentucky,1686,0,0.0,True
+20203,Wichita County,Kansas,483,0,0.0,True
+20201,Washington County,Kansas,1295,0,0.0,True
+20199,Wallace County,Kansas,375,0,0.0,True
+20197,Wabaunsee County,Kansas,1462,0,0.0,True
+20189,Stevens County,Kansas,891,0,0.0,True
+20187,Stanton County,Kansas,273,0,0.0,True
+21031,Butler County,Kentucky,2345,0,0.0,True
+21029,Bullitt County,Kentucky,14042,0,0.0,True
+21027,Breckinridge County,Kentucky,4132,0,0.0,True
+21023,Bracken County,Kentucky,1486,0,0.0,True
+21017,Bourbon County,Kentucky,3937,0,0.0,True
+21011,Bath County,Kentucky,2142,0,0.0,True
+41069,Wheeler County,Oregon,520,0,0.0,True
+21005,Anderson County,Kentucky,3927,0,0.0,True
+21057,Cumberland County,Kentucky,1322,0,0.0,True
+21053,Clinton County,Kentucky,1863,0,0.0,True
+21049,Clark County,Kentucky,6722,0,0.0,True
+21045,Casey County,Kentucky,3226,0,0.0,True
+21043,Carter County,Kentucky,5285,0,0.0,True
+21041,Carroll County,Kentucky,1766,0,0.0,True
+21039,Carlisle County,Kentucky,947,0,0.0,True
+21037,Campbell County,Kentucky,15918,0,0.0,True
+21081,Grant County,Kentucky,3540,0,0.0,True
+21079,Garrard County,Kentucky,3188,0,0.0,True
+20141,Osborne County,Kansas,914,0,0.0,True
+42087,Mifflin County,Pennsylvania,10025,0,0.0,True
+42083,McKean County,Pennsylvania,8235,0,0.0,True
+20097,Kiowa County,Kansas,541,0,0.0,True
+20095,Kingman County,Kansas,1436,0,0.0,True
+20105,Lincoln County,Kansas,728,0,0.0,True
+20103,Leavenworth County,Kansas,12813,0,0.0,True
+20101,Lane County,Kansas,354,0,0.0,True
+44001,Bristol County,Rhode Island,10351,0,0.0,True
+42131,Wyoming County,Pennsylvania,5846,0,0.0,True
+42127,Wayne County,Pennsylvania,12806,0,0.0,True
+42117,Tioga County,Pennsylvania,9442,0,0.0,True
+42115,Susquehanna County,Pennsylvania,9482,0,0.0,True
+42099,Perry County,Pennsylvania,9144,0,0.0,True
+20129,Morton County,Kansas,537,0,0.0,True
+20127,Morris County,Kansas,1407,0,0.0,True
+20123,Mitchell County,Kansas,1312,0,0.0,True
+20121,Miami County,Kansas,6056,0,0.0,True
+20111,Lyon County,Kansas,5075,0,0.0,True
+20109,Logan County,Kansas,573,0,0.0,True
+20107,Linn County,Kansas,2165,0,0.0,True
+20025,Clark County,Kansas,472,0,0.0,True
+20021,Cherokee County,Kansas,3781,0,0.0,True
+20019,Chautauqua County,Kansas,806,0,0.0,True
+20017,Chase County,Kansas,620,0,0.0,True
+42009,Bedford County,Pennsylvania,11145,0,0.0,True
+41063,Wallowa County,Oregon,2187,0,0.0,True
+41055,Sherman County,Oregon,433,0,0.0,True
+41053,Polk County,Oregon,16628,0,0.0,True
+41045,Malheur County,Oregon,5405,0,0.0,True
+20185,Stafford County,Kansas,874,0,0.0,True
+20183,Smith County,Kansas,1030,0,0.0,True
+20181,Sherman County,Kansas,1213,0,0.0,True
+20179,Sheridan County,Kansas,566,0,0.0,True
+20171,Scott County,Kansas,1029,0,0.0,True
+20167,Russell County,Kansas,1733,0,0.0,True
+20165,Rush County,Kansas,747,0,0.0,True
+26047,Emmet County,Michigan,8276,0,0.0,True
+20093,Kearny County,Kansas,645,0,0.0,True
+20089,Jewell County,Kansas,890,0,0.0,True
+20083,Hodgeman County,Kansas,351,0,0.0,True
+20081,Haskell County,Kansas,582,0,0.0,True
+20077,Harper County,Kansas,1201,0,0.0,True
+20075,Hamilton County,Kansas,330,0,0.0,True
+20071,Greeley County,Kansas,241,0,0.0,True
+20069,Gray County,Kansas,913,0,0.0,True
+42113,Sullivan County,Pennsylvania,1781,0,0.0,True
+42105,Potter County,Pennsylvania,4113,0,0.0,True
+42103,Pike County,Pennsylvania,14155,0,0.0,True
+28143,Tunica County,Mississippi,1328,0,0.0,True
+30077,Powell County,Montana,1470,0,0.0,True
+28131,Stone County,Mississippi,3229,0,0.0,True
+28129,Smith County,Mississippi,2945,0,0.0,True
+28127,Simpson County,Mississippi,4823,0,0.0,True
+28125,Sharkey County,Mississippi,722,0,0.0,True
+28123,Scott County,Mississippi,4424,0,0.0,True
+28121,Rankin County,Mississippi,25835,0,0.0,True
+28119,Quitman County,Mississippi,1077,0,0.0,True
+28117,Prentiss County,Mississippi,4351,0,0.0,True
+28157,Wilkinson County,Mississippi,1580,0,0.0,True
+28147,Walthall County,Mississippi,2820,0,0.0,True
+28145,Union County,Mississippi,4613,0,0.0,True
+30079,Prairie County,Montana,424,0,0.0,True
+28141,Tishomingo County,Mississippi,3920,0,0.0,True
+28139,Tippah County,Mississippi,3678,0,0.0,True
+28137,Tate County,Mississippi,4630,0,0.0,True
+28135,Tallahatchie County,Mississippi,2111,0,0.0,True
+29011,Barton County,Missouri,2433,0,0.0,True
+29009,Barry County,Missouri,7616,0,0.0,True
+29007,Audrain County,Missouri,4583,0,0.0,True
+29005,Atchison County,Missouri,1317,0,0.0,True
+29003,Andrew County,Missouri,3722,0,0.0,True
+28163,Yazoo County,Mississippi,3763,0,0.0,True
+28161,Yalobusha County,Mississippi,2666,0,0.0,True
+30071,Phillips County,Montana,1000,0,0.0,True
+29055,Crawford County,Missouri,4745,0,0.0,True
+29053,Cooper County,Missouri,3217,0,0.0,True
+30053,Lincoln County,Montana,6139,0,0.0,True
+30051,Liberty County,Montana,406,0,0.0,True
+30047,Lake County,Montana,7564,0,0.0,True
+30045,Judith Basin County,Montana,582,0,0.0,True
+30043,Jefferson County,Montana,2848,0,0.0,True
+30041,Hill County,Montana,2592,0,0.0,True
+30039,Granite County,Montana,1057,0,0.0,True
+30037,Golden Valley County,Montana,237,0,0.0,True
+30075,Powder River County,Montana,557,0,0.0,True
+30073,Pondera County,Montana,1297,0,0.0,True
+28159,Winston County,Mississippi,3721,0,0.0,True
+30069,Petroleum County,Montana,112,0,0.0,True
+30065,Musselshell County,Montana,1458,0,0.0,True
+30061,Mineral County,Montana,1347,0,0.0,True
+30059,Meagher County,Montana,682,0,0.0,True
+30057,Madison County,Montana,2742,0,0.0,True
+29065,Dent County,Missouri,3159,0,0.0,True
+29063,DeKalb County,Missouri,2092,0,0.0,True
+30087,Rosebud County,Montana,1377,0,0.0,True
+30085,Roosevelt County,Montana,1268,0,0.0,True
+30083,Richland County,Montana,1944,0,0.0,True
+30081,Ravalli County,Montana,12124,0,0.0,True
+28099,Neshoba County,Mississippi,4839,0,0.0,True
+31029,Chase County,Nebraska,869,0,0.0,True
+31027,Cedar County,Nebraska,1829,0,0.0,True
+31025,Cass County,Nebraska,4942,0,0.0,True
+31023,Butler County,Nebraska,1718,0,0.0,True
+31021,Burt County,Nebraska,1649,0,0.0,True
+31017,Brown County,Nebraska,745,0,0.0,True
+31015,Boyd County,Nebraska,576,0,0.0,True
+31013,Box Butte County,Nebraska,2174,0,0.0,True
+28115,Pontotoc County,Mississippi,4757,0,0.0,True
+28105,Oktibbeha County,Mississippi,6121,0,0.0,True
+28103,Noxubee County,Mississippi,1783,0,0.0,True
+28101,Newton County,Mississippi,3639,0,0.0,True
+30103,Treasure County,Montana,172,0,0.0,True
+31037,Colfax County,Nebraska,1422,0,0.0,True
+31035,Clay County,Nebraska,1252,0,0.0,True
+31033,Cheyenne County,Nebraska,2025,0,0.0,True
+28007,Attala County,Mississippi,3425,0,0.0,True
+28005,Amite County,Mississippi,3209,0,0.0,True
+28001,Adams County,Mississippi,6271,0,0.0,True
+27169,Winona County,Minnesota,9052,0,0.0,True
+27165,Watonwan County,Minnesota,2255,0,0.0,True
+27161,Waseca County,Minnesota,3510,0,0.0,True
+27155,Traverse County,Minnesota,828,0,0.0,True
+27151,Swift County,Minnesota,2298,0,0.0,True
+30095,Stillwater County,Montana,2259,0,0.0,True
+29041,Chariton County,Missouri,1851,0,0.0,True
+29039,Cedar County,Missouri,3409,0,0.0,True
+29035,Carter County,Missouri,1061,0,0.0,True
+29033,Carroll County,Missouri,1861,0,0.0,True
+29027,Callaway County,Missouri,7733,0,0.0,True
+29025,Caldwell County,Missouri,1779,0,0.0,True
+29017,Bollinger County,Missouri,2190,0,0.0,True
+29013,Bates County,Missouri,3101,0,0.0,True
+30101,Toole County,Montana,877,0,0.0,True
+30099,Teton County,Montana,1458,0,0.0,True
+30097,Sweet Grass County,Montana,869,0,0.0,True
+29057,Dade County,Missouri,1865,0,0.0,True
+30091,Sheridan County,Montana,839,0,0.0,True
+30089,Sanders County,Montana,4185,0,0.0,True
+28097,Montgomery County,Mississippi,2172,0,0.0,True
+28095,Monroe County,Mississippi,6752,0,0.0,True
+31009,Blaine County,Nebraska,131,0,0.0,True
+31007,Banner County,Nebraska,189,0,0.0,True
+31005,Arthur County,Nebraska,104,0,0.0,True
+31001,Adams County,Nebraska,5731,0,0.0,True
+30109,Wibaux County,Montana,272,0,0.0,True
+30107,Wheatland County,Montana,592,0,0.0,True
+30105,Valley County,Montana,1833,0,0.0,True
+30003,Big Horn County,Montana,1773,0,0.0,True
+72125,San Germán Municipio,Puerto Rico,8514,0,0.0,True
+72123,Salinas Municipio,Puerto Rico,5542,0,0.0,True
+72121,Sabana Grande Municipio,Puerto Rico,5623,0,0.0,True
+72119,Río Grande Municipio,Puerto Rico,10220,0,0.0,True
+29211,Sullivan County,Missouri,1213,0,0.0,True
+29209,Stone County,Missouri,9927,0,0.0,True
+29205,Shelby County,Missouri,1303,0,0.0,True
+29203,Shannon County,Missouri,1610,0,0.0,True
+29197,Schuyler County,Missouri,763,0,0.0,True
+29189,St. Louis County,Missouri,186150,0,0.0,True
+29185,St. Clair County,Missouri,2439,0,0.0,True
+72109,Patillas Municipio,Puerto Rico,3966,0,0.0,True
+72127,San Juan Municipio,Puerto Rico,83949,0,0.0,True
+30001,Beaverhead County,Montana,2273,0,0.0,True
+29229,Wright County,Missouri,3703,0,0.0,True
+29227,Worth County,Missouri,501,0,0.0,True
+29225,Webster County,Missouri,6249,0,0.0,True
+29223,Wayne County,Missouri,2661,0,0.0,True
+29221,Washington County,Missouri,4097,0,0.0,True
+29219,Warren County,Missouri,6521,0,0.0,True
+01037,Coosa County,Alabama,2558,0,0.0,True
+01029,Cleburne County,Alabama,3117,0,0.0,True
+30021,Dawson County,Montana,1833,0,0.0,True
+30019,Daniels County,Montana,441,0,0.0,True
+72081,Lares Municipio,Puerto Rico,6386,0,0.0,True
+72105,Naranjito Municipio,Puerto Rico,6512,0,0.0,True
+72103,Naguabo Municipio,Puerto Rico,4575,0,0.0,True
+72101,Morovis Municipio,Puerto Rico,5305,0,0.0,True
+72099,Moca Municipio,Puerto Rico,7487,0,0.0,True
+72097,Mayagüez Municipio,Puerto Rico,18634,0,0.0,True
+72095,Maunabo Municipio,Puerto Rico,2684,0,0.0,True
+72093,Maricao Municipio,Puerto Rico,1343,0,0.0,True
+72091,Manatí Municipio,Puerto Rico,9507,0,0.0,True
+72089,Luquillo Municipio,Puerto Rico,4200,0,0.0,True
+72087,Loíza Municipio,Puerto Rico,5039,0,0.0,True
+72085,Las Piedras Municipio,Puerto Rico,7320,0,0.0,True
+72083,Las Marías Municipio,Puerto Rico,2016,0,0.0,True
+30015,Chouteau County,Montana,1323,0,0.0,True
+72079,Lajas Municipio,Puerto Rico,6160,0,0.0,True
+72077,Juncos Municipio,Puerto Rico,6559,0,0.0,True
+02105,Hoonah-Angoon Census Area,Alaska,633,0,0.0,True
+29179,Reynolds County,Missouri,1413,0,0.0,True
+72011,Añasco Municipio,Puerto Rico,5755,0,0.0,True
+72027,Camuy Municipio,Puerto Rico,7322,0,0.0,True
+01041,Crenshaw County,Alabama,2618,0,0.0,True
+72153,Yauco Municipio,Puerto Rico,8321,0,0.0,True
+72133,Santa Isabel Municipio,Puerto Rico,3514,0,0.0,True
+72131,San Sebastián Municipio,Puerto Rico,9970,0,0.0,True
+72129,San Lorenzo Municipio,Puerto Rico,8031,0,0.0,True
+29173,Ralls County,Missouri,2372,0,0.0,True
+29117,Livingston County,Missouri,2858,0,0.0,True
+29115,Linn County,Missouri,2515,0,0.0,True
+29113,Lincoln County,Missouri,8815,0,0.0,True
+29147,Nodaway County,Missouri,3632,0,0.0,True
+29145,Newton County,Missouri,11101,0,0.0,True
+29143,New Madrid County,Missouri,3137,0,0.0,True
+29141,Morgan County,Missouri,5057,0,0.0,True
+29137,Monroe County,Missouri,2140,0,0.0,True
+29135,Moniteau County,Missouri,2507,0,0.0,True
+29133,Mississippi County,Missouri,2213,0,0.0,True
+29131,Miller County,Missouri,4886,0,0.0,True
+29177,Ray County,Missouri,4343,0,0.0,True
+29119,McDonald County,Missouri,3706,0,0.0,True
+29171,Putnam County,Missouri,1173,0,0.0,True
+29169,Pulaski County,Missouri,5169,0,0.0,True
+29159,Pettis County,Missouri,7407,0,0.0,True
+29157,Perry County,Missouri,3660,0,0.0,True
+29153,Ozark County,Missouri,2540,0,0.0,True
+29151,Osage County,Missouri,2376,0,0.0,True
+30035,Glacier County,Montana,1762,0,0.0,True
+30033,Garfield County,Montana,259,0,0.0,True
+30025,Fallon County,Montana,570,0,0.0,True
+29061,Daviess County,Missouri,1793,0,0.0,True
+29059,Dallas County,Missouri,3605,0,0.0,True
+29109,Lawrence County,Missouri,6946,0,0.0,True
+30011,Carter County,Montana,410,0,0.0,True
+30007,Broadwater County,Montana,1722,0,0.0,True
+30005,Blaine County,Montana,1147,0,0.0,True
+72075,Juana Díaz Municipio,Puerto Rico,9284,0,0.0,True
+72073,Jayuya Municipio,Puerto Rico,2847,0,0.0,True
+72071,Isabela Municipio,Puerto Rico,9352,0,0.0,True
+01087,Macon County,Alabama,3927,0,0.0,True
+01085,Lowndes County,Alabama,2007,0,0.0,True
+01067,Henry County,Alabama,4073,0,0.0,True
+01063,Greene County,Alabama,1818,0,0.0,True
+72115,Quebradillas Municipio,Puerto Rico,5204,0,0.0,True
+28027,Coahoma County,Mississippi,3360,0,0.0,True
+29107,Lafayette County,Missouri,6240,0,0.0,True
+29105,Laclede County,Missouri,6510,0,0.0,True
+29093,Iron County,Missouri,2123,0,0.0,True
+29085,Hickory County,Missouri,2756,0,0.0,True
+29075,Gentry County,Missouri,1166,0,0.0,True
+29073,Gasconade County,Missouri,3381,0,0.0,True
+29067,Douglas County,Missouri,2957,0,0.0,True
+29129,Mercer County,Missouri,760,0,0.0,True
+29125,Maries County,Missouri,1875,0,0.0,True
+29123,Madison County,Missouri,2406,0,0.0,True
+29121,Macon County,Missouri,3323,0,0.0,True
+27001,Aitkin County,Minnesota,5404,0,0.0,True
+35021,Harding County,New Mexico,208,0,0.0,True
+35019,Guadalupe County,New Mexico,900,0,0.0,True
+26141,Presque Isle County,Michigan,4347,0,0.0,True
+26135,Oscoda County,Michigan,2377,0,0.0,True
+26133,Osceola County,Michigan,5038,0,0.0,True
+26119,Montmorency County,Michigan,3087,0,0.0,True
+36011,Cayuga County,New York,15509,0,0.0,True
+36003,Allegany County,New York,9279,0,0.0,True
+35059,Union County,New Mexico,911,0,0.0,True
+35057,Torrance County,New Mexico,3376,0,0.0,True
+33019,Sullivan County,New Hampshire,10062,0,0.0,True
+27015,Brown County,Minnesota,5627,0,0.0,True
+35023,Hidalgo County,New Mexico,917,0,0.0,True
+26165,Wexford County,Michigan,6833,0,0.0,True
+26159,Van Buren County,Michigan,14663,0,0.0,True
+26157,Tuscola County,Michigan,11391,0,0.0,True
+26151,Sanilac County,Michigan,9181,0,0.0,True
+26143,Roscommon County,Michigan,7980,0,0.0,True
+34037,Sussex County,New Jersey,26774,0,0.0,True
+34033,Salem County,New Jersey,12294,0,0.0,True
+34015,Gloucester County,New Jersey,50111,0,0.0,True
+36039,Greene County,New York,11149,0,0.0,True
+36037,Genesee County,New York,11369,0,0.0,True
+36035,Fulton County,New York,10746,0,0.0,True
+27055,Houston County,Minnesota,4350,0,0.0,True
+31181,Webster County,Nebraska,762,0,0.0,True
+31177,Washington County,Nebraska,3964,0,0.0,True
+31173,Thurston County,Nebraska,835,0,0.0,True
+33007,Coos County,New Hampshire,7915,0,0.0,True
+32029,Storey County,Nevada,1616,0,0.0,True
+32027,Pershing County,Nevada,1080,0,0.0,True
+32023,Nye County,Nevada,16469,0,0.0,True
+32021,Mineral County,Nevada,1231,0,0.0,True
+32019,Lyon County,Nevada,13168,0,0.0,True
+32017,Lincoln County,Nevada,841,0,0.0,True
+32015,Lander County,Nevada,758,0,0.0,True
+27057,Hubbard County,Minnesota,5673,0,0.0,True
+36025,Delaware County,New York,11442,0,0.0,True
+27051,Grant County,Minnesota,1416,0,0.0,True
+27047,Freeborn County,Minnesota,7006,0,0.0,True
+27039,Dodge County,Minnesota,3214,0,0.0,True
+27029,Clearwater County,Minnesota,1794,0,0.0,True
+27027,Clay County,Minnesota,9095,0,0.0,True
+27025,Chisago County,Minnesota,9516,0,0.0,True
+35051,Sierra County,New Mexico,4251,0,0.0,True
+35047,San Miguel County,New Mexico,6604,0,0.0,True
+35039,Rio Arriba County,New Mexico,8506,0,0.0,True
+35033,Mora County,New Mexico,1366,0,0.0,True
+35029,Luna County,New Mexico,5268,0,0.0,True
+36115,Washington County,New York,12718,0,0.0,True
+26095,Luce County,Michigan,1463,0,0.0,True
+26093,Livingston County,Michigan,37006,0,0.0,True
+26091,Lenawee County,Michigan,19659,0,0.0,True
+36099,Seneca County,New York,6882,0,0.0,True
+36097,Schuyler County,New York,3995,0,0.0,True
+36095,Schoharie County,New York,6984,0,0.0,True
+36093,Schenectady County,New York,28091,0,0.0,True
+37009,Ashe County,North Carolina,7236,0,0.0,True
+37005,Alleghany County,North Carolina,3292,0,0.0,True
+36123,Yates County,New York,5392,0,0.0,True
+36121,Wyoming County,New York,7936,0,0.0,True
+36117,Wayne County,New York,18390,0,0.0,True
+26097,Mackinac County,Michigan,3156,0,0.0,True
+36111,Ulster County,New York,37807,0,0.0,True
+36107,Tioga County,New York,10203,0,0.0,True
+26019,Benzie County,Michigan,5050,0,0.0,True
+26015,Barry County,Michigan,11989,0,0.0,True
+26009,Antrim County,Michigan,6748,0,0.0,True
+26005,Allegan County,Michigan,21555,0,0.0,True
+26003,Alger County,Michigan,2342,0,0.0,True
+26001,Alcona County,Michigan,3734,0,0.0,True
+25019,Nantucket County,Massachusetts,2217,0,0.0,True
+37011,Avery County,North Carolina,4059,0,0.0,True
+26051,Gladwin County,Michigan,6868,0,0.0,True
+26089,Leelanau County,Michigan,7462,0,0.0,True
+36021,Columbia County,New York,15568,0,0.0,True
+36017,Chenango County,New York,10119,0,0.0,True
+36013,Chautauqua County,New York,26475,0,0.0,True
+26053,Gogebic County,Michigan,4138,0,0.0,True
+36073,Orleans County,New York,7542,0,0.0,True
+36069,Ontario County,New York,24191,0,0.0,True
+36063,Niagara County,New York,42613,0,0.0,True
+36057,Montgomery County,New York,9376,0,0.0,True
+36053,Madison County,New York,13333,0,0.0,True
+36051,Livingston County,New York,11990,0,0.0,True
+36043,Herkimer County,New York,12945,0,0.0,True
+31183,Wheeler County,Nebraska,253,0,0.0,True
+26085,Lake County,Michigan,3292,0,0.0,True
+26083,Keweenaw County,Michigan,758,0,0.0,True
+26079,Kalkaska County,Michigan,3846,0,0.0,True
+26071,Iron County,Michigan,3603,0,0.0,True
+26069,Iosco County,Michigan,7712,0,0.0,True
+26067,Ionia County,Michigan,10299,0,0.0,True
+26057,Gratiot County,Michigan,7252,0,0.0,True
+26113,Missaukee County,Michigan,3238,0,0.0,True
+26109,Menominee County,Michigan,6137,0,0.0,True
+26107,Mecosta County,Michigan,8133,0,0.0,True
+26101,Manistee County,Michigan,6909,0,0.0,True
+31049,Deuel County,Nebraska,492,0,0.0,True
+27133,Rock County,Minnesota,1928,0,0.0,True
+27125,Red Lake County,Minnesota,866,0,0.0,True
+27115,Pine County,Minnesota,6426,0,0.0,True
+27107,Norman County,Minnesota,1380,0,0.0,True
+27105,Nobles County,Minnesota,3812,0,0.0,True
+27101,Murray County,Minnesota,2108,0,0.0,True
+31065,Furnas County,Nebraska,1174,0,0.0,True
+31063,Frontier County,Nebraska,652,0,0.0,True
+31061,Franklin County,Nebraska,799,0,0.0,True
+31059,Fillmore County,Nebraska,1319,0,0.0,True
+31057,Dundy County,Nebraska,448,0,0.0,True
+31051,Dixon County,Nebraska,1179,0,0.0,True
+27143,Sibley County,Minnesota,2841,0,0.0,True
+31043,Dakota County,Nebraska,2767,0,0.0,True
+31083,Harlan County,Nebraska,809,0,0.0,True
+31081,Hamilton County,Nebraska,1934,0,0.0,True
+31077,Greeley County,Nebraska,571,0,0.0,True
+31075,Grant County,Nebraska,143,0,0.0,True
+31073,Gosper County,Nebraska,487,0,0.0,True
+31071,Garfield County,Nebraska,496,0,0.0,True
+31069,Garden County,Nebraska,516,0,0.0,True
+31067,Gage County,Nebraska,4735,0,0.0,True
+27149,Stevens County,Minnesota,1620,0,0.0,True
+31103,Keya Paha County,Nebraska,233,0,0.0,True
+28039,George County,Mississippi,3776,0,0.0,True
+28025,Clay County,Mississippi,3582,0,0.0,True
+28023,Clarke County,Mississippi,3352,0,0.0,True
+28021,Claiborne County,Mississippi,1688,0,0.0,True
+28019,Choctaw County,Mississippi,1868,0,0.0,True
+28017,Chickasaw County,Mississippi,3128,0,0.0,True
+28015,Carroll County,Mississippi,2407,0,0.0,True
+28009,Benton County,Mississippi,1614,0,0.0,True
+28053,Humphreys County,Mississippi,1393,0,0.0,True
+28051,Holmes County,Mississippi,2668,0,0.0,True
+28045,Hancock County,Mississippi,10080,0,0.0,True
+28043,Grenada County,Mississippi,3947,0,0.0,True
+28041,Greene County,Mississippi,1978,0,0.0,True
+31101,Keith County,Nebraska,2272,0,0.0,True
+28037,Franklin County,Mississippi,1613,0,0.0,True
+28035,Forrest County,Mississippi,10647,0,0.0,True
+28093,Marshall County,Mississippi,6317,0,0.0,True
+28077,Lawrence County,Mississippi,2146,0,0.0,True
+28069,Kemper County,Mississippi,1894,0,0.0,True
+28065,Jefferson Davis County,Mississippi,2676,0,0.0,True
+28063,Jefferson County,Mississippi,1379,0,0.0,True
+28059,Jackson County,Mississippi,24349,0,0.0,True
+28057,Itawamba County,Mississippi,4236,0,0.0,True
+28055,Issaquena County,Mississippi,213,0,0.0,True
+31041,Custer County,Nebraska,2347,0,0.0,True
+31163,Sherman County,Nebraska,818,0,0.0,True
+31149,Rock County,Nebraska,342,0,0.0,True
+31147,Richardson County,Nebraska,1904,0,0.0,True
+31143,Polk County,Nebraska,1203,0,0.0,True
+31137,Phelps County,Nebraska,1851,0,0.0,True
+31135,Perkins County,Nebraska,662,0,0.0,True
+27099,Mower County,Minnesota,7388,0,0.0,True
+27091,Martin County,Minnesota,4758,0,0.0,True
+27089,Marshall County,Minnesota,2022,0,0.0,True
+27087,Mahnomen County,Minnesota,940,0,0.0,True
+27085,McLeod County,Minnesota,7233,0,0.0,True
+31167,Stanton County,Nebraska,1179,0,0.0,True
+31165,Sioux County,Nebraska,286,0,0.0,True
+31151,Saline County,Nebraska,2274,0,0.0,True
+31171,Thomas County,Nebraska,207,0,0.0,True
+31169,Thayer County,Nebraska,1236,0,0.0,True
+35011,De Baca County,New Mexico,378,0,0.0,True
+35007,Colfax County,New Mexico,3505,0,0.0,True
+35006,Cibola County,New Mexico,4745,0,0.0,True
+35003,Catron County,New Mexico,1639,0,0.0,True
+34041,Warren County,New Jersey,20961,0,0.0,True
+32011,Eureka County,Nevada,384,0,0.0,True
+32009,Esmeralda County,Nevada,255,0,0.0,True
+32005,Douglas County,Nevada,15664,0,0.0,True
+32001,Churchill County,Nevada,4998,0,0.0,True
+27063,Jackson County,Minnesota,2290,0,0.0,True
+31099,Kearney County,Nebraska,1344,0,0.0,True
+31093,Howard County,Nebraska,1440,0,0.0,True
+31091,Hooker County,Nebraska,169,0,0.0,True
+31087,Hitchcock County,Nebraska,678,0,0.0,True
+31085,Hayes County,Nebraska,221,0,0.0,True
+31107,Knox County,Nebraska,2123,0,0.0,True
+31105,Kimball County,Nebraska,912,0,0.0,True
+27079,Le Sueur County,Minnesota,5313,0,0.0,True
+27077,Lake of the Woods County,Minnesota,971,0,0.0,True
+27075,Lake County,Minnesota,2989,0,0.0,True
+27071,Koochiching County,Minnesota,3299,0,0.0,True
+19039,Clarke County,Iowa,1909,0,0.0,True
+27059,Isanti County,Minnesota,7057,0,0.0,True
+31133,Pawnee County,Nebraska,720,0,0.0,True
+31131,Otoe County,Nebraska,3285,0,0.0,True
+31129,Nuckolls County,Nebraska,1159,0,0.0,True
+31125,Nance County,Nebraska,702,0,0.0,True
+31121,Merrick County,Nebraska,1635,0,0.0,True
+31117,McPherson County,Nebraska,100,0,0.0,True
+31115,Loup County,Nebraska,152,0,0.0,True
+31113,Logan County,Nebraska,171,0,0.0,True
+31161,Sheridan County,Nebraska,1374,0,0.0,True
+31159,Seward County,Nebraska,3132,0,0.0,True
+08111,San Juan County,Colorado,143,0,0.0,True
+51097,King and Queen County,Virginia,1576,0,0.0,True
+51093,Isle of Wight County,Virginia,7745,0,0.0,True
+51133,Northumberland County,Virginia,4582,0,0.0,True
+51131,Northampton County,Virginia,3450,0,0.0,True
+51127,New Kent County,Virginia,4516,0,0.0,True
+51125,Nelson County,Virginia,4324,0,0.0,True
+51119,Middlesex County,Virginia,3605,0,0.0,True
+51117,Mecklenburg County,Virginia,8083,0,0.0,True
+51115,Mathews County,Virginia,2750,0,0.0,True
+51113,Madison County,Virginia,3171,0,0.0,True
+08115,Sedgwick County,Colorado,574,0,0.0,True
+08113,San Miguel County,Colorado,1391,0,0.0,True
+51099,King George County,Virginia,3822,0,0.0,True
+08109,Saguache County,Colorado,1726,0,0.0,True
+51145,Powhatan County,Virginia,6046,0,0.0,True
+51139,Page County,Virginia,5174,0,0.0,True
+51137,Orange County,Virginia,7437,0,0.0,True
+51135,Nottoway County,Virginia,2884,0,0.0,True
+51157,Rappahannock County,Virginia,1973,0,0.0,True
+51149,Prince George County,Virginia,5524,0,0.0,True
+53001,Adams County,Washington,2446,0,0.0,True
+51830,Williamsburg city,Virginia,2666,0,0.0,True
+51820,Waynesboro city,Virginia,3998,0,0.0,True
+51735,Poquoson city,Virginia,2476,0,0.0,True
+51079,Greene County,Virginia,3891,0,0.0,True
+51035,Carroll County,Virginia,7477,0,0.0,True
+51033,Caroline County,Virginia,5163,0,0.0,True
+51031,Campbell County,Virginia,11490,0,0.0,True
+51067,Franklin County,Virginia,13317,0,0.0,True
+51065,Fluvanna County,Virginia,5761,0,0.0,True
+51063,Floyd County,Virginia,3706,0,0.0,True
+51059,Fairfax County,Virginia,166297,0,0.0,True
+51057,Essex County,Virginia,2507,0,0.0,True
+51053,Dinwiddie County,Virginia,5262,0,0.0,True
+51051,Dickenson County,Virginia,3372,0,0.0,True
+51049,Cumberland County,Virginia,2267,0,0.0,True
+51091,Highland County,Virginia,776,0,0.0,True
+51690,Martinsville city,Virginia,2318,0,0.0,True
+08105,Rio Grande County,Colorado,2516,0,0.0,True
+08103,Rio Blanco County,Colorado,1099,0,0.0,True
+08097,Pitkin County,Colorado,3704,0,0.0,True
+08095,Phillips County,Colorado,808,0,0.0,True
+08093,Park County,Colorado,4047,0,0.0,True
+08091,Ouray County,Colorado,1782,0,0.0,True
+51111,Lunenburg County,Virginia,2762,0,0.0,True
+51109,Louisa County,Virginia,7965,0,0.0,True
+51105,Lee County,Virginia,4977,0,0.0,True
+51103,Lancaster County,Virginia,4349,0,0.0,True
+51101,King William County,Virginia,3010,0,0.0,True
+53049,Pacific County,Washington,7835,0,0.0,True
+08055,Huerfano County,Colorado,2360,0,0.0,True
+53023,Garfield County,Washington,689,0,0.0,True
+53021,Franklin County,Washington,9857,0,0.0,True
+53019,Ferry County,Washington,2209,0,0.0,True
+53017,Douglas County,Washington,7882,0,0.0,True
+53015,Cowlitz County,Washington,21762,0,0.0,True
+53013,Columbia County,Washington,1185,0,0.0,True
+06093,Siskiyou County,California,11903,0,0.0,True
+06091,Sierra County,California,942,0,0.0,True
+53059,Skamania County,Washington,2872,0,0.0,True
+53055,San Juan County,Washington,6402,0,0.0,True
+53051,Pend Oreille County,Washington,3729,0,0.0,True
+08057,Jackson County,Colorado,465,0,0.0,True
+53045,Mason County,Washington,15882,0,0.0,True
+53043,Lincoln County,Washington,2911,0,0.0,True
+53039,Klickitat County,Washington,5748,0,0.0,True
+53029,Island County,Washington,22640,0,0.0,True
+08025,Crowley County,Colorado,805,0,0.0,True
+08023,Costilla County,Colorado,981,0,0.0,True
+08019,Clear Creek County,Colorado,2071,0,0.0,True
+08017,Cheyenne County,Colorado,344,0,0.0,True
+08014,Broomfield County,Colorado,11357,0,0.0,True
+08007,Archuleta County,Colorado,3801,0,0.0,True
+06105,Trinity County,California,4662,0,0.0,True
+08047,Gilpin County,Colorado,1180,0,0.0,True
+51685,Manassas Park city,Virginia,1627,0,0.0,True
+51183,Sussex County,Virginia,2058,0,0.0,True
+51181,Surry County,Virginia,1620,0,0.0,True
+51175,Southampton County,Virginia,3851,0,0.0,True
+51173,Smyth County,Virginia,6728,0,0.0,True
+51171,Shenandoah County,Virginia,9769,0,0.0,True
+51165,Rockingham County,Virginia,16792,0,0.0,True
+51161,Roanoke County,Virginia,21104,0,0.0,True
+51159,Richmond County,Virginia,1828,0,0.0,True
+08053,Hinsdale County,Colorado,323,0,0.0,True
+08049,Grand County,Colorado,3155,0,0.0,True
+51036,Charles City County,Virginia,1749,0,0.0,True
+51580,Covington city,Virginia,1103,0,0.0,True
+51570,Colonial Heights city,Virginia,3334,0,0.0,True
+51530,Buena Vista city,Virginia,1213,0,0.0,True
+51193,Westmoreland County,Virginia,4924,0,0.0,True
+51187,Warren County,Virginia,6865,0,0.0,True
+08081,Moffat County,Colorado,2141,0,0.0,True
+08079,Mineral County,Colorado,237,0,0.0,True
+08071,Las Animas County,Colorado,3683,0,0.0,True
+08065,Lake County,Colorado,975,0,0.0,True
+08063,Kit Carson County,Colorado,1394,0,0.0,True
+08061,Kiowa County,Colorado,294,0,0.0,True
+49025,Kane County,Utah,1921,0,0.0,True
+49009,Daggett County,Utah,135,0,0.0,True
+48501,Yoakum County,Texas,869,0,0.0,True
+48499,Wood County,Texas,12470,0,0.0,True
+48495,Winkler County,Texas,1012,0,0.0,True
+48489,Willacy County,Texas,2956,0,0.0,True
+13023,Bleckley County,Georgia,2198,0,0.0,True
+13019,Berrien County,Georgia,3242,0,0.0,True
+13017,Ben Hill County,Georgia,3046,0,0.0,True
+49033,Rich County,Utah,548,0,0.0,True
+49031,Piute County,Utah,484,0,0.0,True
+49029,Morgan County,Utah,1520,0,0.0,True
+49027,Millard County,Utah,2253,0,0.0,True
+49015,Emery County,Utah,1791,0,0.0,True
+13049,Charlton County,Georgia,1872,0,0.0,True
+13043,Candler County,Georgia,2006,0,0.0,True
+13039,Camden County,Georgia,8235,0,0.0,True
+13037,Calhoun County,Georgia,931,0,0.0,True
+13035,Butts County,Georgia,4045,0,0.0,True
+13029,Bryan County,Georgia,5018,0,0.0,True
+13027,Brooks County,Georgia,3383,0,0.0,True
+13025,Brantley County,Georgia,3090,0,0.0,True
+12047,Hamilton County,Florida,2634,0,0.0,True
+12043,Glades County,Florida,3273,0,0.0,True
+12041,Gilchrist County,Florida,3737,0,0.0,True
+13085,Dawson County,Georgia,5601,0,0.0,True
+48473,Waller County,Texas,6792,0,0.0,True
+48465,Val Verde County,Texas,6645,0,0.0,True
+48463,Uvalde County,Texas,4072,0,0.0,True
+48461,Upton County,Texas,599,0,0.0,True
+48459,Upshur County,Texas,7645,0,0.0,True
+48455,Trinity County,Texas,3756,0,0.0,True
+46123,Tripp County,South Dakota,1345,0,0.0,True
+13103,Effingham County,Georgia,8239,0,0.0,True
+13101,Echols County,Georgia,468,0,0.0,True
+13099,Early County,Georgia,2067,0,0.0,True
+13093,Dooly County,Georgia,2424,0,0.0,True
+13087,Decatur County,Georgia,4894,0,0.0,True
+12039,Gadsden County,Florida,8485,0,0.0,True
+13083,Dade County,Georgia,3305,0,0.0,True
+51011,Appomattox County,Virginia,3396,0,0.0,True
+51009,Amherst County,Virginia,6713,0,0.0,True
+51007,Amelia County,Virginia,2773,0,0.0,True
+51005,Alleghany County,Virginia,3857,0,0.0,True
+50025,Windham County,Vermont,11325,0,0.0,True
+50017,Orange County,Vermont,6752,0,0.0,True
+50013,Grand Isle County,Vermont,1668,0,0.0,True
+50011,Franklin County,Vermont,8697,0,0.0,True
+49019,Grand County,Utah,1960,0,0.0,True
+49017,Garfield County,Utah,1173,0,0.0,True
+51029,Buckingham County,Virginia,3419,0,0.0,True
+49045,Tooele County,Utah,6932,0,0.0,True
+49043,Summit County,Utah,6262,0,0.0,True
+49037,San Juan County,Utah,2342,0,0.0,True
+13013,Barrow County,Georgia,11141,0,0.0,True
+09160,Northwest Hills Planning Region,Connecticut,25101,0,0.0,True
+09150,Northeastern Connecticut Planning Region,Connecticut,18252,0,0.0,True
+09140,Naugatuck Valley Planning Region,Connecticut,84656,0,0.0,True
+09130,Lower Connecticut River Valley Planning Region,Connecticut,37808,0,0.0,True
+09120,Greater Bridgeport Planning Region,Connecticut,51467,0,0.0,True
+09110,Capitol Planning Region,Connecticut,171507,0,0.0,True
+08121,Washington County,Colorado,1060,0,0.0,True
+08119,Teller County,Colorado,5989,0,0.0,True
+49051,Wasatch County,Utah,4699,0,0.0,True
+51025,Brunswick County,Virginia,3474,0,0.0,True
+51023,Botetourt County,Virginia,8005,0,0.0,True
+51021,Bland County,Virginia,1522,0,0.0,True
+51017,Bath County,Virginia,1128,0,0.0,True
+09190,Western Connecticut Planning Region,Connecticut,105714,0,0.0,True
+09180,Southeastern Connecticut Planning Region,Connecticut,53143,0,0.0,True
+09170,South Central Connecticut Planning Region,Connecticut,103124,0,0.0,True
+51047,Culpeper County,Virginia,8874,0,0.0,True
+51045,Craig County,Virginia,939,0,0.0,True
+51043,Clarke County,Virginia,3285,0,0.0,True
+51037,Charlotte County,Virginia,2552,0,0.0,True
+12049,Hardee County,Florida,4157,0,0.0,True
+12029,Dixie County,Florida,4007,0,0.0,True
+51077,Grayson County,Virginia,3934,0,0.0,True
+51075,Goochland County,Virginia,6115,0,0.0,True
+51071,Giles County,Virginia,3660,0,0.0,True
+12119,Sumter County,Florida,79463,0,0.0,True
+12079,Madison County,Florida,4096,0,0.0,True
+12075,Levy County,Florida,11059,0,0.0,True
+12067,Lafayette County,Florida,1612,0,0.0,True
+12065,Jefferson County,Florida,3605,0,0.0,True
+12059,Holmes County,Florida,3966,0,0.0,True
+12051,Hendry County,Florida,5540,0,0.0,True
+53065,Stevens County,Washington,11717,0,0.0,True
+13011,Banks County,Georgia,3215,0,0.0,True
+13009,Baldwin County,Georgia,7293,0,0.0,True
+13007,Baker County,Georgia,738,0,0.0,True
+13005,Bacon County,Georgia,1873,0,0.0,True
+13003,Atkinson County,Georgia,1123,0,0.0,True
+12131,Walton County,Florida,15801,0,0.0,True
+12125,Union County,Florida,2674,0,0.0,True
+12123,Taylor County,Florida,4467,0,0.0,True
+50009,Essex County,Vermont,1594,0,0.0,True
+50003,Bennington County,Vermont,8865,0,0.0,True
+49055,Wayne County,Utah,590,0,0.0,True
+72037,Ceiba Municipio,Puerto Rico,2849,0,0.0,True
+56043,Washakie County,Wyoming,1816,0,0.0,True
+56035,Sublette County,Wyoming,2069,0,0.0,True
+55081,Monroe County,Wisconsin,8135,0,0.0,True
+55078,Menominee County,Wisconsin,662,0,0.0,True
+55077,Marquette County,Wisconsin,4075,0,0.0,True
+05053,Grant County,Arkansas,3287,0,0.0,True
+05047,Franklin County,Arkansas,3494,0,0.0,True
+05045,Faulkner County,Arkansas,16924,0,0.0,True
+05025,Cleveland County,Arkansas,1567,0,0.0,True
+05013,Calhoun County,Arkansas,1024,0,0.0,True
+72041,Cidra Municipio,Puerto Rico,8038,0,0.0,True
+72039,Ciales Municipio,Puerto Rico,3950,0,0.0,True
+72001,Adjuntas Municipio,Puerto Rico,3969,0,0.0,True
+72035,Cayey Municipio,Puerto Rico,9528,0,0.0,True
+72033,Cataño Municipio,Puerto Rico,5312,0,0.0,True
+72031,Carolina Municipio,Puerto Rico,37007,0,0.0,True
+72029,Canóvanas Municipio,Puerto Rico,7943,0,0.0,True
+72117,Rincón Municipio,Puerto Rico,4146,0,0.0,True
+72055,Guánica Municipio,Puerto Rico,3468,0,0.0,True
+72054,Florida Municipio,Puerto Rico,2435,0,0.0,True
+72053,Fajardo Municipio,Puerto Rico,7412,0,0.0,True
+72051,Dorado Municipio,Puerto Rico,6869,0,0.0,True
+72049,Culebra Municipio,Puerto Rico,235,0,0.0,True
+72047,Corozal Municipio,Puerto Rico,6979,0,0.0,True
+56027,Niobrara County,Wyoming,715,0,0.0,True
+05105,Perry County,Arkansas,2067,0,0.0,True
+05101,Newton County,Arkansas,1940,0,0.0,True
+05099,Nevada County,Arkansas,1740,0,0.0,True
+02290,Yukon-Koyukuk Census Area,Alaska,870,0,0.0,True
+02282,Yakutat City and Borough,Alaska,140,0,0.0,True
+02275,Wrangell City and Borough,Alaska,503,0,0.0,True
+02240,Southeast Fairbanks Census Area,Alaska,1099,0,0.0,True
+02230,Skagway Municipality,Alaska,233,0,0.0,True
+02220,Sitka City and Borough,Alaska,1449,0,0.0,True
+02198,Prince of Wales-Hyder Census Area,Alaska,1164,0,0.0,True
+02195,Petersburg Borough,Alaska,746,0,0.0,True
+56031,Platte County,Wyoming,2251,0,0.0,True
+72045,Comerío Municipio,Puerto Rico,3879,0,0.0,True
+56015,Goshen County,Wyoming,2948,0,0.0,True
+56011,Crook County,Wyoming,1634,0,0.0,True
+56009,Converse County,Wyoming,2475,0,0.0,True
+56003,Big Horn County,Wyoming,2528,0,0.0,True
+55137,Waushara County,Wisconsin,6303,0,0.0,True
+04011,Greenlee County,Arizona,1319,0,0.0,True
+05001,Arkansas County,Arkansas,3342,0,0.0,True
+04021,Pinal County,Arizona,95754,0,0.0,True
+72007,Aguas Buenas Municipio,Puerto Rico,5325,0,0.0,True
+72005,Aguadilla Municipio,Puerto Rico,12861,0,0.0,True
+72003,Aguada Municipio,Puerto Rico,8457,0,0.0,True
+02066,Copper River Census Area,Alaska,577,0,0.0,True
+72113,Ponce Municipio,Puerto Rico,33040,0,0.0,True
+02013,Aleutians East Borough,Alaska,393,0,0.0,True
+01129,Washington County,Alabama,3122,0,0.0,True
+01111,Randolph County,Alabama,4626,0,0.0,True
+01105,Perry County,Alabama,1731,0,0.0,True
+72135,Toa Alta Municipio,Puerto Rico,11041,0,0.0,True
+72137,Toa Baja Municipio,Puerto Rico,16026,0,0.0,True
+72139,Trujillo Alto Municipio,Puerto Rico,14406,0,0.0,True
+72141,Utuado Municipio,Puerto Rico,6854,0,0.0,True
+72009,Aibonito Municipio,Puerto Rico,5902,0,0.0,True
+02070,Dillingham Census Area,Alaska,594,0,0.0,True
+02068,Denali Borough,Alaska,276,0,0.0,True
+72151,Yabucoa Municipio,Puerto Rico,7222,0,0.0,True
+02063,Chugach Census Area,Alaska,911,0,0.0,True
+02060,Bristol Bay Borough,Alaska,121,0,0.0,True
+02050,Bethel Census Area,Alaska,1482,0,0.0,True
+02016,Aleutians West Census Area,Alaska,330,0,0.0,True
+72025,Caguas Municipio,Puerto Rico,27839,0,0.0,True
+72023,Cabo Rojo Municipio,Puerto Rico,11488,0,0.0,True
+72021,Bayamón Municipio,Puerto Rico,43595,0,0.0,True
+72019,Barranquitas Municipio,Puerto Rico,5384,0,0.0,True
+72017,Barceloneta Municipio,Puerto Rico,4752,0,0.0,True
+72015,Arroyo Municipio,Puerto Rico,3421,0,0.0,True
+72013,Arecibo Municipio,Puerto Rico,20364,0,0.0,True
+02180,Nome Census Area,Alaska,836,0,0.0,True
+72043,Coamo Municipio,Puerto Rico,7002,0,0.0,True
+02100,Haines Borough,Alaska,557,0,0.0,True
+72069,Humacao Municipio,Puerto Rico,12615,0,0.0,True
+72067,Hormigueros Municipio,Puerto Rico,4621,0,0.0,True
+72065,Hatillo Municipio,Puerto Rico,8709,0,0.0,True
+72063,Gurabo Municipio,Puerto Rico,7018,0,0.0,True
+72061,Guaynabo Municipio,Puerto Rico,22303,0,0.0,True
+72059,Guayanilla Municipio,Puerto Rico,4005,0,0.0,True
+72057,Guayama Municipio,Puerto Rico,7262,0,0.0,True
+02188,Northwest Arctic Borough,Alaska,639,0,0.0,True
+02185,North Slope Borough,Alaska,858,0,0.0,True
+05107,Phillips County,Arkansas,3204,0,0.0,True
+02164,Lake and Peninsula Borough,Alaska,101,0,0.0,True
+02158,Kusilvak Census Area,Alaska,531,0,0.0,True
+02150,Kodiak Island Borough,Alaska,1622,0,0.0,True
+02110,Juneau City and Borough,Alaska,4840,0,0.0,True
+72111,Peñuelas Municipio,Puerto Rico,3845,0,0.0,True
+72143,Vega Alta Municipio,Puerto Rico,7153,0,0.0,True
+72145,Vega Baja Municipio,Puerto Rico,12145,0,0.0,True
+01011,Bullock County,Alabama,1817,0,0.0,True
+72147,Vieques Municipio,Puerto Rico,1986,0,0.0,True
+72149,Villalba Municipio,Puerto Rico,4478,0,0.0,True
+01005,Barbour County,Alabama,4881,0,0.0,True
+54049,Marion County,West Virginia,11095,0,0.0,True
+54037,Jefferson County,West Virginia,9931,0,0.0,True
+54035,Jackson County,West Virginia,5821,0,0.0,True
+54031,Hardy County,West Virginia,3310,0,0.0,True
+54021,Gilmer County,West Virginia,1315,0,0.0,True
+54019,Fayette County,West Virginia,8912,0,0.0,True
+54017,Doddridge County,West Virginia,1640,0,0.0,True
+06069,San Benito County,California,8900,0,0.0,True
+06051,Mono County,California,2164,0,0.0,True
+06049,Modoc County,California,2680,0,0.0,True
+06043,Mariposa County,California,5009,0,0.0,True
+06035,Lassen County,California,4977,0,0.0,True
+54051,Marshall County,West Virginia,6993,0,0.0,True
+54043,Lincoln County,West Virginia,4139,0,0.0,True
+55041,Forest County,Wisconsin,2316,0,0.0,True
+55037,Florence County,Wisconsin,1311,0,0.0,True
+55031,Douglas County,Wisconsin,8863,0,0.0,True
+55023,Crawford County,Wisconsin,3982,0,0.0,True
+55021,Columbia County,Wisconsin,11146,0,0.0,True
+55019,Clark County,Wisconsin,5910,0,0.0,True
+55013,Burnett County,Wisconsin,5234,0,0.0,True
+55011,Buffalo County,Wisconsin,3106,0,0.0,True
+55067,Langlade County,Wisconsin,4886,0,0.0,True
+55065,Lafayette County,Wisconsin,3322,0,0.0,True
+55061,Kewaunee County,Wisconsin,4441,0,0.0,True
+54099,Wayne County,West Virginia,8395,0,0.0,True
+51678,Lexington city,Virginia,1214,0,0.0,True
+51670,Hopewell city,Virginia,3437,0,0.0,True
+51595,Emporia city,Virginia,1036,0,0.0,True
+08043,Fremont County,Colorado,11074,0,0.0,True
+08039,Elbert County,Colorado,4920,0,0.0,True
+08037,Eagle County,Colorado,7912,0,0.0,True
+08033,Dolores County,Colorado,888,0,0.0,True
+08027,Custer County,Colorado,1541,0,0.0,True
+55001,Adams County,Wisconsin,6603,0,0.0,True
+54109,Wyoming County,West Virginia,4801,0,0.0,True
+54105,Wirt County,West Virginia,1141,0,0.0,True
+54101,Webster County,West Virginia,2013,0,0.0,True
+55057,Juneau County,Wisconsin,5703,0,0.0,True
+54095,Tyler County,West Virginia,1946,0,0.0,True
+54093,Tucker County,West Virginia,1854,0,0.0,True
+54015,Clay County,West Virginia,1727,0,0.0,True
+54013,Calhoun County,West Virginia,1603,0,0.0,True
+54009,Brooke County,West Virginia,5396,0,0.0,True
+54007,Braxton County,West Virginia,3015,0,0.0,True
+54001,Barbour County,West Virginia,3214,0,0.0,True
+53075,Whitman County,Washington,5456,0,0.0,True
+53071,Walla Walla County,Washington,12073,0,0.0,True
+53069,Wahkiakum County,Washington,1479,0,0.0,True
+54047,McDowell County,West Virginia,3984,0,0.0,True
+05097,Montgomery County,Arkansas,2314,0,0.0,True
+55099,Price County,Wisconsin,3916,0,0.0,True
+55093,Pierce County,Wisconsin,6825,0,0.0,True
+55091,Pepin County,Wisconsin,1760,0,0.0,True
+55089,Ozaukee County,Wisconsin,19423,0,0.0,True
+05073,Lafayette County,Arkansas,1576,0,0.0,True
+05059,Hot Spring County,Arkansas,6541,0,0.0,True
+55125,Vilas County,Wisconsin,7299,0,0.0,True
+55123,Vernon County,Wisconsin,6389,0,0.0,True
+55121,Trempealeau County,Wisconsin,5627,0,0.0,True
+55119,Taylor County,Wisconsin,4129,0,0.0,True
+55117,Sheboygan County,Wisconsin,22510,0,0.0,True
+55115,Shawano County,Wisconsin,8939,0,0.0,True
+55101,Racine County,Wisconsin,34757,0,0.0,True
+05095,Monroe County,Arkansas,1554,0,0.0,True
+05093,Mississippi County,Arkansas,6049,0,0.0,True
+05089,Marion County,Arkansas,4969,0,0.0,True
+05087,Madison County,Arkansas,3293,0,0.0,True
+05085,Lonoke County,Arkansas,10754,0,0.0,True
+05077,Lee County,Arkansas,1703,0,0.0,True
+05075,Lawrence County,Arkansas,3079,0,0.0,True
+55007,Bayfield County,Wisconsin,4978,0,0.0,True
+05117,Prairie County,Arkansas,1923,0,0.0,True
+05111,Poinsett County,Arkansas,4174,0,0.0,True
+05109,Pike County,Arkansas,2088,0,0.0,True
+55069,Lincoln County,Wisconsin,6540,0,0.0,True
+55055,Jefferson County,Wisconsin,15436,0,0.0,True
+55053,Jackson County,Wisconsin,4174,0,0.0,True
+55051,Iron County,Wisconsin,1975,0,0.0,True
+55047,Green Lake County,Wisconsin,4396,0,0.0,True
+54059,Mingo County,West Virginia,4911,0,0.0,True
+54057,Mineral County,West Virginia,6063,0,0.0,True
+06021,Glenn County,California,4822,0,0.0,True
+06009,Calaveras County,California,13220,0,0.0,True
+06003,Alpine County,California,369,0,0.0,True
+05147,Woodruff County,Arkansas,1501,0,0.0,True
+05129,Searcy County,Arkansas,2022,0,0.0,True
+48447,Throckmorton County,Texas,390,0,0.0,True
+54091,Taylor County,West Virginia,3458,0,0.0,True
+54089,Summers County,West Virginia,3169,0,0.0,True
+54087,Roane County,West Virginia,3201,0,0.0,True
+54085,Ritchie County,West Virginia,1953,0,0.0,True
+54075,Pocahontas County,West Virginia,2099,0,0.0,True
+54073,Pleasants County,West Virginia,1403,0,0.0,True
+54065,Morgan County,West Virginia,4290,0,0.0,True
+54063,Monroe County,West Virginia,3083,0,0.0,True
+55107,Rusk County,Wisconsin,3589,0,0.0,True
+55105,Rock County,Wisconsin,28396,0,0.0,True
+55103,Richland County,Wisconsin,4199,0,0.0,True
+17185,Wabash County,Illinois,2463,0,0.0,True
+17155,Putnam County,Illinois,1336,0,0.0,True
+48089,Colorado County,Texas,4732,0,0.0,True
+48081,Coke County,Texas,913,0,0.0,True
+48079,Cochran County,Texas,423,0,0.0,True
+48069,Castro County,Texas,1233,0,0.0,True
+48065,Carson County,Texas,1273,0,0.0,True
+48059,Callahan County,Texas,2911,0,0.0,True
+48055,Caldwell County,Texas,7171,0,0.0,True
+48051,Burleson County,Texas,4110,0,0.0,True
+17193,White County,Illinois,3176,0,0.0,True
+17191,Wayne County,Illinois,3508,0,0.0,True
+17189,Washington County,Illinois,2910,0,0.0,True
+17159,Richland County,Illinois,3211,0,0.0,True
+17183,Vermilion County,Illinois,14701,0,0.0,True
+17181,Union County,Illinois,3751,0,0.0,True
+17175,Stark County,Illinois,1216,0,0.0,True
+48093,Comanche County,Texas,3263,0,0.0,True
+18025,Crawford County,Indiana,2175,0,0.0,True
+18023,Clinton County,Indiana,5373,0,0.0,True
+18021,Clay County,Indiana,4894,0,0.0,True
+18017,Cass County,Indiana,6841,0,0.0,True
+18015,Carroll County,Indiana,4169,0,0.0,True
+18007,Benton County,Indiana,1498,0,0.0,True
+18001,Adams County,Indiana,5742,0,0.0,True
+17203,Woodford County,Illinois,7193,0,0.0,True
+47095,Lake County,Tennessee,1059,0,0.0,True
+47175,Van Buren County,Tennessee,1509,0,0.0,True
+47173,Union County,Tennessee,3704,0,0.0,True
+18061,Harrison County,Indiana,7460,0,0.0,True
+18059,Hancock County,Indiana,14078,0,0.0,True
+18055,Greene County,Indiana,6158,0,0.0,True
+18051,Gibson County,Indiana,5850,0,0.0,True
+18049,Fulton County,Indiana,4099,0,0.0,True
+18045,Fountain County,Indiana,3254,0,0.0,True
+18041,Fayette County,Indiana,4806,0,0.0,True
+18037,Dubois County,Indiana,7875,0,0.0,True
+47099,Lawrence County,Tennessee,7941,0,0.0,True
+47097,Lauderdale County,Tennessee,4058,0,0.0,True
+48105,Crockett County,Texas,622,0,0.0,True
+18091,LaPorte County,Indiana,21223,0,0.0,True
+18087,LaGrange County,Indiana,5761,0,0.0,True
+18085,Kosciusko County,Indiana,14087,0,0.0,True
+18079,Jennings County,Indiana,4659,0,0.0,True
+18075,Jay County,Indiana,3677,0,0.0,True
+48045,Briscoe County,Texas,342,0,0.0,True
+48033,Borden County,Texas,98,0,0.0,True
+48031,Blanco County,Texas,3073,0,0.0,True
+17173,Shelby County,Illinois,4899,0,0.0,True
+17171,Scott County,Illinois,1000,0,0.0,True
+17169,Schuyler County,Illinois,1717,0,0.0,True
+17011,Bureau County,Illinois,7488,0,0.0,True
+17147,Piatt County,Illinois,3421,0,0.0,True
+17141,Ogle County,Illinois,9966,0,0.0,True
+17137,Morgan County,Illinois,6802,0,0.0,True
+17135,Montgomery County,Illinois,5895,0,0.0,True
+17133,Monroe County,Illinois,6588,0,0.0,True
+17131,Mercer County,Illinois,3352,0,0.0,True
+17039,De Witt County,Illinois,3097,0,0.0,True
+17037,DeKalb County,Illinois,13696,0,0.0,True
+17035,Cumberland County,Illinois,2108,0,0.0,True
+17027,Clinton County,Illinois,6692,0,0.0,True
+17023,Clark County,Illinois,3018,0,0.0,True
+17015,Carroll County,Illinois,3749,0,0.0,True
+17151,Pope County,Illinois,978,0,0.0,True
+17009,Brown County,Illinois,1024,0,0.0,True
+48191,Hall County,Texas,696,0,0.0,True
+48185,Grimes County,Texas,5634,0,0.0,True
+48179,Gray County,Texas,3463,0,0.0,True
+48175,Goliad County,Texas,1733,0,0.0,True
+48173,Glasscock County,Texas,165,0,0.0,True
+48169,Garza County,Texas,805,0,0.0,True
+48165,Gaines County,Texas,2062,0,0.0,True
+17041,Douglas County,Illinois,3643,0,0.0,True
+17053,Ford County,Illinois,2584,0,0.0,True
+17047,Edwards County,Illinois,1355,0,0.0,True
+48475,Ward County,Texas,1556,0,0.0,True
+48115,Dawson County,Texas,1663,0,0.0,True
+48103,Crane County,Texas,694,0,0.0,True
+48101,Cottle County,Texas,339,0,0.0,True
+48095,Concho County,Texas,656,0,0.0,True
+17107,Logan County,Illinois,5317,0,0.0,True
+17105,Livingston County,Illinois,7115,0,0.0,True
+17103,Lee County,Illinois,7053,0,0.0,True
+17099,LaSalle County,Illinois,21208,0,0.0,True
+48147,Fannin County,Texas,6502,0,0.0,True
+48137,Edwards County,Texas,315,0,0.0,True
+48127,Dimmit County,Texas,1409,0,0.0,True
+48125,Dickens County,Texas,401,0,0.0,True
+48117,Deaf Smith County,Texas,2461,0,0.0,True
+47181,Wayne County,Tennessee,3130,0,0.0,True
+48111,Dallam County,Texas,689,0,0.0,True
+48109,Culberson County,Texas,583,0,0.0,True
+17129,Menard County,Illinois,2457,0,0.0,True
+17127,Massac County,Illinois,2988,0,0.0,True
+17123,Marshall County,Illinois,2762,0,0.0,True
+17117,Macoupin County,Illinois,9414,0,0.0,True
+17115,Macon County,Illinois,21085,0,0.0,True
+48155,Foard County,Texas,313,0,0.0,True
+48153,Floyd County,Texas,1017,0,0.0,True
+48151,Fisher County,Texas,792,0,0.0,True
+17153,Pulaski County,Illinois,1154,0,0.0,True
+47033,Crockett County,Tennessee,2666,0,0.0,True
+18153,Sullivan County,Indiana,3838,0,0.0,True
+18151,Steuben County,Indiana,7386,0,0.0,True
+18147,Spencer County,Indiana,4023,0,0.0,True
+18145,Shelby County,Indiana,8067,0,0.0,True
+18143,Scott County,Indiana,4153,0,0.0,True
+18139,Rush County,Indiana,3170,0,0.0,True
+47061,Grundy County,Tennessee,2834,0,0.0,True
+47057,Grainger County,Tennessee,5107,0,0.0,True
+47055,Giles County,Tennessee,6326,0,0.0,True
+47047,Fayette County,Tennessee,9544,0,0.0,True
+47043,Dickson County,Tennessee,9182,0,0.0,True
+47035,Cumberland County,Tennessee,19892,0,0.0,True
+18155,Switzerland County,Indiana,1832,0,0.0,True
+18161,Union County,Indiana,1436,0,0.0,True
+47091,Johnson County,Tennessee,4212,0,0.0,True
+47087,Jackson County,Tennessee,2761,0,0.0,True
+47085,Humphreys County,Tennessee,3933,0,0.0,True
+47083,Houston County,Tennessee,1660,0,0.0,True
+47077,Henderson County,Tennessee,5118,0,0.0,True
+47073,Hawkins County,Tennessee,12436,0,0.0,True
+47069,Hardeman County,Tennessee,4728,0,0.0,True
+47067,Hancock County,Tennessee,1521,0,0.0,True
+18183,Whitley County,Indiana,6398,0,0.0,True
+18181,White County,Indiana,5086,0,0.0,True
+18179,Wells County,Indiana,5187,0,0.0,True
+46129,Walworth County,South Dakota,1227,0,0.0,True
+46121,Todd County,South Dakota,724,0,0.0,True
+46119,Sully County,South Dakota,353,0,0.0,True
+46117,Stanley County,South Dakota,675,0,0.0,True
+46111,Sanborn County,South Dakota,475,0,0.0,True
+46107,Potter County,South Dakota,678,0,0.0,True
+46105,Perkins County,South Dakota,798,0,0.0,True
+46102,Oglala Lakota County,South Dakota,961,0,0.0,True
+47007,Bledsoe County,Tennessee,3029,0,0.0,True
+47005,Benton County,Tennessee,3786,0,0.0,True
+47003,Bedford County,Tennessee,7458,0,0.0,True
+47001,Anderson County,Tennessee,15749,0,0.0,True
+46137,Ziebach County,South Dakota,266,0,0.0,True
+18175,Washington County,Indiana,5102,0,0.0,True
+46127,Union County,South Dakota,3196,0,0.0,True
+46125,Turner County,South Dakota,1785,0,0.0,True
+19051,Davis County,Iowa,1624,0,0.0,True
+19049,Dallas County,Iowa,13004,0,0.0,True
+19043,Clayton County,Iowa,4156,0,0.0,True
+47027,Clay County,Tennessee,1907,0,0.0,True
+47023,Chester County,Tennessee,3090,0,0.0,True
+47021,Cheatham County,Tennessee,6496,0,0.0,True
+47015,Cannon County,Tennessee,2551,0,0.0,True
+47013,Campbell County,Tennessee,8214,0,0.0,True
+18159,Tipton County,Indiana,3324,0,0.0,True
+47169,Trousdale County,Tennessee,1483,0,0.0,True
+18101,Martin County,Indiana,2024,0,0.0,True
+18099,Marshall County,Indiana,8472,0,0.0,True
+47155,Sevier County,Tennessee,19698,0,0.0,True
+18137,Ripley County,Indiana,5369,0,0.0,True
+18133,Putnam County,Indiana,6432,0,0.0,True
+18131,Pulaski County,Indiana,2595,0,0.0,True
+18129,Posey County,Indiana,5117,0,0.0,True
+18125,Pike County,Indiana,2546,0,0.0,True
+18121,Parke County,Indiana,3309,0,0.0,True
+18119,Owen County,Indiana,4510,0,0.0,True
+18117,Orange County,Indiana,4011,0,0.0,True
+47171,Unicoi County,Tennessee,4105,0,0.0,True
+18103,Miami County,Indiana,6422,0,0.0,True
+47167,Tipton County,Tennessee,9373,0,0.0,True
+47161,Stewart County,Tennessee,2911,0,0.0,True
+47159,Smith County,Tennessee,3321,0,0.0,True
+18033,DeKalb County,Indiana,7411,0,0.0,True
+18031,Decatur County,Indiana,4670,0,0.0,True
+18027,Daviess County,Indiana,5295,0,0.0,True
+48019,Bandera County,Texas,6347,0,0.0,True
+48017,Bailey County,Texas,1226,0,0.0,True
+48011,Armstrong County,Texas,489,0,0.0,True
+48009,Archer County,Texas,1834,0,0.0,True
+47185,White County,Tennessee,5744,0,0.0,True
+47153,Sequatchie County,Tennessee,3467,0,0.0,True
+18173,Warrick County,Indiana,11960,0,0.0,True
+18171,Warren County,Indiana,1772,0,0.0,True
+18169,Wabash County,Indiana,6578,0,0.0,True
+18165,Vermillion County,Indiana,3084,0,0.0,True
+47127,Moore County,Tennessee,1416,0,0.0,True
+47121,Meigs County,Tennessee,2786,0,0.0,True
+47117,Marshall County,Tennessee,5772,0,0.0,True
+47115,Marion County,Tennessee,5939,0,0.0,True
+47111,Macon County,Tennessee,3950,0,0.0,True
+47109,McNairy County,Tennessee,5467,0,0.0,True
+47105,Loudon County,Tennessee,15412,0,0.0,True
+47101,Lewis County,Tennessee,2623,0,0.0,True
+48219,Hockley County,Texas,3263,0,0.0,True
+47151,Scott County,Tennessee,3721,0,0.0,True
+47145,Roane County,Tennessee,12636,0,0.0,True
+47143,Rhea County,Tennessee,6440,0,0.0,True
+47139,Polk County,Tennessee,3665,0,0.0,True
+47137,Pickett County,Tennessee,1414,0,0.0,True
+47135,Perry County,Tennessee,1894,0,0.0,True
+47129,Morgan County,Tennessee,4007,0,0.0,True
+18115,Ohio County,Indiana,1375,0,0.0,True
+18113,Noble County,Indiana,7846,0,0.0,True
+18111,Newton County,Indiana,2770,0,0.0,True
+18107,Montgomery County,Indiana,7048,0,0.0,True
+13201,Miller County,Georgia,1283,0,0.0,True
+13191,McIntosh County,Georgia,3279,0,0.0,True
+13187,Lumpkin County,Georgia,6181,0,0.0,True
+13183,Long County,Georgia,1610,0,0.0,True
+13181,Lincoln County,Georgia,1962,0,0.0,True
+13177,Lee County,Georgia,4577,0,0.0,True
+13175,Laurens County,Georgia,8992,0,0.0,True
+13173,Lanier County,Georgia,1465,0,0.0,True
+13211,Morgan County,Georgia,4185,0,0.0,True
+13209,Montgomery County,Georgia,1512,0,0.0,True
+13207,Monroe County,Georgia,5447,0,0.0,True
+13205,Mitchell County,Georgia,3877,0,0.0,True
+13193,Macon County,Georgia,2187,0,0.0,True
+13199,Meriwether County,Georgia,4333,0,0.0,True
+13197,Marion County,Georgia,1589,0,0.0,True
+13195,Madison County,Georgia,5595,0,0.0,True
+13237,Putnam County,Georgia,5515,0,0.0,True
+13235,Pulaski County,Georgia,2292,0,0.0,True
+13231,Pike County,Georgia,3121,0,0.0,True
+13229,Pierce County,Georgia,3392,0,0.0,True
+13225,Peach County,Georgia,4629,0,0.0,True
+13223,Paulding County,Georgia,19909,0,0.0,True
+13221,Oglethorpe County,Georgia,2886,0,0.0,True
+13213,Murray County,Georgia,5997,0,0.0,True
+13315,Wilcox County,Georgia,1709,0,0.0,True
+13301,Warren County,Georgia,1195,0,0.0,True
+13297,Walton County,Georgia,16091,0,0.0,True
+13295,Walker County,Georgia,13066,0,0.0,True
+13293,Upson County,Georgia,5116,0,0.0,True
+13289,Twiggs County,Georgia,1891,0,0.0,True
+13287,Turner County,Georgia,1720,0,0.0,True
+48207,Haskell County,Texas,1240,0,0.0,True
+15005,Kalawao County,Hawaii,11,0,0.0,True
+13321,Worth County,Georgia,4128,0,0.0,True
+13319,Wilkinson County,Georgia,1771,0,0.0,True
+13317,Wilkes County,Georgia,2265,0,0.0,True
+13133,Greene County,Georgia,5952,0,0.0,True
+13311,White County,Georgia,6520,0,0.0,True
+13309,Wheeler County,Georgia,1096,0,0.0,True
+13307,Webster County,Georgia,457,0,0.0,True
+13171,Lamar County,Georgia,3247,0,0.0,True
+13169,Jones County,Georgia,5163,0,0.0,True
+13167,Johnson County,Georgia,1834,0,0.0,True
+13165,Jenkins County,Georgia,1802,0,0.0,True
+13163,Jefferson County,Georgia,2873,0,0.0,True
+13161,Jeff Davis County,Georgia,2308,0,0.0,True
+13159,Jasper County,Georgia,2691,0,0.0,True
+13157,Jackson County,Georgia,11691,0,0.0,True
+13063,Clayton County,Georgia,30683,0,0.0,True
+13153,Houston County,Georgia,22354,0,0.0,True
+13151,Henry County,Georgia,29993,0,0.0,True
+13149,Heard County,Georgia,2026,0,0.0,True
+13145,Harris County,Georgia,6680,0,0.0,True
+48413,Schleicher County,Texas,518,0,0.0,True
+48411,San Saba County,Texas,1303,0,0.0,True
+48409,San Patricio County,Texas,10685,0,0.0,True
+48419,Shelby County,Texas,4276,0,0.0,True
+13079,Crawford County,Georgia,2429,0,0.0,True
+13077,Coweta County,Georgia,22114,0,0.0,True
+13069,Coffee County,Georgia,6303,0,0.0,True
+13155,Irwin County,Georgia,1635,0,0.0,True
+13061,Clay County,Georgia,893,0,0.0,True
+13055,Chattooga County,Georgia,4578,0,0.0,True
+13053,Chattahoochee County,Georgia,305,0,0.0,True
+48443,Terrell County,Texas,316,0,0.0,True
+48437,Swisher County,Texas,1228,0,0.0,True
+48435,Sutton County,Texas,527,0,0.0,True
+48433,Stonewall County,Texas,319,0,0.0,True
+48431,Sterling County,Texas,184,0,0.0,True
+48429,Stephens County,Texas,1831,0,0.0,True
+48425,Somervell County,Texas,1861,0,0.0,True
+48421,Sherman County,Texas,399,0,0.0,True
+48359,Oldham County,Texas,256,0,0.0,True
+13131,Grady County,Georgia,4885,0,0.0,True
+13125,Glascock County,Georgia,531,0,0.0,True
+13123,Gilmer County,Georgia,8427,0,0.0,True
+13111,Fannin County,Georgia,7779,0,0.0,True
+13109,Evans County,Georgia,1846,0,0.0,True
+13107,Emanuel County,Georgia,3698,0,0.0,True
+13105,Elbert County,Georgia,4185,0,0.0,True
+48379,Rains County,Texas,3030,0,0.0,True
+48377,Presidio County,Texas,1309,0,0.0,True
+48365,Panola County,Texas,4623,0,0.0,True
+48363,Palo Pinto County,Texas,5778,0,0.0,True
+13283,Treutlen County,Georgia,1182,0,0.0,True
+48351,Newton County,Texas,2795,0,0.0,True
+13143,Haralson County,Georgia,4850,0,0.0,True
+13141,Hancock County,Georgia,2127,0,0.0,True
+48407,San Jacinto County,Texas,5914,0,0.0,True
+48405,San Augustine County,Texas,2136,0,0.0,True
+48403,Sabine County,Texas,2977,0,0.0,True
+48395,Robertson County,Texas,3428,0,0.0,True
+48393,Roberts County,Texas,132,0,0.0,True
+48391,Refugio County,Texas,1505,0,0.0,True
+48385,Real County,Texas,1014,0,0.0,True
+48383,Reagan County,Texas,303,0,0.0,True
+17003,Alexander County,Illinois,1221,0,0.0,True
+48237,Jack County,Texas,1504,0,0.0,True
+48235,Irion County,Texas,311,0,0.0,True
+48229,Hudspeth County,Texas,370,0,0.0,True
+16071,Oneida County,Idaho,911,0,0.0,True
+48285,Lavaca County,Texas,4817,0,0.0,True
+48283,La Salle County,Texas,1520,0,0.0,True
+48281,Lampasas County,Texas,4559,0,0.0,True
+48279,Lamb County,Texas,2184,0,0.0,True
+48271,Kinney County,Texas,828,0,0.0,True
+48269,King County,Texas,43,0,0.0,True
+48267,Kimble County,Texas,1369,0,0.0,True
+17007,Boone County,Illinois,8719,0,0.0,True
+48243,Jeff Davis County,Texas,680,0,0.0,True
+17001,Adams County,Illinois,13072,0,0.0,True
+16087,Washington County,Idaho,2790,0,0.0,True
+16085,Valley County,Idaho,3220,0,0.0,True
+16081,Teton County,Idaho,1631,0,0.0,True
+16077,Power County,Idaho,1255,0,0.0,True
+13303,Washington County,Georgia,3622,0,0.0,True
+48301,Loving County,Texas,40,0,0.0,True
+48299,Llano County,Texas,8132,0,0.0,True
+48297,Live Oak County,Texas,2313,0,0.0,True
+48295,Lipscomb County,Texas,561,0,0.0,True
+48293,Limestone County,Texas,4588,0,0.0,True
+48225,Houston County,Texas,4825,0,0.0,True
+48205,Hartley County,Texas,877,0,0.0,True
+48199,Hardin County,Texas,9955,0,0.0,True
+48197,Hardeman County,Texas,768,0,0.0,True
+48195,Hansford County,Texas,718,0,0.0,True
+17093,Kendall County,Illinois,14917,0,0.0,True
+17087,Johnson County,Illinois,2725,0,0.0,True
+17079,Jasper County,Illinois,1892,0,0.0,True
+17077,Jackson County,Illinois,8577,0,0.0,True
+17069,Hardin County,Illinois,1152,0,0.0,True
+17065,Hamilton County,Illinois,1767,0,0.0,True
+17059,Gallatin County,Illinois,1246,0,0.0,True
+17055,Franklin County,Illinois,7799,0,0.0,True
+16073,Owyhee County,Idaho,2347,0,0.0,True
+16067,Minidoka County,Idaho,3443,0,0.0,True
+16063,Lincoln County,Idaho,817,0,0.0,True
+16061,Lewis County,Idaho,1014,0,0.0,True
+16057,Latah County,Idaho,5834,0,0.0,True
+16053,Jerome County,Idaho,3303,0,0.0,True
+16051,Jefferson County,Idaho,3717,0,0.0,True
+16049,Idaho County,Idaho,4895,0,0.0,True
+48263,Kent County,Texas,242,0,0.0,True
+48261,Kenedy County,Texas,26,0,0.0,True
+48253,Jones County,Texas,3169,0,0.0,True
+48247,Jim Hogg County,Texas,405,0,0.0,True
+13251,Screven County,Georgia,2846,0,0.0,True
+48345,Motley County,Texas,393,0,0.0,True
+16047,Gooding County,Idaho,2860,0,0.0,True
+16045,Gem County,Idaho,4512,0,0.0,True
+48289,Leon County,Texas,3812,0,0.0,True
+16039,Elmore County,Idaho,4120,0,0.0,True
+16037,Custer County,Idaho,1594,0,0.0,True
+16035,Clearwater County,Idaho,2544,0,0.0,True
+16033,Clark County,Idaho,102,0,0.0,True
+16029,Caribou County,Idaho,1277,0,0.0,True
+13259,Stewart County,Georgia,785,0,0.0,True
+13257,Stephens County,Georgia,5514,0,0.0,True
+13253,Seminole County,Georgia,2273,0,0.0,True
+16043,Fremont County,Idaho,2438,0,0.0,True
+13249,Schley County,Georgia,704,0,0.0,True
+13243,Randolph County,Georgia,1315,0,0.0,True
+13241,Rabun County,Georgia,4867,0,0.0,True
+13239,Quitman County,Georgia,698,0,0.0,True
+13281,Towns County,Georgia,4626,0,0.0,True
+13273,Terrell County,Georgia,1819,0,0.0,True
+13271,Telfair County,Georgia,2181,0,0.0,True
+13269,Taylor County,Georgia,1673,0,0.0,True
+13267,Tattnall County,Georgia,3691,0,0.0,True
+13265,Taliaferro County,Georgia,471,0,0.0,True
+13263,Talbot County,Georgia,1547,0,0.0,True
+13261,Sumter County,Georgia,5036,0,0.0,True
+48287,Lee County,Texas,3685,0,0.0,True
+48341,Moore County,Texas,2382,0,0.0,True
+48343,Morris County,Texas,2612,0,0.0,True
+48333,Mills County,Texas,1298,0,0.0,True
+48327,Menard County,Texas,633,0,0.0,True
+16003,Adams County,Idaho,1397,0,0.0,True
+48315,Marion County,Texas,2575,0,0.0,True
+48311,McMullen County,Texas,102,0,0.0,True
+48307,McCulloch County,Texas,1783,0,0.0,True
+48305,Lynn County,Texas,896,0,0.0,True
+16025,Camas County,Idaho,172,0,0.0,True
+16023,Butte County,Idaho,528,0,0.0,True
+16021,Boundary County,Idaho,2990,0,0.0,True
+16015,Boise County,Idaho,2197,0,0.0,True
+16009,Benewah County,Idaho,2325,0,0.0,True
+16013,Blaine County,Idaho,5366,0,0.0,True
+16011,Bingham County,Idaho,7258,0,0.0,True
+36061,New York County,New York,289340,1,0.003456141563558443,False
+36081,Queens County,New York,399780,2,0.005002751513332333,False
+24003,Anne Arundel County,Maryland,91932,1,0.010877605186442152,False
+34039,Union County,New Jersey,84844,1,0.011786337277827543,False
+36085,Richmond County,New York,82903,1,0.012062289663823987,False
+34023,Middlesex County,New Jersey,135888,2,0.014718003061344636,False
+34021,Mercer County,New Jersey,60012,1,0.016663333999866695,False
+34025,Monmouth County,New Jersey,119488,2,0.01673808248527049,False
+34035,Somerset County,New Jersey,57335,1,0.017441353449027645,False
+45083,Spartanburg County,South Carolina,54742,1,0.018267509407767345,False
+53067,Thurston County,Washington,54324,1,0.018408070097930933,False
+36103,Suffolk County,New York,266533,5,0.018759403150829353,False
+13089,DeKalb County,Georgia,101452,2,0.01971375625911761,False
+24027,Howard County,Maryland,49360,1,0.020259319286871958,False
+06087,Santa Cruz County,California,48784,1,0.02049852410626435,False
+34029,Ocean County,New Jersey,144719,3,0.02072982814972464,False
+36091,Saratoga County,New York,45947,1,0.021764206585848912,False
+24025,Harford County,Maryland,44548,1,0.02244769686630152,False
+13057,Cherokee County,Georgia,42215,1,0.023688262465948122,False
+34031,Passaic County,New Jersey,80387,2,0.02487964471867342,False
+05007,Benton County,Arkansas,40157,1,0.024902258634858183,False
+12035,Flagler County,Florida,37833,1,0.02643195094229905,False
+45007,Anderson County,South Carolina,37680,1,0.02653927813163482,False
+42007,Beaver County,Pennsylvania,37123,1,0.026937478113299034,False
+36055,Monroe County,New York,137752,4,0.029037690922817817,False
+34003,Bergen County,New Jersey,170348,5,0.029351680090168364,False
+29183,St. Charles County,Missouri,67389,2,0.02967843416581341,False
+47165,Sumner County,Tennessee,32822,1,0.03046736944732192,False
+37179,Union County,North Carolina,32401,1,0.030863244961575262,False
+12113,Santa Rosa County,Florida,31890,1,0.03135779241141423,False
+18039,Elkhart County,Indiana,31377,1,0.031870478375880425,False
+13245,Richmond County,Georgia,30664,1,0.03261153143751631,False
+37101,Johnston County,North Carolina,30615,1,0.03266372693124286,False
+25015,Hampshire County,Massachusetts,30271,1,0.033034917908228996,False
+34027,Morris County,New Jersey,90759,3,0.03305457310018841,False
+34013,Essex County,New Jersey,119383,4,0.03350560800113919,False
+37001,Alamance County,North Carolina,29514,1,0.03388222538456326,False
+36119,Westchester County,New York,176628,6,0.03396969902846661,False
+41019,Douglas County,Oregon,29330,1,0.03409478349812479,False
+06113,Yolo County,California,28915,1,0.034584125886218224,False
+53057,Skagit County,Washington,28810,1,0.034710170079833395,False
+39133,Portage County,Ohio,28698,1,0.03484563384207959,False
+36083,Rensselaer County,New York,28650,1,0.034904013961605584,False
+47009,Blount County,Tennessee,28598,1,0.034967480243373664,False
+36067,Onondaga County,New York,85781,3,0.034972779519940315,False
+34007,Camden County,New Jersey,84971,3,0.03530616327923645,False
+37021,Buncombe County,North Carolina,56572,2,0.03535317825072474,False
+36001,Albany County,New York,56132,2,0.03563030000712606,False
+06107,Tulare County,California,55879,2,0.03579162118148141,False
+34005,Burlington County,New Jersey,83125,3,0.03609022556390978,False
+36027,Dutchess County,New York,55363,2,0.03612520997778299,False
+24033,Prince George's County,Maryland,138054,5,0.03621771190983238,False
+24043,Washington County,Maryland,27598,1,0.03623450974708312,False
+50007,Chittenden County,Vermont,27558,1,0.03628710356339357,False
+27003,Anoka County,Minnesota,55001,2,0.03636297521863239,False
+51013,Arlington County,Virginia,27321,1,0.036601881336700705,False
+34009,Cape May County,New Jersey,27232,1,0.03672150411280846,False
+45013,Beaufort County,South Carolina,53616,2,0.03730229782154581,False
+34001,Atlantic County,New Jersey,52889,2,0.03781504660704494,False
+36087,Rockland County,New York,52835,2,0.03785369546701997,False
+18063,Hendricks County,Indiana,26406,1,0.03787018101946527,False
+36047,Kings County,New York,396070,15,0.03787209331683793,False
+37151,Randolph County,North Carolina,26369,1,0.03792331904888316,False
+23011,Kennebec County,Maine,26116,1,0.038290703017307394,False
+06023,Humboldt County,California,26082,1,0.03834061805076298,False
+34019,Hunterdon County,New Jersey,26073,1,0.03835385264449814,False
+36029,Erie County,New York,178676,7,0.03917705791488504,False
+17179,Tazewell County,Illinois,25516,1,0.039191095783038095,False
+45063,Lexington County,South Carolina,50204,2,0.039837463150346586,False
+28033,DeSoto County,Mississippi,25074,1,0.03988194942968812,False
+53009,Clallam County,Washington,24426,1,0.04093998198640793,False
+26025,Calhoun County,Michigan,24384,1,0.04101049868766404,False
+17113,McLean County,Illinois,24285,1,0.04117768169652048,False
+34011,Cumberland County,New Jersey,23806,1,0.04200621692010418,False
+37135,Orange County,North Carolina,23101,1,0.04328816934331847,False
+36059,Nassau County,New York,253288,11,0.04342882410536622,False
+05125,Saline County,Arkansas,22835,1,0.04379242391066345,False
+06039,Madera County,California,22802,1,0.04385580212262082,False
+30029,Flathead County,Montana,22519,1,0.04440694524623651,False
+48381,Randall County,Texas,22506,1,0.04443259575224385,False
+36065,Oneida County,New York,44536,2,0.04490749056942698,False
+01103,Morgan County,Alabama,22123,1,0.04520182615377661,False
+51650,Hampton city,Virginia,22122,1,0.04520386945122502,False
+24017,Charles County,Maryland,22108,1,0.04523249502442555,False
+34017,Hudson County,New Jersey,88417,4,0.04524016874582942,False
+12089,Nassau County,Florida,22097,1,0.045255011992578184,False
+45057,Lancaster County,South Carolina,21699,1,0.046085073044840774,False
+26045,Eaton County,Michigan,21352,1,0.04683402023229674,False
+15003,Honolulu County,Hawaii,191464,9,0.04700622571345005,False
+35049,Santa Fe County,New Mexico,42341,2,0.04723554002031128,False
+13135,Gwinnett County,Georgia,105476,5,0.04740414881110394,False
+04017,Navajo County,Arizona,21091,1,0.04741358873453132,False
+24021,Frederick County,Maryland,42039,2,0.04757487095316254,False
+39109,Miami County,Ohio,20978,1,0.04766898655734579,False
+55063,La Crosse County,Wisconsin,20969,1,0.04768944632552816,False
+44005,Newport County,Rhode Island,20779,1,0.04812551133355792,False
+23001,Androscoggin County,Maine,20770,1,0.04814636494944632,False
+37049,Craven County,North Carolina,20675,1,0.04836759371221282,False
+36075,Oswego County,New York,20575,1,0.04860267314702309,False
+26065,Ingham County,Michigan,41092,2,0.04867127421395892,False
+06075,San Francisco County,California,143605,7,0.04874482086278333,False
+41005,Clackamas County,Oregon,81683,4,0.048969797877159264,False
+55127,Walworth County,Wisconsin,20274,1,0.049324257669922066,False
+55039,Fond du Lac County,Wisconsin,20087,1,0.04978344202718176,False
+12087,Monroe County,Florida,19888,1,0.05028157683024939,False
+18105,Monroe County,Indiana,19888,1,0.05028157683024939,False
+36005,Bronx County,New York,197702,10,0.05058117773214231,False
+22063,Livingston Parish,Louisiana,19746,1,0.05064316823660488,False
+51510,Alexandria city,Virginia,19720,1,0.05070993914807302,False
+36007,Broome County,New York,39373,2,0.05079623091966576,False
+41039,Lane County,Oregon,78251,4,0.051117557603097726,False
+37037,Chatham County,North Carolina,19531,1,0.05120065536838871,False
+29071,Franklin County,Missouri,19517,1,0.051237382794486856,False
+24031,Montgomery County,Maryland,175080,9,0.05140507196710076,False
+27171,Wright County,Minnesota,19339,1,0.05170898185014737,False
+36071,Orange County,New York,57945,3,0.05177323323841574,False
+12017,Citrus County,Florida,57659,3,0.05203003867566208,False
+45043,Georgetown County,South Carolina,19152,1,0.052213868003341685,False
+29037,Cass County,Missouri,19108,1,0.05233410090014654,False
+53053,Pierce County,Washington,133313,7,0.052508007471139345,False
+29047,Clay County,Missouri,38061,2,0.05254722682010457,False
+37157,Rockingham County,North Carolina,19008,1,0.052609427609427606,False
+36101,Steuben County,New York,18895,1,0.05292405398253506,False
+13121,Fulton County,Georgia,132189,7,0.052954481840395196,False
+27139,Scott County,Minnesota,18807,1,0.05317169139150316,False
+37023,Burke County,North Carolina,18659,1,0.05359344016292406,False
+12055,Highlands County,Florida,37300,2,0.053619302949061656,False
+17091,Kankakee County,Illinois,18645,1,0.053633681952266025,False
+01117,Shelby County,Alabama,37189,2,0.05377934335421764,False
+29099,Jefferson County,Missouri,36770,2,0.05439216752787599,False
+53033,King County,Washington,311368,17,0.05459777498008787,False
+45085,Sumter County,South Carolina,18224,1,0.05487269534679543,False
+06083,Santa Barbara County,California,71982,4,0.05556944791753494,False
+53041,Lewis County,Washington,17779,1,0.056246133078350864,False
+53035,Kitsap County,Washington,52865,3,0.05674832119549797,False
+47163,Sullivan County,Tennessee,35212,2,0.056798818584573446,False
+12091,Okaloosa County,Florida,35106,2,0.05697031846408021,False
+28049,Hinds County,Mississippi,34982,2,0.05717226001943857,False
+12107,Putnam County,Florida,17472,1,0.05723443223443223,False
+13097,Douglas County,Georgia,17466,1,0.05725409366769724,False
+53027,Grays Harbor County,Washington,17438,1,0.05734602592040372,False
+24015,Cecil County,Maryland,17411,1,0.0574349549135604,False
+16027,Canyon County,Idaho,34795,2,0.057479522919959766,False
+26087,Lapeer County,Michigan,17339,1,0.0576734529096257,False
+41067,Washington County,Oregon,86005,5,0.058136154874716586,False
+42111,Somerset County,Pennsylvania,17188,1,0.05818012566907144,False
+53061,Snohomish County,Washington,120158,7,0.058256628772116716,False
+51015,Augusta County,Virginia,17133,1,0.05836689429755443,False
+13045,Carroll County,Georgia,17112,1,0.0584385226741468,False
+29165,Platte County,Missouri,17091,1,0.05851032707272834,False
+37027,Caldwell County,North Carolina,17060,1,0.05861664712778429,False
+41029,Jackson County,Oregon,51035,3,0.058783188008229646,False
+13067,Cobb County,Georgia,101893,6,0.058885301247386966,False
+25011,Franklin County,Massachusetts,16973,1,0.05891710363518529,False
+01095,Marshall County,Alabama,16756,1,0.05968011458582,False
+33005,Cheshire County,New Hampshire,16642,1,0.06008893161879582,False
+06047,Merced County,California,33068,2,0.0604814322003145,False
+36015,Chemung County,New York,16496,1,0.06062075654704171,False
+36109,Tompkins County,New York,16494,1,0.06062810719049351,False
+40131,Rogers County,Oklahoma,16444,1,0.06081245439065921,False
+08035,Douglas County,Colorado,49324,3,0.06082231773578785,False
+21111,Jefferson County,Kentucky,131237,8,0.06095841873861792,False
+55027,Dodge County,Wisconsin,16398,1,0.060983046713013786,False
+28089,Madison County,Mississippi,16385,1,0.061031431187061336,False
+18067,Howard County,Indiana,16356,1,0.061139642944485206,False
+06031,Kings County,California,16221,1,0.061648480364959006,False
+13117,Forsyth County,Georgia,32413,2,0.061703637429426465,False
+37019,Brunswick County,North Carolina,48517,3,0.06183399633118288,False
+26139,Ottawa County,Michigan,48462,3,0.0619041723412158,False
+13015,Bartow County,Georgia,16151,1,0.06191567085629373,False
+17143,Peoria County,Illinois,32237,2,0.06204051245463287,False
+01125,Tuscaloosa County,Alabama,32169,2,0.062171655942056016,False
+20045,Douglas County,Kansas,15927,1,0.06278646323852578,False
+55141,Wood County,Wisconsin,15848,1,0.06309944472488642,False
+26147,St. Clair County,Michigan,31644,2,0.06320313487548983,False
+26121,Muskegon County,Michigan,31596,2,0.063299151791366,False
+37097,Iredell County,North Carolina,31545,2,0.06340148993501347,False
+41041,Lincoln County,Oregon,15765,1,0.06343165239454487,False
+25003,Berkshire County,Massachusetts,31527,2,0.06343768833063723,False
+15001,Hawaii County,Hawaii,47167,3,0.06360379078593084,False
+48021,Bastrop County,Texas,15617,1,0.06403278478581034,False
+13059,Clarke County,Georgia,15596,1,0.06411900487304437,False
+36009,Cattaraugus County,New York,15502,1,0.06450780544445878,False
+22071,Orleans Parish,Louisiana,61879,4,0.06464228575122416,False
+36113,Warren County,New York,15454,1,0.06470816617057074,False
+33003,Carroll County,New Hampshire,15425,1,0.06482982171799029,False
+41035,Klamath County,Oregon,15411,1,0.06488871585231328,False
+55087,Outagamie County,Wisconsin,30756,2,0.06502796202367019,False
+37089,Henderson County,North Carolina,30552,2,0.06546216286986123,False
+06109,Tuolumne County,California,15199,1,0.06579380222383051,False
+13313,Whitfield County,Georgia,15153,1,0.06599353263380188,False
+36105,Sullivan County,New York,15058,1,0.06640988179041042,False
+06041,Marin County,California,60192,4,0.06645401382243488,False
+27019,Carver County,Minnesota,14990,1,0.066711140760507,False
+26115,Monroe County,Michigan,29966,2,0.06674230794900889,False
+37193,Wilkes County,North Carolina,14981,1,0.06675121820973233,False
+37195,Wilson County,North Carolina,14938,1,0.06694336591243807,False
+29043,Christian County,Missouri,14875,1,0.06722689075630252,False
+26075,Jackson County,Michigan,29730,2,0.06727211570803902,False
+06057,Nevada County,California,29591,2,0.06758811800885405,False
+44009,Washington County,Rhode Island,29403,2,0.06802027004047205,False
+45045,Greenville County,South Carolina,88164,6,0.06805498843065197,False
+55139,Winnebago County,Wisconsin,29233,2,0.06841583142339137,False
+10005,Sussex County,Delaware,73050,5,0.06844626967830253,False
+06017,El Dorado County,California,43808,3,0.06848064280496713,False
+23009,Hancock County,Maine,14563,1,0.06866717022591498,False
+13247,Rockdale County,Georgia,14552,1,0.06871907641561298,False
+06097,Sonoma County,California,101805,7,0.06875890182211089,False
+51143,Pittsylvania County,Virginia,14475,1,0.0690846286701209,False
+08001,Adams County,Colorado,57841,4,0.06915509759513148,False
+41051,Multnomah County,Oregon,115661,8,0.06916765374672534,False
+36019,Clinton County,New York,14447,1,0.06921852287672181,False
+37129,New Hanover County,North Carolina,43240,3,0.06938020351526364,False
+42025,Carbon County,Pennsylvania,14403,1,0.06942997986530584,False
+53025,Grant County,Washington,14393,1,0.06947821857847565,False
+35061,Valencia County,New Mexico,14337,1,0.0697495989398061,False
+50027,Windsor County,Vermont,14336,1,0.06975446428571429,False
+37161,Rutherford County,North Carolina,14334,1,0.06976419701409237,False
+24001,Allegany County,Maryland,14200,1,0.07042253521126761,False
+29031,Cape Girardeau County,Missouri,14172,1,0.07056167090036693,False
+53073,Whatcom County,Washington,42255,3,0.07099751508697195,False
+06055,Napa County,California,28017,2,0.0713852303958311,False
+53011,Clark County,Washington,83012,6,0.07227870669300825,False
+51087,Henrico County,Virginia,55311,4,0.07231834535625825,False
+01073,Jefferson County,Alabama,110182,8,0.07260714091230873,False
+21151,Madison County,Kentucky,13719,1,0.07289161017566878,False
+46099,Minnehaha County,South Dakota,27318,2,0.07321180174244088,False
+21145,McCracken County,Kentucky,13614,1,0.07345379756133391,False
+27037,Dakota County,Minnesota,67915,5,0.07362143856290952,False
+45051,Horry County,South Carolina,94867,7,0.0737875130445782,False
+54055,Mercer County,West Virginia,13341,1,0.07495689978262499,False
+26155,Shiawassee County,Michigan,13253,1,0.07545461404964914,False
+40037,Creek County,Oklahoma,13232,1,0.07557436517533252,False
+53031,Jefferson County,Washington,13181,1,0.07586677793794097,False
+55131,Washington County,Wisconsin,26343,2,0.07592149717192423,False
+37183,Wake County,North Carolina,144054,11,0.07636025379371625,False
+54033,Harrison County,West Virginia,13084,1,0.07642922653622745,False
+06103,Tehama County,California,13075,1,0.07648183556405354,False
+37159,Rowan County,North Carolina,26006,2,0.07690532953933707,False
+48187,Guadalupe County,Texas,25942,2,0.07709505820676894,False
+17201,Winnebago County,Illinois,51590,4,0.07753440589261486,False
+55059,Kenosha County,Wisconsin,25740,2,0.0777000777000777,False
+55073,Marathon County,Wisconsin,25737,2,0.07770913470878502,False
+19169,Story County,Iowa,12773,1,0.07829014327096219,False
+55017,Chippewa County,Wisconsin,12741,1,0.07848677497841614,False
+55111,Sauk County,Wisconsin,12715,1,0.07864726700747149,False
+50023,Washington County,Vermont,12602,1,0.07935248373274083,False
+47019,Carter County,Tennessee,12593,1,0.07940919558484873,False
+37071,Gaston County,North Carolina,37758,3,0.0794533608771651,False
+29213,Taney County,Missouri,12577,1,0.07951021706289257,False
+29029,Camden County,Missouri,12556,1,0.07964319847085059,False
+55097,Portage County,Wisconsin,12556,1,0.07964319847085059,False
+20155,Reno County,Kansas,12535,1,0.07977662544874352,False
+42085,Mercer County,Pennsylvania,24927,2,0.08023428410960003,False
+37125,Moore County,North Carolina,24731,2,0.08087016295337834,False
+37147,Pitt County,North Carolina,24612,2,0.08126117341134406,False
+17167,Sangamon County,Illinois,36885,3,0.08133387555917039,False
+53077,Yakima County,Washington,36622,3,0.08191797280323303,False
+39093,Lorain County,Ohio,60992,5,0.08197796432318992,False
+12109,St. Johns County,Florida,60957,5,0.08202503404038912,False
+51199,York County,Virginia,12186,1,0.08206138191367142,False
+32031,Washoe County,Nevada,85081,7,0.08227453838107215,False
+42121,Venango County,Pennsylvania,12135,1,0.08240626287597858,False
+23005,Cumberland County,Maine,60648,5,0.08244294947896057,False
+37081,Guilford County,North Carolina,84833,7,0.0825150589982672,False
+31153,Sarpy County,Nebraska,24234,2,0.08252867871585376,False
+37119,Mecklenburg County,North Carolina,132281,11,0.0831563111860358,False
+42129,Westmoreland County,Pennsylvania,83913,7,0.08341973234183023,False
+01101,Montgomery County,Alabama,35962,3,0.08342138924420221,False
+17119,Madison County,Illinois,47601,4,0.08403184807041868,False
+55025,Dane County,Wisconsin,83030,7,0.08430687703239793,False
+26117,Montcalm County,Michigan,11818,1,0.08461668641056017,False
+41033,Josephine County,Oregon,23599,2,0.08474935378617739,False
+13113,Fayette County,Georgia,23556,2,0.08490405841399219,False
+13073,Columbia County,Georgia,23470,2,0.08521516829995739,False
+48291,Liberty County,Texas,11701,1,0.08546278095889241,False
+02090,Fairbanks North Star Borough,Alaska,11685,1,0.08557980316645271,False
+23031,York County,Maine,46675,4,0.0856989823245849,False
+01033,Colbert County,Alabama,11600,1,0.08620689655172413,False
+37107,Lenoir County,North Carolina,11576,1,0.08638562543192813,False
+45079,Richland County,South Carolina,57401,5,0.08710649640250169,False
+37141,Pender County,North Carolina,11449,1,0.08734387282732117,False
+47089,Jefferson County,Tennessee,11318,1,0.08835483300936561,False
+51003,Albemarle County,Virginia,22616,2,0.08843296781039972,False
+42125,Washington County,Pennsylvania,45137,4,0.08861909298358332,False
+26149,St. Joseph County,Michigan,11273,1,0.08870753126940477,False
+08059,Jefferson County,Colorado,101082,9,0.08903662373122812,False
+18157,Tippecanoe County,Indiana,22415,2,0.08922596475574392,False
+08067,La Plata County,Colorado,11192,1,0.08934953538241601,False
+22045,Iberia Parish,Louisiana,11164,1,0.08957362952346828,False
+06005,Amador County,California,11163,1,0.08958165367732689,False
+47125,Montgomery County,Tennessee,22269,2,0.08981094795455566,False
+51107,Loudoun County,Virginia,44291,4,0.09031180149466031,False
+48339,Montgomery County,Texas,88541,8,0.09035362148609119,False
+27131,Rice County,Minnesota,11067,1,0.09035872413481522,False
+54079,Putnam County,West Virginia,11038,1,0.0905961224859576,False
+01009,Blount County,Alabama,11019,1,0.09075233687267448,False
+01071,Jackson County,Alabama,11004,1,0.09087604507451835,False
+27163,Washington County,Minnesota,43979,4,0.09095250005684531,False
+15009,Maui County,Hawaii,32982,3,0.09095870474804439,False
+28109,Pearl River County,Mississippi,10948,1,0.09134088417975886,False
+06045,Mendocino County,California,21829,2,0.09162123780292272,False
+20209,Wyandotte County,Kansas,21817,2,0.09167163221341156,False
+53005,Benton County,Washington,32722,3,0.09168143756494102,False
+06095,Solano County,California,76287,7,0.0917587531296289,False
+06115,Yuba County,California,10889,1,0.0918357975939021,False
+33017,Strafford County,New Hampshire,21771,2,0.09186532543291534,False
+47107,McMinn County,Tennessee,10877,1,0.09193711501333089,False
+39123,Ottawa County,Ohio,10852,1,0.09214891264283082,False
+39169,Wayne County,Ohio,21693,2,0.09219563914626838,False
+37113,Macon County,North Carolina,10832,1,0.09231905465288036,False
+45091,York County,South Carolina,43314,4,0.09234889412199289,False
+55005,Barron County,Wisconsin,10817,1,0.09244707405010631,False
+55135,Waupaca County,Wisconsin,10817,1,0.09244707405010631,False
+20015,Butler County,Kansas,10798,1,0.09260974254491573,False
+48091,Comal County,Texas,32385,3,0.09263547938860583,False
+48471,Walker County,Texas,10762,1,0.0929195316855603,False
+12105,Polk County,Florida,149631,14,0.09356349954220716,False
+17163,St. Clair County,Illinois,42724,4,0.09362419249133976,False
+04001,Apache County,Arizona,10662,1,0.09379103357719001,False
+18011,Boone County,Indiana,10627,1,0.09409993413004611,False
+05033,Crawford County,Arkansas,10623,1,0.09413536665725314,False
+25001,Barnstable County,Massachusetts,74234,7,0.09429641404208314,False
+10003,New Castle County,Delaware,95161,9,0.09457655972509747,False
+17177,Stephenson County,Illinois,10543,1,0.09484966328369535,False
+39005,Ashland County,Ohio,10481,1,0.09541074324968991,False
+42095,Northampton County,Pennsylvania,62869,6,0.09543654265218152,False
+01015,Calhoun County,Alabama,20939,2,0.09551554515497397,False
+55085,Oneida County,Wisconsin,10448,1,0.09571209800918837,False
+42055,Franklin County,Pennsylvania,31287,3,0.09588647041902389,False
+39037,Darke County,Ohio,10429,1,0.09588647041902389,False
+37083,Halifax County,North Carolina,10426,1,0.0959140610013428,False
+42021,Cambria County,Pennsylvania,31109,3,0.0964351152399627,False
+17073,Henry County,Illinois,10364,1,0.09648784253184099,False
+40041,Delaware County,Oklahoma,10357,1,0.09655305590421938,False
+37025,Cabarrus County,North Carolina,30979,3,0.09683979469963525,False
+33009,Grafton County,New Hampshire,20645,2,0.09687575684185032,False
+55075,Marinette County,Wisconsin,10318,1,0.09691800736576855,False
+47031,Coffee County,Tennessee,10307,1,0.09702144173862425,False
+53063,Spokane County,Washington,92555,9,0.09723947922856681,False
+37175,Transylvania County,North Carolina,10247,1,0.09758953840148336,False
+35055,Taos County,New Mexico,10244,1,0.09761811792268646,False
+39147,Seneca County,Ohio,10235,1,0.09770395701025891,False
+24013,Carroll County,Maryland,30667,3,0.09782502364104738,False
+27013,Blue Earth County,Minnesota,10212,1,0.09792401096748922,False
+26123,Newaygo County,Michigan,10205,1,0.09799118079372857,False
+38035,Grand Forks County,North Dakota,10195,1,0.0980872976949485,False
+55133,Waukesha County,Wisconsin,81273,8,0.09843367415993011,False
+23019,Penobscot County,Maine,30343,3,0.09886959100945852,False
+04003,Cochise County,Arizona,30320,3,0.09894459102902374,False
+37169,Stokes County,North Carolina,10099,1,0.09901970492127933,False
+01097,Mobile County,Alabama,70108,7,0.0998459519598334,False
+33013,Merrimack County,New Hampshire,29975,3,0.10008340283569642,False
+21015,Boone County,Kentucky,19967,2,0.10016527269995493,False
+19103,Johnson County,Iowa,19951,2,0.10024560172422435,False
+12063,Jackson County,Florida,9961,1,0.10039152695512499,False
+42107,Schuylkill County,Pennsylvania,29838,3,0.10054293183189222,False
+42041,Cumberland County,Pennsylvania,49724,5,0.10055506395302068,False
+55095,Polk County,Wisconsin,9935,1,0.10065425264217413,False
+36089,St. Lawrence County,New York,19814,2,0.10093873019077419,False
+42097,Northumberland County,Pennsylvania,19756,2,0.10123506782749545,False
+12015,Charlotte County,Florida,78873,8,0.10142887933766942,False
+28087,Lowndes County,Mississippi,9856,1,0.10146103896103897,False
+12115,Sarasota County,Florida,167531,17,0.1014737570957017,False
+51710,Norfolk city,Virginia,29560,3,0.10148849797023003,False
+37191,Wayne County,North Carolina,19691,2,0.10156924483266468,False
+19033,Cerro Gordo County,Iowa,9845,1,0.1015744032503809,False
+13031,Bulloch County,Georgia,9836,1,0.101667344448963,False
+53047,Okanogan County,Washington,9817,1,0.10186411327289395,False
+42073,Lawrence County,Pennsylvania,19608,2,0.10199918400652795,False
+39085,Lake County,Ohio,48896,5,0.10225785340314136,False
+18035,Delaware County,Indiana,19495,2,0.102590407796871,False
+46083,Lincoln County,South Dakota,9717,1,0.10291242152927858,False
+42071,Lancaster County,Pennsylvania,106580,11,0.10320885719647213,False
+22015,Bossier Parish,Louisiana,19355,2,0.10333247222939809,False
+17089,Kane County,Illinois,77378,8,0.10338856005582982,False
+45021,Cherokee County,South Carolina,9630,1,0.10384215991692627,False
+40113,Osage County,Oklahoma,9603,1,0.10413412475268145,False
+47149,Rutherford County,Tennessee,38385,4,0.10420737267161652,False
+01077,Lauderdale County,Alabama,19172,2,0.1043187982474442,False
+42065,Jefferson County,Pennsylvania,9570,1,0.10449320794148381,False
+55029,Door County,Wisconsin,9539,1,0.1048327916972429,False
+36031,Essex County,New York,9525,1,0.10498687664041995,False
+06007,Butte County,California,38054,4,0.10511378567299101,False
+26059,Hillsdale County,Michigan,9483,1,0.10545186122535062,False
+41047,Marion County,Oregon,56857,6,0.10552790333644055,False
+01001,Autauga County,Alabama,9474,1,0.10555203715431707,False
+37059,Davie County,North Carolina,9470,1,0.10559662090813093,False
+26041,Delta County,Michigan,9421,1,0.10614584439019212,False
+18065,Henry County,Indiana,9393,1,0.10646225912913872,False
+37045,Cleveland County,North Carolina,18774,2,0.10653030787258976,False
+26161,Washtenaw County,Michigan,56244,6,0.10667804565820355,False
+12121,Suwannee County,Florida,9368,1,0.1067463706233988,False
+42029,Chester County,Pennsylvania,93642,10,0.10678968838768928,False
+48213,Henderson County,Texas,18727,2,0.10679767181075453,False
+54069,Ohio County,West Virginia,9361,1,0.10682619378271553,False
+17019,Champaign County,Illinois,28065,3,0.10689470871191876,False
+01123,Tallapoosa County,Alabama,9342,1,0.10704345964461572,False
+05119,Pulaski County,Arkansas,64832,7,0.10797137216189537,False
+12101,Pasco County,Florida,129661,14,0.10797387032338174,False
+37111,McDowell County,North Carolina,9257,1,0.10802635843145728,False
+37063,Durham County,North Carolina,46239,5,0.10813382642358182,False
+48099,Coryell County,Texas,9221,1,0.10844810758052273,False
+48073,Cherokee County,Texas,9195,1,0.10875475802066341,False
+25005,Bristol County,Massachusetts,100780,11,0.10914864060329431,False
+22113,Vermilion Parish,Louisiana,9161,1,0.10915838882218099,False
+37085,Harnett County,North Carolina,18300,2,0.1092896174863388,False
+04023,Santa Cruz County,Arizona,9123,1,0.10961306587745259,False
+37055,Dare County,North Carolina,9108,1,0.10979358805445763,False
+47187,Williamson County,Tennessee,36307,4,0.11017159225493707,False
+48325,Medina County,Texas,9047,1,0.11053387863380126,False
+37127,Nash County,North Carolina,18090,2,0.1105583195135434,False
+18093,Lawrence County,Indiana,9036,1,0.11066843736166446,False
+06053,Monterey County,California,63232,7,0.11070344129554656,False
+37031,Carteret County,North Carolina,18051,2,0.11079718575148191,False
+18141,St. Joseph County,Indiana,45036,5,0.11102229327648992,False
+04025,Yavapai County,Arizona,80878,9,0.11127871609090234,False
+13129,Gordon County,Georgia,8980,1,0.111358574610245,False
+48349,Navarro County,Texas,8950,1,0.111731843575419,False
+01113,Russell County,Alabama,8948,1,0.11175681716584712,False
+13137,Habersham County,Georgia,8931,1,0.11196954428395477,False
+36033,Franklin County,New York,8902,1,0.11233430689732644,False
+01045,Dale County,Alabama,8892,1,0.11246063877642826,False
+04019,Pima County,Arizona,222074,25,0.11257508758341814,False
+33011,Hillsborough County,New Hampshire,71059,8,0.11258250186464769,False
+41011,Coos County,Oregon,17750,2,0.11267605633802817,False
+33015,Rockingham County,New Hampshire,62005,7,0.11289412144181922,False
+55071,Manitowoc County,Wisconsin,17671,2,0.11317978609020429,False
+40137,Stephens County,Oklahoma,8833,1,0.11321181931393638,False
+48251,Johnson County,Texas,26499,3,0.11321181931393638,False
+08045,Garfield County,Colorado,8827,1,0.11328877308258752,False
+26073,Isabella County,Michigan,8818,1,0.11340440009072351,False
+19181,Warren County,Iowa,8813,1,0.11346873936230568,False
+37099,Jackson County,North Carolina,8799,1,0.11364927832708262,False
+01089,Madison County,Alabama,61396,7,0.1140139422763698,False
+45003,Aiken County,South Carolina,35009,4,0.11425633408552087,False
+16069,Nez Perce County,Idaho,8733,1,0.11450818733539447,False
+47093,Knox County,Tennessee,78379,9,0.11482667551257351,False
+08029,Delta County,Colorado,8701,1,0.11492931846914148,False
+39033,Crawford County,Ohio,8696,1,0.11499540018399264,False
+04015,Mohave County,Arizona,69401,8,0.1152721142346652,False
+13291,Union County,Georgia,8673,1,0.11530035743110804,False
+12021,Collier County,Florida,130092,15,0.11530301632690712,False
+06079,San Luis Obispo County,California,60708,7,0.11530605521512814,False
+55015,Calumet County,Wisconsin,8667,1,0.11538017768547364,False
+55083,Oconto County,Wisconsin,8661,1,0.11546010853250202,False
+39043,Erie County,Ohio,17265,2,0.11584129742253113,False
+45075,Orangeburg County,South Carolina,17227,2,0.11609682475184305,False
+12117,Seminole County,Florida,77479,9,0.11616050800862168,False
+48493,Wilson County,Texas,8588,1,0.11644154634373545,False
+37109,Lincoln County,North Carolina,17168,2,0.11649580615097856,False
+40083,Logan County,Oklahoma,8583,1,0.1165093790050099,False
+21113,Jessamine County,Kentucky,8563,1,0.11678150181011328,False
+01003,Baldwin County,Alabama,51326,6,0.11689981685695358,False
+37051,Cumberland County,North Carolina,42744,5,0.11697548193898559,False
+21107,Hopkins County,Kentucky,8525,1,0.11730205278592376,False
+23003,Aroostook County,Maine,17049,2,0.11730893307525368,False
+12073,Leon County,Florida,42546,5,0.11751986085648473,False
+36045,Jefferson County,New York,16998,2,0.11766090128250382,False
+13275,Thomas County,Georgia,8487,1,0.11782726522917403,False
+41017,Deschutes County,Oregon,42327,5,0.11812790889975666,False
+42133,York County,Pennsylvania,84652,10,0.11813069980626566,False
+29077,Greene County,Missouri,50744,6,0.11824058016711336,False
+28047,Harrison County,Mississippi,33787,4,0.11838872939296179,False
+17029,Coles County,Illinois,8444,1,0.11842728564661298,False
+39149,Shelby County,Ohio,8440,1,0.11848341232227488,False
+04027,Yuma County,Arizona,42186,5,0.11852273266012421,False
+12081,Manatee County,Florida,117425,14,0.11922503725782414,False
+41015,Curry County,Oregon,8345,1,0.11983223487118036,False
+13139,Hall County,Georgia,33285,4,0.12017425266636622,False
+26063,Huron County,Michigan,8316,1,0.12025012025012026,False
+42119,Union County,Pennsylvania,8282,1,0.12074378169524269,False
+01083,Limestone County,Alabama,16544,2,0.12088974854932302,False
+26111,Midland County,Michigan,16534,2,0.120962864400629,False
+50001,Addison County,Vermont,8266,1,0.12097749818533753,False
+17111,McHenry County,Illinois,49532,6,0.12113381248485827,False
+12027,DeSoto County,Florida,8254,1,0.121153380179307,False
+45025,Chesterfield County,South Carolina,8253,1,0.12116806009935781,False
+37145,Person County,North Carolina,8250,1,0.12121212121212122,False
+27021,Cass County,Minnesota,8238,1,0.12138868657441126,False
+21093,Hardin County,Kentucky,16456,2,0.12153621779290227,False
+47037,Davidson County,Tennessee,90153,11,0.12201479706720797,False
+30013,Cascade County,Montana,16354,2,0.12229423994129877,False
+48221,Hood County,Texas,16302,2,0.122684333210649,False
+53007,Chelan County,Washington,16291,2,0.12276717205819164,False
+04007,Gila County,Arizona,16289,2,0.12278224568727363,False
+01115,St. Clair County,Alabama,16285,2,0.12281240405280934,False
+13051,Chatham County,Georgia,48814,6,0.12291555701233252,False
+18095,Madison County,Indiana,24354,3,0.1231830500123183,False
+30031,Gallatin County,Montana,16230,2,0.12322858903265557,False
+29019,Boone County,Missouri,24330,3,0.12330456226880394,False
+44007,Providence County,Rhode Island,105399,13,0.12334082866061348,False
+49057,Weber County,Utah,32361,4,0.12360557461141497,False
+47189,Wilson County,Tennessee,24231,3,0.1238083446824316,False
+12093,Okeechobee County,Florida,8072,1,0.1238850346878097,False
+23029,Washington County,Maine,8071,1,0.12390038409119068,False
+49021,Iron County,Utah,8059,1,0.12408487405385284,False
+45019,Charleston County,South Carolina,72478,9,0.1241756119098209,False
+06033,Lake County,California,16105,2,0.12418503570319776,False
+39051,Fulton County,Ohio,8037,1,0.12442453651860148,False
+31109,Lancaster County,Nebraska,48205,6,0.12446841613940463,False
+15007,Kauai County,Hawaii,16018,2,0.1248595330253465,False
+21009,Barren County,Kentucky,8002,1,0.12496875781054738,False
+16001,Ada County,Idaho,79976,10,0.12503751125337603,False
+47029,Cocke County,Tennessee,7981,1,0.1252975817566721,False
+51073,Gloucester County,Virginia,7975,1,0.12539184952978058,False
+12083,Marion County,Florida,111456,14,0.12561010623026128,False
+37181,Vance County,North Carolina,7958,1,0.12565971349585323,False
+26081,Kent County,Michigan,95484,12,0.12567550584391105,False
+42109,Snyder County,Pennsylvania,7943,1,0.12589701624071511,False
+12009,Brevard County,Florida,150162,19,0.12653001425127527,False
+39107,Mercer County,Ohio,7903,1,0.12653422750854107,False
+42003,Allegheny County,Pennsylvania,244881,31,0.12659209983624697,False
+27007,Beltrami County,Minnesota,7880,1,0.1269035532994924,False
+54025,Greenbrier County,West Virginia,7839,1,0.12756729174639622,False
+27005,Becker County,Minnesota,7815,1,0.12795905310300704,False
+45029,Colleton County,South Carolina,7771,1,0.12868356710848025,False
+36023,Cortland County,New York,7769,1,0.12871669455528384,False
+37197,Yadkin County,North Carolina,7756,1,0.12893243940175347,False
+56013,Fremont County,Wyoming,7755,1,0.1289490651192779,False
+54039,Kanawha County,West Virginia,38593,5,0.12955717358070118,False
+18127,Porter County,Indiana,30874,4,0.12955885210857032,False
+47059,Greene County,Tennessee,15436,2,0.1295672454003628,False
+39089,Licking County,Ohio,30851,4,0.12965544066642898,False
+21089,Greenup County,Kentucky,7706,1,0.12976901116013495,False
+53037,Kittitas County,Washington,7691,1,0.1300221037576388,False
+01121,Talladega County,Alabama,15357,2,0.13023376961646155,False
+49003,Box Elder County,Utah,7671,1,0.13036110024768607,False
+28151,Washington County,Mississippi,7669,1,0.13039509714434735,False
+39057,Greene County,Ohio,30665,4,0.13044187184086092,False
+13217,Newton County,Georgia,15331,2,0.1304546344008871,False
+13227,Pickens County,Georgia,7660,1,0.13054830287206265,False
+51155,Pulaski County,Virginia,7656,1,0.13061650992685478,False
+12053,Hernando County,Florida,53527,7,0.13077512283520468,False
+37153,Richmond County,North Carolina,7646,1,0.13078733978550874,False
+42011,Berks County,Pennsylvania,76181,10,0.13126632624932724,False
+48265,Kerr County,Texas,15227,2,0.13134563604124255,False
+19013,Black Hawk County,Iowa,22833,3,0.1313887793982394,False
+39027,Clinton County,Ohio,7608,1,0.13144058885383805,False
+47079,Henry County,Tennessee,7601,1,0.13156163662675965,False
+45071,Newberry County,South Carolina,7593,1,0.13170025023047544,False
+06061,Placer County,California,83236,11,0.13215435628814454,False
+28071,Lafayette County,Mississippi,7543,1,0.13257324671881213,False
+42031,Clarion County,Pennsylvania,7530,1,0.13280212483399734,False
+41057,Tillamook County,Oregon,7527,1,0.13285505513484788,False
+48013,Atascosa County,Texas,7518,1,0.13301409949454643,False
+33001,Belknap County,New Hampshire,15026,2,0.1331026221216558,False
+12127,Volusia County,Florida,142584,19,0.13325478314537395,False
+37003,Alexander County,North Carolina,7500,1,0.13333333333333333,False
+39025,Clermont County,Ohio,37474,5,0.1334258419170625,False
+27111,Otter Tail County,Minnesota,14970,2,0.13360053440213762,False
+05055,Greene County,Arkansas,7465,1,0.13395847287340923,False
+37035,Catawba County,North Carolina,29857,4,0.13397193288006162,False
+47065,Hamilton County,Tennessee,67162,9,0.13400434769661415,False
+30111,Yellowstone County,Montana,29849,4,0.1340078394586083,False
+48217,Hill County,Texas,7442,1,0.13437248051599032,False
+55033,Dunn County,Wisconsin,7428,1,0.13462574044157244,False
+35043,Sandoval County,New Mexico,29710,4,0.13463480309660047,False
+18071,Jackson County,Indiana,7425,1,0.13468013468013468,False
+06085,Santa Clara County,California,273921,37,0.13507544145939887,False
+17121,Marion County,Illinois,7398,1,0.13517166801838335,False
+39155,Trumbull County,Ohio,44363,6,0.13524784166986,False
+40097,Mayes County,Oklahoma,7368,1,0.13572204125950055,False
+37171,Surry County,North Carolina,14719,2,0.13587879611386644,False
+02170,Matanuska-Susitna Borough,Alaska,14713,2,0.1359342078434038,False
+55045,Green County,Wisconsin,7348,1,0.13609145345672294,False
+13215,Muscogee County,Georgia,29370,4,0.13619339462036092,False
+31157,Scotts Bluff County,Nebraska,7342,1,0.13620266957232363,False
+26017,Bay County,Michigan,22007,3,0.13632026173490253,False
+26031,Cheboygan County,Michigan,7327,1,0.1364815067558346,False
+51041,Chesterfield County,Virginia,58394,8,0.13700037675103607,False
+40017,Canadian County,Oklahoma,21889,3,0.1370551418520718,False
+12085,Martin County,Florida,50992,7,0.13727643551929714,False
+55109,St. Croix County,Wisconsin,14531,2,0.13763677654669326,False
+17081,Jefferson County,Illinois,7261,1,0.13772207684891888,False
+17097,Lake County,Illinois,108824,15,0.1378372417849004,False
+05139,Union County,Arkansas,7254,1,0.13785497656465398,False
+50021,Rutland County,Vermont,14500,2,0.13793103448275862,False
+30049,Lewis and Clark County,Montana,14452,2,0.1383891502906172,False
+19111,Lee County,Iowa,7208,1,0.13873473917869034,False
+08123,Weld County,Colorado,43229,6,0.13879571583890443,False
+42047,Elk County,Pennsylvania,7188,1,0.1391207568169171,False
+02020,Anchorage Municipality,Alaska,35936,5,0.13913624220837043,False
+17161,Rock Island County,Illinois,28691,4,0.13941654177268134,False
+22017,Caddo Parish,Louisiana,42913,6,0.1398177708386736,False
+37067,Forsyth County,North Carolina,64234,9,0.1401127128934832,False
+55009,Brown County,Wisconsin,42792,6,0.14021312394840157,False
+01051,Elmore County,Alabama,14244,2,0.14040999719180006,False
+27053,Hennepin County,Minnesota,191812,27,0.14076283027130734,False
+13071,Colquitt County,Georgia,7092,1,0.14100394811054712,False
+39097,Madison County,Ohio,7089,1,0.1410636196924813,False
+05035,Crittenden County,Arkansas,7061,1,0.141622999575131,False
+20079,Harvey County,Kansas,7056,1,0.1417233560090703,False
+42051,Fayette County,Pennsylvania,28146,4,0.14211610886093937,False
+29101,Johnson County,Missouri,7013,1,0.14259232853272494,False
+04012,La Paz County,Arizona,7012,1,0.1426126640045636,False
+17057,Fulton County,Illinois,7011,1,0.14263300527742118,False
+21157,Marshall County,Kentucky,7006,1,0.14273479874393377,False
+12061,Indian River County,Florida,56023,8,0.14279849347589382,False
+31111,Lincoln County,Nebraska,7002,1,0.14281633818908884,False
+27147,Steele County,Minnesota,6994,1,0.14297969688304263,False
+28113,Pike County,Mississippi,6976,1,0.143348623853211,False
+56033,Sheridan County,Wyoming,6974,1,0.14338973329509608,False
+06077,San Joaquin County,California,104481,15,0.14356677290607864,False
+39055,Geauga County,Ohio,20735,3,0.14468290330359296,False
+21071,Floyd County,Kentucky,6874,1,0.14547570555717196,False
+39063,Hancock County,Ohio,13726,2,0.14570887367040652,False
+37017,Bladen County,North Carolina,6858,1,0.1458151064450277,False
+18005,Bartholomew County,Indiana,13706,2,0.14592149423610096,False
+26029,Charlevoix County,Michigan,6849,1,0.1460067163089502,False
+30093,Silver Bow County,Montana,6849,1,0.1460067163089502,False
+50005,Caledonia County,Vermont,6840,1,0.14619883040935672,False
+54077,Preston County,West Virginia,6834,1,0.1463271875914545,False
+05023,Cleburne County,Arkansas,6829,1,0.1464343242055938,False
+39151,Stark County,Ohio,75100,11,0.14647137150466047,False
+24023,Garrett County,Maryland,6790,1,0.14727540500736377,False
+37133,Onslow County,North Carolina,20307,3,0.14773230905599055,False
+06073,San Diego County,California,493837,73,0.1478220546455612,False
+26049,Genesee County,Michigan,74147,11,0.14835394554061526,False
+45053,Jasper County,South Carolina,6731,1,0.1485663348685188,False
+13233,Polk County,Georgia,6727,1,0.1486546751895347,False
+45089,Williamsburg County,South Carolina,6709,1,0.14905351021016544,False
+21083,Graves County,Kentucky,6709,1,0.14905351021016544,False
+46013,Brown County,South Dakota,6708,1,0.1490757304710793,False
+01055,Etowah County,Alabama,20119,3,0.14911277896515732,False
+18069,Huntington County,Indiana,6688,1,0.14952153110047847,False
+47141,Putnam County,Tennessee,13333,2,0.15000375009375233,False
+35001,Bernalillo County,New Mexico,119885,18,0.15014388789256372,False
+05015,Carroll County,Arkansas,6640,1,0.15060240963855423,False
+17021,Christian County,Illinois,6631,1,0.15080681646810434,False
+30063,Missoula County,Montana,19892,3,0.15081439774783834,False
+42015,Bradford County,Pennsylvania,13252,2,0.15092061575611226,False
+16005,Bannock County,Idaho,13244,2,0.15101177891875567,False
+45047,Greenwood County,South Carolina,13243,2,0.15102318205844598,False
+04013,Maricopa County,Arizona,718079,109,0.1517938834028011,False
+35045,San Juan County,New Mexico,19760,3,0.15182186234817815,False
+28075,Lauderdale County,Mississippi,13121,2,0.1524274064476793,False
+13179,Liberty County,Georgia,6558,1,0.15248551387618176,False
+42019,Butler County,Pennsylvania,39327,6,0.1525669387443741,False
+29097,Jasper County,Missouri,19570,3,0.1532958610117527,False
+21117,Kenton County,Kentucky,26080,4,0.15337423312883436,False
+48149,Fayette County,Texas,6519,1,0.15339776039269826,False
+39041,Delaware County,Ohio,32507,5,0.15381302488694742,False
+28003,Alcorn County,Mississippi,6477,1,0.1543924656476764,False
+41059,Umatilla County,Oregon,12946,2,0.15448787270199288,False
+22115,Vernon Parish,Louisiana,6470,1,0.1545595054095827,False
+40081,Lincoln County,Oklahoma,6470,1,0.1545595054095827,False
+20035,Cowley County,Kansas,6469,1,0.15458339774308238,False
+16017,Bonner County,Idaho,12932,2,0.1546551190844417,False
+47045,Dyer County,Tennessee,6429,1,0.15554518587649713,False
+46081,Lawrence County,South Dakota,6413,1,0.15593326056447843,False
+50019,Orleans County,Vermont,6410,1,0.15600624024961,False
+05145,White County,Arkansas,12817,2,0.15604275571506593,False
+48015,Austin County,Texas,6404,1,0.1561524047470331,False
+13277,Tift County,Georgia,6404,1,0.1561524047470331,False
+45059,Laurens County,South Carolina,12803,2,0.15621338748730768,False
+13255,Spalding County,Georgia,12797,2,0.15628662967883097,False
+18109,Morgan County,Indiana,12780,2,0.15649452269170577,False
+51810,Virginia Beach city,Virginia,70246,11,0.15659254619480115,False
+28081,Lee County,Mississippi,12772,2,0.15659254619480115,False
+17085,Jo Daviess County,Illinois,6385,1,0.15661707126076743,False
+47025,Claiborne County,Tennessee,6384,1,0.15664160401002505,False
+37057,Davidson County,North Carolina,31840,5,0.157035175879397,False
+19179,Wapello County,Iowa,6362,1,0.15718327569946555,False
+21035,Calloway County,Kentucky,6357,1,0.15730690577316345,False
+55079,Milwaukee County,Wisconsin,133478,21,0.1573292977119825,False
+39127,Perry County,Ohio,6355,1,0.15735641227380015,False
+36077,Otsego County,New York,12700,2,0.15748031496062992,False
+54003,Berkeley County,West Virginia,19045,3,0.15752165922814387,False
+01127,Walker County,Alabama,12696,2,0.1575299306868305,False
+19125,Marion County,Iowa,6347,1,0.15755475027572083,False
+17049,Effingham County,Illinois,6331,1,0.15795293002685198,False
+21199,Pulaski County,Kentucky,12652,2,0.15807777426493835,False
+45055,Kershaw County,South Carolina,12641,2,0.15821533106558028,False
+18081,Johnson County,Indiana,25273,4,0.15827167332726627,False
+47157,Shelby County,Tennessee,132606,21,0.15836387493778561,False
+13127,Glynn County,Georgia,18923,3,0.1585372298261375,False
+48143,Erath County,Texas,6292,1,0.1589319771137953,False
+39137,Putnam County,Ohio,6287,1,0.1590583744234134,False
+18053,Grant County,Indiana,12573,2,0.15907102521275748,False
+48367,Parker County,Texas,25050,4,0.1596806387225549,False
+47131,Obion County,Tennessee,6261,1,0.15971889474524836,False
+12019,Clay County,Florida,37541,6,0.1598252577182281,False
+01049,DeKalb County,Alabama,12507,2,0.15991045014791716,False
+47011,Bradley County,Tennessee,18739,3,0.1600939217674369,False
+13047,Catoosa County,Georgia,12471,2,0.1603720631865929,False
+54083,Randolph County,West Virginia,6228,1,0.16056518946692355,False
+48071,Chambers County,Texas,6221,1,0.16074586079408457,False
+20125,Montgomery County,Kansas,6207,1,0.1611084259706783,False
+18077,Jefferson County,Indiana,6203,1,0.16121231662098984,False
+51760,Richmond city,Virginia,31008,5,0.16124871001031993,False
+51197,Wythe County,Virginia,6201,1,0.16126431220770843,False
+19061,Dubuque County,Iowa,18570,3,0.16155088852988692,False
+29095,Jackson County,Missouri,111391,18,0.16159294736558608,False
+29015,Benton County,Missouri,6183,1,0.16173378618793466,False
+35027,Lincoln County,New Mexico,6178,1,0.16186468112657817,False
+51061,Fauquier County,Virginia,12345,2,0.16200891049007696,False
+01093,Marion County,Alabama,6157,1,0.16241676140977748,False
+51089,Henry County,Virginia,12296,2,0.16265452179570594,False
+21177,Muhlenberg County,Kentucky,6142,1,0.16281341582546402,False
+26043,Dickinson County,Michigan,6138,1,0.16291951775822744,False
+37069,Franklin County,North Carolina,12276,2,0.16291951775822744,False
+39157,Tuscarawas County,Ohio,18403,3,0.16301689941857306,False
+37165,Scotland County,North Carolina,6134,1,0.163025758069775,False
+31141,Platte County,Nebraska,6128,1,0.16318537859007834,False
+06065,Riverside County,California,371046,61,0.1644001013351444,False
+54011,Cabell County,West Virginia,18247,3,0.1644105880418699,False
+45023,Chester County,South Carolina,6079,1,0.16450074025333114,False
+51019,Bedford County,Virginia,18224,3,0.1646180860403863,False
+32510,Carson City,Nevada,12128,2,0.16490765171503957,False
+21227,Warren County,Kentucky,18185,3,0.16497113005224087,False
+18073,Jasper County,Indiana,6055,1,0.16515276630883569,False
+12097,Osceola County,Florida,54492,9,0.16516185862144903,False
+12111,St. Lucie County,Florida,84733,14,0.1652248828673598,False
+37167,Stanly County,North Carolina,12102,2,0.16526194017517767,False
+51163,Rockbridge County,Virginia,6048,1,0.16534391534391535,False
+31119,Madison County,Nebraska,6043,1,0.16548072149594573,False
+38017,Cass County,North Dakota,24154,4,0.16560404073859403,False
+18167,Vigo County,Indiana,18107,3,0.16568178052686805,False
+28085,Lincoln County,Mississippi,6035,1,0.16570008285004142,False
+40125,Pottawatomie County,Oklahoma,12035,2,0.1661819692563357,False
+01019,Cherokee County,Alabama,6003,1,0.16658337497917708,False
+51540,Charlottesville city,Virginia,6002,1,0.16661112962345886,False
+18057,Hamilton County,Indiana,48006,8,0.16664583593717452,False
+47183,Weakley County,Tennessee,5982,1,0.16716817118020727,False
+05069,Jefferson County,Arkansas,11935,2,0.1675743611227482,False
+48203,Harrison County,Texas,11934,2,0.16758840288252053,False
+13147,Hart County,Georgia,5947,1,0.1681520094165125,False
+17075,Iroquois County,Illinois,5939,1,0.16837851490149855,False
+54107,Wood County,West Virginia,17791,3,0.16862458546456074,False
+27103,Nicollet County,Minnesota,5906,1,0.16931933626820184,False
+51550,Chesapeake city,Virginia,35362,6,0.16967366099202535,False
+12071,Lee County,Florida,229480,39,0.16994945093254316,False
+39103,Medina County,Ohio,35200,6,0.17045454545454547,False
+35035,Otero County,New Mexico,11723,2,0.17060479399471123,False
+06063,Plumas County,California,5848,1,0.1709986320109439,False
+27119,Polk County,Minnesota,5829,1,0.171556013038257,False
+26127,Oceana County,Michigan,5828,1,0.17158544955387783,False
+29207,Stoddard County,Missouri,5817,1,0.17190991920233797,False
+29167,Polk County,Missouri,5815,1,0.17196904557179707,False
+28067,Jones County,Mississippi,11600,2,0.17241379310344826,False
+02122,Kenai Peninsula Borough,Alaska,11578,2,0.17274140611504576,False
+21235,Whitley County,Kentucky,5779,1,0.17304031839418585,False
+21067,Fayette County,Kentucky,46194,8,0.17318266441529204,False
+54067,Nicholas County,West Virginia,5759,1,0.17364125716270185,False
+27009,Benton County,Minnesota,5755,1,0.1737619461337967,False
+12129,Wakulla County,Florida,5750,1,0.1739130434782609,False
+01081,Lee County,Alabama,22970,4,0.174140182847192,False
+38015,Burleigh County,North Dakota,17208,3,0.17433751743375173,False
+19155,Pottawattamie County,Iowa,17147,3,0.1749577185513501,False
+06013,Contra Costa County,California,193816,34,0.17542411359227308,False
+48309,McLennan County,Texas,39781,7,0.17596339961288052,False
+25023,Plymouth County,Massachusetts,102175,18,0.1761683386346954,False
+51069,Frederick County,Virginia,17015,3,0.1763150161622098,False
+26129,Ogemaw County,Michigan,5659,1,0.17670966601873123,False
+47017,Carroll County,Tennessee,5654,1,0.17686593562079944,False
+29187,St. Francois County,Missouri,11304,2,0.17692852087756547,False
+01043,Cullman County,Alabama,16944,3,0.17705382436260625,False
+27153,Todd County,Minnesota,5647,1,0.17708517797060386,False
+21195,Pike County,Kentucky,11287,2,0.17719500310091257,False
+28107,Panola County,Mississippi,5634,1,0.17749378771742988,False
+38059,Morton County,North Dakota,5628,1,0.17768301350390903,False
+24045,Wicomico County,Maryland,16868,3,0.17785155323689827,False
+06081,San Mateo County,California,128893,23,0.17844258415895356,False
+48497,Wise County,Texas,11151,2,0.1793561115595014,False
+37013,Beaufort County,North Carolina,11130,2,0.17969451931716082,False
+41065,Wasco County,Oregon,5560,1,0.17985611510791366,False
+04009,Graham County,Arizona,5546,1,0.18031013342949875,False
+24041,Talbot County,Maryland,11060,2,0.18083182640144665,False
+54027,Hampshire County,West Virginia,5527,1,0.1809299800977022,False
+53003,Asotin County,Washington,5519,1,0.1811922449719152,False
+06089,Shasta County,California,38580,7,0.18144116122343185,False
+13115,Floyd County,Georgia,16517,3,0.1816310468002664,False
+26137,Otsego County,Michigan,5504,1,0.1816860465116279,False
+47147,Robertson County,Tennessee,10997,2,0.18186778212239701,False
+40115,Ottawa County,Oklahoma,5489,1,0.18218254691200583,False
+48491,Williamson County,Texas,82263,15,0.1823420006564312,False
+08085,Montrose County,Colorado,10968,2,0.18234865061998543,False
+39073,Hocking County,Ohio,5460,1,0.18315018315018314,False
+17095,Knox County,Illinois,10918,2,0.18318373328448434,False
+22005,Ascension Parish,Louisiana,16366,3,0.18330685567640229,False
+13285,Troup County,Georgia,10875,2,0.1839080459770115,False
+46029,Codington County,South Dakota,5430,1,0.1841620626151013,False
+22019,Calcasieu Parish,Louisiana,32572,6,0.18420729460886653,False
+39023,Clark County,Ohio,27115,5,0.18439977872026553,False
+39029,Columbiana County,Ohio,21671,4,0.1845784689216003,False
+51790,Staunton city,Virginia,5409,1,0.18487705675725644,False
+48331,Milam County,Texas,5405,1,0.18501387604070305,False
+06015,Del Norte County,California,5392,1,0.185459940652819,False
+51169,Scott County,Virginia,5382,1,0.1858045336306206,False
+39069,Henry County,Ohio,5378,1,0.1859427296392711,False
+05131,Sebastian County,Arkansas,21507,4,0.18598595806016646,False
+06099,Stanislaus County,California,74905,14,0.1869034109872505,False
+27109,Olmsted County,Minnesota,26688,5,0.18735011990407674,False
+54081,Raleigh County,West Virginia,16012,3,0.18735948038970773,False
+51177,Spotsylvania County,Virginia,21319,4,0.187626061259909,False
+26021,Berrien County,Michigan,31950,6,0.18779342723004694,False
+29127,Marion County,Missouri,5320,1,0.1879699248120301,False
+39077,Huron County,Ohio,10623,2,0.18827073331450628,False
+40147,Washington County,Oklahoma,10592,2,0.18882175226586104,False
+42089,Monroe County,Pennsylvania,31730,6,0.18909549322407815,False
+36049,Lewis County,New York,5287,1,0.18914318138831096,False
+51095,James City County,Virginia,21103,4,0.1895465099748851,False
+21125,Laurel County,Kentucky,10511,2,0.19027685282085435,False
+51085,Hanover County,Virginia,20943,4,0.19099460440242563,False
+19015,Boone County,Iowa,5234,1,0.19105846388995032,False
+17109,McDonough County,Illinois,5234,1,0.19105846388995032,False
+21141,Logan County,Kentucky,5212,1,0.1918649270913277,False
+27137,St. Louis County,Minnesota,41674,8,0.19196621394634544,False
+29215,Texas County,Missouri,5204,1,0.1921598770176787,False
+21121,Knox County,Kentucky,5198,1,0.19238168526356292,False
+20009,Barton County,Kansas,5197,1,0.19241870309794112,False
+12033,Escambia County,Florida,57060,11,0.19277953031896247,False
+28029,Copiah County,Mississippi,5184,1,0.19290123456790123,False
+22047,Iberville Parish,Louisiana,5184,1,0.19290123456790123,False
+17197,Will County,Illinois,98430,19,0.19303058010769075,False
+24029,Kent County,Maryland,5178,1,0.19312475859405176,False
+01133,Winston County,Alabama,5170,1,0.19342359767891681,False
+26077,Kalamazoo County,Michigan,41295,8,0.19372805424385517,False
+13185,Lowndes County,Georgia,15466,3,0.19397387818440448,False
+37047,Columbus County,North Carolina,10310,2,0.19398642095053345,False
+08015,Chaffee County,Colorado,5129,1,0.19496977968414894,False
+47123,Monroe County,Tennessee,10242,2,0.19527436047646946,False
+08069,Larimer County,Colorado,61264,12,0.19587359623922695,False
+37033,Caswell County,North Carolina,5096,1,0.19623233908948196,False
+26055,Grand Traverse County,Michigan,20378,4,0.1962901167926195,False
+48209,Hays County,Texas,30511,6,0.19665038838451704,False
+05143,Washington County,Arkansas,30500,6,0.19672131147540983,False
+49035,Salt Lake County,Utah,137137,27,0.19688340856224068,False
+13021,Bibb County,Georgia,25354,5,0.1972075412163761,False
+54097,Upshur County,West Virginia,5066,1,0.1973943939992104,False
+55113,Sawyer County,Wisconsin,5066,1,0.1973943939992104,False
+12007,Bradford County,Florida,5055,1,0.19782393669634024,False
+04005,Coconino County,Arizona,20200,4,0.19801980198019803,False
+37185,Warren County,North Carolina,5047,1,0.1981375074301565,False
+39017,Butler County,Ohio,60535,12,0.19823242752126868,False
+06029,Kern County,California,105653,21,0.19876387797790881,False
+21095,Harlan County,Kentucky,5021,1,0.19916351324437362,False
+20091,Johnson County,Kansas,95268,19,0.1994373766637276,False
+37115,Madison County,North Carolina,5005,1,0.1998001998001998,False
+47179,Washington County,Tennessee,25019,5,0.19984811543227146,False
+16055,Kootenai County,Idaho,35003,7,0.19998285861211895,False
+48453,Travis County,Texas,139903,28,0.20013866750534298,False
+19163,Scott County,Iowa,29851,6,0.20099829151452214,False
+13305,Wayne County,Georgia,4968,1,0.20128824476650564,False
+51775,Salem city,Virginia,4965,1,0.2014098690835851,False
+18003,Allen County,Indiana,59536,12,0.20155872077398548,False
+19149,Plymouth County,Iowa,4956,1,0.20177562550443906,False
+18135,Randolph County,Indiana,4950,1,0.20202020202020202,False
+01069,Houston County,Alabama,19789,4,0.20213249785234222,False
+37199,Yancey County,North Carolina,4946,1,0.2021835826930853,False
+29083,Henry County,Missouri,4942,1,0.20234722784297857,False
+27095,Mille Lacs County,Minnesota,4941,1,0.20238818053025703,False
+42101,Philadelphia County,Pennsylvania,227129,46,0.20252807875700593,False
+46093,Meade County,South Dakota,4937,1,0.20255215718047398,False
+51740,Portsmouth city,Virginia,14766,3,0.2031694433157253,False
+21193,Perry County,Kentucky,4919,1,0.20329335230737955,False
+37131,Northampton County,North Carolina,4909,1,0.20370747606437156,False
+48373,Polk County,Texas,9797,2,0.20414412575278146,False
+27157,Wabasha County,Minnesota,4898,1,0.2041649652919559,False
+17165,Saline County,Illinois,4890,1,0.20449897750511248,False
+48027,Bell County,Texas,43995,9,0.20456870098874874,False
+27093,Meeker County,Minnesota,4865,1,0.20554984583761562,False
+05051,Garland County,Arkansas,24304,5,0.20572745227123107,False
+21019,Boyd County,Kentucky,9715,2,0.2058672156459084,False
+44003,Kent County,Rhode Island,33989,7,0.20594898349466004,False
+45041,Florence County,South Carolina,24276,5,0.20596473883671115,False
+22103,St. Tammany Parish,Louisiana,48517,10,0.20611332110394295,False
+39007,Ashtabula County,Ohio,19341,4,0.20681453906209607,False
+20177,Shawnee County,Kansas,33819,7,0.20698423962861112,False
+25025,Suffolk County,Massachusetts,101416,21,0.20706791827719492,False
+06025,Imperial County,California,24119,5,0.20730544384095528,False
+37061,Duplin County,North Carolina,9639,2,0.20749040356883494,False
+27049,Goodhue County,Minnesota,9613,2,0.2080515967960054,False
+46135,Yankton County,South Dakota,4798,1,0.20842017507294708,False
+21173,Montgomery County,Kentucky,4794,1,0.20859407592824364,False
+51153,Prince William County,Virginia,52703,11,0.20871677134128988,False
+51840,Winchester city,Virginia,4788,1,0.20885547201336674,False
+24510,Baltimore city,Maryland,86161,18,0.20891122433583642,False
+39081,Jefferson County,Ohio,14341,3,0.20919043302419635,False
+40027,Cleveland County,Oklahoma,43014,9,0.20923420281768726,False
+29021,Buchanan County,Missouri,14335,3,0.20927799093128707,False
+12103,Pinellas County,Florida,248460,52,0.20928922160508734,False
+21085,Grayson County,Kentucky,4770,1,0.20964360587002095,False
+39129,Pickaway County,Ohio,9538,2,0.20968756552736423,False
+13095,Dougherty County,Georgia,14255,3,0.2104524728165556,False
+51141,Patrick County,Virginia,4746,1,0.21070375052675938,False
+08117,Summit County,Colorado,4739,1,0.21101498206372651,False
+55049,Iowa County,Wisconsin,4738,1,0.21105951878429716,False
+50015,Lamoille County,Vermont,4728,1,0.21150592216582065,False
+38101,Ward County,North Dakota,9455,2,0.21152829190904282,False
+08013,Boulder County,Colorado,51867,11,0.2120808992230127,False
+35031,McKinley County,New Mexico,9423,2,0.21224663058473944,False
+01025,Clarke County,Alabama,4702,1,0.2126754572522331,False
+27041,Douglas County,Minnesota,9400,2,0.2127659574468085,False
+48035,Bosque County,Texas,4684,1,0.2134927412467976,False
+48259,Kendall County,Texas,9348,2,0.2139495079161318,False
+19045,Clinton County,Iowa,9301,2,0.21503064186646598,False
+46011,Brookings County,South Dakota,4647,1,0.21519259737465032,False
+27045,Fillmore County,Minnesota,4644,1,0.2153316106804479,False
+55043,Grant County,Wisconsin,9280,2,0.21551724137931033,False
+01031,Coffee County,Alabama,9277,2,0.21558693543171284,False
+12133,Washington County,Florida,4633,1,0.2158428663932657,False
+18149,Starke County,Indiana,4631,1,0.21593608291945585,False
+40049,Garvin County,Oklahoma,4628,1,0.21607605877268798,False
+37155,Robeson County,North Carolina,18490,4,0.21633315305570577,False
+42123,Warren County,Pennsylvania,9240,2,0.21645021645021645,False
+22001,Acadia Parish,Louisiana,9227,2,0.21675517502980385,False
+22051,Jefferson Parish,Louisiana,78367,17,0.2169280436918601,False
+08087,Morgan County,Colorado,4609,1,0.21696680407897592,False
+54005,Boone County,West Virginia,4606,1,0.21710811984368217,False
+42039,Crawford County,Pennsylvania,18403,4,0.21735586589143074,False
+47133,Overton County,Tennessee,4600,1,0.2173913043478261,False
+06027,Inyo County,California,4594,1,0.21767522855898996,False
+08077,Mesa County,Colorado,32147,7,0.21774971225930878,False
+37189,Watauga County,North Carolina,9138,2,0.2188662727073758,False
+21047,Christian County,Kentucky,9124,2,0.21920210434020168,False
+28091,Marion County,Mississippi,4557,1,0.21944261575597981,False
+39009,Athens County,Ohio,9053,2,0.22092124157737766,False
+48189,Hale County,Texas,4523,1,0.2210921954455008,False
+19191,Winneshiek County,Iowa,4517,1,0.22138587558113793,False
+18047,Franklin County,Indiana,4511,1,0.22168033695411216,False
+47081,Hickman County,Tennessee,4510,1,0.22172949002217296,False
+48337,Montague County,Texas,4489,1,0.22276676319893074,False
+05135,Sharp County,Arkansas,4480,1,0.2232142857142857,False
+20051,Ellis County,Kansas,4479,1,0.22326412145568209,False
+19183,Washington County,Iowa,4472,1,0.22361359570661896,False
+51179,Stafford County,Virginia,17825,4,0.2244039270687237,False
+47051,Franklin County,Tennessee,8912,2,0.2244165170556553,False
+38089,Stark County,North Dakota,4455,1,0.2244668911335578,False
+42017,Bucks County,Pennsylvania,128921,29,0.2249439579277232,False
+22077,Pointe Coupee Parish,Louisiana,4439,1,0.22527596305474207,False
+13119,Franklin County,Georgia,4439,1,0.22527596305474207,False
+26103,Marquette County,Michigan,13299,3,0.22558087074216107,False
+39011,Auglaize County,Ohio,8853,2,0.22591212018524795,False
+55035,Eau Claire County,Wisconsin,17634,4,0.22683452421458544,False
+39045,Fairfield County,Ohio,26447,6,0.2268688320036299,False
+39175,Wyandot County,Ohio,4402,1,0.22716946842344388,False
+47119,Maury County,Tennessee,17604,4,0.22722108611679165,False
+48139,Ellis County,Texas,26397,6,0.22729855665416523,False
+46103,Pennington County,South Dakota,21993,5,0.22734506433865323,False
+08107,Routt County,Colorado,4388,1,0.22789425706472197,False
+42037,Columbia County,Pennsylvania,13158,3,0.22799817601459188,False
+19105,Jones County,Iowa,4384,1,0.2281021897810219,False
+47053,Gibson County,Tennessee,8767,2,0.22812820805292575,False
+39091,Logan County,Ohio,8760,2,0.228310502283105,False
+06059,Orange County,California,498997,114,0.2284582873243727,False
+49011,Davis County,Utah,39394,9,0.22846118698278925,False
+17199,Williamson County,Illinois,13109,3,0.22885040811656115,False
+27067,Kandiyohi County,Minnesota,8737,2,0.22891152569531875,False
+37091,Hertford County,North Carolina,4366,1,0.22904260192395787,False
+05005,Baxter County,Arkansas,13098,3,0.22904260192395787,False
+37007,Anson County,North Carolina,4362,1,0.22925263640531865,False
+05071,Johnson County,Arkansas,4357,1,0.22951572182694516,False
+22101,St. Mary Parish,Louisiana,8704,2,0.22977941176470587,False
+21133,Letcher County,Kentucky,4346,1,0.2300966405890474,False
+47113,Madison County,Tennessee,17363,4,0.2303749352070495,False
+38093,Stutsman County,North Dakota,4329,1,0.23100023100023098,False
+19113,Linn County,Iowa,38716,9,0.2324620312015704,False
+42013,Blair County,Pennsylvania,25764,6,0.2328830926874709,False
+19065,Fayette County,Iowa,4291,1,0.23304591004427874,False
+17083,Jersey County,Illinois,4289,1,0.2331545814875262,False
+05083,Logan County,Arkansas,4285,1,0.23337222870478413,False
+20191,Sumner County,Kansas,4278,1,0.2337540906965872,False
+39173,Wood County,Ohio,21390,5,0.2337540906965872,False
+49047,Uintah County,Utah,4276,1,0.23386342376052385,False
+51083,Halifax County,Virginia,8550,2,0.23391812865497078,False
+22099,St. Martin Parish,Louisiana,8544,2,0.2340823970037453,False
+05141,Van Buren County,Arkansas,4259,1,0.23479690068091102,False
+12003,Baker County,Florida,4253,1,0.23512814483893724,False
+18177,Wayne County,Indiana,12757,3,0.23516500744689192,False
+42033,Clearfield County,Pennsylvania,16990,4,0.23543260741612712,False
+37015,Bertie County,North Carolina,4245,1,0.23557126030624265,False
+30067,Park County,Montana,4229,1,0.23646252069047055,False
+21115,Johnson County,Kentucky,4211,1,0.23747328425552125,False
+51700,Newport News city,Virginia,25227,6,0.23784040908550363,False
+29175,Randolph County,Missouri,4197,1,0.23826542768644268,False
+08041,El Paso County,Colorado,100642,24,0.23846902883488005,False
+40071,Kay County,Oklahoma,8384,2,0.23854961832061067,False
+19123,Mahaska County,Iowa,4191,1,0.23860653781913624,False
+51001,Accomack County,Virginia,8382,2,0.23860653781913624,False
+27145,Stearns County,Minnesota,25129,6,0.23876795734012496,False
+21101,Henderson County,Kentucky,8359,2,0.23926306974518483,False
+42063,Indiana County,Pennsylvania,16682,4,0.23977940294928665,False
+40143,Tulsa County,Oklahoma,100090,24,0.23978419422519734,False
+17067,Hancock County,Illinois,4167,1,0.23998080153587714,False
+40015,Caddo County,Oklahoma,4166,1,0.24003840614498317,False
+13033,Burke County,Georgia,4153,1,0.24078979051288224,False
+26163,Wayne County,Michigan,286427,69,0.24089907725179538,False
+31155,Saunders County,Nebraska,4149,1,0.24102193299590263,False
+01099,Monroe County,Alabama,4143,1,0.24137098720733768,False
+22109,Terrebonne Parish,Louisiana,16549,4,0.24170644751948758,False
+28083,Leflore County,Mississippi,4135,1,0.2418379685610641,False
+12005,Bay County,Florida,33065,8,0.24194767881445636,False
+10001,Kent County,Delaware,33044,8,0.242101440503571,False
+48467,Van Zandt County,Texas,12380,3,0.24232633279483035,False
+17145,Perry County,Illinois,4125,1,0.24242424242424243,False
+01039,Covington County,Alabama,8248,2,0.24248302618816683,False
+25017,Middlesex County,Massachusetts,259590,63,0.2426903963943141,False
+35017,Grant County,New Mexico,8229,2,0.24304289707133309,False
+17051,Fayette County,Illinois,4109,1,0.2433682161109759,False
+39015,Brown County,Ohio,8205,2,0.24375380865326018,False
+05029,Conway County,Arkansas,4092,1,0.24437927663734116,False
+56039,Teton County,Wyoming,4087,1,0.24467824810374356,False
+39153,Summit County,Ohio,102113,25,0.24482680951494912,False
+12069,Lake County,Florida,106155,26,0.24492487400499272,False
+18013,Brown County,Indiana,4081,1,0.2450379808870375,False
+29023,Butler County,Missouri,8123,2,0.2462144527883787,False
+18019,Clark County,Indiana,20241,5,0.24702336841065167,False
+48273,Kleberg County,Texas,4044,1,0.2472799208704253,False
+39135,Preble County,Ohio,8085,2,0.24737167594310452,False
+29195,Saline County,Missouri,4039,1,0.24758603614756128,False
+48171,Gillespie County,Texas,8077,2,0.2476166893648632,False
+48477,Washington County,Texas,8051,2,0.24841634579555333,False
+31019,Buffalo County,Nebraska,8045,2,0.24860161591050342,False
+29217,Vernon County,Missouri,4021,1,0.24869435463814973,False
+13189,McDuffie County,Georgia,4004,1,0.24975024975024976,False
+18163,Vanderburgh County,Indiana,32021,8,0.2498360450954061,False
+20099,Labette County,Kansas,4002,1,0.24987506246876562,False
+27035,Crow Wing County,Minnesota,16004,4,0.24993751562109476,False
+05003,Ashley County,Arkansas,3992,1,0.250501002004008,False
+29091,Howell County,Missouri,7977,2,0.2507208223642973,False
+17045,Edgar County,Illinois,3985,1,0.2509410288582183,False
+48039,Brazoria County,Texas,47818,12,0.25095152453051156,False
+42049,Erie County,Pennsylvania,51792,13,0.251004016064257,False
+06101,Sutter County,California,15927,4,0.25114585295410313,False
+48053,Burnet County,Texas,11927,3,0.2515301416953132,False
+05009,Boone County,Arkansas,7943,2,0.25179403248143023,False
+27141,Sherburne County,Minnesota,11912,3,0.25184687709872394,False
+22033,East Baton Rouge Parish,Louisiana,67353,17,0.2524015262868766,False
+42091,Montgomery County,Pennsylvania,158301,40,0.2526831795124478,False
+48161,Freestone County,Texas,3957,1,0.25271670457417234,False
+28149,Warren County,Mississippi,7911,2,0.2528125395019593,False
+48097,Cooke County,Texas,7897,2,0.2532607319235153,False
+48451,Tom Green County,Texas,19740,5,0.25329280648429586,False
+31047,Dawson County,Nebraska,3944,1,0.2535496957403651,False
+17195,Whiteside County,Illinois,11827,3,0.2536568867844762,False
+51520,Bristol city,Virginia,3928,1,0.2545824847250509,False
+29049,Clinton County,Missouri,3916,1,0.25536261491317674,False
+22057,Lafourche Parish,Louisiana,15662,4,0.25539522410930915,False
+48133,Eastland County,Texas,3910,1,0.25575447570332477,False
+18097,Marion County,Indiana,125026,32,0.2559467630732808,False
+05027,Columbia County,Arkansas,3899,1,0.25647601949217746,False
+20149,Pottawatomie County,Kansas,3889,1,0.2571355104139882,False
+38105,Williams County,North Dakota,3886,1,0.2573340195573855,False
+42093,Montour County,Pennsylvania,3877,1,0.25793139025019346,False
+13081,Crisp County,Georgia,3873,1,0.2581977794990963,False
+47063,Hamblen County,Tennessee,11616,3,0.2582644628099174,False
+29186,Ste. Genevieve County,Missouri,3866,1,0.2586652871184687,False
+47041,DeKalb County,Tennessee,3865,1,0.258732212160414,False
+19083,Hardin County,Iowa,3854,1,0.2594706798131811,False
+48177,Gonzales County,Texas,3851,1,0.25967281225655675,False
+05031,Craighead County,Arkansas,15391,4,0.25989214475992467,False
+20057,Ford County,Kansas,3845,1,0.2600780234070221,False
+01021,Chilton County,Alabama,7686,2,0.2602133749674733,False
+49007,Carbon County,Utah,3843,1,0.2602133749674733,False
+01091,Marengo County,Alabama,3842,1,0.2602811035918792,False
+12001,Alachua County,Florida,42114,11,0.26119580187111174,False
+28079,Leake County,Mississippi,3823,1,0.2615746795710175,False
+29001,Adair County,Missouri,3823,1,0.2615746795710175,False
+13091,Dodge County,Georgia,3819,1,0.2618486514794449,False
+26099,Macomb County,Michigan,156538,41,0.26191723415400736,False
+39059,Guernsey County,Ohio,7633,2,0.26202017555351764,False
+20041,Dickinson County,Kansas,3810,1,0.26246719160104987,False
+27123,Ramsey County,Minnesota,83721,22,0.2627775587964788,False
+49049,Utah County,Utah,53214,14,0.26308866087871613,False
+06001,Alameda County,California,246841,65,0.26332740509072644,False
+27061,Itasca County,Minnesota,11374,3,0.2637594513803411,False
+19031,Cedar County,Iowa,3788,1,0.26399155227032733,False
+19153,Polk County,Iowa,68026,18,0.26460470996383734,False
+29161,Phelps County,Missouri,7551,2,0.26486558071778576,False
+26145,Saginaw County,Michigan,37697,10,0.26527309865506543,False
+01007,Bibb County,Alabama,3756,1,0.26624068157614483,False
+06067,Sacramento County,California,236467,63,0.26642195316894113,False
+56029,Park County,Wyoming,7494,2,0.26688017080330934,False
+28133,Sunflower County,Mississippi,3740,1,0.26737967914438504,False
+26105,Mason County,Michigan,7467,2,0.26784518548279096,False
+48481,Wharton County,Texas,7446,2,0.2686005909213,False
+01047,Dallas County,Alabama,7423,2,0.269432843863667,False
+42035,Clinton County,Pennsylvania,7414,2,0.2697599136768276,False
+48057,Calhoun County,Texas,3707,1,0.2697599136768276,False
+05057,Hempstead County,Arkansas,3692,1,0.27085590465872156,False
+37139,Pasquotank County,North Carolina,7382,2,0.270929287455974,False
+12031,Duval County,Florida,150870,41,0.27175714191025385,False
+19055,Delaware County,Iowa,3674,1,0.2721829069134459,False
+49041,Sevier County,Utah,3656,1,0.2735229759299781,False
+19109,Kossuth County,Iowa,3647,1,0.2741979709350151,False
+18123,Perry County,Indiana,3643,1,0.2744990392533626,False
+05121,Randolph County,Arkansas,3642,1,0.2745744096650192,False
+19187,Webster County,Iowa,7258,2,0.2755580049600441,False
+17033,Crawford County,Illinois,3625,1,0.27586206896551724,False
+51800,Suffolk city,Virginia,14496,4,0.27593818984547464,False
+42077,Lehigh County,Pennsylvania,65126,18,0.2763873107514664,False
+42079,Luzerne County,Pennsylvania,65007,18,0.27689325764917627,False
+19145,Page County,Iowa,3609,1,0.2770850651149903,False
+12095,Orange County,Florida,183681,51,0.27765528280007185,False
+19041,Clay County,Iowa,3600,1,0.2777777777777778,False
+21059,Daviess County,Kentucky,17915,5,0.27909572983533354,False
+47075,Haywood County,Tennessee,3577,1,0.2795638803466592,False
+20087,Jefferson County,Kansas,3564,1,0.28058361391694725,False
+48233,Hutchinson County,Texas,3549,1,0.28176951253874327,False
+25009,Essex County,Massachusetts,145373,41,0.28203311481499316,False
+05149,Yell County,Arkansas,3545,1,0.2820874471086037,False
+21097,Harrison County,Kentucky,3542,1,0.282326369282891,False
+39139,Richland County,Ohio,24763,7,0.28267980454710656,False
+26007,Alpena County,Michigan,7075,2,0.2826855123674912,False
+31053,Dodge County,Nebraska,7067,2,0.28300551860761286,False
+39013,Belmont County,Ohio,14110,4,0.28348688873139616,False
+46005,Beadle County,South Dakota,3523,1,0.2838489923360772,False
+19067,Floyd County,Iowa,3523,1,0.2838489923360772,False
+35028,Los Alamos County,New Mexico,3519,1,0.2841716396703609,False
+27097,Morrison County,Minnesota,7017,2,0.2850220892119139,False
+20161,Riley County,Kansas,7015,2,0.2851033499643621,False
+42027,Centre County,Pennsylvania,24549,7,0.285143997718848,False
+54041,Lewis County,West Virginia,3503,1,0.28546959748786754,False
+48257,Kaufman County,Texas,17500,5,0.28571428571428575,False
+29201,Scott County,Missouri,6995,2,0.28591851322373124,False
+01057,Fayette County,Alabama,3495,1,0.2861230329041488,False
+47103,Lincoln County,Tennessee,6990,2,0.2861230329041488,False
+21205,Rowan County,Kentucky,3492,1,0.28636884306987404,False
+27065,Kanabec County,Minnesota,3482,1,0.2871912693854107,False
+28153,Wayne County,Mississippi,3479,1,0.2874389192296637,False
+05019,Clark County,Arkansas,3470,1,0.2881844380403458,False
+12045,Gulf County,Florida,3469,1,0.28826751225136926,False
+19171,Tama County,Iowa,3469,1,0.28826751225136926,False
+05137,Stone County,Arkansas,3462,1,0.28885037550548814,False
+37079,Greene County,North Carolina,3460,1,0.28901734104046245,False
+54029,Hancock County,West Virginia,6910,2,0.2894356005788712,False
+13219,Oconee County,Georgia,6909,2,0.2894774931249095,False
+16031,Cassia County,Idaho,3450,1,0.2898550724637681,False
+18043,Floyd County,Indiana,13796,4,0.28993911278631485,False
+28061,Jasper County,Mississippi,3445,1,0.29027576197387517,False
+01017,Chambers County,Alabama,6884,2,0.2905287623474724,False
+48223,Hopkins County,Texas,6858,2,0.2916302128900554,False
+32007,Elko County,Nevada,6850,2,0.29197080291970806,False
+48007,Aransas County,Texas,6844,2,0.2922267679719462,False
+22097,St. Landry Parish,Louisiana,13649,4,0.29306176276650303,False
+56021,Laramie County,Wyoming,17006,5,0.29401387745501584,False
+51121,Montgomery County,Virginia,13583,4,0.2944857542516381,False
+40111,Okmulgee County,Oklahoma,6789,2,0.29459419649432905,False
+27127,Redwood County,Minnesota,3393,1,0.2947244326554671,False
+42043,Dauphin County,Pennsylvania,50889,15,0.2947591817485115,False
+49005,Cache County,Utah,13550,4,0.2952029520295203,False
+55003,Ashland County,Wisconsin,3380,1,0.2958579881656805,False
+22061,Lincoln Parish,Louisiana,6751,2,0.2962524070508073,False
+40087,McClain County,Oklahoma,6750,2,0.2962962962962963,False
+29051,Cole County,Missouri,13493,4,0.2964500111168754,False
+06011,Colusa County,California,3355,1,0.29806259314456035,False
+48347,Nacogdoches County,Texas,10019,3,0.29943108094620224,False
+48041,Brazos County,Texas,23376,7,0.29945242984257353,False
+05063,Independence County,Arkansas,6672,2,0.29976019184652275,False
+18083,Knox County,Indiana,6649,2,0.30079711234772144,False
+29163,Pike County,Missouri,3319,1,0.30129557095510695,False
+26061,Houghton County,Michigan,6637,2,0.30134096730450505,False
+13001,Appling County,Georgia,3317,1,0.3014772384684956,False
+27017,Carlton County,Minnesota,6634,2,0.3014772384684956,False
+48145,Falls County,Texas,3315,1,0.301659125188537,False
+19193,Woodbury County,Iowa,16444,5,0.30406227195329605,False
+35053,Socorro County,New Mexico,3288,1,0.30413625304136255,False
+21161,Mason County,Kentucky,3283,1,0.3045994517209869,False
+51191,Washington County,Virginia,13106,4,0.3052037234854265,False
+48029,Bexar County,Texas,257782,79,0.3064604976297802,False
+19023,Butler County,Iowa,3258,1,0.3069367710251688,False
+12037,Franklin County,Florida,3257,1,0.30703101013202333,False
+17187,Warren County,Illinois,3255,1,0.30721966205837176,False
+20139,Osage County,Kansas,3250,1,0.3076923076923077,False
+20173,Sedgwick County,Kansas,81088,25,0.30830702446724545,False
+54103,Wetzel County,West Virginia,3237,1,0.3089280197713933,False
+42057,Fulton County,Pennsylvania,3228,1,0.3097893432465923,False
+19095,Iowa County,Iowa,3228,1,0.3097893432465923,False
+27043,Faribault County,Minnesota,3225,1,0.31007751937984496,False
+49053,Washington County,Utah,41924,13,0.3100849155614922,False
+31055,Douglas County,Nebraska,80517,25,0.31049343616875935,False
+28031,Covington County,Mississippi,3211,1,0.3114294612270321,False
+21221,Trigg County,Kentucky,3204,1,0.3121098626716604,False
+48037,Bowie County,Texas,15998,5,0.3125390673834229,False
+48167,Galveston County,Texas,54316,17,0.312983283010531,False
+21127,Lawrence County,Kentucky,3195,1,0.31298904538341155,False
+22055,Lafayette Parish,Louisiana,35109,11,0.3133099774986471,False
+28073,Lamar County,Mississippi,9562,3,0.3137418950010458,False
+19005,Allamakee County,Iowa,3186,1,0.31387319522912743,False
+48067,Cass County,Texas,6342,2,0.315357931251971,False
+17149,Pike County,Illinois,3169,1,0.3155569580309246,False
+18029,Dearborn County,Indiana,9487,3,0.31622219879835567,False
+39165,Warren County,Ohio,37771,12,0.31770405866934953,False
+06019,Fresno County,California,128751,41,0.3184441285892925,False
+05021,Clay County,Arkansas,3139,1,0.31857279388340237,False
+17157,Randolph County,Illinois,6276,2,0.3186743148502231,False
+27129,Renville County,Minnesota,3134,1,0.3190810465858328,False
+08083,Montezuma County,Colorado,6262,2,0.31938677738741617,False
+47071,Hardin County,Tennessee,6237,2,0.320666987333654,False
+46065,Hughes County,South Dakota,3118,1,0.32071840923669015,False
+39111,Monroe County,Ohio,3117,1,0.32082130253448826,False
+01079,Lawrence County,Alabama,6228,2,0.3211303789338471,False
+21203,Rockcastle County,Kentucky,3106,1,0.3219575016097875,False
+25027,Worcester County,Massachusetts,142716,46,0.3223184506292217,False
+40001,Adair County,Oklahoma,3099,1,0.32268473701193934,False
+40117,Pawnee County,Oklahoma,3098,1,0.32278889606197547,False
+05037,Cross County,Arkansas,3097,1,0.32289312237649337,False
+16079,Shoshone County,Idaho,3092,1,0.3234152652005175,False
+22095,St. John the Baptist Parish,Louisiana,6169,2,0.3242016534284325,False
+13299,Ware County,Georgia,6141,2,0.3256798567008631,False
+01075,Lamar County,Alabama,3063,1,0.32647730982696704,False
+17005,Bond County,Illinois,3044,1,0.328515111695138,False
+19029,Cass County,Iowa,3044,1,0.328515111695138,False
+20037,Crawford County,Kansas,6080,2,0.3289473684210526,False
+48401,Rusk County,Texas,9007,3,0.33307427556345065,False
+05067,Jackson County,Arkansas,3001,1,0.33322225924691773,False
+22027,Claiborne Parish,Louisiana,2991,1,0.33433634236041454,False
+37187,Washington County,North Carolina,2984,1,0.3351206434316354,False
+01023,Choctaw County,Alabama,2982,1,0.335345405767941,False
+20113,McPherson County,Kansas,5944,2,0.3364737550471063,False
+48239,Jackson County,Texas,2971,1,0.3365870077415012,False
+12099,Palm Beach County,Florida,370797,125,0.3371116810545932,False
+17125,Mason County,Illinois,2963,1,0.3374957813027337,False
+30009,Carbon County,Montana,2960,1,0.33783783783783783,False
+56037,Sweetwater County,Wyoming,5902,2,0.3388681802778719,False
+19047,Crawford County,Iowa,2951,1,0.3388681802778719,False
+51167,Russell County,Virginia,5895,2,0.33927056827820185,False
+51590,Danville city,Virginia,8842,3,0.33928975344944584,False
+48303,Lubbock County,Texas,41139,14,0.3403096818104475,False
+01065,Hale County,Alabama,2936,1,0.3405994550408719,False
+25021,Norfolk County,Massachusetts,126172,43,0.34080461592112354,False
+22011,Beauregard Parish,Louisiana,5867,2,0.3408897221748764,False
+48353,Nolan County,Texas,2924,1,0.3419972640218878,False
+42069,Lackawanna County,Pennsylvania,43716,15,0.34312379906670326,False
+01027,Clay County,Alabama,2910,1,0.3436426116838488,False
+40121,Pittsburg County,Oklahoma,8696,3,0.34498620055197793,False
+19085,Harrison County,Iowa,2889,1,0.34614053305642095,False
+42045,Delaware County,Pennsylvania,98090,34,0.3466204506065858,False
+42081,Lycoming County,Pennsylvania,22954,8,0.34852313322296763,False
+56005,Campbell County,Wyoming,5738,2,0.34855350296270476,False
+21021,Boyle County,Kentucky,5731,2,0.34897923573547374,False
+19007,Appanoose County,Iowa,2865,1,0.34904013961605584,False
+31185,York County,Nebraska,2864,1,0.34916201117318435,False
+20005,Atchison County,Kansas,2863,1,0.34928396786587496,False
+30027,Fergus County,Montana,2857,1,0.35001750087504374,False
+27121,Pope County,Minnesota,2849,1,0.351000351000351,False
+19035,Cherokee County,Iowa,2845,1,0.351493848857645,False
+27159,Wadena County,Minnesota,2836,1,0.3526093088857546,False
+51730,Petersburg city,Virginia,5663,2,0.35316969803990816,False
+39035,Cuyahoga County,Ohio,237668,84,0.3534342023326657,False
+27135,Roseau County,Minnesota,2829,1,0.3534817956875221,False
+12023,Columbia County,Florida,14143,5,0.35353178250724737,False
+39095,Lucas County,Ohio,73314,26,0.3546389502687072,False
+13075,Cook County,Georgia,2803,1,0.35676061362825545,False
+54061,Monongalia County,West Virginia,14006,5,0.3569898614879337,False
+35041,Roosevelt County,New Mexico,2797,1,0.3575259206292456,False
+54053,Mason County,West Virginia,5591,2,0.3577177606868181,False
+40099,Murray County,Oklahoma,2794,1,0.35790980672870437,False
+32013,Humboldt County,Nevada,2780,1,0.3597122302158273,False
+39099,Mahoning County,Ohio,50002,18,0.35998560057597695,False
+01035,Conecuh County,Alabama,2774,1,0.3604902667627974,False
+37173,Swain County,North Carolina,2771,1,0.36088054853843377,False
+20115,Marion County,Kansas,2765,1,0.3616636528028933,False
+56007,Carbon County,Wyoming,2761,1,0.36218761318362913,False
+17101,Lawrence County,Illinois,2756,1,0.36284470246734396,False
+25013,Hampden County,Massachusetts,82518,30,0.36355704209990547,False
+41061,Union County,Oregon,5500,2,0.3636363636363636,False
+01059,Franklin County,Alabama,5493,2,0.3640997633351538,False
+17139,Moultrie County,Illinois,2742,1,0.36469730123997085,False
+17025,Clay County,Illinois,2738,1,0.36523009495982467,False
+01061,Geneva County,Alabama,5456,2,0.36656891495601174,False
+19165,Shelby County,Iowa,2727,1,0.3667033370003667,False
+40019,Carter County,Oklahoma,8165,3,0.36742192284139624,False
+29155,Pemiscot County,Missouri,2707,1,0.3694126339120798,False
+48361,Orange County,Texas,13523,5,0.3697404422095689,False
+54023,Grant County,West Virginia,2703,1,0.3699593044765076,False
+22013,Bienville Parish,Louisiana,2684,1,0.37257824143070045,False
+22079,Rapides Parish,Louisiana,21434,8,0.373238779509191,False
+21033,Caldwell County,Kentucky,2667,1,0.3749531308586427,False
+48441,Taylor County,Texas,21297,8,0.3756397614687515,False
+18009,Blackford County,Indiana,2655,1,0.3766478342749529,False
+27023,Chippewa County,Minnesota,2651,1,0.37721614485099964,False
+39119,Muskingum County,Ohio,15794,6,0.3798910978852729,False
+28013,Calhoun County,Mississippi,2628,1,0.380517503805175,False
+17031,Cook County,Illinois,806307,307,0.380748275780813,False
+48049,Brown County,Texas,7871,3,0.3811459789099225,False
+19037,Chickasaw County,Iowa,2620,1,0.38167938931297707,False
+56025,Natrona County,Wyoming,13080,5,0.382262996941896,False
+27113,Pennington County,Minnesota,2612,1,0.38284839203675347,False
+48329,Midland County,Texas,18239,7,0.383792971105872,False
+40073,Kingfisher County,Oklahoma,2592,1,0.38580246913580246,False
+27033,Cottonwood County,Minnesota,2585,1,0.38684719535783363,False
+39061,Hamilton County,Ohio,134151,52,0.38762290255011145,False
+39113,Montgomery County,Ohio,98025,38,0.38765621015047186,False
+05115,Pope County,Arkansas,10292,4,0.388651379712398,False
+29069,Dunklin County,Missouri,5138,2,0.38925652004671074,False
+48415,Scurry County,Texas,2560,1,0.390625,False
+19081,Hancock County,Iowa,2559,1,0.390777647518562,False
+48423,Smith County,Texas,40819,16,0.39197432568166785,False
+01109,Pike County,Alabama,5090,2,0.3929273084479371,False
+49013,Duchesne County,Utah,2543,1,0.39323633503735744,False
+48469,Victoria County,Texas,15230,6,0.3939592908732764,False
+05081,Little River County,Arkansas,2534,1,0.39463299131807417,False
+22039,Evangeline Parish,Louisiana,5048,2,0.39619651347068147,False
+16075,Payette County,Idaho,5048,2,0.39619651347068147,False
+40139,Texas County,Oklahoma,2520,1,0.3968253968253968,False
+12011,Broward County,Florida,342594,136,0.3969713421717835,False
+28011,Bolivar County,Mississippi,5025,2,0.3980099502487562,False
+38071,Ramsey County,North Dakota,2510,1,0.39840637450199207,False
+19077,Guthrie County,Iowa,2506,1,0.3990422984836393,False
+47177,Warren County,Tennessee,7488,3,0.4006410256410256,False
+21135,Lewis County,Kentucky,2492,1,0.4012841091492777,False
+22031,De Soto Parish,Louisiana,4983,2,0.4013646397752358,False
+08051,Gunnison County,Colorado,2489,1,0.4017677782241864,False
+16059,Lemhi County,Idaho,2485,1,0.40241448692152915,False
+35013,Doña Ana County,New Mexico,37154,15,0.4037250363352533,False
+19175,Union County,Iowa,2472,1,0.4045307443365696,False
+48439,Tarrant County,Texas,256473,104,0.40550077396061185,False
+21025,Breathitt County,Kentucky,2464,1,0.4058441558441559,False
+19059,Dickinson County,Iowa,4921,2,0.406421459053038,False
+11001,District of Columbia,District of Columbia,85501,35,0.4093519374042409,False
+30017,Custer County,Montana,2434,1,0.4108463434675431,False
+12013,Calhoun County,Florida,2428,1,0.41186161449752884,False
+21175,Morgan County,Kentucky,2425,1,0.4123711340206186,False
+30023,Deer Lodge County,Montana,2422,1,0.41288191577208916,False
+17061,Greene County,Illinois,2410,1,0.41493775933609955,False
+31079,Hall County,Nebraska,9636,4,0.41511000415110005,False
+48487,Wilbarger County,Texas,2404,1,0.415973377703827,False
+12057,Hillsborough County,Florida,221121,92,0.4160617942212635,False
+02130,Ketchikan Gateway Borough,Alaska,2398,1,0.4170141784820684,False
+48043,Brewster County,Texas,2392,1,0.4180602006688963,False
+51195,Wise County,Virginia,7157,3,0.4191700433142378,False
+05091,Miller County,Arkansas,7155,3,0.4192872117400419,False
+17017,Cass County,Illinois,2382,1,0.41981528127623846,False
+39163,Vinton County,Ohio,2381,1,0.41999160016799664,False
+39003,Allen County,Ohio,18988,8,0.4213187276174426,False
+48077,Clay County,Texas,2361,1,0.4235493434985176,False
+06071,San Bernardino County,California,269001,114,0.42379024613291405,False
+05103,Ouachita County,Arkansas,4717,2,0.42399830400678395,False
+39083,Knox County,Ohio,11750,5,0.425531914893617,False
+19137,Montgomery County,Iowa,2342,1,0.4269854824935952,False
+48231,Hunt County,Texas,16382,7,0.42729825418141865,False
+40051,Grady County,Oklahoma,9355,4,0.42757883484767506,False
+08101,Pueblo County,Colorado,32738,14,0.4276376076730405,False
+54045,Logan County,West Virginia,7013,3,0.42777698559817484,False
+29139,Montgomery County,Missouri,2332,1,0.4288164665523156,False
+51027,Buchanan County,Virginia,4661,2,0.42909246942716156,False
+19161,Sac County,Iowa,2330,1,0.42918454935622313,False
+05061,Howard County,Arkansas,2330,1,0.42918454935622313,False
+40031,Comanche County,Oklahoma,16288,7,0.42976424361493126,False
+48159,Franklin County,Texas,2323,1,0.4304778303917348,False
+40109,Oklahoma County,Oklahoma,113476,49,0.431809369382072,False
+01119,Sumter County,Alabama,2312,1,0.43252595155709345,False
+48121,Denton County,Texas,106051,46,0.43375357139489495,False
+01053,Escambia County,Alabama,6914,3,0.43390222736476713,False
+19189,Winnebago County,Iowa,2296,1,0.4355400696864111,False
+56019,Johnson County,Wyoming,2293,1,0.4361098996947231,False
+48135,Ector County,Texas,16038,7,0.43646339942636236,False
+41023,Grant County,Oregon,2290,1,0.4366812227074236,False
+31089,Holt County,Nebraska,2266,1,0.441306266548985,False
+40101,Muskogee County,Oklahoma,11320,5,0.4416961130742049,False
+19131,Mitchell County,Iowa,2259,1,0.4426737494466578,False
+05133,Sevier County,Arkansas,2254,1,0.4436557231588288,False
+20175,Seward County,Kansas,2245,1,0.44543429844098,False
+20117,Marshall County,Kansas,2238,1,0.44682752457551383,False
+35015,Eddy County,New Mexico,8934,4,0.4477277815088426,False
+31145,Red Willow County,Nebraska,2225,1,0.44943820224719105,False
+35037,Quay County,New Mexico,2225,1,0.44943820224719105,False
+08099,Prowers County,Colorado,2223,1,0.449842555105713,False
+48163,Frio County,Texas,2221,1,0.45024763619990993,False
+26131,Ontonagon County,Michigan,2216,1,0.4512635379061372,False
+01131,Wilcox County,Alabama,2214,1,0.45167118337850043,False
+48255,Karnes County,Texas,2206,1,0.45330915684496825,False
+37103,Jones County,North Carolina,2202,1,0.45413260672116257,False
+19063,Emmet County,Iowa,2192,1,0.4562043795620438,False
+08031,Denver County,Colorado,87660,40,0.4563084645220169,False
+27083,Lyon County,Minnesota,4368,2,0.45787545787545786,False
+19107,Keokuk County,Iowa,2183,1,0.45808520384791573,False
+47049,Fentress County,Tennessee,4366,2,0.45808520384791573,False
+05113,Polk County,Arkansas,4359,2,0.4588208304657031,False
+28111,Perry County,Mississippi,2178,1,0.4591368227731864,False
+40079,Le Flore County,Oklahoma,8679,4,0.4608825901601567,False
+05041,Desha County,Arkansas,2169,1,0.4610419548178884,False
+29181,Ripley County,Missouri,2168,1,0.46125461254612543,False
+19027,Carroll County,Iowa,4333,2,0.46157396722824834,False
+05017,Chicot County,Arkansas,2166,1,0.4616805170821791,False
+48321,Matagorda County,Texas,6487,3,0.4624633883150917,False
+16083,Twin Falls County,Idaho,15135,7,0.46250412950115627,False
+51770,Roanoke city,Virginia,17227,8,0.4643872990073722,False
+40119,Payne County,Oklahoma,10743,5,0.46541934282788794,False
+40133,Seminole County,Oklahoma,4297,2,0.46544100535257155,False
+39167,Washington County,Ohio,12866,6,0.46634540649774603,False
+29079,Grundy County,Missouri,2136,1,0.4681647940074906,False
+19069,Franklin County,Iowa,2134,1,0.46860356138706655,False
+19115,Louisa County,Iowa,2122,1,0.471253534401508,False
+46109,Roberts County,South Dakota,2101,1,0.47596382674916704,False
+49039,Sanpete County,Utah,4193,2,0.4769854519437157,False
+35005,Chaves County,New Mexico,10463,5,0.4778744146038421,False
+21171,Monroe County,Kentucky,2088,1,0.4789272030651341,False
+40021,Cherokee County,Oklahoma,8335,4,0.47990401919616077,False
+05127,Scott County,Arkansas,2082,1,0.4803073967339097,False
+48397,Rockwall County,Texas,14564,7,0.4806371875858281,False
+46019,Butte County,South Dakota,2080,1,0.4807692307692308,False
+16041,Franklin County,Idaho,2079,1,0.48100048100048104,False
+48193,Hamilton County,Texas,2078,1,0.48123195380173245,False
+40047,Garfield County,Oklahoma,10363,5,0.48248576666988324,False
+48313,Madison County,Texas,2062,1,0.48496605237633367,False
+35025,Lea County,New Mexico,8214,4,0.48697345994643293,False
+22073,Ouachita Parish,Louisiana,24569,12,0.4884203671293093,False
+48355,Nueces County,Texas,55080,27,0.49019607843137253,False
+48083,Coleman County,Texas,2038,1,0.4906771344455348,False
+19057,Des Moines County,Iowa,8144,4,0.49115913555992136,False
+20013,Brown County,Kansas,2028,1,0.4930966469428008,False
+48245,Jefferson County,Texas,38422,19,0.49450835458851705,False
+46035,Davison County,South Dakota,4044,2,0.4945598417408506,False
+29089,Howard County,Missouri,2019,1,0.49529470034670625,False
+19101,Jefferson County,Iowa,4033,2,0.49590875278948676,False
+05123,St. Francis County,Arkansas,4011,2,0.4986287708800798,False
+22123,West Carroll Parish,Louisiana,2000,1,0.5,False
+20131,Nemaha County,Kansas,2000,1,0.5,False
+48371,Pecos County,Texas,1992,1,0.502008032128514,False
+20169,Saline County,Kansas,9952,5,0.5024115755627009,False
+41049,Morrow County,Oregon,1988,1,0.5030181086519115,False
+29149,Oregon County,Missouri,1987,1,0.5032712632108707,False
+48141,El Paso County,Texas,111186,56,0.5036605328008922,False
+26011,Arenac County,Michigan,3964,2,0.5045408678102926,False
+48123,DeWitt County,Texas,3953,2,0.5059448520111307,False
+20151,Pratt County,Kansas,1968,1,0.508130081300813,False
+08075,Logan County,Colorado,3926,2,0.5094243504839532,False
+48025,Bee County,Texas,3906,2,0.5120327700972862,False
+17043,DuPage County,Illinois,156135,80,0.5123771095526307,False
+19147,Palo Alto County,Iowa,1949,1,0.513083632632119,False
+39121,Noble County,Ohio,3888,2,0.51440329218107,False
+05079,Lincoln County,Arkansas,1942,1,0.5149330587023687,False
+08089,Otero County,Colorado,3876,2,0.5159958720330237,False
+21131,Leslie County,Kentucky,1935,1,0.5167958656330749,False
+41025,Harney County,Oregon,1933,1,0.5173305742369374,False
+17063,Grundy County,Illinois,7727,4,0.5176653293645659,False
+20205,Wilson County,Kansas,1929,1,0.5184033177812338,False
+27117,Pipestone County,Minnesota,1928,1,0.5186721991701245,False
+19089,Howard County,Iowa,1928,1,0.5186721991701245,False
+16019,Bonneville County,Idaho,17345,9,0.5188815220524646,False
+05011,Bradley County,Arkansas,1919,1,0.5211047420531526,False
+39141,Ross County,Ohio,13432,7,0.521143537820131,False
+48061,Cameron County,Texas,59431,31,0.5216132994565126,False
+31039,Cuming County,Nebraska,1910,1,0.5235602094240839,False
+19167,Sioux County,Iowa,5727,3,0.5238344683080147,False
+22041,Franklin Parish,Louisiana,3806,2,0.5254860746190225,False
+26013,Baraga County,Michigan,1897,1,0.5271481286241434,False
+18089,Lake County,Indiana,86949,46,0.5290457624584526,False
+20029,Cloud County,Kansas,1885,1,0.5305039787798408,False
+48503,Young County,Texas,3767,2,0.5309264666843643,False
+39053,Gallia County,Ohio,5647,3,0.5312555339118116,False
+19117,Lucas County,Iowa,1878,1,0.5324813631522897,False
+29111,Lewis County,Missouri,1877,1,0.5327650506126798,False
+51680,Lynchburg city,Virginia,11240,6,0.5338078291814947,False
+39161,Van Wert County,Ohio,5619,3,0.5339028296849972,False
+56023,Lincoln County,Wyoming,3745,2,0.5340453938584779,False
+21055,Crittenden County,Kentucky,1868,1,0.5353319057815846,False
+21001,Adair County,Kentucky,3735,2,0.535475234270415,False
+28155,Webster County,Mississippi,1863,1,0.5367686527106817,False
+32003,Clark County,Nevada,357352,192,0.5372853656898521,False
+51185,Tazewell County,Virginia,9288,5,0.5383290267011198,False
+37043,Clay County,North Carolina,3679,2,0.5436259853220984,False
+01107,Pickens County,Alabama,3675,2,0.5442176870748299,False
+20031,Coffey County,Kansas,1826,1,0.547645125958379,False
+29081,Harrison County,Missouri,1826,1,0.547645125958379,False
+51081,Greensville County,Virginia,1826,1,0.547645125958379,False
+27073,Lac qui Parle County,Minnesota,1820,1,0.5494505494505495,False
+48375,Potter County,Texas,16230,9,0.55452865064695,False
+39087,Lawrence County,Ohio,10804,6,0.5553498704183636,False
+48003,Andrews County,Texas,1790,1,0.5586592178770949,False
+54071,Pendleton County,West Virginia,1780,1,0.5617977528089888,False
+48445,Terry County,Texas,1767,1,0.5659309564233164,False
+22053,Jefferson Davis Parish,Louisiana,5300,3,0.5660377358490566,False
+31095,Jefferson County,Nebraska,1765,1,0.56657223796034,False
+32033,White Pine County,Nevada,1762,1,0.5675368898978433,False
+08125,Yuma County,Colorado,1755,1,0.5698005698005698,False
+48201,Harris County,Texas,543463,310,0.5704160172817653,False
+48001,Anderson County,Texas,8698,5,0.5748447919061853,False
+46051,Grant County,South Dakota,1739,1,0.5750431282346176,False
+05065,Izard County,Arkansas,3473,2,0.5758710048949035,False
+22029,Concordia Parish,Louisiana,3468,2,0.5767012687427913,False
+51660,Harrisonburg city,Virginia,5189,3,0.5781460782424359,False
+40095,Marshall County,Oklahoma,3449,2,0.5798782255726297,False
+56041,Uinta County,Wyoming,3423,2,0.5842827928717499,False
+06111,Ventura County,California,141315,83,0.5873403389590631,False
+27031,Cook County,Minnesota,1701,1,0.5878894767783657,False
+22009,Avoyelles Parish,Louisiana,6771,4,0.5907546891153448,False
+22105,Tangipahoa Parish,Louisiana,20261,12,0.5922708652090223,False
+19177,Van Buren County,Iowa,1682,1,0.5945303210463733,False
+17071,Henderson County,Illinois,1678,1,0.5959475566150179,False
+36041,Hamilton County,New York,1671,1,0.5984440454817475,False
+19021,Buena Vista County,Iowa,3317,2,0.6029544769369912,False
+19195,Worth County,Iowa,1656,1,0.6038647342995169,False
+19011,Benton County,Iowa,4962,3,0.6045949214026601,False
+19151,Pocahontas County,Iowa,1650,1,0.6060606060606061,False
+48183,Gregg County,Texas,19772,12,0.606918875177018,False
+56001,Albany County,Wyoming,4931,3,0.6083958629081322,False
+40153,Woodward County,Oklahoma,3277,2,0.6103143118706134,False
+48485,Wichita County,Texas,19586,12,0.6126825283365669,False
+48389,Reeves County,Texas,1622,1,0.6165228113440198,False
+40123,Pontotoc County,Oklahoma,6479,4,0.6173792251890724,False
+38077,Richland County,North Dakota,3239,2,0.6174745291756715,False
+40091,McIntosh County,Oklahoma,4840,3,0.6198347107438017,False
+20133,Neosho County,Kansas,3206,2,0.6238303181534622,False
+31179,Wayne County,Nebraska,1595,1,0.6269592476489029,False
+31045,Dawes County,Nebraska,1594,1,0.6273525721455457,False
+22025,Catahoula Parish,Louisiana,1589,1,0.6293266205160478,False
+05049,Fulton County,Arkansas,3174,2,0.630119722747322,False
+05039,Dallas County,Arkansas,1586,1,0.6305170239596469,False
+19079,Hamilton County,Iowa,3166,2,0.6317119393556537,False
+21051,Clay County,Kentucky,3155,2,0.6339144215530903,False
+38079,Rolette County,North Dakota,1570,1,0.6369426751592356,False
+12086,Miami-Dade County,Florida,452114,289,0.6392193119434478,False
+22069,Natchitoches Parish,Louisiana,6213,4,0.6438113632705618,False
+26125,Oakland County,Michigan,227903,147,0.6450112547882214,False
+20073,Greenwood County,Kansas,1550,1,0.6451612903225806,False
+49023,Juab County,Utah,1541,1,0.6489292667099286,False
+35009,Curry County,New Mexico,6158,4,0.6495615459564793,False
+55129,Washburn County,Wisconsin,4618,3,0.64963187527068,False
+05043,Drew County,Arkansas,3077,2,0.6499837504062399,False
+08021,Conejos County,Colorado,1538,1,0.6501950585175553,False
+19093,Ida County,Iowa,1536,1,0.6510416666666666,False
+48449,Titus County,Texas,4599,3,0.6523157208088715,False
+48131,Duval County,Texas,1533,1,0.6523157208088715,False
+13279,Toombs County,Georgia,4585,3,0.6543075245365322,False
+31003,Antelope County,Nebraska,1512,1,0.6613756613756614,False
+46115,Spink County,South Dakota,1499,1,0.66711140760507,False
+21013,Bell County,Kentucky,4494,3,0.6675567423230975,False
+48085,Collin County,Texas,127014,85,0.669217566567465,False
+19141,O'Brien County,Iowa,2973,2,0.6727211570803902,False
+48387,Red River County,Texas,2970,2,0.6734006734006734,False
+48457,Tyler County,Texas,4448,3,0.6744604316546763,False
+48507,Zavala County,Texas,1469,1,0.6807351940095302,False
+51683,Manassas city,Virginia,4405,3,0.681044267877412,False
+56045,Weston County,Wyoming,1466,1,0.6821282401091405,False
+22081,Red River Parish,Louisiana,1463,1,0.6835269993164731,False
+48369,Parmer County,Texas,1463,1,0.6835269993164731,False
+19185,Wayne County,Iowa,1460,1,0.684931506849315,False
+20043,Doniphan County,Kansas,1457,1,0.6863417982155113,False
+31127,Nemaha County,Nebraska,1448,1,0.6906077348066298,False
+48227,Howard County,Texas,4329,3,0.693000693000693,False
+31139,Pierce County,Nebraska,1435,1,0.6968641114982579,False
+16065,Madison County,Idaho,2849,2,0.702000702000702,False
+08005,Arapahoe County,Colorado,92071,65,0.70597690912448,False
+20193,Thomas County,Kansas,1415,1,0.7067137809187278,False
+21129,Lee County,Kentucky,1407,1,0.7107320540156361,False
+29045,Clark County,Missouri,1401,1,0.7137758743754461,False
+48181,Grayson County,Texas,25021,18,0.7193957076056113,False
+40089,McCurtain County,Oklahoma,5494,4,0.7280669821623589,False
+16007,Bear Lake County,Idaho,1368,1,0.7309941520467835,False
+29510,St. Louis city,Missouri,43622,32,0.7335748017055614,False
+47039,Decatur County,Tennessee,2723,2,0.7344840249724568,False
+48241,Jasper County,Texas,6790,5,0.7363770250368188,False
+27081,Lincoln County,Minnesota,1355,1,0.7380073800738007,False
+21075,Fulton County,Kentucky,1347,1,0.7423904974016332,False
+01013,Butler County,Alabama,4026,3,0.7451564828614009,False
+19173,Taylor County,Iowa,1335,1,0.7490636704119851,False
+48335,Mitchell County,Texas,1320,1,0.7575757575757576,False
+48005,Angelina County,Texas,14346,11,0.766764254844556,False
+20085,Jackson County,Kansas,2600,2,0.7692307692307693,False
+48047,Brooks County,Texas,1274,1,0.7849293563579278,False
+40065,Jackson County,Oklahoma,3818,3,0.7857517024620221,False
+31011,Boone County,Nebraska,1262,1,0.7923930269413629,False
+20157,Republic County,Kansas,1230,1,0.8130081300813008,False
+56017,Hot Springs County,Wyoming,1230,1,0.8130081300813008,False
+38003,Barnes County,North Dakota,2456,2,0.8143322475570033,False
+27167,Wilkin County,Minnesota,1228,1,0.8143322475570033,False
+40135,Sequoyah County,Oklahoma,7347,6,0.8166598611678236,False
+48215,Hidalgo County,Texas,101496,84,0.827618822416647,False
+48319,Mason County,Texas,1208,1,0.8278145695364238,False
+31031,Cherry County,Nebraska,1202,1,0.831946755407654,False
+22083,Richland Parish,Louisiana,3574,3,0.8393956351426973,False
+20143,Ottawa County,Kansas,1190,1,0.8403361344537815,False
+48323,Maverick County,Texas,6874,6,0.8728542333430317,False
+48063,Camp County,Texas,2282,2,0.8764241893076249,False
+26153,Schoolcraft County,Michigan,2280,2,0.8771929824561404,False
+39145,Scioto County,Ohio,13529,12,0.8869835168896445,False
+13065,Clinch County,Georgia,1122,1,0.8912655971479501,False
+48075,Childress County,Texas,1121,1,0.8920606601248885,False
+48357,Ochiltree County,Texas,1120,1,0.8928571428571428,False
+40029,Coal County,Oklahoma,1107,1,0.9033423667570009,False
+29087,Holt County,Missouri,1098,1,0.9107468123861566,False
+27069,Kittson County,Minnesota,1098,1,0.9107468123861566,False
+48119,Delta County,Texas,1097,1,0.9115770282588879,False
+20137,Norton County,Kansas,1095,1,0.91324200913242,False
+20055,Finney County,Kansas,4379,4,0.9134505594884678,False
+17013,Calhoun County,Illinois,1086,1,0.9208103130755064,False
+22003,Allen Parish,Louisiana,3250,3,0.923076923076923,False
+48277,Lamar County,Texas,9748,9,0.9232663110381617,False
+40009,Beckham County,Oklahoma,3234,3,0.9276437847866419,False
+51610,Falls Church city,Virginia,2146,2,0.9319664492078285,False
+51630,Fredericksburg city,Virginia,3186,3,0.9416195856873822,False
+49001,Beaver County,Utah,1056,1,0.946969696969697,False
+37095,Hyde County,North Carolina,1054,1,0.9487666034155597,False
+12077,Liberty County,Florida,1053,1,0.9496676163342831,False
+22119,Webster Parish,Louisiana,7320,7,0.9562841530054644,False
+08011,Bent County,Colorado,1039,1,0.9624639076034649,False
+48399,Runnels County,Texas,2067,2,0.9675858732462506,False
+19133,Monona County,Iowa,2054,2,0.9737098344693281,False
+48157,Fort Bend County,Texas,104644,102,0.9747333817514622,False
+40013,Bryan County,Oklahoma,8200,8,0.975609756097561,False
+39001,Adams County,Ohio,5101,5,0.9801999607920014,False
+31175,Valley County,Nebraska,1013,1,0.9871668311944718,False
+48483,Wheeler County,Texas,1010,1,0.9900990099009901,False
+40039,Custer County,Oklahoma,4039,4,0.9903441445902451,False
+27173,Yellow Medicine County,Minnesota,1997,2,1.00150225338007,False
+08073,Lincoln County,Colorado,989,1,1.0111223458038423,False
+40023,Choctaw County,Oklahoma,2963,3,1.0124873439082012,False
+31123,Morrill County,Nebraska,970,1,1.0309278350515465,False
+31097,Johnson County,Nebraska,970,1,1.0309278350515465,False
+48107,Crosby County,Texas,969,1,1.0319917440660473,False
+40055,Greer County,Oklahoma,957,1,1.0449320794148382,False
+40069,Johnston County,Oklahoma,1912,2,1.0460251046025104,False
+48023,Baylor County,Texas,916,1,1.0917030567685588,False
+51147,Prince Edward County,Virginia,3657,4,1.0937927262783702,False
+40035,Craig County,Oklahoma,2701,3,1.1106997408367272,False
+29199,Scotland County,Missouri,892,1,1.1210762331838564,False
+48129,Donley County,Texas,882,1,1.1337868480725624,False
+08009,Baca County,Colorado,866,1,1.1547344110854503,False
+48113,Dallas County,Texas,298992,359,1.2007010221009258,False
+39079,Jackson County,Ohio,5796,7,1.2077294685990339,False
+48427,Starr County,Texas,7386,9,1.2185215272136476,False
+40127,Pushmataha County,Oklahoma,2439,3,1.2300123001230012,False
+08003,Alamosa County,Colorado,2436,3,1.2315270935960592,False
+29103,Knox County,Missouri,790,1,1.2658227848101267,False
+51750,Radford city,Virginia,1549,2,1.2911555842479019,False
+20195,Trego County,Kansas,735,1,1.3605442176870748,False
+48479,Webb County,Texas,26886,39,1.4505690694041509,False
+27011,Big Stone County,Minnesota,1366,2,1.4641288433382138,False
+20023,Cheyenne County,Kansas,670,1,1.492537313432836,False
+20119,Meade County,Kansas,660,1,1.5151515151515151,False
+06037,Los Angeles County,California,1448571,2251,1.5539452329226526,False
+48417,Shackelford County,Texas,641,1,1.5600624024960998,False
+48211,Hemphill County,Texas,635,1,1.574803149606299,False
+48505,Zapata County,Texas,1875,3,1.6,False
+48275,Knox County,Texas,619,1,1.6155088852988693,False
+48087,Collingsworth County,Texas,587,1,1.7035775127768313,False
+48317,Martin County,Texas,562,1,1.779359430604982,False
+48249,Jim Wells County,Texas,6147,11,1.7894908085244834,False
+30055,McCone County,Montana,522,1,1.9157088122605364,False
+51620,Franklin city,Virginia,1562,3,1.9206145966709347,False
+40057,Harmon County,Oklahoma,496,1,2.0161290322580645,False
+39049,Franklin County,Ohio,167986,366,2.1787529913207053,False
+51640,Galax city,Virginia,1331,3,2.2539444027047333,False
+51720,Norton city,Virginia,746,2,2.680965147453083,False
+40061,Haskell County,Oklahoma,2365,7,2.959830866807611,False
+20135,Ness County,Kansas,655,2,3.0534351145038165,False
+51600,Fairfax city,Virginia,3495,60,17.167381974248926,False
