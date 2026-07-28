@@ -113,6 +113,8 @@ export function CompassPage() {
   function handleSearch(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault()
     setErrorMsg('')
+    setFocusedFips(null)
+    setSearchedZip('')
 
     const fips = zipToCountyFips(zipInput)
     if (!fips) {

@@ -574,3 +574,20 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 **Deviation note:** This removes a stat explicitly listed as P0 in PRD_Jillian_Krebsbach.md ("Panel displays county-level desert status, agency count, and agencies per 1,000 seniors"). The PRD is being updated separately to reflect this — not automated as part of this change.
 
 **Rejected:** Keeping the stat in both the result card and the hover tooltip — rejected as redundant once the family already has the raw count and the map's color signal for severity.
+
+---
+
+### A11 — All 5 Care Compass tables migrated to Project 1 under `care_compass` schema
+
+**Decision:** Migrated `assignments_log`, `caregiver_profiles`, `client_profiles`, `coordinator_profiles`, and `demand_signals` from the standalone Care Compass Supabase project into Project 1 (jillian.krebsbach@gmail.com's Org) under a dedicated `care_compass` schema. Old project deleted.
+
+**Rationale:** The standalone project was a separate billing/org unit requiring two sets of env vars and two Supabase contexts for a platform sharing a single deployment pipeline. Consolidating under Project 1 reduces credential surface and removes cross-project coordination overhead. A named schema (`care_compass`) keeps the tables namespaced without requiring a separate project.
+
+**Implementation notes:**
+- Tables recreated manually via SQL editor; CSV import failed due to string `"null"` values in UUID fields — data imported via INSERT statements instead
+- RLS intentionally disabled on migrated tables (demo-only; matches pre-migration state)
+- `.env.local` and Vercel env vars updated in both apps to reflect new project URL and anon key
+- Deployed app confirmed working at `care-compass-family.vercel.app/compass` post-migration
+- Old Care Compass Supabase project deleted
+
+**Rejected:** Keeping the two-project structure. Rejected — separate org context, duplicate credential sets, and a dead project in the dashboard with no ongoing benefit.
