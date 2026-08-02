@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { MousePointerClick } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { rankCaregiverMatches, getInitials } from 'utils'
 import type { ClientProfile, CaregiverProfile, RankedMatchResult } from 'utils'
@@ -119,12 +120,10 @@ export function AssignmentPanel({
 
       {countyFips === null ? (
         <div className="assignment-panel__empty-state">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="var(--gray-no-data)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="12" cy="9" r="2.5" stroke="var(--gray-no-data)" strokeWidth="1.5"/>
-          </svg>
-          <p className="assignment-panel__empty">
-            Select a county on the map to see unassigned clients and caregiver matches.
+          <MousePointerClick size={48} color="var(--gray-no-data)" aria-hidden="true" />
+          <h2 className="assignment-panel__county-name">Find clients who need an aide</h2>
+          <p className="assignment-panel__subtext">
+            Click any county on the map to see unassigned clients and caregiver matches.
           </p>
         </div>
       ) : clients.length === 0 ? (
@@ -138,11 +137,11 @@ export function AssignmentPanel({
               <path d="M8 48c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="var(--gray-no-data)" strokeWidth="2.5" strokeLinecap="round"/>
             </svg>
             <p className="assignment-panel__empty">
-              No unassigned clients in this county.{' '}
-              <Link className="assignment-panel__empty-link" to="/clients">
-                View clients list
-              </Link>
+              No unassigned clients in this county.
             </p>
+            <Link className="assignment-panel__empty-link" to="/clients">
+              View clients list
+            </Link>
           </div>
         </>
       ) : (

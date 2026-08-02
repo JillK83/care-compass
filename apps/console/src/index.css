@@ -9,3 +9,44 @@ html, body, #root {
   width: 100%;
   min-height: 100%;
 }
+
+/* ── Console-scoped Leaflet overrides ─────────────────────────────────────── */
+
+/* C4: Reduce tooltip size — county labels overlap at national zoom without this */
+.leaflet-tooltip {
+  font-size: var(--text-xs);
+  padding: 4px 8px;
+}
+
+/* C5: Remove Leaflet DivIcon default white background — pin elements style themselves */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Suppress MapEngine's internal overlay legend — MapPage renders legend in document flow */
+.map-engine-outer .map-engine-legend {
+  display: none !important;
+}
+
+/* External legend: reset position and layout for document flow below the map */
+.map-engine-legend {
+  position: static !important;
+  z-index: auto !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+}
+
+.map-engine-disclaimer {
+  margin-top: 8px;
+}
+
+/* C2: Style Leaflet rubber-band zoom selection box */
+.leaflet-zoom-box {
+  border: 2px dashed var(--teal-action);
+  background: transparent;
+  box-shadow: none;
+}
