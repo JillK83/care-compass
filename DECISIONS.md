@@ -591,3 +591,69 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 - Old Care Compass Supabase project deleted
 
 **Rejected:** Keeping the two-project structure. Rejected — separate org context, duplicate credential sets, and a dead project in the dashboard with no ongoing benefit.
+
+---
+
+### A12 — Supabase project ref `eiowhxkcyicuhnuyzfhk` is the single source of truth
+
+**Decision:** The Supabase project at `https://eiowhxkcyicuhnuyzfhk.supabase.co` (jillian.krebsbach@gmail.com's Project) is the authoritative backend for both `apps/console` and `apps/compass`. No other project ref is valid.
+
+**Rationale:** Post-A11 migration, both apps point to this single project. Any prior project refs (e.g. `xcknjvqaphxdxrvyobhh`) are deleted and must not be reused or confused with the current project.
+
+**Rejected:** No alternative — this decision exists to prevent confusion with prior project refs that appeared in env files during the A11 migration.
+
+---
+
+### A13 — Auth users must be created via the Supabase dashboard, not raw SQL
+
+**Decision:** All `auth.users` rows must be created through the Supabase dashboard (Authentication → Users → Add user). Raw SQL `INSERT INTO auth.users` is prohibited.
+
+**Rationale:** GoTrue initializes additional metadata (identity records, provider linkage, session state) when a user is created through its API. A raw SQL insert bypasses this initialization — the row exists in `auth.users` with a valid password hash but produces `invalid_credentials` on every `signInWithPassword` attempt because GoTrue's internal state is incomplete.
+
+**Rejected:** Raw SQL inserts with `crypt()` password hashing. Rejected — confirmed to produce `invalid_credentials` login failures even when the hash is correct, because GoTrue's metadata initialization is skipped.
+
+---
+
+### A14 — Demo auth user `demo@carecompass.test` managed via Supabase dashboard only
+
+**Decision:** The `demo@carecompass.test` coordinator account is created and password-managed exclusively through Authentication → Users in the Supabase dashboard. SQL `crypt()` updates to `encrypted_password` are not used.
+
+**Rationale:** Per A13, password resets via raw SQL produce an invalid credential state even when the hash appears correct. Dashboard-managed password resets go through GoTrue and are guaranteed to work with `signInWithPassword`.
+
+**Rejected:** Password resets via `UPDATE auth.users SET encrypted_password = crypt(...)`. Rejected — confirmed to fail; see A13.
+
+---
+
+### A15 — Supabase client in `apps/console` scoped to `care_compass` schema
+
+**Decision:** `apps/console/src/lib/supabase.ts` passes `{ db: { schema: 'care_compass' } }` as the third argument to `createClient`. All five tables (`assignments_log`, `caregiver_profiles`, `client_profiles`, `coordinator_profiles`, `demand_signals`) live in the `care_compass` schema, not `public`.
+
+**Rationale:** Post-A11 migration, tables were created under a named schema rather than `public`. Without the schema option, Supabase's PostgREST client defaults to `public` and all queries return empty or error. `apps/compass` does not receive this change — Door 1 reads only from static CSV and its Supabase client (used only for demand signal inserts) targets `demand_signals` which is also in `care_compass`; that alignment should be verified separately.
+
+**Rejected:** Moving tables back to `public`. Rejected — the named schema is the intentional output of A11's consolidation; reverting it would undo the namespacing benefit.
+
+---
+
+### A16 — `care_compass` schema requires explicit USAGE and table grants for `anon` and `authenticated`
+
+**Decision:** After creating the `care_compass` schema, the following grants must be applied before any API request can succeed:
+
+```sql
+GRANT USAGE ON SCHEMA care_compass TO anon, authenticated;
+GRANT ALL ON ALL TABLES IN SCHEMA care_compass TO anon, authenticated;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA care_compass TO anon, authenticated;
+```
+
+**Rationale:** PostgreSQL does not automatically grant schema access to non-owner roles. Without `USAGE` on the schema, all Supabase API requests (PostgREST) return `403 permission denied for schema care_compass` regardless of RLS state — RLS governs row filtering, not schema-level access. These grants are required even when RLS is disabled.
+
+**Rejected:** Disabling RLS as a substitute. Rejected — confirmed to have no effect on the 403; RLS and schema USAGE grants are independent permission layers.
+
+---
+
+### A17 — `care_compass` schema must be added to Supabase Data API exposed schemas
+
+**Decision:** `care_compass` must be listed under Project Settings → Integrations → Data API → Exposed schemas. Without this, all API requests return `406 Invalid schema`. This is a one-time project-level setting — new tables added to `care_compass` do not require re-exposure.
+
+**Rationale:** Supabase's PostgREST layer only serves schemas explicitly listed in its `db-schema` config. The `care_compass` schema is not exposed by default when created — it must be added alongside `public` in the dashboard setting. Failure mode is `406 Invalid schema` on every request, which is distinct from the `403` produced by missing USAGE grants (A16).
+
+**Rejected:** Using the `public` schema. Rejected — A11's consolidation intentionally namespaces Care Compass tables under `care_compass`; reverting to `public` would undo that.
