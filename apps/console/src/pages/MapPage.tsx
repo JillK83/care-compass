@@ -240,9 +240,6 @@ export function MapPage() {
         }
 
         // Signal pins — one per county, positioned at ZIP if available
-        // TEMP: label carries demand count. Per contract, signal pins omit label (no person attached).
-        // Reusing label as count badge is a documented deviation — proper fix is OverlayPin.count
-        // with Lee sign-off. See DECISIONS.md pending entry.
         for (const sig of signalCounts) {
           const pos = getZipPosition(sig.zip, sig.countyFips, centroids, 'signal', countyOccupied)
           if (!pos) { console.warn('[MapPage] no position for signal county', sig.countyFips); continue }
@@ -251,7 +248,6 @@ export function MapPage() {
             lat:        pos.lat,
             lng:        pos.lng,
             type:       'signal',
-            label:      String(sig.count),
             countyFips: sig.countyFips,
           })
         }
@@ -273,31 +269,49 @@ export function MapPage() {
       borderRadius: 'var(--radius-card-console)',
       overflow: 'hidden',
       border: 'var(--border-width) solid var(--border)',
+      display: 'flex',
+      flexDirection: 'column',
     }}>
-      <MapEngine
-        mode="coordinator"
-        counties={counties}
-        focusedCountyFips={focusedCountyFips}
-        onCountyClick={handleCountyClick}
-        overlayPins={overlayPins}
-        dimmedPinIds={dimmedPinIds}
-        colorScale={DEFAULT_COLOR_SCALE}
-        panelContent={
-          <AssignmentPanel
-            countyFips={focusedCountyFips}
-            countyName={focusedCountyFips
-              ? counties.find(c => c.fips === focusedCountyFips)?.name ?? ''
-              : ''}
-            clients={selectedCountyClients}
-            caregivers={selectedCountyCaregivers}
-            onAssignSuccess={handleAssignSuccess}
-          />
-        }
-        isLoading={isLoading}
-        dataSource="live"
-        disclaimerText={null}
-        geojsonData={geojsonData ?? undefined}
-      />
+      <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+        <MapEngine
+          mode="coordinator"
+          counties={counties}
+          focusedCountyFips={focusedCountyFips}
+          onCountyClick={handleCountyClick}
+          overlayPins={overlayPins}
+          dimmedPinIds={dimmedPinIds}
+          colorScale={DEFAULT_COLOR_SCALE}
+          panelContent={
+            <AssignmentPanel
+              countyFips={focusedCountyFips}
+              countyName={focusedCountyFips
+                ? counties.find(c => c.fips === focusedCountyFips)?.name ?? ''
+                : ''}
+              clients={selectedCountyClients}
+              caregivers={selectedCountyCaregivers}
+              onAssignSuccess={handleAssignSuccess}
+            />
+          }
+          isLoading={isLoading}
+          dataSource="live"
+          disclaimerText={null}
+          geojsonData={geojsonData ?? undefined}
+        />
+      </div>
+      <div className="map-engine-legend" aria-label="Map legend">
+        <div className="map-engine-legend__item">
+          <span className="map-engine-legend__pin map-engine-legend__pin--caregiver" />
+          <span>Available aide</span>
+        </div>
+        <div className="map-engine-legend__item">
+          <span className="map-engine-legend__pin map-engine-legend__pin--client" />
+          <span>Unassigned client</span>
+        </div>
+        <div className="map-engine-legend__item">
+          <span className="map-engine-legend__pin map-engine-legend__pin--signal" />
+          <span>Demand signal</span>
+        </div>
+      </div>
     </div>
   )
 }
