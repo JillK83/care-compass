@@ -657,3 +657,21 @@ GRANT ALL ON ALL SEQUENCES IN SCHEMA care_compass TO anon, authenticated;
 **Rationale:** Supabase's PostgREST layer only serves schemas explicitly listed in its `db-schema` config. The `care_compass` schema is not exposed by default when created — it must be added alongside `public` in the dashboard setting. Failure mode is `406 Invalid schema` on every request, which is distinct from the `403` produced by missing USAGE grants (A16).
 
 **Rejected:** Using the `public` schema. Rejected — A11's consolidation intentionally namespaces Care Compass tables under `care_compass`; reverting to `public` would undo that.
+
+---
+
+### A18 — Added PRIMARY KEY and FOREIGN KEY constraints to care_compass schema
+
+**Decision:** Added missing PRIMARY KEY constraints to `care_compass.client_profiles`
+and `care_compass.caregiver_profiles` (both on the `id` uuid column).
+Added FOREIGN KEY constraints from `assignments_log.client_id` →
+`client_profiles(id)` and `assignments_log.caregiver_id` →
+`caregiver_profiles(id)`, both with ON DELETE CASCADE.
+Schema cache reloaded via `notify pgrst, 'reload schema'` after each change.
+
+**Rationale:** PostgREST requires FK relationships to be present in the schema
+for nested select joins (e.g. `assignments_log ( caregiver_profiles ( name ) )`)
+to resolve. Without the FKs, the query returns a 400 "Could not find a
+relationship" error. The PKs were required before the FKs could reference them.
+
+**Applied:** 2026-08-03 via Supabase SQL editor (service role).

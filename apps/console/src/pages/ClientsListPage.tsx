@@ -3,13 +3,35 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import './ClientsListPage.css'
 
-// Placeholder type — columns confirmed from CLAUDE.md Dignity Profile contract.
-// Assigned status derivation (from assignments_log join) is out of scope for this task.
+type AssignmentLogEntry = {
+  created_at: string
+  caregiver_profiles: { name: string } | null
+}
+
 type ClientProfile = {
   id: string
   name: string
-  pronouns: string | null
+  county_fips: string | null
   is_assigned: boolean
+  assignments_log: AssignmentLogEntry[] | null
+}
+
+const ARIZONA_COUNTY_NAMES: Record<string, string> = {
+  '04001': 'Apache County',
+  '04003': 'Cochise County',
+  '04005': 'Coconino County',
+  '04007': 'Gila County',
+  '04009': 'Graham County',
+  '04011': 'Greenlee County',
+  '04012': 'La Paz County',
+  '04013': 'Maricopa County',
+  '04015': 'Mohave County',
+  '04017': 'Navajo County',
+  '04019': 'Pima County',
+  '04021': 'Pinal County',
+  '04023': 'Santa Cruz County',
+  '04025': 'Yavapai County',
+  '04027': 'Yuma County',
 }
 
 export function ClientsListPage() {
@@ -21,7 +43,19 @@ export function ClientsListPage() {
   useEffect(() => {
     supabase
       .from('client_profiles')
-      .select('id, name, pronouns, is_assigned')
+      .select(`
+        id,
+        name,
+        county_fips,
+        is_assigned,
+        assignments_log (
+          created_at,
+          caregiver_profiles (
+            name
+          )
+        )
+      `)
+      .order('name')
       .then(({ data, error: fetchError }) => {
         if (fetchError) {
           setError(fetchError.message)
@@ -106,29 +140,56 @@ export function ClientsListPage() {
       <table style={styles.table}>
         <thead>
           <tr>
-            <th style={styles.th}>Name</th>
-            <th style={styles.th}>Pronouns</th>
-            <th style={styles.th}>Assigned</th>
+            <th style={{ ...styles.th, width: '30%' }}>Name</th>
+            <th style={{ ...styles.th, width: '25%' }}>County</th>
+            <th style={{ ...styles.th, width: '15%' }}>Assigned</th>
+            <th style={{ ...styles.th, width: '30%' }}>Assigned Aide</th>
           </tr>
         </thead>
         <tbody>
-          {clients.map(c => (
-            <tr
-              key={c.id}
-              className="clients-row"
-              onClick={() => navigate(`/clients/${c.id}`)}
-            >
-              <td style={styles.td}>
-                <span className="clients-row-name">{c.name}</span>
-              </td>
-              <td style={styles.td}>{c.pronouns || '—'}</td>
-              <td style={styles.td}>
-                <span className={`assigned-badge assigned-badge--${c.is_assigned ? 'yes' : 'no'}`}>
-                  {c.is_assigned ? 'Assigned' : 'Unassigned'}
-                </span>
-              </td>
-            </tr>
-          ))}
+          {clients.map(c => {
+            const logs = (c.assignments_log ?? []).filter(l => l.caregiver_profiles != null)
+            let aideName: string | null = null
+            let overflowCount = 0
+            if (logs.length === 1) {
+              aideName = logs[0].caregiver_profiles!.name
+            } else if (logs.length > 1) {
+              const sorted = [...logs].sort(
+                (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+              )
+              aideName = sorted[0].caregiver_profiles!.name
+              overflowCount = logs.length - 1
+            }
+
+            return (
+              <tr
+                key={c.id}
+                className="clients-row"
+                onClick={() => navigate(`/clients/${c.id}`)}
+              >
+                <td style={styles.td}>
+                  <span className="clients-row-name">{c.name}</span>
+                </td>
+                <td style={styles.td}>
+                  {c.county_fips != null
+                    ? (ARIZONA_COUNTY_NAMES[c.county_fips] ?? c.county_fips)
+                    : '—'}
+                </td>
+                <td style={styles.td}>
+                  <span className={`assigned-badge assigned-badge--${c.is_assigned ? 'yes' : 'no'}`}>
+                    {c.is_assigned ? 'Assigned' : 'Unassigned'}
+                  </span>
+                </td>
+                <td style={styles.td}>
+                  {aideName != null
+                    ? overflowCount > 0
+                      ? `${aideName} +${overflowCount}`
+                      : aideName
+                    : '—'}
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </main>
@@ -208,6 +269,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   table: {
     width: '100%',
+    tableLayout: 'fixed',
     borderCollapse: 'collapse',
     fontFamily: 'var(--font-family)',
     fontSize: 'var(--text-base)',

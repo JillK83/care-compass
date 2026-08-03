@@ -18,6 +18,11 @@ type FormState = {
   zip_input: string
 }
 
+type AssignmentRow = {
+  created_at: string
+  caregiver_profiles: { name: string }[] | null
+}
+
 const EMPTY_FORM: FormState = {
   name: '',
   nickname: '',
@@ -39,6 +44,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
   const [isSaving, setIsSaving] = useState(false)
   const [banner, setBanner] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
   const [zipError, setZipError] = useState('')
+  const [aideNames, setAideNames] = useState<string[]>([])
 
   useEffect(() => {
     const state = location.state as { banner?: string } | null
@@ -47,28 +53,48 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
 
   useEffect(() => {
     if (mode === 'create' || !id) return
-    supabase
-      .from('client_profiles')
-      .select('name, nickname, pronouns, preferred_language, gender_preference, comfort_note, avoid_note, zip_input')
-      .eq('id', id)
-      .single()
-      .then(({ data, error }) => {
-        if (error || !data) {
-          setBanner({ type: 'error', message: 'Failed to load client profile.' })
-        } else {
-          setForm({
-            name: data.name ?? '',
-            nickname: data.nickname ?? '',
-            pronouns: data.pronouns ?? '',
-            preferred_language: data.preferred_language ?? '',
-            gender_preference: data.gender_preference ?? '',
-            comfort_note: data.comfort_note ?? '',
-            avoid_note: data.avoid_note ?? '',
-            zip_input: data.zip_input ?? '',
-          })
-        }
-        setIsLoading(false)
-      })
+
+    async function load() {
+      const { data, error } = await supabase
+        .from('client_profiles')
+        .select('name, nickname, pronouns, preferred_language, gender_preference, comfort_note, avoid_note, zip_input')
+        .eq('id', id!)
+        .single()
+
+      if (error || !data) {
+        setBanner({ type: 'error', message: 'Failed to load client profile.' })
+      } else {
+        setForm({
+          name: data.name ?? '',
+          nickname: data.nickname ?? '',
+          pronouns: data.pronouns ?? '',
+          preferred_language: data.preferred_language ?? '',
+          gender_preference: data.gender_preference ?? '',
+          comfort_note: data.comfort_note ?? '',
+          avoid_note: data.avoid_note ?? '',
+          zip_input: data.zip_input ?? '',
+        })
+      }
+      setIsLoading(false)
+
+      const { data: assignmentData } = await supabase
+        .from('assignments_log')
+        .select(`
+          created_at,
+          caregiver_profiles (
+            name
+          )
+        `)
+        .eq('client_id', id!)
+        .order('created_at', { ascending: false })
+
+      const names = ((assignmentData ?? []) as AssignmentRow[])
+        .map(row => row.caregiver_profiles?.[0]?.name)
+        .filter((n): n is string => n != null)
+      setAideNames([...new Set(names)])
+    }
+
+    load()
   }, [id, mode])
 
   function handleChange(field: keyof FormState) {
@@ -160,7 +186,8 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
             padding: 0,
             cursor: 'pointer',
             fontSize: 'var(--text-sm)',
-            color: 'var(--text-secondary)',
+            color: 'var(--teal-action)',
+            fontWeight: 500,
             fontFamily: 'var(--font-family)',
             display: 'block',
             marginBottom: '12px',
@@ -369,6 +396,18 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
           </div>
         </form>
       </div>
+      {mode !== 'create' && (
+        <div className="profile-card" style={{ marginTop: 'var(--space-zone-gap)' }}>
+          <p className="field-label">Assigned Aide(s)</p>
+          {aideNames.length === 0 ? (
+            <p className="field-value">No aide currently assigned</p>
+          ) : (
+            aideNames.map(name => (
+              <p key={name} className="field-value">{name}</p>
+            ))
+          )}
+        </div>
+      )}
       </div>
     </main>
   )
