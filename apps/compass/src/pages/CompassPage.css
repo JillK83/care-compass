@@ -275,9 +275,11 @@
 }
 
 .nearby-heading {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: var(--text-xs);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
   margin: 0 0 12px;
 }
 
@@ -317,9 +319,11 @@
 }
 
 .resource-heading {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: var(--text-xs);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
   margin: 0 0 12px;
 }
 
