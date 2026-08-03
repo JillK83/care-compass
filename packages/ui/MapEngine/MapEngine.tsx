@@ -75,7 +75,7 @@ export function MapEngine({
       zoomControl: true,
       attributionControl: false,
       minZoom: 4,
-    }).setView([37.8, -96], 4)
+    }).setView([34.2, -111.5], 5)
 
     geoLayerRef.current = L.geoJSON(undefined, {
       style: () => ({ weight: 0.5, color: '#888', fillOpacity: 0.75 }),

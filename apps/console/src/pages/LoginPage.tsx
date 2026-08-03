@@ -11,7 +11,7 @@ export function LoginPage() {
   const [passwordError, setPasswordError] = useState('')
 
   useEffect(() => {
-    if (session) navigate('/clients', { replace: true })
+    if (session) navigate('/map', { replace: true })
   }, [session, navigate])
 
   async function handleSignIn() {
