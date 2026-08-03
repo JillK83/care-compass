@@ -20,7 +20,7 @@ type FormState = {
 
 type AssignmentRow = {
   created_at: string
-  caregiver_profiles: { name: string }[] | null
+  caregiver_profiles: { name: string } | null
 }
 
 const EMPTY_FORM: FormState = {
@@ -77,7 +77,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
       }
       setIsLoading(false)
 
-      const { data: assignmentData } = await supabase
+      const { data: assignmentData, error: assignmentError } = await supabase
         .from('assignments_log')
         .select(`
           created_at,
@@ -89,7 +89,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
         .order('created_at', { ascending: false })
 
       const names = ((assignmentData ?? []) as AssignmentRow[])
-        .map(row => row.caregiver_profiles?.[0]?.name)
+        .map(row => row.caregiver_profiles?.name)
         .filter((n): n is string => n != null)
       setAideNames([...new Set(names)])
     }
