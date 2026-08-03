@@ -206,7 +206,13 @@ export function AssignmentPanel({
                     <div className="assignment-panel__identity">
                       <span className="assignment-panel__name">{match.name}</span>
                       <p className="assignment-panel__assignment-count">
-                        Currently assigned: {assignmentCounts[match.id] ?? 0}x
+                        Active clients:{' '}
+                        <span style={(assignmentCounts[match.id] ?? 0) >= 3
+                          ? { color: 'var(--orange-alert)', fontWeight: 600 }
+                          : undefined
+                        }>
+                          {assignmentCounts[match.id] ?? 0}
+                        </span>
                       </p>
                     </div>
                     <span className="assignment-panel__score-badge">{match.score}/5</span>
