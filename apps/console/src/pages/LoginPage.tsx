@@ -25,6 +25,9 @@ export function LoginPage() {
     <main className="login-page">
       <div className="login-card">
         <h1 className="login-title">Care Console</h1>
+        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0, marginBottom: '20px' }}>
+          Home care coordination for county networks.
+        </p>
         <div className="field-group">
           <label className="field-label" htmlFor="login-email">Email</label>
           <input
@@ -58,6 +61,9 @@ export function LoginPage() {
         <button className="btn-primary" onClick={handleSignIn}>
           Sign in
         </button>
+        <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', textAlign: 'center', marginTop: '16px', marginBottom: 0 }}>
+          Demo access: demo@carecompass.test / CareDemo2026!
+        </p>
       </div>
     </main>
   )
