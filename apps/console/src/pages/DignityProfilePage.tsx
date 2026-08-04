@@ -88,7 +88,7 @@ export function DignityProfilePage({ mode }: { mode: Mode }) {
         .eq('client_id', id!)
         .order('created_at', { ascending: false })
 
-      const names = ((assignmentData ?? []) as AssignmentRow[])
+      const names = ((assignmentData ?? []) as unknown as AssignmentRow[])
         .map(row => row.caregiver_profiles?.name)
         .filter((n): n is string => n != null)
       setAideNames([...new Set(names)])
