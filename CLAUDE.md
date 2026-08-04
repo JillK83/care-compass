@@ -3,9 +3,9 @@
 Behavioral guidelines for Claude when working on this project. These rules merge general coding discipline with project-specific contracts. When in doubt, re-read this file before writing any code.
 
 Read these companion files before starting any session:
-- `DESIGN_SYSTEM.md` — full token tables, typography, spacing, button tiers, screen constraints
-- `MapEngine_Interface_Contract.md` — shared prop interface between Door 1 and Door 2
-- `DECISIONS.md` — ten locked design decisions with rationale and rejected alternatives
+- `docs/DESIGN_SYSTEM.md` — full token tables, typography, spacing, button tiers, screen constraints
+- `docs/MapEngine_Interface_Contract.md` — shared prop interface between Door 1 and Door 2
+- `docs/DECISIONS.md` — ten locked design decisions with rationale and rejected alternatives
 
 ---
 
@@ -26,7 +26,7 @@ Before implementing anything:
 
 **County is the geographic unit.** ZIP is input only. The crosswalk resolves ZIP to county silently — all downstream rendering, logic, and data display operates at county level. Never render or store at ZIP level.
 
-**MapEngine is shared and locked.** Both doors render through a single `MapEngine` React component defined in `packages/ui`. Its TypeScript interface contract lives in `MapEngine_Interface_Contract.md` and `MapEngine.types.ts`. Data adapts to fit the contract — never the reverse. See Section 5 for the full sign-off protocol.
+**MapEngine is shared and locked.** Both doors render through a single `MapEngine` React component defined in `packages/ui`. Its TypeScript interface contract lives in `docs/MapEngine_Interface_Contract.md` and `MapEngine.types.ts`. Data adapts to fit the contract — never the reverse. See Section 5 for the full sign-off protocol.
 
 **Ambiguity is a signal, not a default.** If data is missing or a state is undefined, surface it explicitly — empty state, error state, or fallback copy. Never silently default to a value or suppress an edge case.
 
@@ -118,7 +118,7 @@ The MapEngine is the highest-risk shared surface in this project. Both doors dep
 ### Rules
 
 - `MapEngine.types.ts` in `packages/ui` is the single source of truth for all prop shapes and data interfaces.
-- Full contract is documented in `MapEngine_Interface_Contract.md`.
+- Full contract is documented in `docs/MapEngine_Interface_Contract.md`.
 - **Any change to the interface requires sign-off from both Jillian and Lee before implementation.**
 - The review window for any proposed interface change is a minimum of 2 hours before a PR is opened.
 - If you are working on Door 2 and need a MapEngine prop that doesn't exist, stop. Document the need. Do not modify the contract unilaterally.
@@ -160,7 +160,7 @@ These three tokens were corrected following the Door 2 WCAG audit. They are conf
 
 ### Door 1 WCAG audit
 
-Door 1 WCAG audit must be run against Figma Make output before committing Door 1 CSS. The same orange token issue that affected Door 2 may apply if Door 1 uses any orange CTAs. See `DESIGN_SYSTEM.md` for the full token constraint table.
+Door 1 WCAG audit must be run against Figma Make output before committing Door 1 CSS. The same orange token issue that affected Door 2 may apply if Door 1 uses any orange CTAs. See `docs/DESIGN_SYSTEM.md` for the full token constraint table.
 
 ---
 
@@ -210,7 +210,7 @@ Optional fields: nickname, preferred language, gender preference for aide, one c
 ### Auth contract
 
 - Door 1: no authentication, fully public.
-- Door 2: Supabase password auth. Magic link was removed — see DECISIONS.md A09 for rationale.
+- Door 2: Supabase password auth. Magic link was removed — see docs/DECISIONS.md A09 for rationale.
 - No coordinator data, Supabase queries, or auth state is ever accessible from the `/compass` route.
 
 ### Geographic unit contract
@@ -241,7 +241,7 @@ Optional fields: nickname, preferred language, gender preference for aide, one c
 
 ## 9. Open Items
 
-Track these before or during Day 1. Do not close them silently — update `DECISIONS.md` when resolved.
+Track these before or during Day 1. Do not close them silently — update `docs/DECISIONS.md` when resolved.
 
 | # | Item | Owner | Status |
 |---|---|---|---|
@@ -271,10 +271,10 @@ Seed data requirements: at least one confirmed Spanish-speaking caregiver, at le
 
 | File | Purpose |
 |---|---|
-| `DESIGN_SYSTEM.md` | Full token tables, typography, spacing, button tiers, screen constraints |
-| `MapEngine_Interface_Contract.md` | Full TypeScript prop definitions, data shapes, auth enforcement, change protocol |
-| `DECISIONS.md` | Ten locked design decisions with rationale and rejected alternatives |
-| `BUILD_CHECKLIST.md` | Day-by-day task list with owners and verification steps |
+| `docs/DESIGN_SYSTEM.md` | Full token tables, typography, spacing, button tiers, screen constraints |
+| `docs/MapEngine_Interface_Contract.md` | Full TypeScript prop definitions, data shapes, auth enforcement, change protocol |
+| `docs/DECISIONS.md` | Ten locked design decisions with rationale and rejected alternatives |
+| `docs/BUILD_CHECKLIST.md` | Day-by-day task list with owners and verification steps |
 | `CareCompass_PRD_v1.0.docx` | Full product requirements document |
 
 ---
