@@ -577,6 +577,16 @@ Move to resolved once addressed in build. Do not delete — add resolution date 
 
 ---
 
+### D38 — Default map view set to Arizona at zoom 5
+
+**Decision:** MapPage initial center set to [34.2, -111.5], zoom 5. Post-login redirect changed from /clients to /map.
+
+**Rationale:** All demo data is Arizona. National default view rendered pins as unreadable blobs. Zoom 5 shows Maricopa and Pinal with readable pins and visible county boundaries — the core demo counties. Map-first landing makes the Door 1 → Door 2 demand signal narrative immediately visible on login.
+
+**Rejected:** Zoom 4 (too far, pins illegible), zoom 6–7 (too tight, loses state context).
+
+---
+
 ### A11 — All 5 Care Compass tables migrated to Project 1 under `care_compass` schema
 
 **Decision:** Migrated `assignments_log`, `caregiver_profiles`, `client_profiles`, `coordinator_profiles`, and `demand_signals` from the standalone Care Compass Supabase project into Project 1 (jillian.krebsbach@gmail.com's Org) under a dedicated `care_compass` schema. Old project deleted.

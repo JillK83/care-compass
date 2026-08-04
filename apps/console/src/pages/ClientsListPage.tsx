@@ -60,7 +60,7 @@ export function ClientsListPage() {
         if (fetchError) {
           setError(fetchError.message)
         } else {
-          setClients((data as ClientProfile[]) ?? [])
+          setClients((data as unknown as ClientProfile[]) ?? [])
         }
         setIsLoading(false)
       })
